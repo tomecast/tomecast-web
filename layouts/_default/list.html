@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html itemscope="itemscope" itemtype="http://schema.org/WebPage" xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<head>
+    {{ partial "head_includes.html" . }}
+
+
+
+</head>
+<body class="page page-id-4700 page-child parent-pageid-4667 page-template-default  wpb-js-composer js-comp-ver-4.5.1 vc_responsive"
+      data-backText="Back" data-vm-anim="1">
+<div id="mk-boxed-layout">
+    <div id="mk-theme-container">
+        {{ partial "header.html" }}
+        <div id="theme-page">
+            <div class="mk-main-wrapper-holder">
+                <div id="mk-page-id-4700" class="theme-page-wrapper mk-main-wrapper full-layout  mk-grid vc_row-fluid">
+                    <div class="theme-content " itemprop="mainContentOfPage">
+                        <div class="wpb_row vc_row  vc_row-fluid  mk-fullwidth-false  attched-false vc_row-fluid">
+                            <div style="" class="vc_col-sm-12 wpb_column column_container ">
+                                <div class="loop-main-wrapper">
+                                    <section data-style="newspaper" data-uniqid="1412769720-543527b8e46ab"
+                                             class="mk-blog-container mk-theme-loop mk-newspaper-wrapper mag-one-column page-nav-style  ">
+
+                                        {{ $paginator := .Paginate ( .Data.Pages.ByDate ) 20 }}
+                                        {{ range $paginator.Pages }}
+
+                                        <article
+                                                 class="mk-blog-newspaper-item newspaper-1412769720-543527b8e46ab mk-isotop-item three-column">
+                                            <div class="blog-item-holder">
+                                                <div class="mk-audio-section " style="background-color:#da4c26"><img
+                                                        class="audio-thumb" alt="" title=""
+                                                        src="/img/covers/{{.Section}}.jpg" style="width:100px"/>
+
+                                                    <div id="jquery_jplayer"
+                                                         class="jp-jplayer mk-blog-audio"
+                                                         data-mp3="{{.Params.episode_url}}"
+                                                         data-ogg=""></div>
+                                                    <div id="jp_container" class="jp-audio audio-has-img">
+                                                        <div class="jp-type-single">
+                                                            <div class="jp-gui jp-interface">
+                                                                <div class="jp-time-holder">
+                                                                    <div class="jp-current-time"></div>
+                                                                    <div class="jp-duration"></div>
+                                                                </div>
+                                                                <div class="jp-progress">
+                                                                    <div class="jp-seek-bar">
+                                                                        <div class="jp-play-bar"></div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="jp-volume-bar">
+                                                                    <i class="mk-moon-volume-mute"></i>
+
+                                                                    <div class="inner-value-adjust">
+                                                                        <div class="jp-volume-bar-value"></div>
+                                                                    </div>
+                                                                </div>
+                                                                <ul class="jp-controls">
+                                                                    <li><a href="javascript:;" class="jp-play"
+                                                                           tabindex="1"><i class="mk-icon-play"></i></a>
+                                                                    </li>
+                                                                    <li><a href="javascript:;" class="jp-pause"
+                                                                           tabindex="1"><i
+                                                                            class="mk-icon-pause"></i></a></li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="jp-no-solution">
+                                                                <span>Update Required</span>
+                                                                To play the media you will need to either update your
+                                                                browser to a recent version or update your <a
+                                                                    href="http://get.adobe.com/flashplayer/"
+                                                                    target="_blank">Flash plugin</a>.
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="clearboth"></div>
+                                                </div>
+                                                <div class="mk-blog-meta"><h3 class="the-title"><a
+                                                        href="{{.RelPermalink}}">{{.Title}}</a></h3>
+
+                                                    <div class="mk-blog-meta-wrapper">
+                                                        <time datetime="August 20, 2014"><a
+                                                                href="{{.RelPermalink}}">{{.Date}}</a>
+                                                        </time>
+                                                    </div>
+                                                    <div class="the-excerpt"><p>{{.Description | safeHtml }} [...]</p></div>
+                                                </div>
+                                                <div class="newspaper-item-footer">
+                                                    <div class="newspaper-item-footer-holder"><a class="mk-readmore"
+                                                                                                 href="{{.RelPermalink}}"><i
+                                                            class="mk-moon-arrow-right-2"></i>Read More</a>
+
+                                                        <div class="mk-love-holder newspapre-footer-icons"><a
+                                                                href="{{.RelPermalink}}"
+                                                                class="mk-love-this " id="mk-love-511"><i
+                                                                class="mk-icon-heart"><span>&nbsp;</span></i> <span
+                                                                class="mk-love-count">0</span></a></div>
+                                                        <span class="newspaper-item-comment newspaper-footer-icons"><i
+                                                                class="mk-moon-bubble-9"></i> 0</span><span
+                                                                class="newspaper-item-share newspaper-footer-icons"><i
+                                                                class="mk-moon-share-2"></i></span>
+
+                                                        <div class="clearboth"></div>
+                                                    </div>
+                                                    <ul class="newspaper-comments-list"></ul>
+                                                    <ul class="newspaper-social-share">
+                                                        {{ partial "social_share.html" . }}
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </article>
+
+                                        {{ end }}
+
+                                    </section>
+                                    <div class="mk-preloader"></div>
+                                    <div class="mk-pagination-holder"><a class="mk-loadmore-button page-nav-style-btn"
+                                                                         style="display:none;"
+                                                                         href="../../index.html%3Fp=4700.html#"><i
+                                            class="mk-moon-loop-4"></i><i class="mk-moon-arrow-down-4"></i>Load More</a>
+
+                                        <div class="mk-pagination mk-grid">
+
+                                            <div class="mk-pagination-previous">{{if ($paginator.HasPrev) }}<a href="{{$paginator.Prev.URL}}"></a>{{end}}</div>
+
+                                            <div class="mk-pagination-inner">
+                                                {{if $paginator.HasPrev}}
+                                                    {{if ne $paginator.First $paginator.Prev }}
+                                                    <a href="{{$paginator.First.URL}}" class="page-number" title="{{$paginator.First.PageNumber}}">{{$paginator.First.PageNumber}}</a>
+                                                    <span class="page-number">..</span>
+                                                    {{end}}
+                                                    <a href="{{$paginator.Prev.URL}}" class="page-number" title="{{$paginator.Prev.PageNumber}}">{{$paginator.Prev.PageNumber}}</a>
+                                                {{end}}
+
+                                                <span class="current-page">{{$paginator.PageNumber}}</span>
+
+                                                {{if $paginator.HasNext}}
+                                                    <a href="{{$paginator.Next.URL}}" class="page-number" title="{{$paginator.Next.PageNumber}}">{{$paginator.Next.PageNumber}}</a>
+                                                    {{if ne $paginator.Last $paginator.Next }}
+                                                    <span class="page-number">..</span>
+                                                    <a href="{{$paginator.Last.URL}}" class="page-number" title="{{$paginator.Last.PageNumber}}">{{$paginator.Last.PageNumber}}</a>
+                                                    {{end}}
+                                                {{end}}
+                                            </div>
+                                            <div class="mk-pagination-next">{{if $paginator.HasNext }}<a href="{{$paginator.Next.URL}}"></a> {{end}}</div>
+                                            <div class="mk-total-pages">page&nbsp;&nbsp;{{$paginator.PageNumber}}&nbsp;&nbsp;of&nbsp;&nbsp;{{$paginator.TotalPages}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearboth"></div>
+                    </div>
+                    <div class="clearboth"></div>
+                </div>
+                <div class="clearboth"></div>
+            </div>
+        </div>
+        {{ partial "footer.html" }}
+    </div>
+    {{ partial "menu.html" . }}
+</div>
+<a href="#" class="mk-go-top"><i class="mk-icon-chevron-up"></i></a>
+
+
+<script type='text/javascript' src='/js/scripts-vendors.js'></script>
+<script type='text/javascript' src='/js/smoothscroll.js'></script>
+<script type='text/javascript'
+        src='//cdnjs.cloudflare.com/ajax/libs/jquery.transit/0.9.12/jquery.transit.min.js'></script>
+
+<script type="text/javascript">
+    window.$ = jQuery
+
+    $('.mk-dynamic-styles').each(function () {
+        $(this).remove();
+    });
+
+    function ajaxStylesInjector() {
+        $('.mk-dynamic-styles').each(function () {
+            var $this = $(this),
+                    id = $this.attr('id'),
+                    commentedStyles = $this.html();
+            styles = commentedStyles
+                    .replace('<!--', '')
+                    .replace('-->', '');
+
+
+            if (dynamic_styles_ids.indexOf(id) === -1) {
+                $('style[data-ajax]').append(styles);
+                $this.remove();
+            }
+
+            dynamic_styles_ids.push(id);
+        });
+    }
+    ;
+
+    abb.modules.theme_header.init({
+        id: 'mk-header',
+        height: '130',
+        stickyHeight: '55',
+        stickyOffset: 'header',
+        hasToolbar: 'false',
+    });
+    abb.init();    </script>
+</body>
+</html>
