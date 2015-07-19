@@ -8,9 +8,9 @@
     <meta property="og:image"
           content="/img/covers/{{.Section}}.jpg"/>
     <meta property="og:url" content="{{.RelPermalink}}"/>
-    <meta property="og:title" content="TomeCast Transcribed Podcast - {{.Author}} - {{.Title}}"/>
+    <meta property="og:title" content="TomeCast Transcribed Podcast - {{index .Site.Data .Section "author"}} - {{.Title}}"/>
     <meta property="og:description"
-          content="Automatically Transcribed Podcast: {{.Author}} - {{.Title}}"/>
+          content="Automatically Transcribed Podcast: {{index .Site.Data .Section "author"}} - {{.Title}}"/>
     <meta property="og:type" content="article"/>
     <noscript>
         <style>.wpb_animate_when_almost_visible {
