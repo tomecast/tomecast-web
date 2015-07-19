@@ -82,7 +82,7 @@
                                                                 href="{{.RelPermalink}}">{{.Date}}</a>
                                                         </time>
                                                     </div>
-                                                    <div class="the-excerpt"><p>{{.Description | safeHTML }} [...]</p></div>
+                                                    <div class="the-excerpt"><p>{{.Description | safeHtml }} [...]</p></div>
                                                 </div>
                                                 <div class="newspaper-item-footer">
                                                     <div class="newspaper-item-footer-holder"><a class="mk-readmore"
@@ -200,7 +200,7 @@
         height: '130',
         stickyHeight: '55',
         stickyOffset: 'header',
-        hasToolbar: 'false',
+        hasToolbar: 'false'
     });
     abb.init();    </script>
 </body>
