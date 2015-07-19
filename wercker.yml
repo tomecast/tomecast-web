@@ -61,4 +61,4 @@ deploy:
             git init
             git add .
             git commit -m "deploy commit from $WERCKER_STARTED_BY"
-            git push -f $GIT_REMOTE master:gh-Rpages
+            git push -f $GIT_REMOTE master:gh-pages
