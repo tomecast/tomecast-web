@@ -8,7 +8,7 @@ build:
         name: move to tomecast-web subfolder
         code: mkdir tomecast-web && mv `ls -A | grep -Ev 'tomecast-web|wercker.yml'` ./tomecast-web
 
-    # (DONT MIRROR THIS SECTION)  checkout the tomecast-web repo
+    # (DONT MIRROR THIS SECTION) checkout the tomecast-web repo
     - script:
         name: checkout the tomecast-podcasts repo
         code: git clone https://github.com/tomecast/tomecast-podcasts.git
