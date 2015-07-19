@@ -1,0 +1,64 @@
+# based off of from:  http://devcenter.wercker.com/docs/containers/minimal-containers.html
+# NOTE: any changes here should be mirrored in the tomecast-podcasts wercker.yml file.
+box: analogj/docker-hugo
+build:
+    steps:
+    # (DONT MIRROR THIS SECTION) move the current tomecast-podcasts files to a subfolder
+    - script:
+        name: move to tomecast-web subfolder
+        code: mkdir tomecast-web && mv `ls -A | grep -Ev 'tomecast-web|wercker.yml'` ./tomecast-web
+
+    # (DONT MIRROR THIS SECTION)  checkout the tomecast-web repo
+    - script:
+        name: checkout the tomecast-podcasts repo
+        code: git clone https://github.com/tomecast/tomecast-podcasts.git
+
+    # todo: move the tomecast-podcast content into the correct structure
+    - script:
+        name: populate structure
+        code: |
+            rsync -r --exclude=.gitignore --exclude=README.md tomecast-podcasts/* tomecast-web/content/
+            cd tomecast-web/content
+            rm -rf .gitignore
+
+            # copy the metadata files into the data folder.
+            find * -type d -exec mv -n -- {}/metadata.json ../data/{}.json \;
+
+            # copy the cover art to the static/img/covers folder
+            find * -type d -exec mv -n -- {}/cover.jpg ../static/img/covers/{}.jpg \;
+
+            #for the content files, make sure that we rename the extension to md, instead of json so that hugo will process them.
+            cd ../ && find ./content -type f -name "*.json" -print0 | xargs -0 rename 's/.json$/.md/'
+
+            echo "data folder structure"
+            ls -alt data
+
+            echo "content folder"
+            ls -alt content
+
+    # todo: generate the static site using hugo
+    - script:
+        name: hugo process site
+        code: |
+            hugo version
+            cd tomecast-web && hugo -v
+deploy:
+    steps:
+    - script:
+        name: Configure git
+        code: |
+            git config --global user.email "pleasemailus@wercker.com"
+            git config --global user.name "wercker"
+
+            # remove current .git folder
+            rm -rf .git
+            rm -rf tomecast-web/.git
+    - script:
+        name: Deploy to github pages
+        code: |
+            cd tomecast-web/public
+            find . -name ".gitignore" -exec rm -f {} \;
+            git init
+            git add .
+            git commit -m "deploy commit from $WERCKER_STARTED_BY"
+            git push -f $GIT_REMOTE master:gh-pages
