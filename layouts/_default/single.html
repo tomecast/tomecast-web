@@ -211,7 +211,7 @@
                                                                                           class="attachment-thumbnail wp-post-image"
                                                                                           alt="{{.PrevInSection.Title}} Podcast"/></span><span
         class="mk-pavnav-icon"><i class="mk-icon-long-arrow-left"></i></span></span><div class="nav-info-container">
-    <span class="pagenav-bottom"><span class="pagenav-title">{{.PrevInSection.Title}}</span>{{.PrevInSection.Date}}</span></div></span></a>
+    <span class="pagenav-bottom"><span class="pagenav-title">{{.PrevInSection.Title}}</span>{{.PrevInSection.Date.Format "2006-01-02"}}</span></div></span></a>
 
 {{ end }}
 {{ if .NextInSection }}
@@ -223,7 +223,7 @@
                                                                                      alt="{{.NextInSection.Title}} Podcast"/></span></span><div
         class="nav-info-container"><span class="pagenav-bottom"><span
         class="pagenav-title">{{.NextInSection.Title}}</span>
-    {{.NextInSection.Date}}
+    {{.NextInSection.Date.Format "2006-01-02"}}}}
 </span></div></span></a>
 {{ end }}
 

@@ -78,8 +78,8 @@
                                                         href="{{.RelPermalink}}">{{.Title}}</a></h3>
 
                                                     <div class="mk-blog-meta-wrapper">
-                                                        <time datetime="August 20, 2014"><a
-                                                                href="{{.RelPermalink}}">{{.Date}}</a>
+                                                        <time datetime="{{.Date.Format "2006-01-02"}}"><a
+                                                                href="{{.RelPermalink}}">{{.Date.Format "2006-01-02"}}</a>
                                                         </time>
                                                     </div>
                                                     <div class="the-excerpt"><p>{{.Description | safeHTML }} [...]</p></div>
