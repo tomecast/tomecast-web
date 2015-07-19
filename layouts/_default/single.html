@@ -22,7 +22,7 @@
       data-backText="Back" data-vm-anim="1">
 <div id="mk-boxed-layout">
     <div id="mk-theme-container">
-        {{ partial "header.html" }}
+        {{ partial "header.html" . }}
         <div id="theme-page">
             <div class="mk-main-wrapper-holder">
                 <div class="theme-page-wrapper mk-blog-single full-layout vc_row-fluid mk-grid ">
@@ -197,7 +197,7 @@
                 </div>
             </div>
         </div>
-        {{ partial "footer.html" }}
+        {{ partial "footer.html" . }}
     </div>
     {{ partial "menu.html" . }}
 </div>

@@ -9,7 +9,7 @@
 <body class="home page page-id-5 page-template-default  wpb-js-composer js-comp-ver-4.5.1 vc_responsive" data-backText="Back" data-vm-anim="1">
 <div id="mk-boxed-layout">
     <div id="mk-theme-container">
-        {{ partial "header.html" }}
+        {{ partial "header.html" . }}
         <div id="theme-page">
             <div class="mk-main-wrapper-holder">
                 <div id="mk-page-id-5" class="theme-page-wrapper mk-main-wrapper full-layout no-padding mk-grid vc_row-fluid">
@@ -52,7 +52,7 @@
             <div class="clearboth"></div>
         </div>
         </div>
-        {{ partial "footer.html" }}
+        {{ partial "footer.html" . }}
     </div>
     {{ partial "menu.html" . }}
 </div>

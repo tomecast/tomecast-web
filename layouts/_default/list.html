@@ -10,7 +10,7 @@
       data-backText="Back" data-vm-anim="1">
 <div id="mk-boxed-layout">
     <div id="mk-theme-container">
-        {{ partial "header.html" }}
+        {{ partial "header.html" . }}
         <div id="theme-page">
             <div class="mk-main-wrapper-holder">
                 <div id="mk-page-id-4700" class="theme-page-wrapper mk-main-wrapper full-layout  mk-grid vc_row-fluid">
@@ -156,7 +156,7 @@
                 <div class="clearboth"></div>
             </div>
         </div>
-        {{ partial "footer.html" }}
+        {{ partial "footer.html" . }}
     </div>
     {{ partial "menu.html" . }}
 </div>
