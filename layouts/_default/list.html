@@ -22,7 +22,7 @@
                                              class="mk-blog-container mk-theme-loop mk-newspaper-wrapper mag-one-column page-nav-style  ">
 
                                         {{ $paginator := .Paginate ( .Data.Pages.ByDate ) 20 }}
-                                        {{ range $paginator.Pages }}
+                                        {{ range $index, $element := $paginator.Pages }}
 
                                         <article
                                                  class="mk-blog-newspaper-item newspaper-1412769720-543527b8e46ab mk-isotop-item three-column">
@@ -31,11 +31,11 @@
                                                         class="audio-thumb" alt="" title=""
                                                         src="/img/covers/{{.Section}}.jpg" style="width:100px"/>
 
-                                                    <div id="jquery_jplayer"
+                                                    <div id="jquery_jplayer_{{$index}}"
                                                          class="jp-jplayer mk-blog-audio"
                                                          data-mp3="{{.Params.episode_url}}"
                                                          data-ogg=""></div>
-                                                    <div id="jp_container" class="jp-audio audio-has-img">
+                                                    <div id="jp_container_{{$index}}" class="jp-audio audio-has-img">
                                                         <div class="jp-type-single">
                                                             <div class="jp-gui jp-interface">
                                                                 <div class="jp-time-holder">
@@ -164,6 +164,7 @@
 
 
 <script type='text/javascript' src='/js/scripts-vendors.js'></script>
+<script type='text/javascript' src='/js/app.js'></script>
 <script type='text/javascript' src='/js/smoothscroll.js'></script>
 <script type='text/javascript'
         src='//cdnjs.cloudflare.com/ajax/libs/jquery.transit/0.9.12/jquery.transit.min.js'></script>
