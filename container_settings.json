@@ -4,14 +4,10 @@
   "OpenStdin": true,
   "HostConfig": {
     "Binds": ["/Users/jason/repos/tomecast-web:/srv/tomecast-web"],
-    "PortBindings":{ "1313/tcp": [{ "HostIp": "0.0.0.0", "HostPort": "1313" }] }
+    "PortBindings":{ "4000/tcp": [{ "HostIp": "0.0.0.0", "HostPort": "4000" }] }
   },
-  "WorkingDir": "/srv/tomecast-web",
+  "WorkingDir": "/srv/",
   "Cmd": [
-    "hugo",
-    "server",
-    "--port=1313",
-    "--bind=0.0.0.0",
-    "--verbose=true"
+    "serve","--source", "/srv/tomecast-web", "--destination", "/srv/tomecast-web/_site", "--host", "0.0.0.0"
   ]
 }
