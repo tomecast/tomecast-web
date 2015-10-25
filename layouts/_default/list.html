@@ -21,7 +21,7 @@
                                     <section data-style="newspaper" data-uniqid="1412769720-543527b8e46ab"
                                              class="mk-blog-container mk-theme-loop mk-newspaper-wrapper mag-one-column page-nav-style  ">
 
-                                        {{ $paginator := .Paginate ( .Data.Pages.ByDate ) 20 }}
+                                        {{ $paginator := .Paginate ( .Data.Pages.ByDate.Reverse ) 20 }}
                                         {{ range $index, $element := $paginator.Pages }}
 
                                         <article
