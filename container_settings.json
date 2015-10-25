@@ -1,0 +1,17 @@
+{
+  "_comment": "FOR DETAILED FORMAT LOOK AT https://docs.docker.com/reference/api/docker_remote_api_v1.16/#create-a-container",
+  "AttachStdin": true,
+  "OpenStdin": true,
+  "HostConfig": {
+    "Binds": ["/Users/jason/repos/tomecast-web:/srv/tomecast-web"],
+    "PortBindings":{ "1313/tcp": [{ "HostIp": "0.0.0.0", "HostPort": "1313" }] }
+  },
+  "WorkingDir": "/srv/tomecast-web",
+  "Cmd": [
+    "hugo",
+    "server",
+    "--port=1313",
+    "--bind=0.0.0.0",
+    "--verbose=true"
+  ]
+}
