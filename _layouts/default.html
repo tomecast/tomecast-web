@@ -1,29 +1,4 @@
 <!DOCTYPE html>
-<html>
-
-    {% include head.html %}
-
-  <body>
-
-    {% include header.html %}
-
-    <div class="page-content">
-      <div class="wrapper">
-        {{ content }}
-      </div>
-    </div>
-
-    {% include footer.html %}
-
-  </body>
-
-</html>
-
-
-
-
-
-<!DOCTYPE html>
 <html itemscope="itemscope" itemtype="http://schema.org/WebPage" xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
   {% include head.html %}
@@ -49,7 +24,7 @@
                 <img alt="{{podcast_metadata[1].name}}" title="{{podcast_metadata[1].name}}" src="/img/covers/{{podcast_metadata[0]}}.jpg"/>
                 <div class="image-hover-overlay"></div>
                 <div class="grid-hover-icons">
-                  <a class="permalink-badge project-load" data-fancybox-group="portfolio-grid" data-post-id="{{podcast_metadata[0]}}" rel="portfolio-grid" target="_self" href="{{podcast_metadata[0]}}">
+                  <a class="permalink-badge project-load" data-fancybox-group="portfolio-grid" data-post-id="{{podcast_metadata[0]}}" rel="portfolio-grid" target="_self" href="/podcasts/{{podcast_metadata[0]}}">
                     <i class="mk-jupiter-icon-arrow-circle"></i>
                   </a>
                   <a data-fancybox-group="portfolio-grid" title="{{podcast_metadata[1].name}} - {{podcast_metadata[1].author}}" class="zoom-badge mk-lightbox" href="{{podcast_metadata[0]}}/cover.jpg">
