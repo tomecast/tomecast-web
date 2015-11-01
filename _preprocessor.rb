@@ -1,6 +1,8 @@
 require 'fileutils'
 require 'yaml'
 require 'json'
+require 'logger'
+
 class Preprocessor
   def initialize
 
@@ -24,29 +26,29 @@ class Preprocessor
       FileUtils.cp_r("#{@content_directory}/#{podcast_name}/cover.jpg", "#{dest_cover_path}/#{podcast_name}.jpg")
 
       #copy data files
-      dest_data_path = File.absolute_path("./img/covers/")
-      FileUtils.cp_r("#{@content_directory}/#{podcast_name}/metadata.json", "#{dest_data_path}/#{podcast_name}.jpg")
+      dest_data_path = File.absolute_path("./_data")
+      FileUtils.cp_r("#{@content_directory}/#{podcast_name}/metadata.json", "#{dest_data_path}/#{podcast_name}.json")
 
-      #copy over podcasts after preprocessing
+      #preprocess the episodes and copy them over to the dest folder
       Dir.glob("#{@content_directory}/#{podcast_name}/*").each do |episode_filepath|
-        if File.directory?(episode_filepath)
-          next
+        if File.directory?(episode_filepath) || File.basename(episode_filepath) == 'cover.jpg' || File.basename(episode_filepath) == 'metadata.json'
+            next
         end
         episode_filename = File.basename(episode_filepath,'.json')
 
         #parse the podcast json file.
-        episode_data = JSON.parse(File.read(episode_filepath))
+        p episode_filepath
+        episode_data = JSON.parse(File.read(episode_filepath,:external_encoding => 'utf-8'))
 
 
         #set additional jekyll data
         episode_data['layout'] = 'post'
 
         #write the episode_data to the destination path as yaml embedded in a md file
-        dest_podcasts_path = File.absolute_path("./podcasts/#{podcast_name}/")
+        dest_podcasts_path = File.absolute_path("./podcasts/#{podcast_name}/_posts/")
         FileUtils.mkdir_p(dest_podcasts_path) unless File.directory?(dest_podcasts_path)
 
         File.open("#{dest_podcasts_path}/#{episode_filename}.md", 'w') {|f|
-          f.write "---\n"
           f.write episode_data.to_yaml
           f.write "---\n"
         }
@@ -58,14 +60,6 @@ class Preprocessor
 
     end
   end
-
-  # def copy_static_files
-  #   # copy the metadata files into the data folder.
-  #
-  #
-  #   FileUtils.cp_r('../tomecast-podcasts', dest, options)
-  #
-  # end
 
 end
 
