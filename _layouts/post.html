@@ -203,9 +203,30 @@
 <a href="#" class="mk-go-top"><i class="mk-icon-chevron-up"></i></a>
 
 
-<!--
-    pagination section here.
--->
+{% if page.previous %}
+<a class="mk-post-nav mk-post-prev with-image" href="{{page.previous.url}}"><span
+        class="pagnav-wrapper"><span class="pagenav-top"><span class="pagenav-image"><img width="150" height="150"
+                                                                                          src="/img/covers/{{page.previous.categories[1]}}.jpg"
+                                                                                          class="attachment-thumbnail wp-post-image"
+                                                                                          alt="{{page.previous.title}} Podcast"/></span><span
+        class="mk-pavnav-icon"><i class="mk-icon-long-arrow-left"></i></span></span><div class="nav-info-container">
+    <span class="pagenav-bottom"><span class="pagenav-title">{{page.previous.title}}</span>{{page.previous.date  | date: "%F"}}</span></div></span></a>
+
+{% endif %}
+
+{% if page.next %}
+<a class="mk-post-nav mk-post-next with-image" href="{{page.next.url}}"><span
+        class="pagnav-wrapper"><span class="pagenav-top"><span class="mk-pavnav-icon"><i
+        class="mk-icon-long-arrow-right"></i></span><span class="pagenav-image"><img width="150" height="150"
+                                                                                     src="/img/covers/{{page.next.categories[1]}}.jpg"
+                                                                                     class="attachment-thumbnail wp-post-image"
+                                                                                     alt="{{page.next.title}} Podcast"/></span></span><div
+        class="nav-info-container"><span class="pagenav-bottom"><span
+        class="pagenav-title">{{page.next.title}}</span>
+    {{page.next.date  | date: "%F"}}
+</span></div></span></a>
+{% endif %}
+
 
 <script type='text/javascript' src='/js/scripts-vendors.js'></script>
 <script type='text/javascript' src='/js/app.js'></script>
