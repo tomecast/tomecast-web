@@ -1,6 +1,6 @@
 # based off of from:  http://devcenter.wercker.com/docs/containers/minimal-containers.html
 # NOTE: any changes here should be mirrored in the tomecast-podcasts wercker.yml file.
-box: grahamc/jekyll
+box: analogj/docker-jekyll
 build:
     steps:
     # (DONT MIRROR THIS SECTION) move the current tomecast-podcasts files to a subfolder
