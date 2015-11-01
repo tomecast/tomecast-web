@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html itemscope="itemscope" itemtype="http://schema.org/Article" xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
-    {{ partial "head_includes.html" . }}
-
+    {% include head.html %}
 
     <meta property="og:site_name" content="TomeCast"/>
     <meta property="og:image"
-          content="/img/covers/{{.Section}}.jpg"/>
-    <meta property="og:url" content="{{.RelPermalink}}"/>
-    <meta property="og:title" content="TomeCast Transcribed Podcast - {{index .Site.Data .Section "author"}} - {{.Title}}"/>
+          content="/img/covers/{{page.categories[1]}}.jpg"/>
+    <meta property="og:url" content="{{page.url}}"/>
+    <meta property="og:title" content="TomeCast Transcribed Podcast - {{site.data[page.categories[1]].author}} - {{page.title}}"/>
     <meta property="og:description"
-          content="Automatically Transcribed Podcast: {{index .Site.Data .Section "author"}} - {{.Title}}"/>
+          content="Automatically Transcribed Podcast: {{site.data[page.categories[1]].author}} - {{page.title}}"/>
     <meta property="og:type" content="article"/>
     <noscript>
         <style>.wpb_animate_when_almost_visible {
@@ -20,21 +19,22 @@
 </head>
 <body class="single single-post postid-591 single-format-standard  wpb-js-composer js-comp-ver-4.5.1 vc_responsive"
       data-backText="Back" data-vm-anim="1">
+
 <div id="mk-boxed-layout">
     <div id="mk-theme-container">
-        {{ partial "header.html" . }}
+        {% include header.html %}
         <div id="theme-page">
             <div class="mk-main-wrapper-holder">
                 <div class="theme-page-wrapper mk-blog-single full-layout vc_row-fluid mk-grid ">
                     <div class="theme-content ">
                         <article
-                                 class=" post type-post status-publish format-standard has-post-thumbnail hentry category-articles category-business tag-audio tag-design">
+                                class=" post type-post status-publish format-standard has-post-thumbnail hentry category-articles category-business tag-audio tag-design">
                             <div class="mk-audio-section mk-audio-shortcode" style="background-color:#acacac"><img
                                     class="audio-thumb" alt="" title=""
-                                    src="/img/covers/{{.Section}}.jpg" style="width:170px"/>
+                                    src="/img/covers/{{page.categories[1]}}.jpg" style="width:170px"/>
 
                                 <div id="jquery_jplayer" class="jp-jplayer mk-blog-audio"
-                                     data-mp3="{{.Params.episode_url}}"
+                                     data-mp3="{{page.episode_url}}"
                                      data-ogg=""></div>
                                 <div id="jp_container" class="jp-audio audio-has-img">
                                     <div class="jp-type-single">
@@ -72,15 +72,15 @@
                                 </div>
                                 <div class="clearboth"></div>
                             </div>
-                            <h2 class="blog-single-title">{{.Title}}</h2>
+                            <h2 class="blog-single-title">{{page.title}}</h2>
 
                             <div class="blog-single-meta">
-                                <div class="mk-blog-author"><a href="/{{.Section}}"
-                                                 title='Posts in {{index .Site.Data .Section "name"}}' rel="section">{{index .Site.Data .Section "name"}}</a></div>
-                                <div class="mk-blog-author">By <a title='Posted By {{index .Site.Data .Section "author"}}' rel="author">{{index .Site.Data .Section "author"}}</a>
+                                <div class="mk-blog-author"><a href="/podcasts/{{page.categories[1]}}"
+                                                               title='Posts in {{site.data[page.categories[1]].name}}' rel="section">{{site.data[page.categories[1]].name}}</a></div>
+                                <div class="mk-blog-author">By <a title='Posted By {{site.data[page.categories[1]].author}}' rel="author">{{site.data[page.categories[1]].author}}</a>
                                 </div>
-                                <time class="mk-post-date" datetime="{{.Date}}">
-                                    Posted on <a href="">{{.Date.Format "2006-01-02" }}</a>
+                                <time class="mk-post-date" datetime="{{page.date}}">
+                                    Posted on <a href="">{{page.date  | date: "%F" }}</a>
                                 </time>
                             </div>
                             <div class="single-social-section">
@@ -97,7 +97,7 @@
                                     <div class="blog-single-share mk-toggle-trigger"><i class="mk-moon-share-2"></i>
                                     </div>
                                     <ul class="single-share-box mk-box-to-trigger">
-                                        {{ partial "social_share.html" . }}
+                                        {% include social_share.html %}
                                     </ul>
                                 </div>
                                 <a class="mk-blog-print" onClick="window.print()"
@@ -128,7 +128,7 @@
                                         </div>
                                         <div style="font-size: 18px;" id="blockquote-555772840c9ac"
                                              class="mk-shortcode mk-blockquote quote-style ">
-                                            {{.Description |safeHTML}}
+                                            {{page.description |raw}}
                                         </div>
                                         <div class="clearboth"></div>
                                         <div class="mk-shortcode mk-padding-shortcode" style="height:20px"></div>
@@ -141,13 +141,13 @@
                                                     <th>Speaker</th>
                                                     <th>Transcript</th>
                                                 </tr>
-                                                {{ range sort .Params.segments }}
+                                                {% for segment_hash in page.segments%}
                                                 <tr>
-                                                    <td>{{.timestamp}}</td>
-                                                    <td></td>
-                                                    <td style="text-align: left;">{{.content}}</td>
+                                                    <td>{{segment_hash[0]}}</td>
+                                                    <td>{{segment_hash[1].speaker}}</td>
+                                                    <td style="text-align: left;">{{segment_hash[1].content}}</td>
                                                 </tr>
-                                                {{ end }}
+                                                {% endfor %}
                                             </table>
 
                                             <div class="clearboth"></div>
@@ -157,14 +157,14 @@
                             </div>
 
                             <div class="mk-about-author-wrapper">
-                                <div class="avatar-wrapper"><img alt='{{index .Site.Data .Section "author"}}'
-                                                                 src='/img/covers/{{.Section}}.jpg'
+                                <div class="avatar-wrapper"><img alt='{{site.data[page.categories[1]].author}}'
+                                                                 src='/img/covers/{{page.categories[1]}}.jpg'
                                                                  class='avatar avatar-65 photo' height='65' width='65'/>
                                 </div>
                                 <div class="mk-about-author-meta">
-                                    <a class="about-author-name" href="">{{index .Site.Data .Section "author"}}</a>
+                                    <a class="about-author-name" href="">{{site.data[page.categories[1]].author}}</a>
 
-                                    <div class="about-author-desc">{{index .Site.Data .Section "description"}}</div>
+                                    <div class="about-author-desc">{{site.data[page.categories[1]].description}}</div>
 
                                 </div>
                                 <div class="clearboth"></div>
@@ -175,20 +175,19 @@
                                     {{ range first 4 .Site.Pages.ByDate }}
                                     <li>
                                         <div class="similar-post-holder"><a class="mk-similiar-thumbnail"
-                                                                            href="{{.RelPermalink}}"
-                                                                            title="{{.Title}}"><img
-                                                src="/img/covers/{{.Section}}.jpg"
-                                                alt="{{.Title}}"/>
+                                                                            href="{{post.url}}"
+                                                                            title="{{page.title}}"><img
+                                                src="/img/covers/{{page.categories[1]}}.jpg"
+                                                alt="{{page.title}}"/>
 
                                             <div class="image-hover-overlay"></div>
-                                        </a><a href="{{.RelPermalink}}" class="mk-similiar-title">{{.Title}}</a></div>
+                                        </a><a href="{{.RelPermalink}}" class="mk-similiar-title">{{page.title}}</a></div>
                                     </li>
                                     {{ end }}
                                 </ul>
                                 <div class="clearboth"></div>
                             </section>
                             <section id="comments">
-                                {{ template "_internal/disqus.html" . }}
                             </section>
                         </article>
                         <div class="clearboth"></div>
@@ -197,35 +196,37 @@
                 </div>
             </div>
         </div>
-        {{ partial "footer.html" . }}
+        {% include footer.html %}
     </div>
-    {{ partial "menu.html" . }}
+    {% include menu.html %}
 </div>
 <a href="#" class="mk-go-top"><i class="mk-icon-chevron-up"></i></a>
 
 
-{{ if .PrevInSection }}
-<a class="mk-post-nav mk-post-prev with-image" href="{{.PrevInSection.Permalink}}"><span
+{% if page.previous %}
+<a class="mk-post-nav mk-post-prev with-image" href="{{page.previous.url}}"><span
         class="pagnav-wrapper"><span class="pagenav-top"><span class="pagenav-image"><img width="150" height="150"
-                                                                                          src="/img/covers/{{.PrevInSection.Section}}.jpg"
+                                                                                          src="/img/covers/{{page.previous.categories[1]}}.jpg"
                                                                                           class="attachment-thumbnail wp-post-image"
-                                                                                          alt="{{.PrevInSection.Title}} Podcast"/></span><span
+                                                                                          alt="{{page.previous.title}} Podcast"/></span><span
         class="mk-pavnav-icon"><i class="mk-icon-long-arrow-left"></i></span></span><div class="nav-info-container">
-    <span class="pagenav-bottom"><span class="pagenav-title">{{.PrevInSection.Title}}</span>{{.PrevInSection.Date.Format "2006-01-02"}}</span></div></span></a>
+    <span class="pagenav-bottom"><span class="pagenav-title">{{page.previous.title}}</span>{{page.previous.date  | date: "%F"}}</span></div></span></a>
 
-{{ end }}
-{{ if .NextInSection }}
-<a class="mk-post-nav mk-post-next with-image" href="{{.NextInSection.Permalink}}"><span
+{% endif %}
+
+{% if page.next %}
+<a class="mk-post-nav mk-post-next with-image" href="{{page.next.url}}"><span
         class="pagnav-wrapper"><span class="pagenav-top"><span class="mk-pavnav-icon"><i
         class="mk-icon-long-arrow-right"></i></span><span class="pagenav-image"><img width="150" height="150"
-                                                                                     src="/img/covers/{{.NextInSection.Section}}.jpg"
+                                                                                     src="/img/covers/{{page.next.categories[1]}}.jpg"
                                                                                      class="attachment-thumbnail wp-post-image"
-                                                                                     alt="{{.NextInSection.Title}} Podcast"/></span></span><div
+                                                                                     alt="{{page.next.title}} Podcast"/></span></span><div
         class="nav-info-container"><span class="pagenav-bottom"><span
-        class="pagenav-title">{{.NextInSection.Title}}</span>
-    {{.NextInSection.Date.Format "2006-01-02"}}
+        class="pagenav-title">{{page.next.title}}</span>
+    {{page.next.date  | date: "%F"}}
 </span></div></span></a>
-{{ end }}
+{% endif %}
+
 
 <script type='text/javascript' src='/js/scripts-vendors.js'></script>
 <script type='text/javascript' src='/js/app.js'></script>
@@ -268,7 +269,7 @@
         hasToolbar: 'false'
     });
     abb.init();    </script>
-{{ partial "analytics.html" . }}
+{% include analytics.html %}
 </body>
 </html>
  
