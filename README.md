@@ -13,3 +13,4 @@ find ./content -type f -name "*.json" -print0 | xargs -0 rename 's/.json$/.md/'
 
         {{range $key, $val := .Site.Data}}
         {{ end }}
+
