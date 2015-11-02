@@ -29,7 +29,7 @@ build:
         name: jekyll process site
         code: |
             jekyll --version
-            jekyll build --source tomecast-web
+            jekyll build --source tomecast-web --destination tomecast-web/_site
 deploy:
     steps:
     - script:
