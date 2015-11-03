@@ -8,6 +8,6 @@
   },
   "WorkingDir": "/srv/",
   "Cmd": [
-    "serve","--source", "/srv/tomecast-web", "--destination", "/srv/tomecast-web/_site", "--host", "0.0.0.0"
+    "jekyll","serve","--source", "/srv/tomecast-web", "--destination", "/srv/tomecast-web/_site", "--host", "0.0.0.0"
   ]
 }

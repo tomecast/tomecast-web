@@ -134,22 +134,21 @@
                                         <div class="mk-shortcode mk-padding-shortcode" style="height:20px"></div>
                                         <div class="clearboth"></div>
                                         <div style=" margin-bottom:0px;text-align: left;" class="mk-text-block  ">
-
-                                            <table style="width:100%">
-                                                <tr>
-                                                    <th>Segment Start</th>
-                                                    <th>Speaker</th>
-                                                    <th>Transcript</th>
-                                                </tr>
-                                                {% for segment_hash in page.segments%}
-                                                <tr>
-                                                    <td>{{segment_hash[0]}}</td>
-                                                    <td>{{segment_hash[1].speaker}}</td>
-                                                    <td style="text-align: left;">{{segment_hash[1].content}}</td>
-                                                </tr>
-                                                {% endfor %}
-                                            </table>
-
+                                            <p>
+                                            {% assign prev_segment = null %}
+                                            {% for segment_hash in page.segments%}
+                                                {% if forloop.first == false and prev_segment.speaker != segment_hash[1].speaker %}
+                                            </p><p><!--New speaker-->
+                                                {% endif %}
+                                                <span data-speaker="{{segment_hash[1].speaker}}"
+                                                      data-timestamp="{{segment_hash[1].timestamp}}"
+                                                      data-length="{{segment_hash[1].length}}"
+                                                      data-uuid="{{segment_hash[1].uuid}}">
+                                                    {{segment_hash[1].content}}
+                                                </span>
+                                            {% assign prev_segment = segment_hash[1] %}
+                                            {% endfor %}
+                                            </p>
                                             <div class="clearboth"></div>
                                         </div>
                                     </div>
@@ -206,9 +205,9 @@
 {% if page.previous %}
 <a class="mk-post-nav mk-post-prev with-image" href="{{page.previous.url}}"><span
         class="pagnav-wrapper"><span class="pagenav-top"><span class="pagenav-image"><img width="150" height="150"
-                                                                                          src="/img/covers/{{page.previous.categories[1]}}.jpg"
-                                                                                          class="attachment-thumbnail wp-post-image"
-                                                                                          alt="{{page.previous.title}} Podcast"/></span><span
+              src="/img/covers/{{page.previous.categories[1]}}.jpg"
+              class="attachment-thumbnail wp-post-image"
+              alt="{{page.previous.title}} Podcast"/></span><span
         class="mk-pavnav-icon"><i class="mk-icon-long-arrow-left"></i></span></span><div class="nav-info-container">
     <span class="pagenav-bottom"><span class="pagenav-title">{{page.previous.title}}</span>{{page.previous.date  | date: "%F"}}</span></div></span></a>
 
@@ -218,9 +217,9 @@
 <a class="mk-post-nav mk-post-next with-image" href="{{page.next.url}}"><span
         class="pagnav-wrapper"><span class="pagenav-top"><span class="mk-pavnav-icon"><i
         class="mk-icon-long-arrow-right"></i></span><span class="pagenav-image"><img width="150" height="150"
-                                                                                     src="/img/covers/{{page.next.categories[1]}}.jpg"
-                                                                                     class="attachment-thumbnail wp-post-image"
-                                                                                     alt="{{page.next.title}} Podcast"/></span></span><div
+             src="/img/covers/{{page.next.categories[1]}}.jpg"
+             class="attachment-thumbnail wp-post-image"
+             alt="{{page.next.title}} Podcast"/></span></span><div
         class="nav-info-container"><span class="pagenav-bottom"><span
         class="pagenav-title">{{page.next.title}}</span>
     {{page.next.date  | date: "%F"}}
