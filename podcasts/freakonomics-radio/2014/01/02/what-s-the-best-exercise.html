@@ -1,0 +1,2879 @@
+<!DOCTYPE html>
+<html itemscope="itemscope" itemtype="http://schema.org/Article" xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="format-detection" content="telephone=no">
+<title itemprop="name">TomeCast Template</title>
+
+<script type="text/javascript">
+  // Init aplication namespace
+  var abb = {};
+  var php = {};
+
+  var mk_header_parallax, mk_banner_parallax, mk_page_parallax, mk_footer_parallax, mk_body_parallax;
+  var mk_captcha_placeholder = "Enter Captcha",
+          mk_captcha_invalid_txt = "Invalid. Try again.",
+          mk_captcha_correct_txt = "Captcha correct.",
+          mk_responsive_nav_width = 1140,
+          mk_check_rtl = true,
+          mk_grid_width = 1140,
+          mk_ajax_search_option = "disable",
+          mk_preloader_txt_color = "#444444",
+          mk_preloader_bg_color = "#ffffff",
+          mk_accent_color = "#f97352",
+          mk_preloader_bar_color = "#f97352",
+          mk_preloader_logo = "";
+  var mk_header_parallax = false,
+          mk_banner_parallax = false,
+          mk_page_parallax = false,
+          mk_footer_parallax = false,
+          mk_body_parallax = false,
+          mk_no_more_posts = "No More Posts";
+
+  function is_touch_device() {
+    return ('ontouchstart' in document.documentElement);
+  }
+
+</script>
+
+<link rel='stylesheet' id='theme-styles-css' href='/css/theme-styles.min.css' type='text/css' media='all'/>
+<link rel='stylesheet' id='mk-pe-line-icon-css' href='/css/pe-line-icons.min.css' type='text/css' media='all'/>
+<link rel='stylesheet' id='mk-font-awesome-css' href='/css/font-awesome.min.css' type='text/css' media='all'/>
+<link rel='stylesheet' id='mk-icomoon-fonts-css' href='/css/icomoon-fonts.min.css' type='text/css' media='all'/>
+<link rel='stylesheet' id='mk-theme-icons-css' href='/css/theme-icons.min.css' type='text/css' media='all'/>
+<link rel='stylesheet' id='google-font-api-special-1-css' href='http://fonts.googleapis.com/css?family=Open+Sans%3A100italic%2C200italic%2C300italic%2C400italic%2C500italic%2C600italic%2C700italic%2C800italic%2C900italic%2C100%2C200%2C300%2C400%2C500%2C600%2C700%2C800%2C900&#038;ver=4.2.2' type='text/css' media='all'/>
+<link rel='stylesheet' id='mk-style-css' href='/css/style.css' type='text/css' media='all'/>
+<link rel='stylesheet' id='theme-dynamic-styles-css' href='/css/custom.css' type='text/css' media='all'/>
+<style id='theme-dynamic-styles-inline-css' type='text/css'>
+  body {
+  }
+
+  body,
+  p {
+    font-family: Open Sans
+  }
+
+  body {
+    background-color: #fff;
+  }
+
+  #mk-header {
+    background-color: #1b1b1b;
+  }
+
+  .mk-header-bg {
+    background-color: #1b1b1b;
+  }
+
+  .mk-header-toolbar {
+    background-color: #ffffff;
+  }
+
+  #theme-page {
+    background-color: #fff;
+  }
+
+  #mk-footer {
+    background-color: #1b1b1b;
+  }
+
+  #mk-footer .footer-wrapper {
+    padding: 30px 0;
+  }
+
+  #mk-footer .widget {
+    margin-bottom: 40px;
+  }
+
+  #mk-footer [class*='mk-col-'] {
+    padding: 0 2%;
+  }
+
+  #sub-footer {
+    background-color: #43474d;
+  }
+
+  .mk-footer-copyright {
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+
+  #mk-boxed-layout {
+    -webkit-box-shadow: 0 0 0px rgba(0, 0, 0, 0);
+    -moz-box-shadow: 0 0 0px rgba(0, 0, 0, 0);
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0);
+  }
+
+  .mk-tabs-panes,
+  .mk-news-tab .mk-tabs-tabs li.ui-tabs-active a,
+  .mk-divider .divider-go-top,
+  .ajax-container,
+  .mk-fancy-title.pattern-style span,
+  .mk-portfolio-view-all,
+  .mk-woo-view-all,
+  .mk-blog-view-all {
+    background-color: #fff;
+  }
+
+  .mk-header-bg {
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+    -o-opacity: 1;
+    opacity: 1;
+  }
+
+  .header-sticky-ready .mk-header-bg {
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+    -o-opacity: 1;
+    opacity: 1;
+  }
+
+  .mk-header-inner,
+  .header-sticky-ready .mk-header-inner,
+  .header-style-2.header-sticky-ready .mk-classic-nav-bg {
+    border-bottom: 1px solid #1b1b1b;
+  }
+
+  .header-style-4.header-align-left .mk-header-inner,
+  .header-style-4.header-align-center .mk-header-inner {
+    border-bottom: none;
+    border-right: 1px solid #1b1b1b;
+  }
+
+  .header-style-4.header-align-right .mk-header-inner {
+    border-bottom: none;
+    border-left: 1px solid #1b1b1b;
+  }
+
+  .header-style-2 .mk-header-nav-container {
+    border-top: 1px solid #1b1b1b;
+  }
+
+  #mk-header {
+    border-bottom: 1px solid #1b1b1b;
+  }
+
+  body {
+    font-size: 13px;
+    color: #777777;
+    font-weight: normal;
+    line-height: 1.66em;
+  }
+
+  p,
+  .mk-box-icon-2-content {
+    font-size: 13px;
+    color: #777777;
+    line-height: 1.66em;
+  }
+
+  a {
+    color: #2e2e2e;
+  }
+
+  a:hover {
+    color: #f97352;
+  }
+
+  #theme-page strong {
+    color: #f97352;
+  }
+
+  #theme-page h1 {
+    font-size: 36px;
+    color: #404040;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  #theme-page h2 {
+    font-size: 30px;
+    color: #404040;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  #theme-page h3 {
+    font-size: 24px;
+    color: #404040;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  #theme-page h4 {
+    font-size: 18px;
+    color: #404040;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  #theme-page h5 {
+    font-size: 16px;
+    color: #404040;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  #theme-page h6 {
+    font-size: 14px;
+    color: #404040;
+    font-weight: normal;
+    text-transform: uppercase;
+  }
+
+  .page-introduce-title {
+    font-size: 20px;
+    color: #4d4d4d;
+    text-transform: uppercase;
+    font-weight: normal;
+    letter-spacing: 2px;
+  }
+
+  .page-introduce-subtitle {
+    font-size: 14px;
+    line-height: 100%;
+    color: #a3a3a3;
+    font-size: 14px;
+    text-transform: none;
+  }
+
+  ::-webkit-selection {
+    background-color: #f97352;
+    color: #fff;
+  }
+
+  ::-moz-selection {
+    background-color: #f97352;
+    color: #fff;
+  }
+
+  ::selection {
+    background-color: #f97352;
+    color: #fff;
+  }
+
+  #mk-sidebar,
+  #mk-sidebar p {
+    font-size: 14px;
+    color: #999999;
+    font-weight: normal;
+  }
+
+  #mk-sidebar .widgettitle {
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #333333;
+    font-weight: bolder;
+  }
+
+  #mk-sidebar .widgettitle a {
+    color: #333333;
+  }
+
+  #mk-sidebar .widget a {
+    color: #999999;
+  }
+
+  #mk-footer,
+  #mk-footer p {
+    font-size: 14px;
+    color: #808080;
+    font-weight: normal;
+  }
+
+  #mk-footer .widgettitle {
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: 800;
+  }
+
+  #mk-footer .widgettitle a {
+    color: #ffffff;
+  }
+
+  #mk-footer .widget:not(.widget_social_networks) a {
+    color: #999999;
+  }
+
+  .mk-side-dashboard {
+    background-color: #1b1b1b;
+  }
+
+  .mk-side-dashboard,
+  .mk-side-dashboard p {
+    font-size: 12px;
+    color: #eeeeee;
+    font-weight: normal;
+  }
+
+  .mk-side-dashboard .widgettitle {
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #f16f4f;
+    font-weight: 800;
+  }
+
+  .mk-side-dashboard .widgettitle a {
+    color: #f16f4f;
+  }
+
+  .mk-side-dashboard .widget a {
+    color: #fafafa;
+  }
+
+  .sidedash-navigation-ul li a,
+  .sidedash-navigation-ul li .mk-nav-arrow {
+    color: #ffffff;
+  }
+
+  .sidedash-navigation-ul li a:hover {
+    color: #f16f4f;
+    background-color:;
+  }
+
+  .mk-fullscreen-nav {
+    background-color: #444444;
+  }
+
+  .mk-fullscreen-nav .mk-fullscreen-nav-wrapper .mk-fullscreen-nav-logo {
+    margin-bottom: 125px;
+  }
+
+  .mk-fullscreen-nav .fullscreen-navigation-ul .menu-item a {
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 0;
+    font-weight: 800;
+    padding: 25px 0;
+    color: #ffffff;
+  }
+
+  .mk-fullscreen-nav .fullscreen-navigation-ul .menu-item a:hover {
+    background-color: #ffffff;
+    color: #444444;
+  }
+
+  #mk-sidebar .widget:not(.widget_social_networks) a:hover {
+    color: #f97352;
+  }
+
+  #mk-footer .widget:not(.widget_social_networks) a:hover {
+    color: #f97352;
+  }
+
+  .mk-side-dashboard .widget:not(.widget_social_networks) a:hover {
+    color: #f97352;
+  }
+
+  .mk-grid {
+    max-width: 1140px;
+  }
+
+  .mk-header-nav-container,
+  .mk-classic-menu-wrapper {
+    width: 1140px;
+  }
+
+  .theme-page-wrapper #mk-sidebar.mk-builtin {
+    width: 27%;
+  }
+
+  .theme-page-wrapper.right-layout .theme-content,
+  .theme-page-wrapper.left-layout .theme-content {
+    width: 73%;
+  }
+
+  .mk-boxed-enabled #mk-boxed-layout,
+  .mk-boxed-enabled #mk-boxed-layout .header-style-1 .mk-header-holder,
+  .mk-boxed-enabled #mk-boxed-layout .header-style-3 .mk-header-holder {
+    max-width: 1200px;
+  }
+
+  .mk-boxed-enabled #mk-boxed-layout .header-style-1 .mk-header-holder,
+  .mk-boxed-enabled #mk-boxed-layout .header-style-3 .mk-header-holder {
+    width: 100% !important;
+    left: auto !important;
+  }
+
+  .mk-boxed-enabled #mk-boxed-layout .header-style-2.header-sticky-ready .mk-header-nav-container {
+    width: 1200px !important;
+    left: auto !important;
+  }
+
+  .header-style-1 .mk-header-start-tour,
+  .header-style-3 .mk-header-start-tour,
+  .header-style-1 .mk-header-inner #mk-header-search,
+  .header-style-1 .mk-header-inner,
+  .header-style-1 .mk-search-trigger,
+  .header-style-3 .mk-header-inner,
+  .header-style-1 .header-logo,
+  .header-style-3 .header-logo,
+  .header-style-1 .shopping-cart-header,
+  .header-style-3 .shopping-cart-header,
+  .header-style-1 #mk-header-social.header-section a,
+  .header-style-2 #mk-header-social.header-section a,
+  .header-style-3 #mk-header-social.header-section a {
+    height: 130px;
+    line-height: 130px;
+  }
+
+  @media handheld, only screen and (max-width: 1140px) {
+    .header-grid.mk-grid .header-logo.left-logo {
+      left: 15px !important;
+    }
+
+    .header-grid.mk-grid .header-logo.right-logo,
+    .mk-header-right {
+      right: 15px !important;
+    }
+
+    .header-style-3 .shopping-cart-header {
+      right: 30px;
+    }
+  }
+
+  #mk-theme-container:not(.mk-transparent-header) .header-style-1 .mk-header-padding-wrapper,
+  #mk-theme-container:not(.mk-transparent-header) .header-style-3 .mk-header-padding-wrapper {
+    padding-top: 130px;
+  }
+
+  @media handheld, only screen and (max-width: 960px) {
+    .theme-page-wrapper .theme-content {
+      width: 100% !important;
+      float: none !important;
+    }
+
+    .theme-page-wrapper {
+      padding-right: 15px !important;
+      padding-left: 15px !important;
+    }
+
+    .theme-page-wrapper .theme-content:not(.no-padding) {
+      padding: 25px 0 !important;
+    }
+
+    .theme-page-wrapper #mk-sidebar {
+      width: 100% !important;
+      float: none !important;
+      padding: 0 !important;
+    }
+
+    .theme-page-wrapper #mk-sidebar .sidebar-wrapper {
+      padding: 20px 0 !important;
+    }
+  }
+
+  @media handheld, only screen and (max-width: 1140px) {
+    .mk-go-top,
+    .mk-quick-contact-wrapper {
+      bottom: 70px !important;
+    }
+
+    .mk-grid {
+      width: 100%;
+    }
+
+    .mk-padding-wrapper {
+      padding: 0 20px;
+    }
+  }
+
+  #mk-toolbar-navigation ul li a,
+  .mk-language-nav > a,
+  .mk-header-login .mk-login-link,
+  .mk-subscribe-link,
+  .mk-checkout-btn,
+  .mk-header-tagline a,
+  .header-toolbar-contact a,
+  #mk-toolbar-navigation ul li a:hover,
+  .mk-language-nav > a:hover,
+  .mk-header-login .mk-login-link:hover,
+  .mk-subscribe-link:hover,
+  .mk-checkout-btn:hover,
+  .mk-header-tagline a:hover {
+    color: #999999;
+  }
+
+  .mk-header-tagline,
+  .header-toolbar-contact,
+  .mk-header-date {
+    color: #999999;
+  }
+
+  .mk-header-toolbar #mk-header-social a i {
+    color: #999999;
+  }
+
+  .header-section#mk-header-social ul li a i {
+    color: #999999;
+  }
+
+  .header-section#mk-header-social ul li a:hover i {
+    color: #cccccc;
+  }
+
+  .header-style-2 .header-logo,
+  .header-style-4 .header-logo {
+    height: 130px !important;
+  }
+
+  .header-style-4 .header-logo {
+    margin: 10px 0;
+  }
+
+  .header-style-2 .mk-header-inner {
+    line-height: 130px;
+  }
+
+  .mk-header-nav-container {
+    background-color:;
+  }
+
+  .mk-header-start-tour {
+    font-size: 14px;
+    color: #333333;
+  }
+
+  .mk-header-start-tour:hover {
+    color: #333333;
+  }
+
+  .mk-classic-nav-bg {
+    background-color: #1b1b1b;
+  }
+
+  .mk-search-trigger,
+  .mk-shoping-cart-link i,
+  .mk-header-cart-count,
+  .mk-toolbar-resposnive-icon i {
+    color: #ffffff;
+  }
+
+  .mk-css-icon-close div,
+  .mk-css-icon-menu div {
+    background-color: #ffffff;
+  }
+
+  #mk-header-searchform .text-input {
+    background-color: !important;
+    color: #c7c7c7;
+  }
+
+  #mk-header-searchform span i {
+    color: #c7c7c7;
+  }
+
+  #mk-header-searchform .text-input::-webkit-input-placeholder {
+    color: #c7c7c7;
+  }
+
+  #mk-header-searchform .text-input:-ms-input-placeholder {
+    color: #c7c7c7;
+  }
+
+  #mk-header-searchform .text-input:-moz-placeholder {
+    color: #c7c7c7;
+  }
+
+  .header-style-1.header-sticky-ready .menu-hover-style-1 .main-navigation-ul > li > a,
+  .header-style-3.header-sticky-ready .menu-hover-style-1 .main-navigation-ul > li > a,
+  .header-style-1.header-sticky-ready .menu-hover-style-5 .main-navigation-ul > li,
+  .header-style-1.header-sticky-ready .menu-hover-style-2 .main-navigation-ul > li > a,
+  .header-style-3.header-sticky-ready .menu-hover-style-2 .main-navigation-ul > li > a,
+  .header-style-1.header-style-1.header-sticky-ready .menu-hover-style-4 .main-navigation-ul > li > a,
+  .header-style-3.header-sticky-ready .menu-hover-style-4 .main-navigation-ul > li > a,
+  .header-style-1.header-sticky-ready .menu-hover-style-3 .main-navigation-ul > li,
+  .header-style-1.header-sticky-ready .mk-header-inner #mk-header-search,
+  .header-style-3.header-sticky-ready .mk-header-holder #mk-header-search,
+  .header-sticky-ready.header-style-3 .mk-header-start-tour,
+  .header-sticky-ready.header-style-1 .mk-header-start-tour,
+  .header-sticky-ready.header-style-1 .mk-header-inner,
+  .header-sticky-ready.header-style-3 .mk-header-inner,
+  .header-sticky-ready.header-style-3 .header-logo,
+  .header-sticky-ready.header-style-1 .header-logo,
+  .header-sticky-ready.header-style-1 .mk-search-trigger,
+  .header-sticky-ready.header-style-1 .mk-search-trigger i,
+  .header-sticky-ready.header-style-1 .shopping-cart-header,
+  .header-sticky-ready.header-style-1 .shopping-cart-header i,
+  .header-sticky-ready.header-style-3 .shopping-cart-header,
+  .header-sticky-ready.header-style-1 #mk-header-social.header-section a,
+  .header-sticky-ready.header-style-3 #mk-header-social.header-section a {
+    height: 55px !important;
+    line-height: 55px !important;
+  }
+
+  #mk-header-social.header-section a.small {
+    margin-top: 48px;
+  }
+
+  #mk-header-social.header-section a.medium {
+    margin-top: 40px;
+  }
+
+  #mk-header-social.header-section a.large {
+    margin-top: 32px;
+  }
+
+  .header-sticky-ready #mk-header-social.header-section a.small,
+  .header-sticky-ready #mk-header-social.header-section a.medium,
+  .header-sticky-ready #mk-header-social.header-section a.large {
+    margin-top: 10.5px;
+    line-height: 16px !important;
+    height: 16px !important;
+    font-size: 16px !important;
+    width: 16px !important;
+    padding: 8px !important;
+  }
+
+  .header-sticky-ready #mk-header-social.header-section a.small i:before,
+  .header-sticky-ready #mk-header-social.header-section a.medium i:before,
+  .header-sticky-ready #mk-header-social.header-section a.large i:before {
+    line-height: 16px !important;
+    font-size: 16px !important;
+  }
+
+  .main-navigation-ul > li.menu-item > a.menu-item-link {
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: bold;
+    padding-right: 20px !important;
+    padding-left: 20px !important;
+    text-transform: uppercase;
+    letter-spacing: 0px;
+  }
+
+  .mk-vm-menuwrapper ul li a {
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .mk-vm-menuwrapper li > a:after,
+  .mk-vm-menuwrapper li.mk-vm-back:after {
+    color: #ffffff;
+  }
+
+  .main-navigation-ul > li.no-mega-menu ul.sub-menu li.menu-item a.menu-item-link {
+    width: 230px;
+  }
+
+  .mk-header-3-menu-trigger {
+    color: #ffffff;
+  }
+
+  .menu-hover-style-1 .main-navigation-ul li.menu-item > a.menu-item-link:hover,
+  .menu-hover-style-1 .main-navigation-ul li.menu-item:hover > a.menu-item-link,
+  .menu-hover-style-1 .main-navigation-ul li.current-menu-item > a.menu-item-link,
+  .menu-hover-style-1 .main-navigation-ul li.current-menu-ancestor > a.menu-item-link,
+  .menu-hover-style-2 .main-navigation-ul li.menu-item > a.menu-item-link:hover,
+  .menu-hover-style-2 .main-navigation-ul li.menu-item:hover > a.menu-item-link,
+  .menu-hover-style-2 .main-navigation-ul li.current-menu-item > a.menu-item-link,
+  .menu-hover-style-2 .main-navigation-ul li.current-menu-ancestor > a.menu-item-link,
+  .menu-hover-style-1.mk-vm-menuwrapper li.menu-item > a:hover,
+  .menu-hover-style-1.mk-vm-menuwrapper li.menu-item:hover > a,
+  .menu-hover-style-1.mk-vm-menuwrapper li.current-menu-item > a,
+  .menu-hover-style-1.mk-vm-menuwrapper li.current-menu-ancestor > a,
+  .menu-hover-style-2.mk-vm-menuwrapper li.menu-item > a:hover,
+  .menu-hover-style-2.mk-vm-menuwrapper li.menu-item:hover > a,
+  .menu-hover-style-2.mk-vm-menuwrapper li.current-menu-item > a,
+  .menu-hover-style-2.mk-vm-menuwrapper li.current-menu-ancestor > a {
+    color: #f97352 !important;
+  }
+
+  .menu-hover-style-3 .main-navigation-ul > li.menu-item > a.menu-item-link:hover,
+  .menu-hover-style-3 .main-navigation-ul > li.menu-item:hover > a.menu-item-link,
+  .menu-hover-style-3.mk-vm-menuwrapper li > a:hover,
+  .menu-hover-style-3.mk-vm-menuwrapper li:hover > a {
+    border: 2px solid #f97352;
+  }
+
+  .menu-hover-style-3 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
+  .menu-hover-style-3 .main-navigation-ul > li.current-menu-ancestor > a.menu-item-link,
+  .menu-hover-style-3.mk-vm-menuwrapper li.current-menu-item > a,
+  .menu-hover-style-3.mk-vm-menuwrapper li.current-menu-ancestor > a {
+    border: 2px solid #f97352;
+    background-color: #f97352;
+    color: #ffffff;
+  }
+
+  .menu-hover-style-3.mk-vm-menuwrapper li.current-menu-ancestor > a:after {
+    color: #ffffff;
+  }
+
+  .menu-hover-style-4 .main-navigation-ul li.menu-item > a.menu-item-link:hover,
+  .menu-hover-style-4 .main-navigation-ul li.menu-item:hover > a.menu-item-link,
+  .menu-hover-style-4 .main-navigation-ul li.current-menu-item > a.menu-item-link,
+  .menu-hover-style-4 .main-navigation-ul li.current-menu-ancestor > a.menu-item-link,
+  .menu-hover-style-4.mk-vm-menuwrapper li a:hover,
+  .menu-hover-style-4.mk-vm-menuwrapper li:hover > a,
+  .menu-hover-style-4.mk-vm-menuwrapper li.current-menu-item > a,
+  .menu-hover-style-4.mk-vm-menuwrapper li.current-menu-ancestor > a,
+  .menu-hover-style-5 .main-navigation-ul > li.menu-item > a.menu-item-link:after {
+    background-color: #f97352;
+    color: #ffffff;
+  }
+
+  .menu-hover-style-4.mk-vm-menuwrapper li.current-menu-ancestor > a:after,
+  .menu-hover-style-4.mk-vm-menuwrapper li.current-menu-item > a:after,
+  .menu-hover-style-4.mk-vm-menuwrapper li:hover > a:after,
+  .menu-hover-style-4.mk-vm-menuwrapper li a:hover::after {
+    color: #ffffff;
+  }
+
+  .menu-hover-style-1 .main-navigation-ul > li.dropdownOpen > a.menu-item-link,
+  .menu-hover-style-1 .main-navigation-ul > li.active > a.menu-item-link,
+  .menu-hover-style-1 .main-navigation-ul > li.open > a.menu-item-link,
+  .menu-hover-style-1 .main-navigation-ul > li.menu-item > a:hover,
+  .menu-hover-style-1 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
+  .menu-hover-style-1 .main-navigation-ul > li.current-menu-ancestor > a.menu-item-link {
+    border-top-color: #f97352;
+  }
+
+  .menu-hover-style-1.mk-vm-menuwrapper li > a:hover,
+  .menu-hover-style-1.mk-vm-menuwrapper li.current-menu-item > a,
+  .menu-hover-style-1.mk-vm-menuwrapper li.current-menu-ancestor > a {
+    border-left-color: #f97352;
+  }
+
+  .header-style-1 .menu-hover-style-1 .main-navigation-ul > li > a,
+  .header-style-1 .menu-hover-style-2 .main-navigation-ul > li > a,
+  .header-style-1 .menu-hover-style-4 .main-navigation-ul > li > a,
+  .header-style-1 .menu-hover-style-5 .main-navigation-ul > li {
+    height: 130px;
+    line-height: 130px;
+  }
+
+  .header-style-1 .menu-hover-style-3 .main-navigation-ul > li,
+  .header-style-1 .menu-hover-style-5 .main-navigation-ul > li {
+    height: 130px;
+    line-height: 130px;
+  }
+
+  .header-style-1 .menu-hover-style-3 .main-navigation-ul > li > a {
+    line-height: 65px;
+  }
+
+  .header-style-1.header-sticky-ready .menu-hover-style-3 .main-navigation-ul > li > a {
+    line-height: 36.666666666667px;
+  }
+
+  .header-style-1 .menu-hover-style-5 .main-navigation-ul > li > a {
+    line-height: 20px;
+    vertical-align: middle;
+  }
+
+  .main-navigation-ul > li.no-mega-menu ul.sub-menu:after,
+  .main-navigation-ul > li.has-mega-menu > ul.sub-menu:after {
+    background-color: #f97352;
+  }
+
+  .mk-shopping-cart-box {
+    border-top: 2px solid #f97352;
+  }
+
+  #mk-main-navigation li.no-mega-menu ul.sub-menu,
+  #mk-main-navigation li.has-mega-menu > ul.sub-menu,
+  .mk-shopping-cart-box {
+    background-color: #333333;
+  }
+
+  #mk-main-navigation ul.sub-menu a.menu-item-link,
+  #mk-main-navigation ul .megamenu-title,
+  .megamenu-widgets-container a,
+  .mk-shopping-cart-box .product_list_widget li a,
+  .mk-shopping-cart-box .product_list_widget li.empty,
+  .mk-shopping-cart-box .product_list_widget li span,
+  .mk-shopping-cart-box .widget_shopping_cart .total {
+    color: #b3b3b3;
+  }
+
+  .mk-shopping-cart-box .mk-button.cart-widget-btn {
+    border-color: #b3b3b3;
+    color: #b3b3b3;
+  }
+
+  .mk-shopping-cart-box .mk-button.cart-widget-btn:hover {
+    background-color: #b3b3b3;
+    color: #333333;
+  }
+
+  #mk-main-navigation ul .megamenu-title {
+    color: #ffffff;
+  }
+
+  #mk-main-navigation ul .megamenu-title:after {
+    background-color: #ffffff;
+  }
+
+  .megamenu-widgets-container {
+    color: #b3b3b3;
+  }
+
+  .megamenu-widgets-container .widgettitle {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bolder;
+  }
+
+  #mk-main-navigation ul.sub-menu li.menu-item ul.sub-menu li.menu-item a.menu-item-link i {
+    color: #e0e0e0;
+  }
+
+  #mk-main-navigation ul.sub-menu a.menu-item-link:hover,
+  .main-navigation-ul ul.sub-menu li.current-menu-item > a.menu-item-link,
+  .main-navigation-ul ul.sub-menu li.current-menu-parent > a.menu-item-link {
+    color: #ffffff !important;
+  }
+
+  .megamenu-widgets-container a:hover {
+    color: #ffffff;
+  }
+
+  .main-navigation-ul li.menu-item ul.sub-menu li.menu-item a.menu-item-link:hover,
+  .main-navigation-ul li.menu-item ul.sub-menu li.menu-item:hover > a.menu-item-link,
+  .main-navigation-ul ul.sub-menu li.menu-item a.menu-item-link:hover,
+  .main-navigation-ul ul.sub-menu li.menu-item:hover > a.menu-item-link,
+  .main-navigation-ul ul.sub-menu li.current-menu-item > a.menu-item-link,
+  .main-navigation-ul ul.sub-menu li.current-menu-parent > a.menu-item-link {
+    background-color: transparent !important;
+  }
+
+  .mk-search-trigger:hover,
+  .mk-header-start-tour:hover {
+    color: #f97352;
+  }
+
+  .main-navigation-ul li.menu-item ul.sub-menu li.menu-item a.menu-item-link {
+    font-size: 12px;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .has-mega-menu .megamenu-title {
+    letter-spacing: 1px;
+  }
+
+  .header-style-4 {
+    text-align: left
+  }
+
+  .mk-vm-menuwrapper li > a {
+    padding-right: 45px;
+  }
+
+  @media handheld, only screen and (max-width: 1140px) {
+    .header-style-1 .mk-header-inner,
+    .header-style-3 .mk-header-inner,
+    .header-style-3 .header-logo,
+    .header-style-1 .header-logo,
+    .header-style-1 .shopping-cart-header,
+    .header-style-3 .shopping-cart-header {
+      height: 90px !important;
+      line-height: 90px;
+    }
+
+    #mk-header:not(.header-style-4) .mk-header-holder {
+      position: relative !important;
+      top: 0 !important;
+    }
+
+    .mk-header-padding-wrapper {
+      display: none !important;
+    }
+
+    .mk-header-nav-container {
+      width: auto !important;
+      display: none;
+    }
+
+    .header-style-1 .mk-header-right,
+    .header-style-2 .mk-header-right,
+    .header-style-3 .mk-header-right {
+      right: 55px !important;
+    }
+
+    .header-style-1 .mk-header-inner #mk-header-search,
+    .header-style-2 .mk-header-inner #mk-header-search,
+    .header-style-3 .mk-header-inner #mk-header-search {
+      display: none !important;
+    }
+
+    .mk-fullscreen-search-overlay {
+      display: none;
+    }
+
+    #mk-header-search {
+      padding-bottom: 10px !important;
+    }
+
+    #mk-header-searchform span .text-input {
+      width: 100% !important;
+    }
+
+    .header-style-2 .header-logo .center-logo {
+      text-align: right !important;
+    }
+
+    .header-style-2 .header-logo .center-logo a {
+      margin: 0 !important;
+    }
+
+    .header-logo,
+    .header-style-4 .header-logo {
+      height: 90px !important;
+    }
+
+    .header-style-4 .shopping-cart-header {
+      display: none;
+    }
+
+    .mk-header-inner {
+      padding-top: 0 !important;
+    }
+
+    .header-logo {
+      position: relative !important;
+      right: auto !important;
+      left: auto !important;
+      float: left !important;
+      text-align: left;
+    }
+
+    .shopping-cart-header {
+      margin: 0 20px 0 0 !important;
+    }
+
+    #mk-responsive-nav {
+      background-color: #ffffff !important;
+    }
+
+    .mk-header-nav-container #mk-responsive-nav {
+      visibility: hidden;
+    }
+
+    #mk-responsive-nav li ul li .megamenu-title:hover,
+    #mk-responsive-nav li ul li .megamenu-title,
+    #mk-responsive-nav li a,
+    #mk-responsive-nav li ul li a:hover,
+    #mk-responsive-nav .mk-nav-arrow {
+      color: #444444 !important;
+    }
+
+    .mk-mega-icon {
+      display: none !important;
+    }
+
+    .mk-header-bg {
+      zoom: 1 !important;
+      filter: alpha(opacity=100) !important;
+      opacity: 1 !important;
+    }
+
+    .header-style-1 .mk-nav-responsive-link,
+    .header-style-2 .mk-nav-responsive-link {
+      display: block !important;
+    }
+
+    .mk-header-nav-container {
+      height: 100%;
+      z-index: 200;
+    }
+
+    #mk-main-navigation {
+      position: relative;
+      z-index: 2;
+    }
+
+    .mk_megamenu_columns_2,
+    .mk_megamenu_columns_3,
+    .mk_megamenu_columns_4,
+    .mk_megamenu_columns_5,
+    .mk_megamenu_columns_6 {
+      width: 100% !important;
+    }
+
+    .header-style-1.header-align-right .header-logo img,
+    .header-style-3.header-align-right .header-logo img,
+    .header-style-3.header-align-center .header-logo img {
+      float: left !important;
+      right: auto !important;
+    }
+
+    .header-style-4 .mk-header-inner {
+      width: auto !important;
+      position: relative !important;
+      overflow: visible;
+      padding-bottom: 0;
+    }
+
+    .admin-bar .header-style-4 .mk-header-inner {
+      top: 0 !important;
+    }
+
+    .header-style-4 .mk-header-right {
+      display: none;
+    }
+
+    .header-style-4 .mk-nav-responsive-link {
+      display: block !important;
+    }
+
+    .header-style-4 .mk-vm-menuwrapper,
+    .header-style-4 #mk-header-search {
+      display: none;
+    }
+
+    .header-style-4 .header-logo {
+      width: auto !important;
+      display: inline-block !important;
+      text-align: left !important;
+      margin: 0 !important;
+    }
+
+    .vertical-header-enabled .header-style-4 .header-logo img {
+      max-width: 100% !important;
+      left: 20px !important;
+      top: 50% !important;
+      -webkit-transform: translate(0, -50%) !important;
+      -moz-transform: translate(0, -50%) !important;
+      -ms-transform: translate(0, -50%) !important;
+      -o-transform: translate(0, -50%) !important;
+      transform: translate(0, -50%) !important;
+      position: relative !important;
+    }
+
+    .vertical-header-enabled.vertical-header-left #theme-page > .mk-main-wrapper-holder,
+    .vertical-header-enabled.vertical-header-center #theme-page > .mk-main-wrapper-holder,
+    .vertical-header-enabled.vertical-header-left #theme-page > .mk-page-section,
+    .vertical-header-enabled.vertical-header-center #theme-page > .mk-page-section,
+    .vertical-header-enabled.vertical-header-left #theme-page > .wpb_row,
+    .vertical-header-enabled.vertical-header-center #theme-page > .wpb_row,
+    .vertical-header-enabled.vertical-header-left #mk-theme-container:not(.mk-transparent-header),
+    .vertical-header-enabled.vertical-header-center #mk-footer,
+    .vertical-header-enabled.vertical-header-left #mk-footer,
+    .vertical-header-enabled.vertical-header-center #mk-theme-container:not(.mk-transparent-header) {
+      padding-left: 0 !important;
+    }
+
+    .vertical-header-enabled.vertical-header-right #theme-page > .mk-main-wrapper-holder,
+    .vertical-header-enabled.vertical-header-right #theme-page > .mk-page-section,
+    .vertical-header-enabled.vertical-header-right #theme-page > .wpb_row,
+    .vertical-header-enabled.vertical-header-right #mk-footer,
+    .vertical-header-enabled.vertical-header-right #mk-theme-container:not(.mk-transparent-header) {
+      padding-right: 0 !important;
+    }
+  }
+
+  @media handheld, only screen and (min-width: 1140px) {
+    .mk-transparent-header .sticky-style-slide .mk-header-holder {
+      position: absolute;
+    }
+
+    .mk-transparent-header .remove-header-bg-true:not(.header-sticky-ready) .mk-header-bg {
+      opacity: 0;
+    }
+
+    .mk-transparent-header .remove-header-bg-true#mk-header:not(.header-sticky-ready) .mk-header-inner {
+      border: 0;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-desktop-logo.light-logo {
+      display: block !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-desktop-logo.dark-logo {
+      display: none !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .main-navigation-ul > li.menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-search-trigger,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-shoping-cart-link i,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-header-cart-count,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-header-start-tour,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) #mk-header-social a i,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.menu-item > a.menu-item-link:hover,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.menu-item:hover > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.current-menu-ancestor > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-2 .main-navigation-ul > li.menu-item > a.menu-item-link:hover,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-2 .main-navigation-ul > li.menu-item:hover > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-2 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-vm-menuwrapper li a,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-vm-menuwrapper li > a:after,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-vm-menuwrapper li.mk-vm-back:after {
+      color: #fff !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-css-icon-menu div {
+      background-color: #fff !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.dropdownOpen > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.active > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.open > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.menu-item > a:hover,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.current-menu-ancestor > a.menu-item-link {
+      border-top-color: #fff;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.current-menu-ancestor > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li.current-menu-item > a,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li.current-menu-ancestor > a {
+      border: 2px solid #fff;
+      background-color: #fff;
+      color: #222 !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.menu-item > a.menu-item-link:hover,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.menu-item:hover > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li > a:hover,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li:hover > a {
+      border: 2px solid #fff;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-4 .main-navigation-ul li.menu-item > a.menu-item-link:hover,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-4 .main-navigation-ul li.menu-item:hover > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-4 .main-navigation-ul li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-5 .main-navigation-ul > li.menu-item > a.menu-item-link:after {
+      background-color: #fff;
+      color: #222 !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-desktop-logo.dark-logo {
+      display: block !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-desktop-logo.light-logo {
+      display: none !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .main-navigation-ul > li.menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-search-trigger,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-shoping-cart-link i,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-header-cart-count,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-header-start-tour,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) #mk-header-social a i,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul li.menu-item > a.menu-item-link:hover,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul li.menu-item:hover > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul li.current-menu-ancestor > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-2 .main-navigation-ul li.menu-item > a.menu-item-link:hover,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-2 .main-navigation-ul li.menu-item:hover > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-2 .main-navigation-ul li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-2 .main-navigation-ul li.current-menu-ancestor > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-vm-menuwrapper li a,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-vm-menuwrapper li > a:after,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-vm-menuwrapper li.mk-vm-back:after {
+      color: #222 !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.dropdownOpen > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.active > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.open > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.menu-item > a:hover,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.current-menu-ancestor > a.menu-item-link {
+      border-top-color: #222;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-css-icon-menu div {
+      background-color: #222 !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.current-menu-ancestor > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li.current-menu-item > a,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li.current-menu-ancestor > a {
+      border: 2px solid #222;
+      background-color: #222;
+      color: #fff !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.menu-item > a.menu-item-link:hover,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.menu-item:hover > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li > a:hover,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li:hover > a {
+      border: 2px solid #222;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-4 .main-navigation-ul li.menu-item > a.menu-item-link:hover,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-4 .main-navigation-ul li.menu-item:hover > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-4 .main-navigation-ul li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-4 .main-navigation-ul li.current-menu-ancestor > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-5 .main-navigation-ul > li.menu-item > a.menu-item-link:after {
+      background-color: #222;
+      color: #fff !important;
+    }
+  }
+
+  .comment-reply a,
+  .mk-toggle .mk-toggle-title.active-toggle:before,
+  .mk-testimonial-author,
+  .modern-style .mk-testimonial-company,
+  #wp-calendar td#today,
+  .news-full-without-image .news-categories span,
+  .news-half-without-image .news-categories span,
+  .news-fourth-without-image .news-categories span,
+  .mk-read-more,
+  .news-single-social li a,
+  .portfolio-widget-cats,
+  .portfolio-carousel-cats,
+  .blog-showcase-more,
+  .simple-style .mk-employee-item:hover .team-member-position,
+  .mk-readmore,
+  .about-author-name,
+  .mk-portfolio-classic-item .portfolio-categories a,
+  .register-login-links a:hover,
+  .not-found-subtitle,
+  .mk-mini-callout a,
+  .search-loop-meta a,
+  .new-tab-readmore,
+  .mk-news-tab .mk-tabs-tabs li.ui-tabs-active a,
+  .mk-tooltip a,
+  .mk-accordion-single.current .mk-accordion-tab i,
+  .monocolor.pricing-table .pricing-price span,
+  .quantity .plus:hover,
+  .quantity .minus:hover,
+  .mk-woo-tabs .mk-tabs-tabs li.ui-state-active a,
+  .product .add_to_cart_button i,
+  .blog-modern-comment:hover,
+  .blog-modern-share:hover,
+  {
+    color: #f97352;
+  }
+
+  .mk-tabs .mk-tabs-tabs li.ui-tabs-active a > i,
+  .mk-accordion .mk-accordion-single.current .mk-accordion-tab:before,
+  .mk-tweet-list a,
+  .widget_testimonials .testimonial-slider .testimonial-author,
+  #mk-filter-portfolio li a:hover,
+  #mk-language-navigation ul li a:hover,
+  #mk-language-navigation ul li.current-menu-item > a,
+  .mk-quick-contact-wrapper h4,
+  .divider-go-top:hover i,
+  .widget-sub-navigation ul li a:hover,
+  #mk-footer .widget_posts_lists ul li .post-list-meta time,
+  .mk-footer-tweets .tweet-username,
+  .product-category .item-holder:hover h4,
+  {
+    color: #f97352 !important;
+  }
+
+  .image-hover-overlay,
+  .newspaper-portfolio,
+  .similar-posts-wrapper .post-thumbnail:hover > .overlay-pattern,
+  .portfolio-logo-section,
+  .post-list-document .post-type-thumb:hover,
+  #cboxTitle,
+  #cboxPrevious,
+  #cboxNext,
+  #cboxClose,
+  .comment-form-button,
+  .mk-dropcaps.fancy-style,
+  .mk-image-overlay,
+  .pinterest-item-overlay,
+  .news-full-with-image .news-categories span,
+  .news-half-with-image .news-categories span,
+  .news-fourth-with-image .news-categories span,
+  .widget-portfolio-overlay,
+  .portfolio-carousel-overlay,
+  .blog-carousel-overlay,
+  .mk-classic-comments span,
+  .mk-similiar-overlay,
+  .mk-skin-button,
+  .mk-flex-caption .flex-desc span,
+  .mk-icon-box .mk-icon-wrapper i:hover,
+  .mk-quick-contact-link:hover,
+  .quick-contact-active.mk-quick-contact-link,
+  .mk-fancy-table th,
+  .ui-slider-handle,
+  .widget_price_filter .ui-slider-range,
+  .shop-skin-btn,
+  #review_form_wrapper input[type=submit],
+  #mk-nav-search-wrapper form .nav-side-search-icon:hover,
+  form.ajax-search-complete i,
+  .blog-modern-btn,
+  .showcase-blog-overlay,
+  .gform_button[type=submit],
+  .button.alt,
+  #respond #submit,
+  .woocommerce .price_slider_amount .button.button,
+  .mk-shopping-cart-box .mk-button.checkout,
+  .widget_shopping_cart .mk-button.checkout,
+  .widget_shopping_cart .mk-button.checkout {
+    background-color: #f97352 !important;
+  }
+
+  .mk-circle-image .item-holder {
+    -webkit-box-shadow: 0 0 0 1px #f97352;
+    -moz-box-shadow: 0 0 0 1px #f97352;
+    box-shadow: 0 0 0 1px #f97352;
+  }
+
+  .mk-blockquote.line-style,
+  .bypostauthor .comment-content,
+  .bypostauthor .comment-content:after,
+  .mk-tabs.simple-style .mk-tabs-tabs li.ui-tabs-active a {
+    border-color: #f97352 !important;
+  }
+
+  .news-full-with-image .news-categories span,
+  .news-half-with-image .news-categories span,
+  .news-fourth-with-image .news-categories span,
+  .mk-flex-caption .flex-desc span {
+    box-shadow: 8px 0 0 #f97352, -8px 0 0 #f97352;
+  }
+
+  .monocolor.pricing-table .pricing-cols .pricing-col.featured-plan {
+    border: 1px solid #f97352 !important;
+  }
+
+  .mk-skin-button.three-dimension {
+    box-shadow: 0px 3px 0px 0px #c75c42;
+  }
+
+  .mk-skin-button.three-dimension:active {
+    box-shadow: 0px 1px 0px 0px #c75c42;
+  }
+
+  .mk-footer-copyright,
+  #mk-footer-navigation li a {
+    color: #8c8e91;
+  }
+
+  .mk-woocommerce-main-image img:hover,
+  .mk-single-thumbnails img:hover {
+    border: 1px solid #f97352 !important;
+  }
+
+  .product-loading-icon {
+    background-color: rgba(249, 115, 82, 0.6);
+  }
+
+  .mk-dynamic-styles {
+    display: none
+  }
+</style>
+<link rel='stylesheet' id='js_composer_front-css' href='/css/js_composer.css' type='text/css' media='all'/>
+<script type='text/javascript' src='https://code.jquery.com/jquery-1.11.3.min.js'></script>
+<script type='text/javascript' src='https://code.jquery.com/jquery-migrate-1.2.1.min.js'></script>
+<style type="text/css">.recentcomments a {
+  display: inline !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}</style>
+
+
+    <meta property="og:site_name" content="TomeCast"/>
+    <meta property="og:image"
+          content="/img/covers/freakonomics-radio.jpg"/>
+    <meta property="og:url" content="/podcasts/freakonomics-radio/2014/01/02/what-s-the-best-exercise.html"/>
+    <meta property="og:title" content="TomeCast Transcribed Podcast -  - What’s the “Best” Exercise?"/>
+    <meta property="og:description"
+          content="Automatically Transcribed Podcast:  - What’s the “Best” Exercise?"/>
+    <meta property="og:type" content="article"/>
+    <noscript>
+        <style>.wpb_animate_when_almost_visible {
+            opacity: 1;
+        }</style>
+    </noscript>
+</head>
+<body class="single single-post postid-591 single-format-standard  wpb-js-composer js-comp-ver-4.5.1 vc_responsive"
+      data-backText="Back" data-vm-anim="1">
+
+<div id="mk-boxed-layout">
+    <div id="mk-theme-container">
+        <header id="mk-header" data-height="130" data-hover-style="2" data-transparent-skin="" data-header-style="3" data-sticky-height="55" data-sticky-style="fixed" data-sticky-offset="header" class="header-style-3 header-align-left header-toolbar-false sticky-style-fixed  mk-background-stretch full-header ">
+  <div class="mk-header-holder">
+    <div class="mk-header-inner">
+      <div class="mk-header-bg "></div>
+      <div class="mk-dashboard-trigger header_dashboard_style">
+        <div class="mk-css-icon-menu icon-size-big">
+          <div class="mk-css-icon-menu-line-1"></div>
+          <div class="mk-css-icon-menu-line-2"></div>
+          <div class="mk-css-icon-menu-line-3"></div>
+        </div>
+      </div>
+      <div class="header-logo  ">
+        <a href="/" title="TomeCast - Homepage">
+          <img class="mk-desktop-logo dark-logo" alt="TomeCast - Homepage" src="/img/logo.png"/>
+        </a>
+      </div>
+      <div class="clearboth"></div>
+      <div class="mk-header-right">
+      </div>
+    </div>
+  </div>
+  <div class="clearboth"></div>
+  <div class="mk-header-padding-wrapper"></div>
+  <div class="clearboth"></div>
+  <div class="mk-zindex-fix">
+  </div>
+  <div class="clearboth"></div>
+</header>
+
+        <div id="theme-page">
+            <div class="mk-main-wrapper-holder">
+                <div class="theme-page-wrapper mk-blog-single full-layout vc_row-fluid mk-grid ">
+                    <div class="theme-content ">
+                        <article
+                                class=" post type-post status-publish format-standard has-post-thumbnail hentry category-articles category-business tag-audio tag-design">
+                            <div class="mk-audio-section mk-audio-shortcode" style="background-color:#acacac"><img
+                                    class="audio-thumb" alt="" title=""
+                                    src="/img/covers/freakonomics-radio.jpg" style="width:170px"/>
+
+                                <div id="jquery_jplayer" class="jp-jplayer mk-blog-audio"
+                                     data-mp3="http://feedproxy.google.com/~r/freakonomicsradio/~5/ug2QZuGKKeE/freakonomics_podcast010214.mp3"
+                                     data-ogg=""></div>
+                                <div id="jp_container" class="jp-audio audio-has-img">
+                                    <div class="jp-type-single">
+                                        <div class="jp-gui jp-interface">
+                                            <div class="jp-time-holder">
+                                                <div class="jp-current-time"></div>
+                                                <div class="jp-duration"></div>
+                                            </div>
+                                            <div class="jp-progress">
+                                                <div class="jp-seek-bar">
+                                                    <div class="jp-play-bar"></div>
+                                                </div>
+                                            </div>
+                                            <div class="jp-volume-bar">
+                                                <i class="mk-moon-volume-mute"></i>
+
+                                                <div class="inner-value-adjust">
+                                                    <div class="jp-volume-bar-value"></div>
+                                                </div>
+                                            </div>
+                                            <ul class="jp-controls">
+                                                <li><a href="javascript:;" class="jp-play" tabindex="1"><i
+                                                        class="mk-icon-play"></i></a></li>
+                                                <li><a href="javascript:;" class="jp-pause" tabindex="1"><i
+                                                        class="mk-icon-pause"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="jp-no-solution">
+                                            <span>Update Required</span>
+                                            To play the media you will need to either update your browser to a recent
+                                            version or update your <a href="http://get.adobe.com/flashplayer/"
+                                                                      target="_blank">Flash plugin</a>.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearboth"></div>
+                            </div>
+                            <h2 class="blog-single-title">What’s the “Best” Exercise?</h2>
+
+                            <div class="blog-single-meta">
+                                <div class="mk-blog-author"><a href="/podcasts/freakonomics-radio"
+                                                               title='Posts in ' rel="section"></a></div>
+                                <div class="mk-blog-author">By <a title='Posted By ' rel="author"></a>
+                                </div>
+                                <time class="mk-post-date" datetime="2014-01-02 00:00:00 +0000">
+                                    Posted on <a href="">2014-01-02</a>
+                                </time>
+                            </div>
+                            <div class="single-social-section">
+                                <div class="mk-love-holder">
+                                    <a href="#" class="mk-love-this " id="mk-love">
+                                        <i class="mk-icon-heart"><span>&nbsp;</span></i>
+                                        <span class="mk-love-count">2</span>
+                                    </a>
+                                </div>
+                                <a href="#comments" class="blog-modern-comment">
+                                    <i class="mk-moon-bubble-9"></i><span> 0</span>
+                                </a>
+                                <div class="blog-share-container">
+                                    <div class="blog-single-share mk-toggle-trigger"><i class="mk-moon-share-2"></i>
+                                    </div>
+                                    <ul class="single-share-box mk-box-to-trigger">
+                                        <li><a class="facebook-share" data-title="Check out this Podcast:  - "
+    data-url=""
+    href=""><i
+            class="mk-jupiter-icon-simple-facebook"></i></a></li>
+<li><a class="twitter-share" data-title="Check out this Podcast:  - "
+    data-url=""
+    href="#"><i
+            class="mk-moon-twitter"></i></a></li>
+<li><a class="googleplus-share" data-title="Check out this Podcast:  - "
+    data-url=""
+    href=""><i
+            class="mk-jupiter-icon-simple-googleplus"></i></a></li>
+<li><a class="pinterest-share"
+       data-image="/img/covers/.jpg"
+       data-title="Check out this Podcast:  - "
+    data-url=""
+    href=""><i
+            class="mk-jupiter-icon-simple-pinterest"></i></a></li>
+<li><a class="linkedin-share"
+       data-desc=""
+       data-title="Check out this Podcast:  - "
+    data-url=""
+    href=""><i
+            class="mk-jupiter-icon-simple-linkedin"></i></a></li>
+
+                                    </ul>
+                                </div>
+                                <a class="mk-blog-print" onClick="window.print()"
+                                   href="#" title="Print"><i
+                                        class="mk-moon-print-3"></i></a>
+
+                                <div class="clearboth"></div>
+                            </div>
+                            <div class="clearboth"></div>
+                            <div class="mk-single-content" itemprop="mainContentOfPage">
+                                <div class="wpb_row vc_row  vc_row-fluid  mk-fullwidth-false  attched-false vc_row-fluid">
+                                    <div style="" class="vc_col-sm-12 wpb_column column_container ">
+                                        <div class="clearboth"></div>
+                                        <div class="mk-shortcode mk-padding-shortcode" style="height:40px"></div>
+                                        <div class="clearboth"></div>
+                                        <span id="drop-caps-555772840bc14"
+                                              class="mk-dropcaps mk-shortcode fancy-style ">D</span>
+
+                                        <div id="ajax-555772840bc14" class="mk-dynamic-styles"></div>
+                                        <div style=" margin-bottom:0px;text-align: left;" class="mk-text-block  "><p
+                                                style="text-align: justify;"><span style="color: #33cccc;"><strong>Duis
+                                            viverra</strong></span>
+
+
+                                        </p>
+
+                                            <div class="clearboth"></div>
+                                        </div>
+                                        <div style="font-size: 18px;" id="blockquote-555772840c9ac"
+                                             class="mk-shortcode mk-blockquote quote-style ">
+                                            <p>Most people blame lack of time for being out of shape. So maybe the solution is to exercise more efficiently.</p>
+                                        </div>
+                                        <div class="clearboth"></div>
+                                        <div class="mk-shortcode mk-padding-shortcode" style="height:20px"></div>
+                                        <div class="clearboth"></div>
+                                        <div style=" margin-bottom:0px;text-align: left;" class="mk-text-block  ">
+                                            <p>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="0.74"
+                                                      data-length=""
+                                                      data-uuid="ccaaabd6-35ac-4eb4-b92a-90049ec41b72"
+                                                      data-confidence="0.6352931">
+                                                    play freakonomics is a college education still for sale how much do parents really fast shipping beeban how many parking spaces are drug dealers play freakonomics I have a question for you
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S3"
+                                                      data-timestamp="17.78"
+                                                      data-length=""
+                                                      data-uuid="af01b063-74c3-4fa4-894e-050f4d3e55e2"
+                                                      data-confidence="0.6559952">
+                                                    from wmic this is freakonomics radio podcast that explored the side and everything
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S3"
+                                                      data-timestamp="25.67"
+                                                      data-length=""
+                                                      data-uuid="ff7df39d-7402-41d1-aa63-bbfb07582b9d"
+                                                      data-confidence="0.7294553">
+                                                    here's your host stephen dubner
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S0"
+                                                      data-timestamp="32.7"
+                                                      data-length=""
+                                                      data-uuid="1cb510c3-2438-4b32-97a4-cb231f819213"
+                                                      data-confidence="0.7934708">
+                                                    hey punk <profanity>ass</profanity> with news we love it when you send us your questions like hey freakonomics what's the best way to do this or that or the freakonomics what's the story with such and such some of you are so smart and I'm sure you
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S49"
+                                                      data-timestamp="46.21"
+                                                      data-length=""
+                                                      data-uuid="8d517475-d2de-40d3-8adb-b5c66d0a5662"
+                                                      data-confidence="0.7567243">
+                                                    go to free conomiques this is jasmine are hey jasmine what would you like to know today I want to know what is the best most efficient form of exercise
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S16"
+                                                      data-timestamp="57.95"
+                                                      data-length=""
+                                                      data-uuid="42e7ce82-cf18-472f-ad99-e5dd07530970"
+                                                      data-confidence="0.8081235">
+                                                    I want to get the most benefit for the least amount of time invested I don't have that much money either also I am kind of lazy
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S0"
+                                                      data-timestamp="67.99"
+                                                      data-length=""
+                                                      data-uuid="37fca85b-073f-4380-8ccf-f1e578ac98af"
+                                                      data-confidence="0.6827639">
+                                                    bank freakonomics I jasmon let's see if we can answer question the best most efficient form of exercise limits for my exam in the premise maybe you don't even need exercise exercise really is worthwhile as we think
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S0"
+                                                      data-timestamp="82.5"
+                                                      data-length=""
+                                                      data-uuid="aadcb807-68de-42b0-8e12-c2aefbe6c260"
+                                                      data-confidence="0.7464471">
+                                                    sleep this question to david meltzer he's at what kind of guy he's a doctor and an economist at university of chicago
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S109"
+                                                      data-timestamp="90.49"
+                                                      data-length=""
+                                                      data-uuid="2b801adf-a51c-4ba2-be6a-d56ce1d18c5f"
+                                                      data-confidence="0.7994594">
+                                                    I think there's a lot of good evidence both observation ull as well as experimental the exercise really helps I'm the numbers I often saytar that even something as simple as walking for half an hour a day 5 days a week race is your life expectancy by a year and a half
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S109"
+                                                      data-timestamp="109.78"
+                                                      data-length=""
+                                                      data-uuid="01ebc1a8-cbf2-44b9-8b85-08b99c40b345"
+                                                      data-confidence="0.8286164">
+                                                    and exercising more intensively the mat on a daily basis can produce games that are double back
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S16"
+                                                      data-timestamp="116.11"
+                                                      data-length=""
+                                                      data-uuid="4a1b49ac-c5e0-45c1-a539-b0ba562ac265"
+                                                      data-confidence="0.7879177">
+                                                    no offence freakonomics but I could've told you that exercise is good for me
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S0"
+                                                      data-timestamp="121.21"
+                                                      data-length=""
+                                                      data-uuid="e45db65b-9445-4041-a45e-8f98060fb83a"
+                                                      data-confidence="0.7388408">
+                                                    sorry I just wanna make sure you're not wasting what little time you have so as it turns out jasmine your situations pretty typical here's gretchen reynolds she writes the food that comes in your times
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S101"
+                                                      data-timestamp="131.09"
+                                                      data-length=""
+                                                      data-uuid="6ecfb3c3-bff7-4804-9f37-427347a28910"
+                                                      data-confidence="0.8737485">
+                                                    the most common reason that people give for not exercising is that they don't have time and here's what that means most americans are not exercising the best statistics suggest that at least 80% of americans are not meeting
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S101"
+                                                      data-timestamp="148.16"
+                                                      data-length=""
+                                                      data-uuid="49b6dee1-8afe-4b03-83b7-078fd5f2aef6"
+                                                      data-confidence="0.8742103">
+                                                    the most commonly used guidelines for exercise which are those
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S101"
+                                                      data-timestamp="152.24"
+                                                      data-length=""
+                                                      data-uuid="2cc3caca-7ae6-4f00-9a35-e2b357a92a91"
+                                                      data-confidence="0.9166893">
+                                                    from the american college of sports medicine
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S101"
+                                                      data-timestamp="154.83"
+                                                      data-length=""
+                                                      data-uuid="bf06f2cc-1956-4643-b275-5ebb5c308ad5"
+                                                      data-confidence="0.8747568">
+                                                    and they suggest 30 minutes of moderate exercise most days of the week
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S101"
+                                                      data-timestamp="160.3"
+                                                      data-length=""
+                                                      data-uuid="3b62e769-6a7f-4fb5-ae50-911a4556ad5a"
+                                                      data-confidence="0.7165381">
+                                                    the vast majority of americans are not do
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S16"
+                                                      data-timestamp="163.31"
+                                                      data-length=""
+                                                      data-uuid="c75dea7b-f382-41ed-9ba6-cd3c3ca2a2ea"
+                                                      data-confidence="0.7802045">
+                                                    mat oh no I don't feel quite so bad
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S0"
+                                                      data-timestamp="167.22"
+                                                      data-length=""
+                                                      data-uuid="0e603066-2390-4cdf-bba4-f1aa0d1f7142"
+                                                      data-confidence="0.8220243">
+                                                    are you with that doesn't mean you shouldn't try to exercise so we took your question what is the most efficient form of exercise and we have some people that we thought could answer his wife
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S26"
+                                                      data-timestamp="177.06"
+                                                      data-length=""
+                                                      data-uuid="9267784e-2cc6-4f28-8ca4-217c0ff0b90f"
+                                                      data-confidence="0.8986019">
+                                                    the right way to think about this is it's the wrong question and you know if I've learned anything in my life whenever I ask the wrong question it almost guarantees I will not find the right answer
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S16"
+                                                      data-timestamp="191.34"
+                                                      data-length=""
+                                                      data-uuid="76853373-554c-425c-b896-ff11c0c6bb35"
+                                                      data-confidence="0.7091295">
+                                                    do with a meanie who is this guy
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S0"
+                                                      data-timestamp="194.45"
+                                                      data-length=""
+                                                      data-uuid="ac0ffaaf-b228-4517-9321-46df5f37d630"
+                                                      data-confidence="0.7707589">
+                                                    the name is peter ateah he's an MD&A nutrition expert and a fitness fanatic and self emphasis on the fanatic part of his exercise routine is flipping a tractor tire
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S26"
+                                                      data-timestamp="207.39"
+                                                      data-length=""
+                                                      data-uuid="6af2bc5d-02eb-4cfb-aff7-586983c62365"
+                                                      data-confidence="0.8448491">
+                                                    it's pretty heavy tirot about 450 pounds you're never actually lifting the entire thing at once 'cause you're flipping it I have a goal but I'm working really hard mostly for fun to get to which is to break 16 seconds on 6 flips of that tire
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S0"
+                                                      data-timestamp="225.14"
+                                                      data-length=""
+                                                      data-uuid="88feae14-ba04-4caa-8e54-ccaadd18acbd"
+                                                      data-confidence="0.832439">
+                                                    and here's why doctor atiya things this question what is the most efficient form of exercise is the wrong question
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S26"
+                                                      data-timestamp="232.35"
+                                                      data-length=""
+                                                      data-uuid="904ad404-9323-42a6-8fcc-c450a775e323"
+                                                      data-confidence="0.9136987">
+                                                    if someone says it to make it I get out this question all the time what's the least I can do for the most I really ask a person what is it you want with your desired outcome and it can be anything from you know I wanna run my first marathon in 6 months or
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S26"
+                                                      data-timestamp="246.74"
+                                                      data-length=""
+                                                      data-uuid="4a0a627d-8968-43f1-9d02-587f6447a15d"
+                                                      data-confidence="0.9089186">
+                                                    I want to compete in a triathlon in will be my very first one or I wanna take my game to the highest level because I've already been doing this for awhile but I wanna get a little bit better
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S26"
+                                                      data-timestamp="257.54"
+                                                      data-length=""
+                                                      data-uuid="6e0565ec-fb53-4e0a-acbd-c8e42ff0e19d"
+                                                      data-confidence="0.8953208">
+                                                    I can also be something like I wanna look better in a bathing suit or
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S40"
+                                                      data-timestamp="261.78"
+                                                      data-length=""
+                                                      data-uuid="dc5b5619-2825-4e92-ace1-435ad07010d3"
+                                                      data-confidence="0.8783539">
+                                                    I want to not get tired when I play with my kids are all actually really an elaborate physical activities
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S116"
+                                                      data-timestamp="274.05"
+                                                      data-length=""
+                                                      data-uuid="3c6fe371-3f5a-47c8-ac1e-fb852ba3dfbb"
+                                                      data-confidence="0.6723675">
+                                                    ok so jasmine what is your exercise go do you wanna compete that rasam money does look better in a bathing suit
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S16"
+                                                      data-timestamp="282.06"
+                                                      data-length=""
+                                                      data-uuid="e89063d6-6303-409a-bbaa-a3d3f630f3ac"
+                                                      data-confidence="0.7791894">
+                                                    oh I already look very good in a bathing suit this is mostly for my heart for my longevity
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S116"
+                                                      data-timestamp="290.05"
+                                                      data-length=""
+                                                      data-uuid="9ba9d7e7-e23b-4ad8-ac34-e3cc10fa5e7d"
+                                                      data-confidence="0.6490012">
+                                                    well if you think long japanese is one exercise that gretchen reynolds really like
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S45"
+                                                      data-timestamp="297.55"
+                                                      data-length=""
+                                                      data-uuid="0220c2b0-6b74-4fa5-acce-d30906bb59f9"
+                                                      data-confidence="0.7630264">
+                                                    that's why I will use almost all of the biggest muscles in your body goes in your upper legs your back your core
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S45"
+                                                      data-timestamp="306.44"
+                                                      data-length=""
+                                                      data-uuid="cd4885ca-cbc0-459c-8fc9-b90e9e97a360"
+                                                      data-confidence="0.867794">
+                                                    those are also the muscles that you need to do things like
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S45"
+                                                      data-timestamp="310.07"
+                                                      data-length=""
+                                                      data-uuid="e5485d91-68b7-4890-8cc5-4453600734bf"
+                                                      data-confidence="0.8360746">
+                                                    get up out of the chair which may sound facetious but in fact is you age when of the best indicators of whether you will be independent
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S45"
+                                                      data-timestamp="319.55"
+                                                      data-length=""
+                                                      data-uuid="90e9515d-2df2-4e18-b04f-c15241d8e4bf"
+                                                      data-confidence="0.8717309">
+                                                    well into your twilight years is if you can get up out of the chair and if you can go up and down stairs
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S49"
+                                                      data-timestamp="328.54"
+                                                      data-length=""
+                                                      data-uuid="538475f2-bd29-43e6-a929-9fcf37803882"
+                                                      data-confidence="0.8265095">
+                                                    that sounds pretty good but how am I supposed to know what exercises do the most good
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S0"
+                                                      data-timestamp="334.29"
+                                                      data-length=""
+                                                      data-uuid="bb498a8f-d02c-4188-aaf6-b75aaeded48b"
+                                                      data-confidence="0.7735063">
+                                                    ok so let's talk about how exercise is actually measured is david melcher again for the technical am
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S50"
+                                                      data-timestamp="340.85"
+                                                      data-length=""
+                                                      data-uuid="5435359f-9273-4c71-941d-9eb67ecc3928"
+                                                      data-confidence="0.8346058">
+                                                    serez exercise is probably best measured in terms of the total number of calories that you burn and there for the efficiency of exercise in terms of calories burned per unit of time is commonly measured in in something called a metabolic equivalents garmatz
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S50"
+                                                      data-timestamp="360.56"
+                                                      data-length=""
+                                                      data-uuid="275f2e01-af10-41f8-b4cf-0d23164a5199"
+                                                      data-confidence="0.800765">
+                                                    and they rank all the exercises that you can imagine doing from the most intensive to the least intense ever amen the scale starts at one and one is basically rest
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S50"
+                                                      data-timestamp="372.5"
+                                                      data-length=""
+                                                      data-uuid="a8c60d77-13db-4530-9801-b7fb378bb8f0"
+                                                      data-confidence="0.7684519">
+                                                    and in the sort of standard scales I've seen things that are right up at the top are basically running soccer which presumably mean in a running all the time I get some ice for the goalie
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S50"
+                                                      data-timestamp="382.78"
+                                                      data-length=""
+                                                      data-uuid="bafbd6d4-a77e-4f06-bb20-30a4561224cc"
+                                                      data-confidence="0.6826098">
+                                                    and then it works its way down south things like running around 10 I'm jogging is the 7 AM golf is a 4 and a half I'm danino rest is 1 AM but it is interesting today are also some activities on the list of things that you might have to do anyway
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S103"
+                                                      data-timestamp="399.03"
+                                                      data-length=""
+                                                      data-uuid="4658952b-8ce9-4e88-9a95-7e229264a52b"
+                                                      data-confidence="0.711179">
+                                                    like yard work and after sex
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S103"
+                                                      data-timestamp="401.65"
+                                                      data-length=""
+                                                      data-uuid="7493d588-0ba9-48ee-a1e5-6d3b2bbac23f"
+                                                      data-confidence="0.7648783">
+                                                    do I don't really like yard work is there anything else like that on his list at either 5 or 6 on the map scale well square dancing is pretty good in the quote from a list put up at the centers for disease control
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S103"
+                                                      data-timestamp="416.06"
+                                                      data-length=""
+                                                      data-uuid="6d9f2a3b-b69c-4ed4-95ef-1fdc53b037d2"
+                                                      data-confidence="0.8613793">
+                                                    playing guitar or drums in the rock band for fishing while walking along the river bank in you that sounds good
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S107"
+                                                      data-timestamp="423.43"
+                                                      data-length=""
+                                                      data-uuid="dfa47592-9a00-43eb-b551-e46aa578cf75"
+                                                      data-confidence="0.6974817">
+                                                    I am not into fishing sorry I am not into fishing
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S0"
+                                                      data-timestamp="431.92"
+                                                      data-length=""
+                                                      data-uuid="fcc8e7b4-278e-41fa-b11b-d24248dc7ce0"
+                                                      data-confidence="0.653205">
+                                                    alright let's see what else clogging is good I jumping jacks digging <profanity>bitches</profanity>
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S16"
+                                                      data-timestamp="438.31"
+                                                      data-length=""
+                                                      data-uuid="7478d96c-bee7-4e90-99ab-fcec88506535"
+                                                      data-confidence="0.6461202">
+                                                    yeah let me think those over
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S0"
+                                                      data-timestamp="441.29"
+                                                      data-length=""
+                                                      data-uuid="119e0223-32e4-4d27-b961-886d66ccd831"
+                                                      data-confidence="0.86621">
+                                                    ferna when we come back I will tell you about a really fast way to get in your daily
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S113"
+                                                      data-timestamp="446.3"
+                                                      data-length=""
+                                                      data-uuid="e8e8303f-f13c-4fe9-860e-474cc525016b"
+                                                      data-confidence="0.7944445">
+                                                    to sign with the ram there's no time to get bored by the time you think of an excuse for minutes is up and you're getting on with your day
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="470.15"
+                                                      data-length=""
+                                                      data-uuid="d3769188-1001-4cb0-8ec3-0bf2d985337b"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S3"
+                                                      data-timestamp="473.21"
+                                                      data-length=""
+                                                      data-uuid="97b8d087-96da-466b-9765-f328fcad8e11"
+                                                      data-confidence="0.8142591">
+                                                    from WNYC this is freakonomics radio here's your host stephen dubner
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S0"
+                                                      data-timestamp="484.49"
+                                                      data-length=""
+                                                      data-uuid="e9ff9aef-1b5a-47fe-b36e-40cc248f2b8e"
+                                                      data-confidence="0.8598475">
+                                                    hey jasmine you still there I am still here and you still looking to the most efficient form of exercise I am ok so you could try and exercise commitment device like joining a gym
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S0"
+                                                      data-timestamp="497.83"
+                                                      data-length=""
+                                                      data-uuid="baf0855b-73b3-45a3-82f6-0a7172d06566"
+                                                      data-confidence="0.7853402">
+                                                    problem is research shows that people who buy an annual gym membership overestimate how much to use it by about 70% what a waste of money agreed now there's another kind of commitment device an app called genpact where you sign up for certamen of exercise and if you don't follow through
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S0"
+                                                      data-timestamp="516.15"
+                                                      data-length=""
+                                                      data-uuid="a82dcfd2-d434-4f4f-bf54-81af36872d66"
+                                                      data-confidence="0.8165291">
+                                                    you have to pay them I don't like that one bit I jasmon I hear you
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S0"
+                                                      data-timestamp="520.53"
+                                                      data-length=""
+                                                      data-uuid="870dbe17-64de-4e2b-be31-49672ee39402"
+                                                      data-confidence="0.8535562">
+                                                    so you want the best most fish and most cost effective exercise you can find
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S0"
+                                                      data-timestamp="525.45"
+                                                      data-length=""
+                                                      data-uuid="cd1118f1-cc3f-4656-9daf-0ecd4b4e8453"
+                                                      data-confidence="0.6674106">
+                                                    based on what our 3 wise guessed it figured out overtime let me offer you a little checklist will call it 3 I spent the first I intensity years gretchen reynolds again
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S101"
+                                                      data-timestamp="538.01"
+                                                      data-length=""
+                                                      data-uuid="ec9ffc0b-7f83-492e-931c-34b8986a22d0"
+                                                      data-confidence="0.867121">
+                                                    and that means simply fit you go it's very very hard for a brief period of time and usually that you then you have a short break and you go very very hard again there are number of studies that have looked at different forms of high intensity interval training
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S101"
+                                                      data-timestamp="557.01"
+                                                      data-length=""
+                                                      data-uuid="7536a8dd-5545-4146-9efe-3db8ae4396fd"
+                                                      data-confidence="0.9427579">
+                                                    and have found that for instance you can do
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S101"
+                                                      data-timestamp="560.26"
+                                                      data-length=""
+                                                      data-uuid="80f32425-b463-49a0-aab8-459e4d44da3e"
+                                                      data-confidence="0.6635342">
+                                                    one minute of say emhardt bicycling in one minute of much easier bicycling
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S101"
+                                                      data-timestamp="567.76"
+                                                      data-length=""
+                                                      data-uuid="3aabf7fb-8254-470e-be26-180247fd9584"
+                                                      data-confidence="0.7757763">
+                                                    and if you do 10 of those intervals you get a sensually the same physiological changes within your body is if you do about 90 minutes or 2 hours even of more common in doran's training way just go ride em
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S101"
+                                                      data-timestamp="585.82"
+                                                      data-length=""
+                                                      data-uuid="d2fe8183-e485-4cfc-bb30-bbc8f44c6083"
+                                                      data-confidence="0.7850598">
+                                                    it seems very clear that is intense bout of exercise can improve your fitness and also improve your help just as much as much longer bout but they have to be hard to have to hurt
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S89"
+                                                      data-timestamp="603.73"
+                                                      data-length=""
+                                                      data-uuid="fa038e92-bab3-4b7b-948f-06a7a09992d4"
+                                                      data-confidence="0.7862309">
+                                                    jasmine are you ready for the pain maybe
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S16"
+                                                      data-timestamp="609.33"
+                                                      data-length=""
+                                                      data-uuid="fce5935c-b80d-4151-aa29-6b79900c01f5"
+                                                      data-confidence="0.6366445">
+                                                    maybe not what is the second time in your checklist of 3 eyes
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S0"
+                                                      data-timestamp="614.18"
+                                                      data-length=""
+                                                      data-uuid="28d5c16a-f5bb-4be5-9b1c-d163d0e9cc90"
+                                                      data-confidence="0.7173176">
+                                                    individualization kierspe tarati again he's the tractor tyre flipping doctor nutritionist kinda means
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S40"
+                                                      data-timestamp="622.34"
+                                                      data-length=""
+                                                      data-uuid="04d76705-78b8-4506-9524-d2fcf28b03e1"
+                                                      data-confidence="0.8988383">
+                                                    using your self is a guinea pig you know there's a lot of questions that I think we wish science would answer but
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S40"
+                                                      data-timestamp="629.36"
+                                                      data-length=""
+                                                      data-uuid="8de47610-6aa9-416d-8131-9fafc92c28e0"
+                                                      data-confidence="0.8111798">
+                                                    sometimes the reader not deemed a high enough priority in the scientific community
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S40"
+                                                      data-timestamp="633.39"
+                                                      data-length=""
+                                                      data-uuid="4ba4a317-9269-40c7-868b-0bae72a63403"
+                                                      data-confidence="0.7775513">
+                                                    who are the signs of experiments that are carried out are done on such a heterogeneous population but you can't necessarily extrapolate for yourself and so when do things I do when I work with people is really sort of thought in brace this concept of self experimentation because at the end of the day
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S40"
+                                                      data-timestamp="649.41"
+                                                      data-length=""
+                                                      data-uuid="9984f0d3-7ddc-4862-bd0a-7e9b63807418"
+                                                      data-confidence="0.8832372">
+                                                    if I was working with you um it's really not that important what works for the population it's really more important what works for you personally
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S16"
+                                                      data-timestamp="658.48"
+                                                      data-length=""
+                                                      data-uuid="203127f1-da3e-4593-aa97-5658bb37b423"
+                                                      data-confidence="0.689786">
+                                                    ok he doesn't sound so mean anymore agreed
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S0"
+                                                      data-timestamp="662.85"
+                                                      data-length=""
+                                                      data-uuid="d0979b06-0714-43fc-845e-66e57cc5142d"
+                                                      data-confidence="0.7755197">
+                                                    and that leads us to the last I on the exercise checklist is the first 2 are intensity and individuals asian the third one is I like to do it
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S0"
+                                                      data-timestamp="674.67"
+                                                      data-length=""
+                                                      data-uuid="ede1922c-ba90-4cfa-986a-6c95e943a977"
+                                                      data-confidence="0.7744167">
+                                                    peter attia gretchen reynolds david mail today all agree that the best exercise is whichever one you actually do whatever you will do
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S45"
+                                                      data-timestamp="683.95"
+                                                      data-length=""
+                                                      data-uuid="097e8336-04c7-4d43-a04e-328ae1d009b5"
+                                                      data-confidence="0.8061325">
+                                                    who is certainly the best exercise
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S109"
+                                                      data-timestamp="686.7"
+                                                      data-length=""
+                                                      data-uuid="ab243846-40d8-4034-a5ba-ec39981ec6b6"
+                                                      data-confidence="0.8015988">
+                                                    what do you actually like doing
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S103"
+                                                      data-timestamp="688.53"
+                                                      data-length=""
+                                                      data-uuid="c30f1be8-bb28-40c2-b80b-e4675969915f"
+                                                      data-confidence="0.8561618">
+                                                    do something that you actually enjoy do something that makes you better to do you say jasmine that give you any ideas I do have something in mind but I would rather not say
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S0"
+                                                      data-timestamp="699.14"
+                                                      data-length=""
+                                                      data-uuid="5bf7ce44-6515-4614-b7cd-f3eb7ac47737"
+                                                      data-confidence="0.810811">
+                                                    ok no problem but if whatever you are thinking about doing doesn't workout we got one more option for you david melktert old is about the ram workout machine from a company called quick gym
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S105"
+                                                      data-timestamp="711.44"
+                                                      data-length=""
+                                                      data-uuid="53729e55-f79d-4f10-9775-e1a1d4b5dc58"
+                                                      data-confidence="0.7135805">
+                                                    best exercise machine is the one you'll actually use in the one that gives you a total body workout in only 4 minutes is the one you use everyday
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S0"
+                                                      data-timestamp="720.87"
+                                                      data-length=""
+                                                      data-uuid="c01157ad-e076-418a-9f40-6d5521b8ac12"
+                                                      data-confidence="0.8416603">
+                                                    is the sound to me like the kind of person you could really warm up to this machine jasmine but let me warn you it costs more than $14,000
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S107"
+                                                      data-timestamp="729.56"
+                                                      data-length=""
+                                                      data-uuid="ebc29447-8de4-4a4a-aec6-982febd03bb5"
+                                                      data-confidence="0.6617956">
+                                                    how much is it worth it
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S0"
+                                                      data-timestamp="731.63"
+                                                      data-length=""
+                                                      data-uuid="50714901-72e6-4d94-aa71-b16eb2764de3"
+                                                      data-confidence="0.7030886">
+                                                    will depend to gaskiers how david melcher season are member when he's not busy being a doctor keys being an economist
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S109"
+                                                      data-timestamp="738.88"
+                                                      data-length=""
+                                                      data-uuid="284feee5-48ae-4be2-b20b-c26543aadc2a"
+                                                      data-confidence="0.7740243">
+                                                    yeah well I guess the economic logic of it is bad I it doesn't require very much time at all to get a full days work out I am so presumably if you know it a cat I add an hour to get a copper bowl work out of man it only takes yeah 04 minutes it saved your 56 minutes
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S109"
+                                                      data-timestamp="758.4"
+                                                      data-length=""
+                                                      data-uuid="b18c1676-658e-4c44-9c81-8745879fa985"
+                                                      data-confidence="0.7880065">
+                                                    south presumably you know that's worth your hourly wage to get out at 5 times a week over a year you can price it out now amortize that and I did you know that probably worth quite a lot of money yeah maybe you'll even get a new sponsor for the show
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S113"
+                                                      data-timestamp="772.94"
+                                                      data-length=""
+                                                      data-uuid="f3f3c021-06f4-4474-bbc4-c5bfed17cf57"
+                                                      data-confidence="0.8180559">
+                                                    with the ram there's no time to get bored by the time you think of an excuse for minutes is up and you're getting on with your day
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S16"
+                                                      data-timestamp="781.21"
+                                                      data-length=""
+                                                      data-uuid="c8ecedaa-7a40-4267-9a82-916ece250723"
+                                                      data-confidence="0.6461908">
+                                                    is it a freakonomics that's pretty neat george thank you
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S0"
+                                                      data-timestamp="784.88"
+                                                      data-length=""
+                                                      data-uuid="1a6f843e-ee98-485c-9363-ba9b3a6a82d8"
+                                                      data-confidence="0.7445901">
+                                                    for your help I think the question jasmine and I look forward to next one
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S116"
+                                                      data-timestamp="798.6"
+                                                      data-length=""
+                                                      data-uuid="8981f24b-b5f6-48c2-9710-a1f4071a4ba7"
+                                                      data-confidence="0.7336545">
+                                                    play podcast with news coming up on the next week and I mix radio steve levitan I answer your questions like what would happen if you put cameras in the classroom paqueta different idea like it because there so many ideas about what to do about public education and this is not one thing I've heard 4 end
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S116"
+                                                      data-timestamp="817.82"
+                                                      data-length=""
+                                                      data-uuid="01957255-06e1-4b35-b388-97639f89ed2b"
+                                                      data-confidence="0.6916031">
+                                                    12 what do you think lebed's talking about right here
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S116"
+                                                      data-timestamp="822.03"
+                                                      data-length=""
+                                                      data-uuid="4d787d0b-e29c-4706-98af-4ae8ebe067d9"
+                                                      data-confidence="0.7707476">
+                                                    how many feet in a long time I think it's been numb
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S116"
+                                                      data-timestamp="825.79"
+                                                      data-length=""
+                                                      data-uuid="106cdfd3-b644-4a81-a64e-79f5eaf87445"
+                                                      data-confidence="0.5566375">
+                                                    it's been nice at least probably close to 20th
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S116"
+                                                      data-timestamp="830.98"
+                                                      data-length=""
+                                                      data-uuid="184586e0-6f90-47de-9574-d42c8f12d433"
+                                                      data-confidence="0.7081244">
+                                                    it's another installment of faq the next time I'm free can I mix radio
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S122"
+                                                      data-timestamp="839.7"
+                                                      data-length=""
+                                                      data-uuid="8472e32b-4525-4db9-8929-fef008e19744"
+                                                      data-confidence="0.6805868">
+                                                    freakonomics radio is produced by w on my feet in dubner productions our staff include david herman greg rozalski credico nbra lamcy be like in bergen crispins and special thanks to capstraw hitaffer provided us with the voice of jasmine
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S122"
+                                                      data-timestamp="854.61"
+                                                      data-length=""
+                                                      data-uuid="b80d32e9-2213-4ec0-99b2-39116f1c4c87"
+                                                      data-confidence="0.7048866">
+                                                    and banks trailer center scott hechinger question inspired this episode if you want more freakonomics radio you can subscribe to a podcast on itunes or go to freakonomics.com real fun lots of radio log books in morn
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="878.12"
+                                                      data-length=""
+                                                      data-uuid="dca68eb2-73e5-4d50-a023-543f9b131925"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S127"
+                                                      data-timestamp="879.91"
+                                                      data-length=""
+                                                      data-uuid="7ed94801-b928-4da8-a731-965409c226df"
+                                                      data-confidence="0.7138047">
+                                                    oh we're done I was easy thank you thank you steven you are the bomb
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S0"
+                                                      data-timestamp="886.58"
+                                                      data-length=""
+                                                      data-uuid="c2d9a2ad-642b-445b-8e5e-833e5aa485d9"
+                                                      data-confidence="0.7638913">
+                                                    oh and you are the fuse
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S127"
+                                                      data-timestamp="889.58"
+                                                      data-length=""
+                                                      data-uuid="d65eabe0-e920-4978-bba6-f29ca5b1c1b8"
+                                                      data-confidence="0.6296449">
+                                                    do you like absinthe jasmine let's get wasted
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="895.6"
+                                                      data-length=""
+                                                      data-uuid="55499f10-1ff5-4287-85d4-f9df73c4fa76"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="898.54"
+                                                      data-length=""
+                                                      data-uuid="98054ff7-6b0c-4a57-ac17-aaf67bb51d37"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S0"
+                                                      data-timestamp="900.94"
+                                                      data-length=""
+                                                      data-uuid="287e3cfe-549c-4c63-aa26-a4d5b27025c5"
+                                                      data-confidence="0.7950993">
+                                                    freakonomics radio is supported by wealthfront wealthfront is an automated investment service built for the modern era and make it easier than ever to invest your money well will front you the software instead of retail locations are salespeople so it can offer sophisticat in bethany bisat lokos that were previously impossible
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S0"
+                                                      data-timestamp="920.21"
+                                                      data-length=""
+                                                      data-uuid="e5f31fb5-94f5-4099-8620-05d659df8985"
+                                                      data-confidence="0.8987753">
+                                                    it is exploded in popularity in last 2 years I know it more than $2.5 Billion under management check them out atwealthfront.com slash freak to get up to $10000 managed for free
+                                                </span>
+                                            
+                                            
+                                            </p>
+                                            <div class="clearboth"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mk-about-author-wrapper">
+                                <div class="avatar-wrapper"><img alt=''
+                                                                 src='/img/covers/freakonomics-radio.jpg'
+                                                                 class='avatar avatar-65 photo' height='65' width='65'/>
+                                </div>
+                                <div class="mk-about-author-meta">
+                                    <a class="about-author-name" href=""></a>
+
+                                    <div class="about-author-desc"></div>
+
+                                </div>
+                                <div class="clearboth"></div>
+                            </div>
+                            <section class="blog-similar-posts">
+                                <div class="similar-post-title">Recent Podcasts</div>
+                                <ul class="four-cols">
+                                    
+                                    <li>
+                                        <div class="similar-post-holder"><a class="mk-similiar-thumbnail"
+                                                                            href=""
+                                                                            title="What’s the “Best” Exercise?"><img
+                                                src="/img/covers/freakonomics-radio.jpg"
+                                                alt="What’s the “Best” Exercise?"/>
+
+                                            <div class="image-hover-overlay"></div>
+                                        </a><a href="" class="mk-similiar-title">What’s the “Best” Exercise?</a></div>
+                                    </li>
+                                    
+                                </ul>
+                                <div class="clearboth"></div>
+                            </section>
+                            <section id="comments">
+                            </section>
+                        </article>
+                        <div class="clearboth"></div>
+                    </div>
+                    <div class="clearboth"></div>
+                </div>
+            </div>
+        </div>
+        <section id="mk-footer" class="">
+  <div class="footer-wrapper mk-grid">
+    <div class="mk-padding-wrapper">
+      <div class=""><section id="text-2" class="widget widget_text"> <div class="textwidget"><div style="text-align: center; color: #999999;"> Copyright TomeCast All Rights Reserved © 2015 </div></div>
+      </section></div>
+      <div class="clearboth"></div>
+    </div>
+  </div>
+</section>
+
+    </div>
+    <div class="mk-side-dashboard">
+    <div class="side-dash-top-widgets">
+        <section id="text-4" class="widget widget_text">
+            <div class="textwidget"><img
+                    src="/img/D-logo.png">
+            </div>
+        </section>
+    </div>
+    <nav id="mk-sidedash-navigation" class="side_dashboard_menu">
+        <ul id="menu-main-menu" class="sidedash-navigation-ul">
+            <li id="menu-item-4533" class="menu-item menu-item-type-post_type menu-item-object-page"><a
+                    href="/">Home</a></li>
+            <li id="menu-item-4527" class="menu-item menu-item-type-post_type menu-item-object-page"><a
+                    href="/about.html">About</a></li>
+            <li id="menu-item-4529"
+                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><a
+                    href="">Podcasts</a>
+                <ul class="sub-menu">
+                    
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                        <a href="//"></a>
+                    </li>
+                    
+
+
+                </ul>
+            </li>
+
+            <li id="menu-item-4525" class="menu-item menu-item-type-post_type menu-item-object-page"><a
+                    href="/contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="side-dash-bottom-widgets">
+        <section id="social-2" class="widget widget_social_networks">
+            <div id="social-55560e5fcc0ca" class="align-left"><a href="#"
+                                                                 rel="nofollow"
+                                                                 class="builtin-icons mk-square-pointed custom small facebook-hover"
+                                                                 target="_blank" alt="Follow Us on facebook"
+                                                                 title="Follow Us on facebook"><i
+                    class="mk-jupiter-icon-simple-facebook"></i></a><a href="#"
+                                                                       rel="nofollow"
+                                                                       class="builtin-icons mk-square-pointed custom small googleplus-hover"
+                                                                       target="_blank" alt="Follow Us on googleplus"
+                                                                       title="Follow Us on googleplus"><i
+                    class="mk-jupiter-icon-simple-googleplus"></i></a><a href="#"
+                                                                         rel="nofollow"
+                                                                         class="builtin-icons mk-square-pointed custom small twitter-hover"
+                                                                         target="_blank" alt="Follow Us on twitter"
+                                                                         title="Follow Us on twitter"><i
+                    class="mk-jupiter-icon-simple-twitter"></i></a>
+                <style>#social-55560e5fcc0ca a {
+                    opacity: 100 !important;
+                    color: #ffffff !important;
+                }
+
+                #social-55560e5fcc0ca a:hover {
+                    color: #f16f4f !important;
+                }</style>
+            </div>
+        </section>
+    </div>
+</div>
+
+</div>
+<a href="#" class="mk-go-top"><i class="mk-icon-chevron-up"></i></a>
+
+
+
+<a class="mk-post-nav mk-post-prev with-image" href="/podcasts/freakonomics-radio/2013/12/26/save-me-from-myself-rebroadcast.html"><span
+        class="pagnav-wrapper"><span class="pagenav-top"><span class="pagenav-image"><img width="150" height="150"
+              src="/img/covers/freakonomics-radio.jpg"
+              class="attachment-thumbnail wp-post-image"
+              alt="Save Me From Myself (Rebroadcast) Podcast"/></span><span
+        class="mk-pavnav-icon"><i class="mk-icon-long-arrow-left"></i></span></span><div class="nav-info-container">
+    <span class="pagenav-bottom"><span class="pagenav-title">Save Me From Myself (Rebroadcast)</span>2013-12-26</span></div></span></a>
+
+
+
+
+<a class="mk-post-nav mk-post-next with-image" href="/podcasts/freakonomics-radio/2014/01/09/are-we-ready-to-legalize-drugs-and-other-freak-quently-asked-questions.html"><span
+        class="pagnav-wrapper"><span class="pagenav-top"><span class="mk-pavnav-icon"><i
+        class="mk-icon-long-arrow-right"></i></span><span class="pagenav-image"><img width="150" height="150"
+             src="/img/covers/freakonomics-radio.jpg"
+             class="attachment-thumbnail wp-post-image"
+             alt="Are We Ready to Legalize Drugs? And Other FREAK-Quently Asked Questions Podcast"/></span></span><div
+        class="nav-info-container"><span class="pagenav-bottom"><span
+        class="pagenav-title">Are We Ready to Legalize Drugs? And Other FREAK-Quently Asked Questions</span>
+    2014-01-09
+</span></div></span></a>
+
+
+
+<script type='text/javascript' src='/js/scripts-vendors.js'></script>
+<script type='text/javascript' src='/js/app.js'></script>
+<script type='text/javascript' src='/js/smoothscroll.js'></script>
+<script type='text/javascript'
+        src='//cdnjs.cloudflare.com/ajax/libs/jquery.transit/0.9.12/jquery.transit.min.js'></script>
+
+<script type="text/javascript">
+    window.$ = jQuery
+
+    $('.mk-dynamic-styles').each(function () {
+        $(this).remove();
+    });
+
+    function ajaxStylesInjector() {
+        $('.mk-dynamic-styles').each(function () {
+            var $this = $(this),
+                    id = $this.attr('id'),
+                    commentedStyles = $this.html();
+            styles = commentedStyles
+                    .replace('<!--', '')
+                    .replace('-->', '');
+
+
+            if (dynamic_styles_ids.indexOf(id) === -1) {
+                $('style[data-ajax]').append(styles);
+                $this.remove();
+            }
+
+            dynamic_styles_ids.push(id);
+        });
+    }
+    ;
+
+    abb.modules.theme_header.init({
+        id: 'mk-header',
+        height: '130',
+        stickyHeight: '55',
+        stickyOffset: 'header',
+        hasToolbar: 'false'
+    });
+    abb.init();    </script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-69068664-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>
+ 

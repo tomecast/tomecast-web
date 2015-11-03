@@ -1,0 +1,3377 @@
+<!DOCTYPE html>
+<html itemscope="itemscope" itemtype="http://schema.org/Article" xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="format-detection" content="telephone=no">
+<title itemprop="name">TomeCast Template</title>
+
+<script type="text/javascript">
+  // Init aplication namespace
+  var abb = {};
+  var php = {};
+
+  var mk_header_parallax, mk_banner_parallax, mk_page_parallax, mk_footer_parallax, mk_body_parallax;
+  var mk_captcha_placeholder = "Enter Captcha",
+          mk_captcha_invalid_txt = "Invalid. Try again.",
+          mk_captcha_correct_txt = "Captcha correct.",
+          mk_responsive_nav_width = 1140,
+          mk_check_rtl = true,
+          mk_grid_width = 1140,
+          mk_ajax_search_option = "disable",
+          mk_preloader_txt_color = "#444444",
+          mk_preloader_bg_color = "#ffffff",
+          mk_accent_color = "#f97352",
+          mk_preloader_bar_color = "#f97352",
+          mk_preloader_logo = "";
+  var mk_header_parallax = false,
+          mk_banner_parallax = false,
+          mk_page_parallax = false,
+          mk_footer_parallax = false,
+          mk_body_parallax = false,
+          mk_no_more_posts = "No More Posts";
+
+  function is_touch_device() {
+    return ('ontouchstart' in document.documentElement);
+  }
+
+</script>
+
+<link rel='stylesheet' id='theme-styles-css' href='/css/theme-styles.min.css' type='text/css' media='all'/>
+<link rel='stylesheet' id='mk-pe-line-icon-css' href='/css/pe-line-icons.min.css' type='text/css' media='all'/>
+<link rel='stylesheet' id='mk-font-awesome-css' href='/css/font-awesome.min.css' type='text/css' media='all'/>
+<link rel='stylesheet' id='mk-icomoon-fonts-css' href='/css/icomoon-fonts.min.css' type='text/css' media='all'/>
+<link rel='stylesheet' id='mk-theme-icons-css' href='/css/theme-icons.min.css' type='text/css' media='all'/>
+<link rel='stylesheet' id='google-font-api-special-1-css' href='http://fonts.googleapis.com/css?family=Open+Sans%3A100italic%2C200italic%2C300italic%2C400italic%2C500italic%2C600italic%2C700italic%2C800italic%2C900italic%2C100%2C200%2C300%2C400%2C500%2C600%2C700%2C800%2C900&#038;ver=4.2.2' type='text/css' media='all'/>
+<link rel='stylesheet' id='mk-style-css' href='/css/style.css' type='text/css' media='all'/>
+<link rel='stylesheet' id='theme-dynamic-styles-css' href='/css/custom.css' type='text/css' media='all'/>
+<style id='theme-dynamic-styles-inline-css' type='text/css'>
+  body {
+  }
+
+  body,
+  p {
+    font-family: Open Sans
+  }
+
+  body {
+    background-color: #fff;
+  }
+
+  #mk-header {
+    background-color: #1b1b1b;
+  }
+
+  .mk-header-bg {
+    background-color: #1b1b1b;
+  }
+
+  .mk-header-toolbar {
+    background-color: #ffffff;
+  }
+
+  #theme-page {
+    background-color: #fff;
+  }
+
+  #mk-footer {
+    background-color: #1b1b1b;
+  }
+
+  #mk-footer .footer-wrapper {
+    padding: 30px 0;
+  }
+
+  #mk-footer .widget {
+    margin-bottom: 40px;
+  }
+
+  #mk-footer [class*='mk-col-'] {
+    padding: 0 2%;
+  }
+
+  #sub-footer {
+    background-color: #43474d;
+  }
+
+  .mk-footer-copyright {
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+
+  #mk-boxed-layout {
+    -webkit-box-shadow: 0 0 0px rgba(0, 0, 0, 0);
+    -moz-box-shadow: 0 0 0px rgba(0, 0, 0, 0);
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0);
+  }
+
+  .mk-tabs-panes,
+  .mk-news-tab .mk-tabs-tabs li.ui-tabs-active a,
+  .mk-divider .divider-go-top,
+  .ajax-container,
+  .mk-fancy-title.pattern-style span,
+  .mk-portfolio-view-all,
+  .mk-woo-view-all,
+  .mk-blog-view-all {
+    background-color: #fff;
+  }
+
+  .mk-header-bg {
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+    -o-opacity: 1;
+    opacity: 1;
+  }
+
+  .header-sticky-ready .mk-header-bg {
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+    -o-opacity: 1;
+    opacity: 1;
+  }
+
+  .mk-header-inner,
+  .header-sticky-ready .mk-header-inner,
+  .header-style-2.header-sticky-ready .mk-classic-nav-bg {
+    border-bottom: 1px solid #1b1b1b;
+  }
+
+  .header-style-4.header-align-left .mk-header-inner,
+  .header-style-4.header-align-center .mk-header-inner {
+    border-bottom: none;
+    border-right: 1px solid #1b1b1b;
+  }
+
+  .header-style-4.header-align-right .mk-header-inner {
+    border-bottom: none;
+    border-left: 1px solid #1b1b1b;
+  }
+
+  .header-style-2 .mk-header-nav-container {
+    border-top: 1px solid #1b1b1b;
+  }
+
+  #mk-header {
+    border-bottom: 1px solid #1b1b1b;
+  }
+
+  body {
+    font-size: 13px;
+    color: #777777;
+    font-weight: normal;
+    line-height: 1.66em;
+  }
+
+  p,
+  .mk-box-icon-2-content {
+    font-size: 13px;
+    color: #777777;
+    line-height: 1.66em;
+  }
+
+  a {
+    color: #2e2e2e;
+  }
+
+  a:hover {
+    color: #f97352;
+  }
+
+  #theme-page strong {
+    color: #f97352;
+  }
+
+  #theme-page h1 {
+    font-size: 36px;
+    color: #404040;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  #theme-page h2 {
+    font-size: 30px;
+    color: #404040;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  #theme-page h3 {
+    font-size: 24px;
+    color: #404040;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  #theme-page h4 {
+    font-size: 18px;
+    color: #404040;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  #theme-page h5 {
+    font-size: 16px;
+    color: #404040;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  #theme-page h6 {
+    font-size: 14px;
+    color: #404040;
+    font-weight: normal;
+    text-transform: uppercase;
+  }
+
+  .page-introduce-title {
+    font-size: 20px;
+    color: #4d4d4d;
+    text-transform: uppercase;
+    font-weight: normal;
+    letter-spacing: 2px;
+  }
+
+  .page-introduce-subtitle {
+    font-size: 14px;
+    line-height: 100%;
+    color: #a3a3a3;
+    font-size: 14px;
+    text-transform: none;
+  }
+
+  ::-webkit-selection {
+    background-color: #f97352;
+    color: #fff;
+  }
+
+  ::-moz-selection {
+    background-color: #f97352;
+    color: #fff;
+  }
+
+  ::selection {
+    background-color: #f97352;
+    color: #fff;
+  }
+
+  #mk-sidebar,
+  #mk-sidebar p {
+    font-size: 14px;
+    color: #999999;
+    font-weight: normal;
+  }
+
+  #mk-sidebar .widgettitle {
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #333333;
+    font-weight: bolder;
+  }
+
+  #mk-sidebar .widgettitle a {
+    color: #333333;
+  }
+
+  #mk-sidebar .widget a {
+    color: #999999;
+  }
+
+  #mk-footer,
+  #mk-footer p {
+    font-size: 14px;
+    color: #808080;
+    font-weight: normal;
+  }
+
+  #mk-footer .widgettitle {
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: 800;
+  }
+
+  #mk-footer .widgettitle a {
+    color: #ffffff;
+  }
+
+  #mk-footer .widget:not(.widget_social_networks) a {
+    color: #999999;
+  }
+
+  .mk-side-dashboard {
+    background-color: #1b1b1b;
+  }
+
+  .mk-side-dashboard,
+  .mk-side-dashboard p {
+    font-size: 12px;
+    color: #eeeeee;
+    font-weight: normal;
+  }
+
+  .mk-side-dashboard .widgettitle {
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #f16f4f;
+    font-weight: 800;
+  }
+
+  .mk-side-dashboard .widgettitle a {
+    color: #f16f4f;
+  }
+
+  .mk-side-dashboard .widget a {
+    color: #fafafa;
+  }
+
+  .sidedash-navigation-ul li a,
+  .sidedash-navigation-ul li .mk-nav-arrow {
+    color: #ffffff;
+  }
+
+  .sidedash-navigation-ul li a:hover {
+    color: #f16f4f;
+    background-color:;
+  }
+
+  .mk-fullscreen-nav {
+    background-color: #444444;
+  }
+
+  .mk-fullscreen-nav .mk-fullscreen-nav-wrapper .mk-fullscreen-nav-logo {
+    margin-bottom: 125px;
+  }
+
+  .mk-fullscreen-nav .fullscreen-navigation-ul .menu-item a {
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 0;
+    font-weight: 800;
+    padding: 25px 0;
+    color: #ffffff;
+  }
+
+  .mk-fullscreen-nav .fullscreen-navigation-ul .menu-item a:hover {
+    background-color: #ffffff;
+    color: #444444;
+  }
+
+  #mk-sidebar .widget:not(.widget_social_networks) a:hover {
+    color: #f97352;
+  }
+
+  #mk-footer .widget:not(.widget_social_networks) a:hover {
+    color: #f97352;
+  }
+
+  .mk-side-dashboard .widget:not(.widget_social_networks) a:hover {
+    color: #f97352;
+  }
+
+  .mk-grid {
+    max-width: 1140px;
+  }
+
+  .mk-header-nav-container,
+  .mk-classic-menu-wrapper {
+    width: 1140px;
+  }
+
+  .theme-page-wrapper #mk-sidebar.mk-builtin {
+    width: 27%;
+  }
+
+  .theme-page-wrapper.right-layout .theme-content,
+  .theme-page-wrapper.left-layout .theme-content {
+    width: 73%;
+  }
+
+  .mk-boxed-enabled #mk-boxed-layout,
+  .mk-boxed-enabled #mk-boxed-layout .header-style-1 .mk-header-holder,
+  .mk-boxed-enabled #mk-boxed-layout .header-style-3 .mk-header-holder {
+    max-width: 1200px;
+  }
+
+  .mk-boxed-enabled #mk-boxed-layout .header-style-1 .mk-header-holder,
+  .mk-boxed-enabled #mk-boxed-layout .header-style-3 .mk-header-holder {
+    width: 100% !important;
+    left: auto !important;
+  }
+
+  .mk-boxed-enabled #mk-boxed-layout .header-style-2.header-sticky-ready .mk-header-nav-container {
+    width: 1200px !important;
+    left: auto !important;
+  }
+
+  .header-style-1 .mk-header-start-tour,
+  .header-style-3 .mk-header-start-tour,
+  .header-style-1 .mk-header-inner #mk-header-search,
+  .header-style-1 .mk-header-inner,
+  .header-style-1 .mk-search-trigger,
+  .header-style-3 .mk-header-inner,
+  .header-style-1 .header-logo,
+  .header-style-3 .header-logo,
+  .header-style-1 .shopping-cart-header,
+  .header-style-3 .shopping-cart-header,
+  .header-style-1 #mk-header-social.header-section a,
+  .header-style-2 #mk-header-social.header-section a,
+  .header-style-3 #mk-header-social.header-section a {
+    height: 130px;
+    line-height: 130px;
+  }
+
+  @media handheld, only screen and (max-width: 1140px) {
+    .header-grid.mk-grid .header-logo.left-logo {
+      left: 15px !important;
+    }
+
+    .header-grid.mk-grid .header-logo.right-logo,
+    .mk-header-right {
+      right: 15px !important;
+    }
+
+    .header-style-3 .shopping-cart-header {
+      right: 30px;
+    }
+  }
+
+  #mk-theme-container:not(.mk-transparent-header) .header-style-1 .mk-header-padding-wrapper,
+  #mk-theme-container:not(.mk-transparent-header) .header-style-3 .mk-header-padding-wrapper {
+    padding-top: 130px;
+  }
+
+  @media handheld, only screen and (max-width: 960px) {
+    .theme-page-wrapper .theme-content {
+      width: 100% !important;
+      float: none !important;
+    }
+
+    .theme-page-wrapper {
+      padding-right: 15px !important;
+      padding-left: 15px !important;
+    }
+
+    .theme-page-wrapper .theme-content:not(.no-padding) {
+      padding: 25px 0 !important;
+    }
+
+    .theme-page-wrapper #mk-sidebar {
+      width: 100% !important;
+      float: none !important;
+      padding: 0 !important;
+    }
+
+    .theme-page-wrapper #mk-sidebar .sidebar-wrapper {
+      padding: 20px 0 !important;
+    }
+  }
+
+  @media handheld, only screen and (max-width: 1140px) {
+    .mk-go-top,
+    .mk-quick-contact-wrapper {
+      bottom: 70px !important;
+    }
+
+    .mk-grid {
+      width: 100%;
+    }
+
+    .mk-padding-wrapper {
+      padding: 0 20px;
+    }
+  }
+
+  #mk-toolbar-navigation ul li a,
+  .mk-language-nav > a,
+  .mk-header-login .mk-login-link,
+  .mk-subscribe-link,
+  .mk-checkout-btn,
+  .mk-header-tagline a,
+  .header-toolbar-contact a,
+  #mk-toolbar-navigation ul li a:hover,
+  .mk-language-nav > a:hover,
+  .mk-header-login .mk-login-link:hover,
+  .mk-subscribe-link:hover,
+  .mk-checkout-btn:hover,
+  .mk-header-tagline a:hover {
+    color: #999999;
+  }
+
+  .mk-header-tagline,
+  .header-toolbar-contact,
+  .mk-header-date {
+    color: #999999;
+  }
+
+  .mk-header-toolbar #mk-header-social a i {
+    color: #999999;
+  }
+
+  .header-section#mk-header-social ul li a i {
+    color: #999999;
+  }
+
+  .header-section#mk-header-social ul li a:hover i {
+    color: #cccccc;
+  }
+
+  .header-style-2 .header-logo,
+  .header-style-4 .header-logo {
+    height: 130px !important;
+  }
+
+  .header-style-4 .header-logo {
+    margin: 10px 0;
+  }
+
+  .header-style-2 .mk-header-inner {
+    line-height: 130px;
+  }
+
+  .mk-header-nav-container {
+    background-color:;
+  }
+
+  .mk-header-start-tour {
+    font-size: 14px;
+    color: #333333;
+  }
+
+  .mk-header-start-tour:hover {
+    color: #333333;
+  }
+
+  .mk-classic-nav-bg {
+    background-color: #1b1b1b;
+  }
+
+  .mk-search-trigger,
+  .mk-shoping-cart-link i,
+  .mk-header-cart-count,
+  .mk-toolbar-resposnive-icon i {
+    color: #ffffff;
+  }
+
+  .mk-css-icon-close div,
+  .mk-css-icon-menu div {
+    background-color: #ffffff;
+  }
+
+  #mk-header-searchform .text-input {
+    background-color: !important;
+    color: #c7c7c7;
+  }
+
+  #mk-header-searchform span i {
+    color: #c7c7c7;
+  }
+
+  #mk-header-searchform .text-input::-webkit-input-placeholder {
+    color: #c7c7c7;
+  }
+
+  #mk-header-searchform .text-input:-ms-input-placeholder {
+    color: #c7c7c7;
+  }
+
+  #mk-header-searchform .text-input:-moz-placeholder {
+    color: #c7c7c7;
+  }
+
+  .header-style-1.header-sticky-ready .menu-hover-style-1 .main-navigation-ul > li > a,
+  .header-style-3.header-sticky-ready .menu-hover-style-1 .main-navigation-ul > li > a,
+  .header-style-1.header-sticky-ready .menu-hover-style-5 .main-navigation-ul > li,
+  .header-style-1.header-sticky-ready .menu-hover-style-2 .main-navigation-ul > li > a,
+  .header-style-3.header-sticky-ready .menu-hover-style-2 .main-navigation-ul > li > a,
+  .header-style-1.header-style-1.header-sticky-ready .menu-hover-style-4 .main-navigation-ul > li > a,
+  .header-style-3.header-sticky-ready .menu-hover-style-4 .main-navigation-ul > li > a,
+  .header-style-1.header-sticky-ready .menu-hover-style-3 .main-navigation-ul > li,
+  .header-style-1.header-sticky-ready .mk-header-inner #mk-header-search,
+  .header-style-3.header-sticky-ready .mk-header-holder #mk-header-search,
+  .header-sticky-ready.header-style-3 .mk-header-start-tour,
+  .header-sticky-ready.header-style-1 .mk-header-start-tour,
+  .header-sticky-ready.header-style-1 .mk-header-inner,
+  .header-sticky-ready.header-style-3 .mk-header-inner,
+  .header-sticky-ready.header-style-3 .header-logo,
+  .header-sticky-ready.header-style-1 .header-logo,
+  .header-sticky-ready.header-style-1 .mk-search-trigger,
+  .header-sticky-ready.header-style-1 .mk-search-trigger i,
+  .header-sticky-ready.header-style-1 .shopping-cart-header,
+  .header-sticky-ready.header-style-1 .shopping-cart-header i,
+  .header-sticky-ready.header-style-3 .shopping-cart-header,
+  .header-sticky-ready.header-style-1 #mk-header-social.header-section a,
+  .header-sticky-ready.header-style-3 #mk-header-social.header-section a {
+    height: 55px !important;
+    line-height: 55px !important;
+  }
+
+  #mk-header-social.header-section a.small {
+    margin-top: 48px;
+  }
+
+  #mk-header-social.header-section a.medium {
+    margin-top: 40px;
+  }
+
+  #mk-header-social.header-section a.large {
+    margin-top: 32px;
+  }
+
+  .header-sticky-ready #mk-header-social.header-section a.small,
+  .header-sticky-ready #mk-header-social.header-section a.medium,
+  .header-sticky-ready #mk-header-social.header-section a.large {
+    margin-top: 10.5px;
+    line-height: 16px !important;
+    height: 16px !important;
+    font-size: 16px !important;
+    width: 16px !important;
+    padding: 8px !important;
+  }
+
+  .header-sticky-ready #mk-header-social.header-section a.small i:before,
+  .header-sticky-ready #mk-header-social.header-section a.medium i:before,
+  .header-sticky-ready #mk-header-social.header-section a.large i:before {
+    line-height: 16px !important;
+    font-size: 16px !important;
+  }
+
+  .main-navigation-ul > li.menu-item > a.menu-item-link {
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: bold;
+    padding-right: 20px !important;
+    padding-left: 20px !important;
+    text-transform: uppercase;
+    letter-spacing: 0px;
+  }
+
+  .mk-vm-menuwrapper ul li a {
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .mk-vm-menuwrapper li > a:after,
+  .mk-vm-menuwrapper li.mk-vm-back:after {
+    color: #ffffff;
+  }
+
+  .main-navigation-ul > li.no-mega-menu ul.sub-menu li.menu-item a.menu-item-link {
+    width: 230px;
+  }
+
+  .mk-header-3-menu-trigger {
+    color: #ffffff;
+  }
+
+  .menu-hover-style-1 .main-navigation-ul li.menu-item > a.menu-item-link:hover,
+  .menu-hover-style-1 .main-navigation-ul li.menu-item:hover > a.menu-item-link,
+  .menu-hover-style-1 .main-navigation-ul li.current-menu-item > a.menu-item-link,
+  .menu-hover-style-1 .main-navigation-ul li.current-menu-ancestor > a.menu-item-link,
+  .menu-hover-style-2 .main-navigation-ul li.menu-item > a.menu-item-link:hover,
+  .menu-hover-style-2 .main-navigation-ul li.menu-item:hover > a.menu-item-link,
+  .menu-hover-style-2 .main-navigation-ul li.current-menu-item > a.menu-item-link,
+  .menu-hover-style-2 .main-navigation-ul li.current-menu-ancestor > a.menu-item-link,
+  .menu-hover-style-1.mk-vm-menuwrapper li.menu-item > a:hover,
+  .menu-hover-style-1.mk-vm-menuwrapper li.menu-item:hover > a,
+  .menu-hover-style-1.mk-vm-menuwrapper li.current-menu-item > a,
+  .menu-hover-style-1.mk-vm-menuwrapper li.current-menu-ancestor > a,
+  .menu-hover-style-2.mk-vm-menuwrapper li.menu-item > a:hover,
+  .menu-hover-style-2.mk-vm-menuwrapper li.menu-item:hover > a,
+  .menu-hover-style-2.mk-vm-menuwrapper li.current-menu-item > a,
+  .menu-hover-style-2.mk-vm-menuwrapper li.current-menu-ancestor > a {
+    color: #f97352 !important;
+  }
+
+  .menu-hover-style-3 .main-navigation-ul > li.menu-item > a.menu-item-link:hover,
+  .menu-hover-style-3 .main-navigation-ul > li.menu-item:hover > a.menu-item-link,
+  .menu-hover-style-3.mk-vm-menuwrapper li > a:hover,
+  .menu-hover-style-3.mk-vm-menuwrapper li:hover > a {
+    border: 2px solid #f97352;
+  }
+
+  .menu-hover-style-3 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
+  .menu-hover-style-3 .main-navigation-ul > li.current-menu-ancestor > a.menu-item-link,
+  .menu-hover-style-3.mk-vm-menuwrapper li.current-menu-item > a,
+  .menu-hover-style-3.mk-vm-menuwrapper li.current-menu-ancestor > a {
+    border: 2px solid #f97352;
+    background-color: #f97352;
+    color: #ffffff;
+  }
+
+  .menu-hover-style-3.mk-vm-menuwrapper li.current-menu-ancestor > a:after {
+    color: #ffffff;
+  }
+
+  .menu-hover-style-4 .main-navigation-ul li.menu-item > a.menu-item-link:hover,
+  .menu-hover-style-4 .main-navigation-ul li.menu-item:hover > a.menu-item-link,
+  .menu-hover-style-4 .main-navigation-ul li.current-menu-item > a.menu-item-link,
+  .menu-hover-style-4 .main-navigation-ul li.current-menu-ancestor > a.menu-item-link,
+  .menu-hover-style-4.mk-vm-menuwrapper li a:hover,
+  .menu-hover-style-4.mk-vm-menuwrapper li:hover > a,
+  .menu-hover-style-4.mk-vm-menuwrapper li.current-menu-item > a,
+  .menu-hover-style-4.mk-vm-menuwrapper li.current-menu-ancestor > a,
+  .menu-hover-style-5 .main-navigation-ul > li.menu-item > a.menu-item-link:after {
+    background-color: #f97352;
+    color: #ffffff;
+  }
+
+  .menu-hover-style-4.mk-vm-menuwrapper li.current-menu-ancestor > a:after,
+  .menu-hover-style-4.mk-vm-menuwrapper li.current-menu-item > a:after,
+  .menu-hover-style-4.mk-vm-menuwrapper li:hover > a:after,
+  .menu-hover-style-4.mk-vm-menuwrapper li a:hover::after {
+    color: #ffffff;
+  }
+
+  .menu-hover-style-1 .main-navigation-ul > li.dropdownOpen > a.menu-item-link,
+  .menu-hover-style-1 .main-navigation-ul > li.active > a.menu-item-link,
+  .menu-hover-style-1 .main-navigation-ul > li.open > a.menu-item-link,
+  .menu-hover-style-1 .main-navigation-ul > li.menu-item > a:hover,
+  .menu-hover-style-1 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
+  .menu-hover-style-1 .main-navigation-ul > li.current-menu-ancestor > a.menu-item-link {
+    border-top-color: #f97352;
+  }
+
+  .menu-hover-style-1.mk-vm-menuwrapper li > a:hover,
+  .menu-hover-style-1.mk-vm-menuwrapper li.current-menu-item > a,
+  .menu-hover-style-1.mk-vm-menuwrapper li.current-menu-ancestor > a {
+    border-left-color: #f97352;
+  }
+
+  .header-style-1 .menu-hover-style-1 .main-navigation-ul > li > a,
+  .header-style-1 .menu-hover-style-2 .main-navigation-ul > li > a,
+  .header-style-1 .menu-hover-style-4 .main-navigation-ul > li > a,
+  .header-style-1 .menu-hover-style-5 .main-navigation-ul > li {
+    height: 130px;
+    line-height: 130px;
+  }
+
+  .header-style-1 .menu-hover-style-3 .main-navigation-ul > li,
+  .header-style-1 .menu-hover-style-5 .main-navigation-ul > li {
+    height: 130px;
+    line-height: 130px;
+  }
+
+  .header-style-1 .menu-hover-style-3 .main-navigation-ul > li > a {
+    line-height: 65px;
+  }
+
+  .header-style-1.header-sticky-ready .menu-hover-style-3 .main-navigation-ul > li > a {
+    line-height: 36.666666666667px;
+  }
+
+  .header-style-1 .menu-hover-style-5 .main-navigation-ul > li > a {
+    line-height: 20px;
+    vertical-align: middle;
+  }
+
+  .main-navigation-ul > li.no-mega-menu ul.sub-menu:after,
+  .main-navigation-ul > li.has-mega-menu > ul.sub-menu:after {
+    background-color: #f97352;
+  }
+
+  .mk-shopping-cart-box {
+    border-top: 2px solid #f97352;
+  }
+
+  #mk-main-navigation li.no-mega-menu ul.sub-menu,
+  #mk-main-navigation li.has-mega-menu > ul.sub-menu,
+  .mk-shopping-cart-box {
+    background-color: #333333;
+  }
+
+  #mk-main-navigation ul.sub-menu a.menu-item-link,
+  #mk-main-navigation ul .megamenu-title,
+  .megamenu-widgets-container a,
+  .mk-shopping-cart-box .product_list_widget li a,
+  .mk-shopping-cart-box .product_list_widget li.empty,
+  .mk-shopping-cart-box .product_list_widget li span,
+  .mk-shopping-cart-box .widget_shopping_cart .total {
+    color: #b3b3b3;
+  }
+
+  .mk-shopping-cart-box .mk-button.cart-widget-btn {
+    border-color: #b3b3b3;
+    color: #b3b3b3;
+  }
+
+  .mk-shopping-cart-box .mk-button.cart-widget-btn:hover {
+    background-color: #b3b3b3;
+    color: #333333;
+  }
+
+  #mk-main-navigation ul .megamenu-title {
+    color: #ffffff;
+  }
+
+  #mk-main-navigation ul .megamenu-title:after {
+    background-color: #ffffff;
+  }
+
+  .megamenu-widgets-container {
+    color: #b3b3b3;
+  }
+
+  .megamenu-widgets-container .widgettitle {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bolder;
+  }
+
+  #mk-main-navigation ul.sub-menu li.menu-item ul.sub-menu li.menu-item a.menu-item-link i {
+    color: #e0e0e0;
+  }
+
+  #mk-main-navigation ul.sub-menu a.menu-item-link:hover,
+  .main-navigation-ul ul.sub-menu li.current-menu-item > a.menu-item-link,
+  .main-navigation-ul ul.sub-menu li.current-menu-parent > a.menu-item-link {
+    color: #ffffff !important;
+  }
+
+  .megamenu-widgets-container a:hover {
+    color: #ffffff;
+  }
+
+  .main-navigation-ul li.menu-item ul.sub-menu li.menu-item a.menu-item-link:hover,
+  .main-navigation-ul li.menu-item ul.sub-menu li.menu-item:hover > a.menu-item-link,
+  .main-navigation-ul ul.sub-menu li.menu-item a.menu-item-link:hover,
+  .main-navigation-ul ul.sub-menu li.menu-item:hover > a.menu-item-link,
+  .main-navigation-ul ul.sub-menu li.current-menu-item > a.menu-item-link,
+  .main-navigation-ul ul.sub-menu li.current-menu-parent > a.menu-item-link {
+    background-color: transparent !important;
+  }
+
+  .mk-search-trigger:hover,
+  .mk-header-start-tour:hover {
+    color: #f97352;
+  }
+
+  .main-navigation-ul li.menu-item ul.sub-menu li.menu-item a.menu-item-link {
+    font-size: 12px;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .has-mega-menu .megamenu-title {
+    letter-spacing: 1px;
+  }
+
+  .header-style-4 {
+    text-align: left
+  }
+
+  .mk-vm-menuwrapper li > a {
+    padding-right: 45px;
+  }
+
+  @media handheld, only screen and (max-width: 1140px) {
+    .header-style-1 .mk-header-inner,
+    .header-style-3 .mk-header-inner,
+    .header-style-3 .header-logo,
+    .header-style-1 .header-logo,
+    .header-style-1 .shopping-cart-header,
+    .header-style-3 .shopping-cart-header {
+      height: 90px !important;
+      line-height: 90px;
+    }
+
+    #mk-header:not(.header-style-4) .mk-header-holder {
+      position: relative !important;
+      top: 0 !important;
+    }
+
+    .mk-header-padding-wrapper {
+      display: none !important;
+    }
+
+    .mk-header-nav-container {
+      width: auto !important;
+      display: none;
+    }
+
+    .header-style-1 .mk-header-right,
+    .header-style-2 .mk-header-right,
+    .header-style-3 .mk-header-right {
+      right: 55px !important;
+    }
+
+    .header-style-1 .mk-header-inner #mk-header-search,
+    .header-style-2 .mk-header-inner #mk-header-search,
+    .header-style-3 .mk-header-inner #mk-header-search {
+      display: none !important;
+    }
+
+    .mk-fullscreen-search-overlay {
+      display: none;
+    }
+
+    #mk-header-search {
+      padding-bottom: 10px !important;
+    }
+
+    #mk-header-searchform span .text-input {
+      width: 100% !important;
+    }
+
+    .header-style-2 .header-logo .center-logo {
+      text-align: right !important;
+    }
+
+    .header-style-2 .header-logo .center-logo a {
+      margin: 0 !important;
+    }
+
+    .header-logo,
+    .header-style-4 .header-logo {
+      height: 90px !important;
+    }
+
+    .header-style-4 .shopping-cart-header {
+      display: none;
+    }
+
+    .mk-header-inner {
+      padding-top: 0 !important;
+    }
+
+    .header-logo {
+      position: relative !important;
+      right: auto !important;
+      left: auto !important;
+      float: left !important;
+      text-align: left;
+    }
+
+    .shopping-cart-header {
+      margin: 0 20px 0 0 !important;
+    }
+
+    #mk-responsive-nav {
+      background-color: #ffffff !important;
+    }
+
+    .mk-header-nav-container #mk-responsive-nav {
+      visibility: hidden;
+    }
+
+    #mk-responsive-nav li ul li .megamenu-title:hover,
+    #mk-responsive-nav li ul li .megamenu-title,
+    #mk-responsive-nav li a,
+    #mk-responsive-nav li ul li a:hover,
+    #mk-responsive-nav .mk-nav-arrow {
+      color: #444444 !important;
+    }
+
+    .mk-mega-icon {
+      display: none !important;
+    }
+
+    .mk-header-bg {
+      zoom: 1 !important;
+      filter: alpha(opacity=100) !important;
+      opacity: 1 !important;
+    }
+
+    .header-style-1 .mk-nav-responsive-link,
+    .header-style-2 .mk-nav-responsive-link {
+      display: block !important;
+    }
+
+    .mk-header-nav-container {
+      height: 100%;
+      z-index: 200;
+    }
+
+    #mk-main-navigation {
+      position: relative;
+      z-index: 2;
+    }
+
+    .mk_megamenu_columns_2,
+    .mk_megamenu_columns_3,
+    .mk_megamenu_columns_4,
+    .mk_megamenu_columns_5,
+    .mk_megamenu_columns_6 {
+      width: 100% !important;
+    }
+
+    .header-style-1.header-align-right .header-logo img,
+    .header-style-3.header-align-right .header-logo img,
+    .header-style-3.header-align-center .header-logo img {
+      float: left !important;
+      right: auto !important;
+    }
+
+    .header-style-4 .mk-header-inner {
+      width: auto !important;
+      position: relative !important;
+      overflow: visible;
+      padding-bottom: 0;
+    }
+
+    .admin-bar .header-style-4 .mk-header-inner {
+      top: 0 !important;
+    }
+
+    .header-style-4 .mk-header-right {
+      display: none;
+    }
+
+    .header-style-4 .mk-nav-responsive-link {
+      display: block !important;
+    }
+
+    .header-style-4 .mk-vm-menuwrapper,
+    .header-style-4 #mk-header-search {
+      display: none;
+    }
+
+    .header-style-4 .header-logo {
+      width: auto !important;
+      display: inline-block !important;
+      text-align: left !important;
+      margin: 0 !important;
+    }
+
+    .vertical-header-enabled .header-style-4 .header-logo img {
+      max-width: 100% !important;
+      left: 20px !important;
+      top: 50% !important;
+      -webkit-transform: translate(0, -50%) !important;
+      -moz-transform: translate(0, -50%) !important;
+      -ms-transform: translate(0, -50%) !important;
+      -o-transform: translate(0, -50%) !important;
+      transform: translate(0, -50%) !important;
+      position: relative !important;
+    }
+
+    .vertical-header-enabled.vertical-header-left #theme-page > .mk-main-wrapper-holder,
+    .vertical-header-enabled.vertical-header-center #theme-page > .mk-main-wrapper-holder,
+    .vertical-header-enabled.vertical-header-left #theme-page > .mk-page-section,
+    .vertical-header-enabled.vertical-header-center #theme-page > .mk-page-section,
+    .vertical-header-enabled.vertical-header-left #theme-page > .wpb_row,
+    .vertical-header-enabled.vertical-header-center #theme-page > .wpb_row,
+    .vertical-header-enabled.vertical-header-left #mk-theme-container:not(.mk-transparent-header),
+    .vertical-header-enabled.vertical-header-center #mk-footer,
+    .vertical-header-enabled.vertical-header-left #mk-footer,
+    .vertical-header-enabled.vertical-header-center #mk-theme-container:not(.mk-transparent-header) {
+      padding-left: 0 !important;
+    }
+
+    .vertical-header-enabled.vertical-header-right #theme-page > .mk-main-wrapper-holder,
+    .vertical-header-enabled.vertical-header-right #theme-page > .mk-page-section,
+    .vertical-header-enabled.vertical-header-right #theme-page > .wpb_row,
+    .vertical-header-enabled.vertical-header-right #mk-footer,
+    .vertical-header-enabled.vertical-header-right #mk-theme-container:not(.mk-transparent-header) {
+      padding-right: 0 !important;
+    }
+  }
+
+  @media handheld, only screen and (min-width: 1140px) {
+    .mk-transparent-header .sticky-style-slide .mk-header-holder {
+      position: absolute;
+    }
+
+    .mk-transparent-header .remove-header-bg-true:not(.header-sticky-ready) .mk-header-bg {
+      opacity: 0;
+    }
+
+    .mk-transparent-header .remove-header-bg-true#mk-header:not(.header-sticky-ready) .mk-header-inner {
+      border: 0;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-desktop-logo.light-logo {
+      display: block !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-desktop-logo.dark-logo {
+      display: none !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .main-navigation-ul > li.menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-search-trigger,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-shoping-cart-link i,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-header-cart-count,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-header-start-tour,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) #mk-header-social a i,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.menu-item > a.menu-item-link:hover,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.menu-item:hover > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.current-menu-ancestor > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-2 .main-navigation-ul > li.menu-item > a.menu-item-link:hover,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-2 .main-navigation-ul > li.menu-item:hover > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-2 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-vm-menuwrapper li a,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-vm-menuwrapper li > a:after,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-vm-menuwrapper li.mk-vm-back:after {
+      color: #fff !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-css-icon-menu div {
+      background-color: #fff !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.dropdownOpen > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.active > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.open > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.menu-item > a:hover,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.current-menu-ancestor > a.menu-item-link {
+      border-top-color: #fff;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.current-menu-ancestor > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li.current-menu-item > a,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li.current-menu-ancestor > a {
+      border: 2px solid #fff;
+      background-color: #fff;
+      color: #222 !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.menu-item > a.menu-item-link:hover,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.menu-item:hover > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li > a:hover,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li:hover > a {
+      border: 2px solid #fff;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-4 .main-navigation-ul li.menu-item > a.menu-item-link:hover,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-4 .main-navigation-ul li.menu-item:hover > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-4 .main-navigation-ul li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-5 .main-navigation-ul > li.menu-item > a.menu-item-link:after {
+      background-color: #fff;
+      color: #222 !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-desktop-logo.dark-logo {
+      display: block !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-desktop-logo.light-logo {
+      display: none !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .main-navigation-ul > li.menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-search-trigger,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-shoping-cart-link i,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-header-cart-count,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-header-start-tour,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) #mk-header-social a i,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul li.menu-item > a.menu-item-link:hover,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul li.menu-item:hover > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul li.current-menu-ancestor > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-2 .main-navigation-ul li.menu-item > a.menu-item-link:hover,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-2 .main-navigation-ul li.menu-item:hover > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-2 .main-navigation-ul li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-2 .main-navigation-ul li.current-menu-ancestor > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-vm-menuwrapper li a,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-vm-menuwrapper li > a:after,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-vm-menuwrapper li.mk-vm-back:after {
+      color: #222 !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.dropdownOpen > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.active > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.open > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.menu-item > a:hover,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.current-menu-ancestor > a.menu-item-link {
+      border-top-color: #222;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-css-icon-menu div {
+      background-color: #222 !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.current-menu-ancestor > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li.current-menu-item > a,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li.current-menu-ancestor > a {
+      border: 2px solid #222;
+      background-color: #222;
+      color: #fff !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.menu-item > a.menu-item-link:hover,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.menu-item:hover > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li > a:hover,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li:hover > a {
+      border: 2px solid #222;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-4 .main-navigation-ul li.menu-item > a.menu-item-link:hover,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-4 .main-navigation-ul li.menu-item:hover > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-4 .main-navigation-ul li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-4 .main-navigation-ul li.current-menu-ancestor > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-5 .main-navigation-ul > li.menu-item > a.menu-item-link:after {
+      background-color: #222;
+      color: #fff !important;
+    }
+  }
+
+  .comment-reply a,
+  .mk-toggle .mk-toggle-title.active-toggle:before,
+  .mk-testimonial-author,
+  .modern-style .mk-testimonial-company,
+  #wp-calendar td#today,
+  .news-full-without-image .news-categories span,
+  .news-half-without-image .news-categories span,
+  .news-fourth-without-image .news-categories span,
+  .mk-read-more,
+  .news-single-social li a,
+  .portfolio-widget-cats,
+  .portfolio-carousel-cats,
+  .blog-showcase-more,
+  .simple-style .mk-employee-item:hover .team-member-position,
+  .mk-readmore,
+  .about-author-name,
+  .mk-portfolio-classic-item .portfolio-categories a,
+  .register-login-links a:hover,
+  .not-found-subtitle,
+  .mk-mini-callout a,
+  .search-loop-meta a,
+  .new-tab-readmore,
+  .mk-news-tab .mk-tabs-tabs li.ui-tabs-active a,
+  .mk-tooltip a,
+  .mk-accordion-single.current .mk-accordion-tab i,
+  .monocolor.pricing-table .pricing-price span,
+  .quantity .plus:hover,
+  .quantity .minus:hover,
+  .mk-woo-tabs .mk-tabs-tabs li.ui-state-active a,
+  .product .add_to_cart_button i,
+  .blog-modern-comment:hover,
+  .blog-modern-share:hover,
+  {
+    color: #f97352;
+  }
+
+  .mk-tabs .mk-tabs-tabs li.ui-tabs-active a > i,
+  .mk-accordion .mk-accordion-single.current .mk-accordion-tab:before,
+  .mk-tweet-list a,
+  .widget_testimonials .testimonial-slider .testimonial-author,
+  #mk-filter-portfolio li a:hover,
+  #mk-language-navigation ul li a:hover,
+  #mk-language-navigation ul li.current-menu-item > a,
+  .mk-quick-contact-wrapper h4,
+  .divider-go-top:hover i,
+  .widget-sub-navigation ul li a:hover,
+  #mk-footer .widget_posts_lists ul li .post-list-meta time,
+  .mk-footer-tweets .tweet-username,
+  .product-category .item-holder:hover h4,
+  {
+    color: #f97352 !important;
+  }
+
+  .image-hover-overlay,
+  .newspaper-portfolio,
+  .similar-posts-wrapper .post-thumbnail:hover > .overlay-pattern,
+  .portfolio-logo-section,
+  .post-list-document .post-type-thumb:hover,
+  #cboxTitle,
+  #cboxPrevious,
+  #cboxNext,
+  #cboxClose,
+  .comment-form-button,
+  .mk-dropcaps.fancy-style,
+  .mk-image-overlay,
+  .pinterest-item-overlay,
+  .news-full-with-image .news-categories span,
+  .news-half-with-image .news-categories span,
+  .news-fourth-with-image .news-categories span,
+  .widget-portfolio-overlay,
+  .portfolio-carousel-overlay,
+  .blog-carousel-overlay,
+  .mk-classic-comments span,
+  .mk-similiar-overlay,
+  .mk-skin-button,
+  .mk-flex-caption .flex-desc span,
+  .mk-icon-box .mk-icon-wrapper i:hover,
+  .mk-quick-contact-link:hover,
+  .quick-contact-active.mk-quick-contact-link,
+  .mk-fancy-table th,
+  .ui-slider-handle,
+  .widget_price_filter .ui-slider-range,
+  .shop-skin-btn,
+  #review_form_wrapper input[type=submit],
+  #mk-nav-search-wrapper form .nav-side-search-icon:hover,
+  form.ajax-search-complete i,
+  .blog-modern-btn,
+  .showcase-blog-overlay,
+  .gform_button[type=submit],
+  .button.alt,
+  #respond #submit,
+  .woocommerce .price_slider_amount .button.button,
+  .mk-shopping-cart-box .mk-button.checkout,
+  .widget_shopping_cart .mk-button.checkout,
+  .widget_shopping_cart .mk-button.checkout {
+    background-color: #f97352 !important;
+  }
+
+  .mk-circle-image .item-holder {
+    -webkit-box-shadow: 0 0 0 1px #f97352;
+    -moz-box-shadow: 0 0 0 1px #f97352;
+    box-shadow: 0 0 0 1px #f97352;
+  }
+
+  .mk-blockquote.line-style,
+  .bypostauthor .comment-content,
+  .bypostauthor .comment-content:after,
+  .mk-tabs.simple-style .mk-tabs-tabs li.ui-tabs-active a {
+    border-color: #f97352 !important;
+  }
+
+  .news-full-with-image .news-categories span,
+  .news-half-with-image .news-categories span,
+  .news-fourth-with-image .news-categories span,
+  .mk-flex-caption .flex-desc span {
+    box-shadow: 8px 0 0 #f97352, -8px 0 0 #f97352;
+  }
+
+  .monocolor.pricing-table .pricing-cols .pricing-col.featured-plan {
+    border: 1px solid #f97352 !important;
+  }
+
+  .mk-skin-button.three-dimension {
+    box-shadow: 0px 3px 0px 0px #c75c42;
+  }
+
+  .mk-skin-button.three-dimension:active {
+    box-shadow: 0px 1px 0px 0px #c75c42;
+  }
+
+  .mk-footer-copyright,
+  #mk-footer-navigation li a {
+    color: #8c8e91;
+  }
+
+  .mk-woocommerce-main-image img:hover,
+  .mk-single-thumbnails img:hover {
+    border: 1px solid #f97352 !important;
+  }
+
+  .product-loading-icon {
+    background-color: rgba(249, 115, 82, 0.6);
+  }
+
+  .mk-dynamic-styles {
+    display: none
+  }
+</style>
+<link rel='stylesheet' id='js_composer_front-css' href='/css/js_composer.css' type='text/css' media='all'/>
+<script type='text/javascript' src='https://code.jquery.com/jquery-1.11.3.min.js'></script>
+<script type='text/javascript' src='https://code.jquery.com/jquery-migrate-1.2.1.min.js'></script>
+<style type="text/css">.recentcomments a {
+  display: inline !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}</style>
+
+
+    <meta property="og:site_name" content="TomeCast"/>
+    <meta property="og:image"
+          content="/img/covers/freakonomics-radio.jpg"/>
+    <meta property="og:url" content="/podcasts/freakonomics-radio/2014/02/13/why-marry-part-1.html"/>
+    <meta property="og:title" content="TomeCast Transcribed Podcast -  - Why Marry? (Part 1)"/>
+    <meta property="og:description"
+          content="Automatically Transcribed Podcast:  - Why Marry? (Part 1)"/>
+    <meta property="og:type" content="article"/>
+    <noscript>
+        <style>.wpb_animate_when_almost_visible {
+            opacity: 1;
+        }</style>
+    </noscript>
+</head>
+<body class="single single-post postid-591 single-format-standard  wpb-js-composer js-comp-ver-4.5.1 vc_responsive"
+      data-backText="Back" data-vm-anim="1">
+
+<div id="mk-boxed-layout">
+    <div id="mk-theme-container">
+        <header id="mk-header" data-height="130" data-hover-style="2" data-transparent-skin="" data-header-style="3" data-sticky-height="55" data-sticky-style="fixed" data-sticky-offset="header" class="header-style-3 header-align-left header-toolbar-false sticky-style-fixed  mk-background-stretch full-header ">
+  <div class="mk-header-holder">
+    <div class="mk-header-inner">
+      <div class="mk-header-bg "></div>
+      <div class="mk-dashboard-trigger header_dashboard_style">
+        <div class="mk-css-icon-menu icon-size-big">
+          <div class="mk-css-icon-menu-line-1"></div>
+          <div class="mk-css-icon-menu-line-2"></div>
+          <div class="mk-css-icon-menu-line-3"></div>
+        </div>
+      </div>
+      <div class="header-logo  ">
+        <a href="/" title="TomeCast - Homepage">
+          <img class="mk-desktop-logo dark-logo" alt="TomeCast - Homepage" src="/img/logo.png"/>
+        </a>
+      </div>
+      <div class="clearboth"></div>
+      <div class="mk-header-right">
+      </div>
+    </div>
+  </div>
+  <div class="clearboth"></div>
+  <div class="mk-header-padding-wrapper"></div>
+  <div class="clearboth"></div>
+  <div class="mk-zindex-fix">
+  </div>
+  <div class="clearboth"></div>
+</header>
+
+        <div id="theme-page">
+            <div class="mk-main-wrapper-holder">
+                <div class="theme-page-wrapper mk-blog-single full-layout vc_row-fluid mk-grid ">
+                    <div class="theme-content ">
+                        <article
+                                class=" post type-post status-publish format-standard has-post-thumbnail hentry category-articles category-business tag-audio tag-design">
+                            <div class="mk-audio-section mk-audio-shortcode" style="background-color:#acacac"><img
+                                    class="audio-thumb" alt="" title=""
+                                    src="/img/covers/freakonomics-radio.jpg" style="width:170px"/>
+
+                                <div id="jquery_jplayer" class="jp-jplayer mk-blog-audio"
+                                     data-mp3="http://feedproxy.google.com/~r/freakonomicsradio/~5/BddYlZIxxhU/freakonomics_podcast021314.mp3"
+                                     data-ogg=""></div>
+                                <div id="jp_container" class="jp-audio audio-has-img">
+                                    <div class="jp-type-single">
+                                        <div class="jp-gui jp-interface">
+                                            <div class="jp-time-holder">
+                                                <div class="jp-current-time"></div>
+                                                <div class="jp-duration"></div>
+                                            </div>
+                                            <div class="jp-progress">
+                                                <div class="jp-seek-bar">
+                                                    <div class="jp-play-bar"></div>
+                                                </div>
+                                            </div>
+                                            <div class="jp-volume-bar">
+                                                <i class="mk-moon-volume-mute"></i>
+
+                                                <div class="inner-value-adjust">
+                                                    <div class="jp-volume-bar-value"></div>
+                                                </div>
+                                            </div>
+                                            <ul class="jp-controls">
+                                                <li><a href="javascript:;" class="jp-play" tabindex="1"><i
+                                                        class="mk-icon-play"></i></a></li>
+                                                <li><a href="javascript:;" class="jp-pause" tabindex="1"><i
+                                                        class="mk-icon-pause"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="jp-no-solution">
+                                            <span>Update Required</span>
+                                            To play the media you will need to either update your browser to a recent
+                                            version or update your <a href="http://get.adobe.com/flashplayer/"
+                                                                      target="_blank">Flash plugin</a>.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearboth"></div>
+                            </div>
+                            <h2 class="blog-single-title">Why Marry? (Part 1)</h2>
+
+                            <div class="blog-single-meta">
+                                <div class="mk-blog-author"><a href="/podcasts/freakonomics-radio"
+                                                               title='Posts in ' rel="section"></a></div>
+                                <div class="mk-blog-author">By <a title='Posted By ' rel="author"></a>
+                                </div>
+                                <time class="mk-post-date" datetime="2014-02-13 00:00:00 +0000">
+                                    Posted on <a href="">2014-02-13</a>
+                                </time>
+                            </div>
+                            <div class="single-social-section">
+                                <div class="mk-love-holder">
+                                    <a href="#" class="mk-love-this " id="mk-love">
+                                        <i class="mk-icon-heart"><span>&nbsp;</span></i>
+                                        <span class="mk-love-count">2</span>
+                                    </a>
+                                </div>
+                                <a href="#comments" class="blog-modern-comment">
+                                    <i class="mk-moon-bubble-9"></i><span> 0</span>
+                                </a>
+                                <div class="blog-share-container">
+                                    <div class="blog-single-share mk-toggle-trigger"><i class="mk-moon-share-2"></i>
+                                    </div>
+                                    <ul class="single-share-box mk-box-to-trigger">
+                                        <li><a class="facebook-share" data-title="Check out this Podcast:  - "
+    data-url=""
+    href=""><i
+            class="mk-jupiter-icon-simple-facebook"></i></a></li>
+<li><a class="twitter-share" data-title="Check out this Podcast:  - "
+    data-url=""
+    href="#"><i
+            class="mk-moon-twitter"></i></a></li>
+<li><a class="googleplus-share" data-title="Check out this Podcast:  - "
+    data-url=""
+    href=""><i
+            class="mk-jupiter-icon-simple-googleplus"></i></a></li>
+<li><a class="pinterest-share"
+       data-image="/img/covers/.jpg"
+       data-title="Check out this Podcast:  - "
+    data-url=""
+    href=""><i
+            class="mk-jupiter-icon-simple-pinterest"></i></a></li>
+<li><a class="linkedin-share"
+       data-desc=""
+       data-title="Check out this Podcast:  - "
+    data-url=""
+    href=""><i
+            class="mk-jupiter-icon-simple-linkedin"></i></a></li>
+
+                                    </ul>
+                                </div>
+                                <a class="mk-blog-print" onClick="window.print()"
+                                   href="#" title="Print"><i
+                                        class="mk-moon-print-3"></i></a>
+
+                                <div class="clearboth"></div>
+                            </div>
+                            <div class="clearboth"></div>
+                            <div class="mk-single-content" itemprop="mainContentOfPage">
+                                <div class="wpb_row vc_row  vc_row-fluid  mk-fullwidth-false  attched-false vc_row-fluid">
+                                    <div style="" class="vc_col-sm-12 wpb_column column_container ">
+                                        <div class="clearboth"></div>
+                                        <div class="mk-shortcode mk-padding-shortcode" style="height:40px"></div>
+                                        <div class="clearboth"></div>
+                                        <span id="drop-caps-555772840bc14"
+                                              class="mk-dropcaps mk-shortcode fancy-style ">D</span>
+
+                                        <div id="ajax-555772840bc14" class="mk-dynamic-styles"></div>
+                                        <div style=" margin-bottom:0px;text-align: left;" class="mk-text-block  "><p
+                                                style="text-align: justify;"><span style="color: #33cccc;"><strong>Duis
+                                            viverra</strong></span>
+
+
+                                        </p>
+
+                                            <div class="clearboth"></div>
+                                        </div>
+                                        <div style="font-size: 18px;" id="blockquote-555772840c9ac"
+                                             class="mk-shortcode mk-blockquote quote-style ">
+                                            <p>The myths of modern marriage.</p>
+                                        </div>
+                                        <div class="clearboth"></div>
+                                        <div class="mk-shortcode mk-padding-shortcode" style="height:20px"></div>
+                                        <div class="clearboth"></div>
+                                        <div style=" margin-bottom:0px;text-align: left;" class="mk-text-block  ">
+                                            <p>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S0"
+                                                      data-timestamp="0.0"
+                                                      data-length=""
+                                                      data-uuid="4ebcbb71-6964-4ed9-be91-4ba5884b578a"
+                                                      data-confidence="0.8623143">
+                                                    freakonomics radio is supported by brain tree green trees new b dot OSDK makes it easy to support multiple mobile payment types with one simple integration to learn more and try another sandbox go to brain treepayments.com slash freak
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S0"
+                                                      data-timestamp="26.24"
+                                                      data-length=""
+                                                      data-uuid="f6d8e313-fd16-4382-a600-7fbcebb2165c"
+                                                      data-confidence="0.8493859">
+                                                    or is it sometimes called
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S0"
+                                                      data-timestamp="30.07"
+                                                      data-length=""
+                                                      data-uuid="3eaa256b-9dff-4bee-b845-9387efa973ba"
+                                                      data-confidence="0.8203972">
+                                                    is what brings us together today
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S0"
+                                                      data-timestamp="34.19"
+                                                      data-length=""
+                                                      data-uuid="10e186e3-d258-430c-80e4-02798733caf4"
+                                                      data-confidence="0.7800439">
+                                                    it is an institution unlike any other in human history when can imagine there are countless reasons why to people with mary we asked some people in new york city atlanta minneapolis in san francisco white they got married or why they want to get married
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S10"
+                                                      data-timestamp="49.58"
+                                                      data-length=""
+                                                      data-uuid="0ec3d49c-78b9-4f01-bd04-fde60206f771"
+                                                      data-confidence="0.6156714">
+                                                    we get married because we love each other do you have a family to patty continue with theut addition greatest liberated
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S13"
+                                                      data-timestamp="56.75"
+                                                      data-length=""
+                                                      data-uuid="58f49b51-55aa-47df-b26e-2cbceb436d57"
+                                                      data-confidence="0.6001887">
+                                                    there's a whole world out there that can marry people there
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S10"
+                                                      data-timestamp="62.11"
+                                                      data-length=""
+                                                      data-uuid="53275593-e61f-4cac-8914-ec003bb245be"
+                                                      data-confidence="0.7458988">
+                                                    to be happy and being part of community part of a household part of a marriage I think it is just the right thing to do
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S12"
+                                                      data-timestamp="76.72"
+                                                      data-length=""
+                                                      data-uuid="1f9d1de0-f8c4-4434-943b-1e8d85e53074"
+                                                      data-confidence="0.6649656">
+                                                    when I got married I bring any better I think it was when I was supposed to do you think I haven't read it yet
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S12"
+                                                      data-timestamp="84.58"
+                                                      data-length=""
+                                                      data-uuid="62780983-9d1e-4a18-9a8b-ec512a72b67f"
+                                                      data-confidence="0.5150104">
+                                                    in india it is a social take to get
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S13"
+                                                      data-timestamp="86.91"
+                                                      data-length=""
+                                                      data-uuid="dddb3c81-befb-4297-a7a2-42a42dc5885c"
+                                                      data-confidence="0.4446373">
+                                                    maritime catholic store
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S10"
+                                                      data-timestamp="91.62"
+                                                      data-length=""
+                                                      data-uuid="970abf08-926f-45bf-829d-9f685e86bcc1"
+                                                      data-confidence="0.8117509">
+                                                    I guess I don't really see why we get married that was the right thing to do to raise a family I thought
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S15"
+                                                      data-timestamp="97.79"
+                                                      data-length=""
+                                                      data-uuid="fee449cf-27d1-40ca-9dee-ed318853d9ef"
+                                                      data-confidence="0.4973112">
+                                                    the big pot of assessing the minnetrista area
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S16"
+                                                      data-timestamp="104.49"
+                                                      data-length=""
+                                                      data-uuid="c3405fe5-891e-4ff1-9720-ebea5693b888"
+                                                      data-confidence="0.3977891">
+                                                    chubby that was expiring
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S16"
+                                                      data-timestamp="106.78"
+                                                      data-length=""
+                                                      data-uuid="9da3fb9b-b973-4f75-acd1-fabe5ddb0203"
+                                                      data-confidence="0.6985217">
+                                                    and so if either pay for him to go out of the country to get a new visa or we could get married
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S10"
+                                                      data-timestamp="113.43"
+                                                      data-length=""
+                                                      data-uuid="cb384f2a-9e8d-451f-b13d-d1a86c8902bc"
+                                                      data-confidence="0.6140133">
+                                                    are you in love with him she got pregnant and it's in like 3 things
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S13"
+                                                      data-timestamp="117.52"
+                                                      data-length=""
+                                                      data-uuid="571914d7-a04c-4d9a-b90d-85badfa77272"
+                                                      data-confidence="0.401789">
+                                                    they would win in girl
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S13"
+                                                      data-timestamp="119.32"
+                                                      data-length=""
+                                                      data-uuid="15f987e1-b2c3-4d07-8678-2ee26008cdf6"
+                                                      data-confidence="0.5033751">
+                                                    not exactly green card but it was a fish ladder bakabon I pretty
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S10"
+                                                      data-timestamp="123.08"
+                                                      data-length=""
+                                                      data-uuid="d4521ddd-8671-4d12-a9dd-0540b2c55db3"
+                                                      data-confidence="0.6162131">
+                                                    from broken families that we are starting to term and dad not to repeat the same mistake thought our parents made
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S10"
+                                                      data-timestamp="128.64"
+                                                      data-length=""
+                                                      data-uuid="b3db87b6-dd60-4108-b71b-9f49ee33b418"
+                                                      data-confidence="0.6753466">
+                                                    is it true for check from la and I liked it we just finally decided it was easier
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S20"
+                                                      data-timestamp="134.49"
+                                                      data-length=""
+                                                      data-uuid="5fba3a47-8103-4257-b618-06cb61e67b34"
+                                                      data-confidence="0.5661802">
+                                                    why should I wear
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S20"
+                                                      data-timestamp="137.24"
+                                                      data-length=""
+                                                      data-uuid="b8d79c00-2828-403f-905c-3daf7730af57"
+                                                      data-confidence="0.4872473">
+                                                    yikes that's my mom asked me what time
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="143.87"
+                                                      data-length=""
+                                                      data-uuid="2c3a0a07-9619-4ef0-b5c1-e5998cfb7ec5"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S22"
+                                                      data-timestamp="152.08"
+                                                      data-length=""
+                                                      data-uuid="74b51810-ce73-474e-b690-cac2720f65b7"
+                                                      data-confidence="0.6617318">
+                                                    from wmic this is freakonomics radio podcast explored the inside of everything
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S22"
+                                                      data-timestamp="159.96"
+                                                      data-length=""
+                                                      data-uuid="cd10904a-b58d-4522-94f6-7e7b473c2faa"
+                                                      data-confidence="0.3668518">
+                                                    here's your host stephen dubner
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="167.47"
+                                                      data-length=""
+                                                      data-uuid="ad34041a-aafe-4dc6-8f74-10e36952c778"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S0"
+                                                      data-timestamp="173.05"
+                                                      data-length=""
+                                                      data-uuid="fa08547c-0519-48a2-bbdc-7bb8c2577597"
+                                                      data-confidence="0.6970583">
+                                                    today's program for talking about institutions that americans in patea
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S27"
+                                                      data-timestamp="177.13"
+                                                      data-length=""
+                                                      data-uuid="501342ae-1e3f-4ddd-9b11-84d3c8735721"
+                                                      data-confidence="0.468413">
+                                                    killer love americans live match with justin wolf
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S0"
+                                                      data-timestamp="182.74"
+                                                      data-length=""
+                                                      data-uuid="e0e99abf-50c4-44a3-9d85-7db03df7cdae"
+                                                      data-confidence="0.7001755">
+                                                    he's an economist at the university of michigan in the brookings institution wolfir says that american special when you compare them to canadian french germans italians the british and swedes specially the sweet compared to all of them both for sale
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S27"
+                                                      data-timestamp="198.99"
+                                                      data-length=""
+                                                      data-uuid="53e900e7-f1f4-4c76-a3a2-0dbcdf47493d"
+                                                      data-confidence="0.617319">
+                                                    american hey mary rlia hey mary more often and more than get married
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S27"
+                                                      data-timestamp="207.3"
+                                                      data-length=""
+                                                      data-uuid="b6261a37-face-4d3a-9693-1686e1196744"
+                                                      data-confidence="0.7423682">
+                                                    does this mean marriage is more popular than ever in united states it most definitely does not get into that later for now let me know that wolfersheim self is importantly not technically least it
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S0"
+                                                      data-timestamp="222.57"
+                                                      data-length=""
+                                                      data-uuid="9c593e75-6970-4c52-94a9-0f06a6c9c1b3"
+                                                      data-confidence="0.5498892">
+                                                    could be my sensualist ralian is coming to visit quite seriously many other countries 3 competing St new message to attach and it's a huge competitive american countries like sweden and increasingly in australias will meet my high school friends
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S27"
+                                                      data-timestamp="237.52"
+                                                      data-length=""
+                                                      data-uuid="1b69ec92-399f-4402-90f2-e846d539e2ad"
+                                                      data-confidence="0.5523379">
+                                                    I don't formally married I'm playing leave as husband and wife
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S0"
+                                                      data-timestamp="244.39"
+                                                      data-length=""
+                                                      data-uuid="10c60f58-3355-4731-b788-2a56eed67ab6"
+                                                      data-confidence="0.6831977">
+                                                    the movers in australian slippermen years in us is one of those cohabitators with children the person he cohabits with happens also be in the comus betty stevenson who is currently serving on president obama's council of economic advisers so I'm at pt was in graduate school com
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S0"
+                                                      data-timestamp="262.8"
+                                                      data-length=""
+                                                      data-uuid="6e217bbf-656d-4ffd-92f8-9182a2738114"
+                                                      data-confidence="0.5818592">
+                                                    you know it's very standard thing avanzini coming to see the cute girl across the room at the labor economics eminem tell me mini great relationship so <profanity>pissed</profanity> when I got up in all the great romantic novel yup exactly
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S134"
+                                                      data-timestamp="275.12"
+                                                      data-length=""
+                                                      data-uuid="ac2d4012-fca1-463a-ad9f-e72ea89339e8"
+                                                      data-confidence="0.6419314">
+                                                    and that lady that week with halloween does a halloween party so I bought a 6 pack of newcastle brown which I am at the time to the big chunk of my student budget mandam this
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S134"
+                                                      data-timestamp="286.62"
+                                                      data-length=""
+                                                      data-uuid="4be56685-7472-45bf-a64d-8196777ac432"
+                                                      data-confidence="0.5760562">
+                                                    read the brazen last payment of one of them I'm in shaka comma sation an unusually contest which sits anyone's blood
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S0"
+                                                      data-timestamp="296.74"
+                                                      data-length=""
+                                                      data-uuid="5b62f8a4-3416-40d0-976c-0394961e6cb3"
+                                                      data-confidence="0.7444018">
+                                                    I said yes and what did what was it like for us
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S0"
+                                                      data-timestamp="302.3"
+                                                      data-length=""
+                                                      data-uuid="df24e038-19a7-48ab-91ce-eba3fb9e8a06"
+                                                      data-confidence="0.7702161">
+                                                    man in the modern era to be um courting a woman who you knew would be at least your
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S134"
+                                                      data-timestamp="311.49"
+                                                      data-length=""
+                                                      data-uuid="a836cc34-b0a1-4d72-9e17-a526c61fe1c9"
+                                                      data-confidence="0.4570346">
+                                                    equal professionally young boy it's messing of dead kids
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S134"
+                                                      data-timestamp="318.17"
+                                                      data-length=""
+                                                      data-uuid="8bfc3021-107c-42db-a93c-d99ff6e50125"
+                                                      data-confidence="0.6053301">
+                                                    I get to see <profanity>bitches</profanity> paycheck every couple weeks
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S134"
+                                                      data-timestamp="321.76"
+                                                      data-length=""
+                                                      data-uuid="f1d3c619-08e3-4978-b2e9-e23b709a1de0"
+                                                      data-confidence="0.5838279">
+                                                    and I could've had a 1950s partnership with some of the last thing she would have a very different paycheck I'm sudice choice pays off so your total mercer you just sold yourself to the highest bidder essentially sounds like dustin will do in city
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S134"
+                                                      data-timestamp="339.05"
+                                                      data-length=""
+                                                      data-uuid="f25e0cf3-8355-4393-8ad7-1596d4efe73d"
+                                                      data-confidence="0.7039102">
+                                                    its just when we made it in the currency which we counted now I know the
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S0"
+                                                      data-timestamp="343.52"
+                                                      data-length=""
+                                                      data-uuid="f7dc12d2-958f-4ac0-9c42-af1f494210ff"
+                                                      data-confidence="0.8668194">
+                                                    you're not not serious but I also know that that you were thinking beyond the amount that she would contribute financially to your household bottom line
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S134"
+                                                      data-timestamp="352.63"
+                                                      data-length=""
+                                                      data-uuid="6faee066-cc6f-45db-9ad5-50c0d1fa0fec"
+                                                      data-confidence="0.6345012">
+                                                    aming what was it should be fascinating ok what did you love about are on this family show me since day so can we have a we have a great blue
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S52"
+                                                      data-timestamp="364.35"
+                                                      data-length=""
+                                                      data-uuid="ef6d35d4-01c6-4d0b-8849-a28dcbf22ca0"
+                                                      data-confidence="0.6624754">
+                                                    but in here don't graduate school in economics incredibly intense experience I know it's in strange to say but its it's its transformation all intents intents experience item and we can share with me you understood what I was going through hoops had great nights by the way that I can stay here
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S52"
+                                                      data-timestamp="384.2"
+                                                      data-length=""
+                                                      data-uuid="a2106df4-4bb4-40ec-844e-81734780b1d0"
+                                                      data-confidence="0.5464141">
+                                                    adam and we can talk about our passions
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S54"
+                                                      data-timestamp="389.52"
+                                                      data-length=""
+                                                      data-uuid="6a55615b-d8c4-4d4b-a4e5-203b5f4a9a2a"
+                                                      data-confidence="0.6488477">
+                                                    now we could talk about there passing this according to wolfers is one of the big changes in marriage
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S55"
+                                                      data-timestamp="399.33"
+                                                      data-length=""
+                                                      data-uuid="2b95f152-4e47-46b8-86af-e553c40d5b21"
+                                                      data-confidence="0.7284386">
+                                                    think about all the reasons that people have historically mary out of love sure but also in order to have children together in order to have sex together people married to fulfill a religious impulsora traditional impulse maybe a financial temples
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S175"
+                                                      data-timestamp="418.52"
+                                                      data-length=""
+                                                      data-uuid="9c03e788-fec7-4503-93ef-c13045e5f5ed"
+                                                      data-confidence="0.6135635">
+                                                    search hughes the story I tell um can I see if you can we chill my
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S175"
+                                                      data-timestamp="423.05"
+                                                      data-length=""
+                                                      data-uuid="943aee13-6c34-45fb-a959-9f6784215d74"
+                                                      data-confidence="0.3526971">
+                                                    potna until sopoti stevenson until
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S175"
+                                                      data-timestamp="426.24"
+                                                      data-length=""
+                                                      data-uuid="2df61c74-c83f-447d-87f5-76c412f88dc3"
+                                                      data-confidence="0.6848837">
+                                                    it was a model a marriage that we will be leaving in the 1950s
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S175"
+                                                      data-timestamp="429.88"
+                                                      data-length=""
+                                                      data-uuid="31854277-74e1-4e08-a0f5-be968c28a795"
+                                                      data-confidence="0.4066611">
+                                                    um we short on am leaving today
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S60"
+                                                      data-timestamp="432.91"
+                                                      data-length=""
+                                                      data-uuid="94c6e316-325c-4688-b230-1fbe20eca55e"
+                                                      data-confidence="0.6066665">
+                                                    start of prussia know I guess so you know it's a woman's place is in the home and now I suppose as long as she's in the home she might as well be in ketchup
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S134"
+                                                      data-timestamp="443.06"
+                                                      data-length=""
+                                                      data-uuid="71226355-d941-43df-bda2-e48115e1cb7f"
+                                                      data-confidence="0.6284673">
+                                                    this is the stala marriage that I'm carryback it says that god is the god of marriage is for like at a factory
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S134"
+                                                      data-timestamp="449.5"
+                                                      data-length=""
+                                                      data-uuid="1f4541e4-2e71-4953-830f-315a75feb6e7"
+                                                      data-confidence="0.707243">
+                                                    I'm in this point you get married because she can do more to get it and you can a pot and it's just like in a smith contract rate the way you do more together is my special lighting
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S134"
+                                                      data-timestamp="458.75"
+                                                      data-length=""
+                                                      data-uuid="0ea5ab5f-df8c-4829-bfb7-bb8a48c815ea"
+                                                      data-confidence="0.5882294">
+                                                    specialisations dad would be on within the market mom would stay at home and do the enormously complex pot of running a household in shuddhi will be good at it chris cutler practice be much better than that and as a result the pod bay get about the samarjit productive and make mom and dad both better off
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S68"
+                                                      data-timestamp="475.72"
+                                                      data-length=""
+                                                      data-uuid="bd158389-075d-41d2-aeb2-d2bd7436976f"
+                                                      data-confidence="0.7175692">
+                                                    boo boo boo
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S0"
+                                                      data-timestamp="479.66"
+                                                      data-length=""
+                                                      data-uuid="fe46748f-e968-4c34-9543-c2a67d569e94"
+                                                      data-confidence="0.6309097">
+                                                    bing to marriage used to create an economist speak productive complementarities bassmint let a man the ceo of the household wanted to spell super do the things you didn't do much did we can both running out so
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S0"
+                                                      data-timestamp="494.72"
+                                                      data-length=""
+                                                      data-uuid="305add6c-7ddd-425f-b6f7-e0b81d0f1a59"
+                                                      data-confidence="0.8231849">
+                                                    but as we all know what is changed in the past few decades specially for women that are birth control more labor saving devices in the home
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S0"
+                                                      data-timestamp="503.23"
+                                                      data-length=""
+                                                      data-uuid="7f626c11-9ce7-4306-9a21-dce275126c8a"
+                                                      data-confidence="0.7686824">
+                                                    and a lot more work outside the home so the share of married women who are employed has risen from 6% in 1930 percent in 1960 nearly 70% with me to put a condom so cool consumption complementarities we have more time more money
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S0"
+                                                      data-timestamp="520.96"
+                                                      data-length=""
+                                                      data-uuid="bc93b8ec-2816-4d95-9149-2175dfd491fc"
+                                                      data-confidence="0.7042011">
+                                                    do you wanna spend it with someone you enjoy system with my interests and passions
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S0"
+                                                      data-timestamp="525.55"
+                                                      data-length=""
+                                                      data-uuid="3a7bbcab-b34c-4a3a-8192-a04d0b597f8d"
+                                                      data-confidence="0.609474">
+                                                    week old is the model to danick marriage but really to let my million at this is just gonna miss giving a job in 9 to love to go to monicas remarkably similar to you had similar passions need to find a milli changes who married too but that's not the only change it produces insulin
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S0"
+                                                      data-timestamp="543.16"
+                                                      data-length=""
+                                                      data-uuid="017174fa-25ec-40e6-85e6-f69fe93bfb00"
+                                                      data-confidence="0.6579907">
+                                                    the question is why did anyone get married anymore if these productive complementarism going away
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S0"
+                                                      data-timestamp="559.87"
+                                                      data-length=""
+                                                      data-uuid="1aab011a-3444-4a31-8734-dfe4d690cd28"
+                                                      data-confidence="0.691546">
+                                                    so why opt for us
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S0"
+                                                      data-timestamp="561.85"
+                                                      data-length=""
+                                                      data-uuid="2673fc2a-3f03-4fd0-a7f3-66d69af63c0b"
+                                                      data-confidence="0.7812114">
+                                                    30 or 40 or 50 year monogamist partnership the one reason is the belief that marriage makes us happy we hear that a lot of married people are on average
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S0"
+                                                      data-timestamp="573.52"
+                                                      data-length=""
+                                                      data-uuid="08988d42-74bf-4c84-b3c1-1311513289b0"
+                                                      data-confidence="0.3537696">
+                                                    happier than the non mehring's that true
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S134"
+                                                      data-timestamp="578.21"
+                                                      data-length=""
+                                                      data-uuid="e77961f7-296b-494f-b524-27676b9455a2"
+                                                      data-confidence="0.5307361">
+                                                    most people get this room done it turns out
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S88"
+                                                      data-timestamp="582.06"
+                                                      data-length=""
+                                                      data-uuid="b2832ffa-cf0a-41da-ac0f-d988c815d0a2"
+                                                      data-confidence="0.6594279">
+                                                    at any point on the people who are married are happy to be better not married people in 15 at oh boy marriage must make you happy but do you like my sense um reverse causation if you're grumpy who the hell wants to match
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S88"
+                                                      data-timestamp="597.85"
+                                                      data-length=""
+                                                      data-uuid="d4ee4d33-8e11-49e5-b16d-f396cd79b920"
+                                                      data-confidence="0.6012903">
+                                                    incidences selection affects when you streaming porn cousin and selection affects the people who are married I selected dinner and get the population of something up call to mossen statisticians the little time
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S88"
+                                                      data-timestamp="610.63"
+                                                      data-length=""
+                                                      data-uuid="44fc900c-393a-4fa8-bbd5-8e7f427df813"
+                                                      data-confidence="0.6962118">
+                                                    in so it seems to me to be completely obvious that the grumpy bing how to employ
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S88"
+                                                      data-timestamp="616.7"
+                                                      data-length=""
+                                                      data-uuid="6b5c3d08-ceb0-4c4c-b90b-ab5be408a040"
+                                                      data-confidence="0.5523784">
+                                                    I'm the <profanity>ass</profanity> a selfish good ol be far less likely to be marriageable annapolis black american old is amy if he said merry people look better on almost every major life expectancy is well the healthier
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S88"
+                                                      data-timestamp="631.28"
+                                                      data-length=""
+                                                      data-uuid="6d82cd9f-9b3e-46e2-b3c1-7221df5f4211"
+                                                      data-confidence="0.6386192">
+                                                    I'm in not married people breaking my shoulder is his spouse is looking for happy healthy and functional people
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S104"
+                                                      data-timestamp="649.45"
+                                                      data-length=""
+                                                      data-uuid="ceb11260-e044-46fa-8320-fe45f9443ad1"
+                                                      data-confidence="0.7588466">
+                                                    ok that makes sense happy healthy functional people are more likely to get married which makes it seem as if marriage itself is responsible for maybe not but if he's happy healthy functional people amering each other
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S104"
+                                                      data-timestamp="668.91"
+                                                      data-length=""
+                                                      data-uuid="274b4893-c005-48d8-a530-4a649bf3d6ed"
+                                                      data-confidence="0.8339238">
+                                                    for years we've all heard that half of all marriages end in divorce
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S104"
+                                                      data-timestamp="676.16"
+                                                      data-length=""
+                                                      data-uuid="66157c34-cceb-4591-82a9-c5adea48e3fe"
+                                                      data-confidence="0.706543">
+                                                    coming up on freakonomics radio we find out I cannot tell you is not a week goes by when I don't wait in the major newspaper
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S104"
+                                                      data-timestamp="684.02"
+                                                      data-length=""
+                                                      data-uuid="ce2320b6-4741-42f1-aa97-bad6d3e20100"
+                                                      data-confidence="0.6226529">
+                                                    in a period of rising divorce with got to do something
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S105"
+                                                      data-timestamp="688.92"
+                                                      data-length=""
+                                                      data-uuid="802c17af-e739-49eb-bda2-8bb91b0bf6c1"
+                                                      data-confidence="0.6633439">
+                                                    how is marriage doing overall I wouldn't say all that marriage is still the institution that is one squad
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S107"
+                                                      data-timestamp="705.97"
+                                                      data-length=""
+                                                      data-uuid="31b61124-61df-4b52-bd8a-8193d2a8235d"
+                                                      data-confidence="0.7444372">
+                                                    you enjoy being with that one person
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S107"
+                                                      data-timestamp="708.23"
+                                                      data-length=""
+                                                      data-uuid="ccc41789-3800-4f59-8609-fc8b33dcbbac"
+                                                      data-confidence="0.8250366">
+                                                    and you don't have to worry about it date
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S107"
+                                                      data-timestamp="711.2"
+                                                      data-length=""
+                                                      data-uuid="ab6077f1-4d42-486a-a4c9-5b9c96c0a191"
+                                                      data-confidence="0.6880393">
+                                                    I would like to get married think it's kind of ridiculous sometimes I
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S109"
+                                                      data-timestamp="714.72"
+                                                      data-length=""
+                                                      data-uuid="a2355d8d-1a13-4f4e-a7bb-208fcd890446"
+                                                      data-confidence="0.7836064">
+                                                    I feel like I should get married I don't think I should get married
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="730.17"
+                                                      data-length=""
+                                                      data-uuid="5eefcda6-80b6-480e-b5c0-42cdd5c38072"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S0"
+                                                      data-timestamp="732.53"
+                                                      data-length=""
+                                                      data-uuid="752d4209-aa31-4f59-8d7a-63886bbeb076"
+                                                      data-confidence="0.8534984">
+                                                    freakonomics radio is supported by citrix go to meeting designed to be a fast and simple way to meet and collaborate with clients and coworkers online
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S0"
+                                                      data-timestamp="741.46"
+                                                      data-length=""
+                                                      data-uuid="12ce39a2-18d0-44c7-a94d-c820f33fda46"
+                                                      data-confidence="0.7975612">
+                                                    go to meeting with users share screens change presenters
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S0"
+                                                      data-timestamp="745.12"
+                                                      data-length=""
+                                                      data-uuid="3de5ea2c-ddbc-4568-9cb4-8f4e4903aaca"
+                                                      data-confidence="0.8651657">
+                                                    and turn on their webcams for high definition video conferencing go to meeting allows teams to stay connected from wherever they are at anytime using any computer mobile or tablet music go to meeting.com and click on that riot free button for a free 30 day trial
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S115"
+                                                      data-timestamp="763.34"
+                                                      data-length=""
+                                                      data-uuid="eed8ace6-a3a5-4f82-a33e-408ecafd18fa"
+                                                      data-confidence="0.7702335">
+                                                    from wmic this is freakonomics radio here's your host stephen dubner
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S116"
+                                                      data-timestamp="775.6"
+                                                      data-length=""
+                                                      data-uuid="cb060077-00fa-449d-9a00-a4909d60cdc2"
+                                                      data-confidence="0.7468108">
+                                                    today show were talking about marriage and we are asking with so many changes to society in the past sentry are so why people still marry after all we've heard for years that
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S116"
+                                                      data-timestamp="787.35"
+                                                      data-length=""
+                                                      data-uuid="516e8026-09ad-4623-b0b1-ac9f166d7892"
+                                                      data-confidence="0.8387481">
+                                                    of all marriages end in divorce
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S107"
+                                                      data-timestamp="791.34"
+                                                      data-length=""
+                                                      data-uuid="f3993e84-2a80-4578-bddf-a298beb4b7e0"
+                                                      data-confidence="0.5112317">
+                                                    does a divorce without it currently is like so high I'm divorced
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S107"
+                                                      data-timestamp="796.3"
+                                                      data-length=""
+                                                      data-uuid="88d5db42-ce27-4780-b980-66eeaff7bbeb"
+                                                      data-confidence="0.6410349">
+                                                    do I wanna get mad again now I think the voice is really scary and with how common it is he says
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S119"
+                                                      data-timestamp="802.78"
+                                                      data-length=""
+                                                      data-uuid="830dafd6-a2d4-4d38-9d08-a889fcf2d17e"
+                                                      data-confidence="0.7429938">
+                                                    is it true that divorce is so frightfully commons today
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S119"
+                                                      data-timestamp="809.17"
+                                                      data-length=""
+                                                      data-uuid="d5adc789-4bbc-4acd-9473-cf907640c53e"
+                                                      data-confidence="0.1054842">
+                                                    kohls
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S119"
+                                                      data-timestamp="811.18"
+                                                      data-length=""
+                                                      data-uuid="ab6b92e2-81e5-4ca0-b965-45b45921061c"
+                                                      data-confidence="0.5240167">
+                                                    back to much to be here about the boss is false
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S119"
+                                                      data-timestamp="814.68"
+                                                      data-length=""
+                                                      data-uuid="ba214f59-1360-4f07-b58b-f779508a5ea3"
+                                                      data-confidence="0.5064818">
+                                                    but economists justin mobile
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S119"
+                                                      data-timestamp="816.61"
+                                                      data-length=""
+                                                      data-uuid="7311da4b-e96b-40ec-8b28-3f3b89a04216"
+                                                      data-confidence="0.6786743">
+                                                    I cannot tell you this not a week goes by when I don't read in the major newspaper
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S119"
+                                                      data-timestamp="821.1"
+                                                      data-length=""
+                                                      data-uuid="6c06717e-1be3-4717-9a94-938059f7c15c"
+                                                      data-confidence="0.5585044">
+                                                    fat in a period of rising divorce with got to do something
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S119"
+                                                      data-timestamp="825.28"
+                                                      data-length=""
+                                                      data-uuid="921415cb-11d7-4e61-bfc5-54c43bd4f674"
+                                                      data-confidence="0.4208907">
+                                                    guess what divorce bing falling for 30 minutes
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S119"
+                                                      data-timestamp="830.14"
+                                                      data-length=""
+                                                      data-uuid="a740d0da-1b86-40e3-86a3-6f54ca511b97"
+                                                      data-confidence="0.6521878">
+                                                    bridge to take me to 1979 to 1981 depending on how you wanna count it for each and every year since
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S119"
+                                                      data-timestamp="837.39"
+                                                      data-length=""
+                                                      data-uuid="cefc642f-fb76-4040-b06e-8c4e5c3b6464"
+                                                      data-confidence="0.6903011">
+                                                    we live in a period of more stable divorces in appearance that's right the rate of divorce is lower in the us today then it been since 1970 now why is that to the great and terrible thing social sciences the other woman <profanity>fucking</profanity>
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S134"
+                                                      data-timestamp="851.8"
+                                                      data-length=""
+                                                      data-uuid="c2737ba5-8b08-4ba6-811a-5158556c9f4c"
+                                                      data-confidence="0.5000731">
+                                                    post re shop liquid like 16 elections guess what what about the stuff changed her late 60s and early 70s not meet every social scientist favourite will insist you to keep them is matured women in the workplace a tv while drunk morning masculinity tv crime around
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S134"
+                                                      data-timestamp="869.46"
+                                                      data-length=""
+                                                      data-uuid="0cfe59d9-3d5a-4cd7-9015-9d26dafa451e"
+                                                      data-confidence="0.4827428">
+                                                    the last concert of social values dot changing boys um abba music from daniel
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S104"
+                                                      data-timestamp="888.05"
+                                                      data-length=""
+                                                      data-uuid="9ddfee73-05f8-4531-ad8b-40e1c7b2bdf0"
+                                                      data-confidence="0.6235603">
+                                                    adjustable for some really have an answer to why divorce through so much in the 1960s and 70s but I don't think he knows why it's fallen since then I think
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S134"
+                                                      data-timestamp="897.78"
+                                                      data-length=""
+                                                      data-uuid="ef0b0f7c-b2e6-411b-943e-5de8c1993765"
+                                                      data-confidence="0.485992">
+                                                    primary driver is the loadable straight
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S134"
+                                                      data-timestamp="900.38"
+                                                      data-length=""
+                                                      data-uuid="4e045113-1344-463a-87c4-fe30ae7a8f1e"
+                                                      data-confidence="0.6558313">
+                                                    is my generation contact with people with whom they hatch an interesting fact
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S134"
+                                                      data-timestamp="906.11"
+                                                      data-length=""
+                                                      data-uuid="64c130e3-fd79-461a-8b5e-0cb1b4a9d5c9"
+                                                      data-confidence="0.7321282">
+                                                    telepad with the right people for the style of marriage by end up living in
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S134"
+                                                      data-timestamp="910.41"
+                                                      data-length=""
+                                                      data-uuid="03832855-5398-4b4b-ad22-9d7dd6e85481"
+                                                      data-confidence="0.6126768">
+                                                    I'm so it's not just that we love apartments but we could choose a partner who is compatible with the way we're actually going to dallas it was my mother's generation he got stuck with labeled the wrong partner in like 10 different
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S0"
+                                                      data-timestamp="922.73"
+                                                      data-length=""
+                                                      data-uuid="3949d213-5470-402a-a057-ecfa8ba45eba"
+                                                      data-confidence="0.7593126">
+                                                    pardon my interruption in my personal question but did shelly assuming that your parents got divorced my parents got divorced by my parents are a part of this bike in the voice and that's because your mother
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S0"
+                                                      data-timestamp="933.61"
+                                                      data-length=""
+                                                      data-uuid="3dc88d08-4fbd-484a-b477-7e7a04ff7842"
+                                                      data-confidence="0.7034862">
+                                                    was married in an era where did her opportunies we just emerging but they hadn't been evident to her at the time of her toys are maybe they would've been sacked socially acceptable even at the time of her choice she put you behind machorro may be a teacher sometimes at my mothers no not gonna
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="949.37"
+                                                      data-length=""
+                                                      data-uuid="7d9d7ced-7b11-4ca2-baf1-aece0dfc929f"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="951.64"
+                                                      data-length=""
+                                                      data-uuid="3fe07a88-88d6-48b7-93b3-9d78ee7715e3"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S144"
+                                                      data-timestamp="956.34"
+                                                      data-length=""
+                                                      data-uuid="2bdea60a-6e8b-48d2-b3ea-09a9bc0d6307"
+                                                      data-confidence="0.3149375">
+                                                    2
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S145"
+                                                      data-timestamp="962.89"
+                                                      data-length=""
+                                                      data-uuid="e05c4b0d-8697-462d-8c8d-075f1667723c"
+                                                      data-confidence="0.7261574">
+                                                    when you hear the divorce rate is lower today than it been since 1970s that sounds like an unmitigated victory right but it's not that simple depending on what's the number to talk about
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S145"
+                                                      data-timestamp="973.28"
+                                                      data-length=""
+                                                      data-uuid="5072e50d-25b5-48fc-8279-5827663712c6"
+                                                      data-confidence="0.8726501">
+                                                    if you look at the rate of divorce per 1000 people in the us
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S145"
+                                                      data-timestamp="977.72"
+                                                      data-length=""
+                                                      data-uuid="b3f1d631-0f42-4aa1-9f65-9b7ee14d7f04"
+                                                      data-confidence="0.7146355">
+                                                    vattenfall in about 33% since 1979 if however you look at the divorce rate per 1000 married couples it's fallen substantially less about 27% know what is that mean is claudia golden com start
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S151"
+                                                      data-timestamp="994.57"
+                                                      data-length=""
+                                                      data-uuid="a8298196-2c2f-46ac-b03f-e45206e85d56"
+                                                      data-confidence="0.6597746">
+                                                    marriage boot space it is on the decline in many different ways it's true
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S145"
+                                                      data-timestamp="1002.69"
+                                                      data-length=""
+                                                      data-uuid="784dc260-fc57-433f-a338-d207dadd3db0"
+                                                      data-confidence="0.7850752">
+                                                    even in marriage loving america the marriage rate today is at an all time low tour 1962 thirds of all americans 15 and older get 50 and older and how to measure were married 67
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S0"
+                                                      data-timestamp="1017.74"
+                                                      data-length=""
+                                                      data-uuid="ade178d3-c7f8-4cee-9b84-c05a389b5b1a"
+                                                      data-confidence="0.7132542">
+                                                    would 6% by 1990 that number had fallen 58.7 percent
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S0"
+                                                      data-timestamp="1023.64"
+                                                      data-length=""
+                                                      data-uuid="df239972-d901-4630-97e8-5f8144ae5d8e"
+                                                      data-confidence="0.6272456">
+                                                    now from 50%
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S0"
+                                                      data-timestamp="1026.22"
+                                                      data-length=""
+                                                      data-uuid="db433b82-d5d0-4806-ab7e-12370eb8e934"
+                                                      data-confidence="0.6775258">
+                                                    claudia golden tate the third at least 2 big changes the account for this
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S105"
+                                                      data-timestamp="1030.93"
+                                                      data-length=""
+                                                      data-uuid="19e96401-a023-4373-afca-dda02d90fe38"
+                                                      data-confidence="0.6777992">
+                                                    in the us one group of individuals who eventually mary married late
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S0"
+                                                      data-timestamp="1036.68"
+                                                      data-length=""
+                                                      data-uuid="bacfb908-207b-418f-9b2b-5ca2a2a337cf"
+                                                      data-confidence="0.8645792">
+                                                    the current median age of first marriage is never been hired 27 for women in 29 for men now compare that the 1950s when I was 20 for women in 22 for men
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S159"
+                                                      data-timestamp="1048.78"
+                                                      data-length=""
+                                                      data-uuid="7d47c308-96cc-4d9a-8d94-0a6732929e52"
+                                                      data-confidence="0.5816619">
+                                                    oh that's very good because we know from odd lots of different work that later mariches konsole reduce the possibility of the force
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S159"
+                                                      data-timestamp="1058.22"
+                                                      data-length=""
+                                                      data-uuid="bbf7675b-33fe-4484-8190-b7e1a37b517d"
+                                                      data-confidence="0.5879111">
+                                                    tabisz helps explain not only the lower marriage numbers but also the lower divorce numbers but not all one group is not marrying paris to lower educated
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S159"
+                                                      data-timestamp="1069.5"
+                                                      data-length=""
+                                                      data-uuid="58445858-097c-47bb-98d3-36cf106e20c8"
+                                                      data-confidence="0.694787">
+                                                    lower income americans are not married for lots of different reasons
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S159"
+                                                      data-timestamp="1074.94"
+                                                      data-length=""
+                                                      data-uuid="9fc43cc8-9730-41d7-93b9-e420e6c1a0af"
+                                                      data-confidence="0.6340861">
+                                                    so II wouldn't say all that marriage is still the institution that it wants blush
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="1084.86"
+                                                      data-length=""
+                                                      data-uuid="d6ad0714-485e-47f5-a175-20b3e68b0024"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S104"
+                                                      data-timestamp="1095.18"
+                                                      data-length=""
+                                                      data-uuid="a72dff6e-0b9f-4940-a67d-284c4955fc37"
+                                                      data-confidence="0.6672854">
+                                                    so if marriage is not been to sleep once was that mean how does this affect breast size
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S104"
+                                                      data-timestamp="1103.48"
+                                                      data-length=""
+                                                      data-uuid="e821efdd-f0fc-4dd8-9606-cfbdc92d8703"
+                                                      data-confidence="0.7978194">
+                                                    that is the question we will try to answer on next weeks episode which is part 2 of y mary turns out we're not the only ones were asking
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="1113.96"
+                                                      data-length=""
+                                                      data-uuid="557beab7-f587-423c-8f9d-2ead8c7ec395"
+                                                      data-confidence="0.2629271">
+                                                    quest connect sansone station marriage
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S109"
+                                                      data-timestamp="1116.9"
+                                                      data-length=""
+                                                      data-uuid="29374bb9-e276-4f34-afb4-506de2f9703e"
+                                                      data-confidence="0.5751721">
+                                                    transfer to being single sentry I think finding apartments
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S109"
+                                                      data-timestamp="1121.19"
+                                                      data-length=""
+                                                      data-uuid="5b558806-1f4c-4d44-bf41-584272e2e761"
+                                                      data-confidence="0.6050063">
+                                                    damh on why people get married
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S170"
+                                                      data-timestamp="1124.03"
+                                                      data-length=""
+                                                      data-uuid="df8c8183-94cb-435b-84ff-1be7cd9cc6a6"
+                                                      data-confidence="0.8026114">
+                                                    I have no idea and a lot of people ask me why I'm not getting married you beautiful in this and that
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S171"
+                                                      data-timestamp="1130.57"
+                                                      data-length=""
+                                                      data-uuid="a4b0e2cd-f3aa-4751-aad6-a94bd78f73fe"
+                                                      data-confidence="0.685581">
+                                                    it doesn't work with me
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S104"
+                                                      data-timestamp="1135.21"
+                                                      data-length=""
+                                                      data-uuid="10e27f18-db5f-429f-b818-68915c3d0f83"
+                                                      data-confidence="0.7386968">
+                                                    next week show who bring in a new cast of characters to look at some of the consequences of
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S170"
+                                                      data-timestamp="1141.71"
+                                                      data-length=""
+                                                      data-uuid="71b612c1-bd9b-491b-bf17-54c8b530ab68"
+                                                      data-confidence="0.4520306">
+                                                    the marriage drive in traffic cheers
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S170"
+                                                      data-timestamp="1145.13"
+                                                      data-length=""
+                                                      data-uuid="0fc8a96a-2254-46c6-be0e-1a38d6853b4b"
+                                                      data-confidence="0.6713845">
+                                                    happens every can you in class of countries hav e the children of single moms
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S104"
+                                                      data-timestamp="1149.19"
+                                                      data-length=""
+                                                      data-uuid="0346fced-72b8-4bef-8435-0326840f4d25"
+                                                      data-confidence="0.812517">
+                                                    in the old model of marriage is less attractive
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S104"
+                                                      data-timestamp="1153.18"
+                                                      data-length=""
+                                                      data-uuid="1482c8ca-ad5c-4558-8053-d157742519ce"
+                                                      data-confidence="0.4800616">
+                                                    find a new mom
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S175"
+                                                      data-timestamp="1154.97"
+                                                      data-length=""
+                                                      data-uuid="d8e7dbb3-dfc1-41de-92ec-67f41aa4e994"
+                                                      data-confidence="0.7007358">
+                                                    you describing is a move away from one size fits all contracts written by the church to couple sitting down and writing are in contract
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S170"
+                                                      data-timestamp="1168.87"
+                                                      data-length=""
+                                                      data-uuid="df7fa123-6189-439d-9bed-50370543248b"
+                                                      data-confidence="0.683664">
+                                                    freakonomics radio is produced byWNYCN.net production our staff include david herman greg brozowski predacons breiland busy lechtenberg in crispins and if you want more freakonomics radio you can subscribe to podcasts on itunes or go to freakonomics.com
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S170"
+                                                      data-timestamp="1187.08"
+                                                      data-length=""
+                                                      data-uuid="1904dd0f-d2f2-4699-9929-e22d3cf2ffb3"
+                                                      data-confidence="0.5593956">
+                                                    will find lots of radio ablanca books and more
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S134"
+                                                      data-timestamp="1194.68"
+                                                      data-length=""
+                                                      data-uuid="2e12b6c7-b761-45d3-8d5f-b6d3791ba173"
+                                                      data-confidence="0.7331522">
+                                                    so should I do it fell out ok
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S183"
+                                                      data-timestamp="1197.56"
+                                                      data-length=""
+                                                      data-uuid="d5d30cec-3ff9-4df9-8a46-78497ea15bdd"
+                                                      data-confidence="0.4969544">
+                                                    ready
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S184"
+                                                      data-timestamp="1211.5"
+                                                      data-length=""
+                                                      data-uuid="96439c60-4cde-46b1-be17-85eb22e5e2c5"
+                                                      data-confidence="0.6348315">
+                                                    this is what brings us together today that's good
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S0"
+                                                      data-timestamp="1218.67"
+                                                      data-length=""
+                                                      data-uuid="918b8931-9c3b-4b4a-b79b-6324341ac508"
+                                                      data-confidence="0.829957">
+                                                    freakonomics radio is supported by wealthfront wealthfront is an automated investment service built for the modern era in to make it easier than ever to invest your money well will front you the software instead of retail locations are salespeople so it can offer sophistical investment advice at low cost that were previously impossible
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S0"
+                                                      data-timestamp="1237.96"
+                                                      data-length=""
+                                                      data-uuid="ed45259b-5286-4a7a-96e6-b3f12f013de4"
+                                                      data-confidence="0.8909931">
+                                                    it is exploded in popularity in last 2 years I know it more than $2.5 Billion under management check them out atwealthfront.com slash freak to get up to $10000 managepro free
+                                                </span>
+                                            
+                                            
+                                            </p>
+                                            <div class="clearboth"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mk-about-author-wrapper">
+                                <div class="avatar-wrapper"><img alt=''
+                                                                 src='/img/covers/freakonomics-radio.jpg'
+                                                                 class='avatar avatar-65 photo' height='65' width='65'/>
+                                </div>
+                                <div class="mk-about-author-meta">
+                                    <a class="about-author-name" href=""></a>
+
+                                    <div class="about-author-desc"></div>
+
+                                </div>
+                                <div class="clearboth"></div>
+                            </div>
+                            <section class="blog-similar-posts">
+                                <div class="similar-post-title">Recent Podcasts</div>
+                                <ul class="four-cols">
+                                    
+                                    <li>
+                                        <div class="similar-post-holder"><a class="mk-similiar-thumbnail"
+                                                                            href=""
+                                                                            title="Why Marry? (Part 1)"><img
+                                                src="/img/covers/freakonomics-radio.jpg"
+                                                alt="Why Marry? (Part 1)"/>
+
+                                            <div class="image-hover-overlay"></div>
+                                        </a><a href="" class="mk-similiar-title">Why Marry? (Part 1)</a></div>
+                                    </li>
+                                    
+                                </ul>
+                                <div class="clearboth"></div>
+                            </section>
+                            <section id="comments">
+                            </section>
+                        </article>
+                        <div class="clearboth"></div>
+                    </div>
+                    <div class="clearboth"></div>
+                </div>
+            </div>
+        </div>
+        <section id="mk-footer" class="">
+  <div class="footer-wrapper mk-grid">
+    <div class="mk-padding-wrapper">
+      <div class=""><section id="text-2" class="widget widget_text"> <div class="textwidget"><div style="text-align: center; color: #999999;"> Copyright TomeCast All Rights Reserved © 2015 </div></div>
+      </section></div>
+      <div class="clearboth"></div>
+    </div>
+  </div>
+</section>
+
+    </div>
+    <div class="mk-side-dashboard">
+    <div class="side-dash-top-widgets">
+        <section id="text-4" class="widget widget_text">
+            <div class="textwidget"><img
+                    src="/img/D-logo.png">
+            </div>
+        </section>
+    </div>
+    <nav id="mk-sidedash-navigation" class="side_dashboard_menu">
+        <ul id="menu-main-menu" class="sidedash-navigation-ul">
+            <li id="menu-item-4533" class="menu-item menu-item-type-post_type menu-item-object-page"><a
+                    href="/">Home</a></li>
+            <li id="menu-item-4527" class="menu-item menu-item-type-post_type menu-item-object-page"><a
+                    href="/about.html">About</a></li>
+            <li id="menu-item-4529"
+                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><a
+                    href="">Podcasts</a>
+                <ul class="sub-menu">
+                    
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                        <a href="//"></a>
+                    </li>
+                    
+
+
+                </ul>
+            </li>
+
+            <li id="menu-item-4525" class="menu-item menu-item-type-post_type menu-item-object-page"><a
+                    href="/contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="side-dash-bottom-widgets">
+        <section id="social-2" class="widget widget_social_networks">
+            <div id="social-55560e5fcc0ca" class="align-left"><a href="#"
+                                                                 rel="nofollow"
+                                                                 class="builtin-icons mk-square-pointed custom small facebook-hover"
+                                                                 target="_blank" alt="Follow Us on facebook"
+                                                                 title="Follow Us on facebook"><i
+                    class="mk-jupiter-icon-simple-facebook"></i></a><a href="#"
+                                                                       rel="nofollow"
+                                                                       class="builtin-icons mk-square-pointed custom small googleplus-hover"
+                                                                       target="_blank" alt="Follow Us on googleplus"
+                                                                       title="Follow Us on googleplus"><i
+                    class="mk-jupiter-icon-simple-googleplus"></i></a><a href="#"
+                                                                         rel="nofollow"
+                                                                         class="builtin-icons mk-square-pointed custom small twitter-hover"
+                                                                         target="_blank" alt="Follow Us on twitter"
+                                                                         title="Follow Us on twitter"><i
+                    class="mk-jupiter-icon-simple-twitter"></i></a>
+                <style>#social-55560e5fcc0ca a {
+                    opacity: 100 !important;
+                    color: #ffffff !important;
+                }
+
+                #social-55560e5fcc0ca a:hover {
+                    color: #f16f4f !important;
+                }</style>
+            </div>
+        </section>
+    </div>
+</div>
+
+</div>
+<a href="#" class="mk-go-top"><i class="mk-icon-chevron-up"></i></a>
+
+
+
+<a class="mk-post-nav mk-post-prev with-image" href="/podcasts/freakonomics-radio/2014/02/06/what-you-don-t-know-about-online-dating.html"><span
+        class="pagnav-wrapper"><span class="pagenav-top"><span class="pagenav-image"><img width="150" height="150"
+              src="/img/covers/freakonomics-radio.jpg"
+              class="attachment-thumbnail wp-post-image"
+              alt="What You Don’t Know About Online Dating Podcast"/></span><span
+        class="mk-pavnav-icon"><i class="mk-icon-long-arrow-left"></i></span></span><div class="nav-info-container">
+    <span class="pagenav-bottom"><span class="pagenav-title">What You Don’t Know About Online Dating</span>2014-02-06</span></div></span></a>
+
+
+
+
+<a class="mk-post-nav mk-post-next with-image" href="/podcasts/freakonomics-radio/2014/02/20/why-marry-part-2.html"><span
+        class="pagnav-wrapper"><span class="pagenav-top"><span class="mk-pavnav-icon"><i
+        class="mk-icon-long-arrow-right"></i></span><span class="pagenav-image"><img width="150" height="150"
+             src="/img/covers/freakonomics-radio.jpg"
+             class="attachment-thumbnail wp-post-image"
+             alt="Why Marry? (Part 2) Podcast"/></span></span><div
+        class="nav-info-container"><span class="pagenav-bottom"><span
+        class="pagenav-title">Why Marry? (Part 2)</span>
+    2014-02-20
+</span></div></span></a>
+
+
+
+<script type='text/javascript' src='/js/scripts-vendors.js'></script>
+<script type='text/javascript' src='/js/app.js'></script>
+<script type='text/javascript' src='/js/smoothscroll.js'></script>
+<script type='text/javascript'
+        src='//cdnjs.cloudflare.com/ajax/libs/jquery.transit/0.9.12/jquery.transit.min.js'></script>
+
+<script type="text/javascript">
+    window.$ = jQuery
+
+    $('.mk-dynamic-styles').each(function () {
+        $(this).remove();
+    });
+
+    function ajaxStylesInjector() {
+        $('.mk-dynamic-styles').each(function () {
+            var $this = $(this),
+                    id = $this.attr('id'),
+                    commentedStyles = $this.html();
+            styles = commentedStyles
+                    .replace('<!--', '')
+                    .replace('-->', '');
+
+
+            if (dynamic_styles_ids.indexOf(id) === -1) {
+                $('style[data-ajax]').append(styles);
+                $this.remove();
+            }
+
+            dynamic_styles_ids.push(id);
+        });
+    }
+    ;
+
+    abb.modules.theme_header.init({
+        id: 'mk-header',
+        height: '130',
+        stickyHeight: '55',
+        stickyOffset: 'header',
+        hasToolbar: 'false'
+    });
+    abb.init();    </script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-69068664-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>
+ 

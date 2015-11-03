@@ -1,0 +1,13 @@
+{
+  "_comment": "FOR DETAILED FORMAT LOOK AT https://docs.docker.com/reference/api/docker_remote_api_v1.16/#create-a-container",
+  "AttachStdin": true,
+  "OpenStdin": true,
+  "HostConfig": {
+    "Binds": ["/Users/jason/repos/tomecast-web:/srv/tomecast-web"],
+    "PortBindings":{ "4000/tcp": [{ "HostIp": "0.0.0.0", "HostPort": "4000" }] }
+  },
+  "WorkingDir": "/srv/",
+  "Cmd": [
+    "jekyll","serve","--source", "/srv/tomecast-web", "--destination", "/srv/tomecast-web/_site", "--host", "0.0.0.0"
+  ]
+}

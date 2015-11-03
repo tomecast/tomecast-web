@@ -1,0 +1,3333 @@
+<!DOCTYPE html>
+<html itemscope="itemscope" itemtype="http://schema.org/Article" xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="format-detection" content="telephone=no">
+<title itemprop="name">TomeCast Template</title>
+
+<script type="text/javascript">
+  // Init aplication namespace
+  var abb = {};
+  var php = {};
+
+  var mk_header_parallax, mk_banner_parallax, mk_page_parallax, mk_footer_parallax, mk_body_parallax;
+  var mk_captcha_placeholder = "Enter Captcha",
+          mk_captcha_invalid_txt = "Invalid. Try again.",
+          mk_captcha_correct_txt = "Captcha correct.",
+          mk_responsive_nav_width = 1140,
+          mk_check_rtl = true,
+          mk_grid_width = 1140,
+          mk_ajax_search_option = "disable",
+          mk_preloader_txt_color = "#444444",
+          mk_preloader_bg_color = "#ffffff",
+          mk_accent_color = "#f97352",
+          mk_preloader_bar_color = "#f97352",
+          mk_preloader_logo = "";
+  var mk_header_parallax = false,
+          mk_banner_parallax = false,
+          mk_page_parallax = false,
+          mk_footer_parallax = false,
+          mk_body_parallax = false,
+          mk_no_more_posts = "No More Posts";
+
+  function is_touch_device() {
+    return ('ontouchstart' in document.documentElement);
+  }
+
+</script>
+
+<link rel='stylesheet' id='theme-styles-css' href='/css/theme-styles.min.css' type='text/css' media='all'/>
+<link rel='stylesheet' id='mk-pe-line-icon-css' href='/css/pe-line-icons.min.css' type='text/css' media='all'/>
+<link rel='stylesheet' id='mk-font-awesome-css' href='/css/font-awesome.min.css' type='text/css' media='all'/>
+<link rel='stylesheet' id='mk-icomoon-fonts-css' href='/css/icomoon-fonts.min.css' type='text/css' media='all'/>
+<link rel='stylesheet' id='mk-theme-icons-css' href='/css/theme-icons.min.css' type='text/css' media='all'/>
+<link rel='stylesheet' id='google-font-api-special-1-css' href='http://fonts.googleapis.com/css?family=Open+Sans%3A100italic%2C200italic%2C300italic%2C400italic%2C500italic%2C600italic%2C700italic%2C800italic%2C900italic%2C100%2C200%2C300%2C400%2C500%2C600%2C700%2C800%2C900&#038;ver=4.2.2' type='text/css' media='all'/>
+<link rel='stylesheet' id='mk-style-css' href='/css/style.css' type='text/css' media='all'/>
+<link rel='stylesheet' id='theme-dynamic-styles-css' href='/css/custom.css' type='text/css' media='all'/>
+<style id='theme-dynamic-styles-inline-css' type='text/css'>
+  body {
+  }
+
+  body,
+  p {
+    font-family: Open Sans
+  }
+
+  body {
+    background-color: #fff;
+  }
+
+  #mk-header {
+    background-color: #1b1b1b;
+  }
+
+  .mk-header-bg {
+    background-color: #1b1b1b;
+  }
+
+  .mk-header-toolbar {
+    background-color: #ffffff;
+  }
+
+  #theme-page {
+    background-color: #fff;
+  }
+
+  #mk-footer {
+    background-color: #1b1b1b;
+  }
+
+  #mk-footer .footer-wrapper {
+    padding: 30px 0;
+  }
+
+  #mk-footer .widget {
+    margin-bottom: 40px;
+  }
+
+  #mk-footer [class*='mk-col-'] {
+    padding: 0 2%;
+  }
+
+  #sub-footer {
+    background-color: #43474d;
+  }
+
+  .mk-footer-copyright {
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+
+  #mk-boxed-layout {
+    -webkit-box-shadow: 0 0 0px rgba(0, 0, 0, 0);
+    -moz-box-shadow: 0 0 0px rgba(0, 0, 0, 0);
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0);
+  }
+
+  .mk-tabs-panes,
+  .mk-news-tab .mk-tabs-tabs li.ui-tabs-active a,
+  .mk-divider .divider-go-top,
+  .ajax-container,
+  .mk-fancy-title.pattern-style span,
+  .mk-portfolio-view-all,
+  .mk-woo-view-all,
+  .mk-blog-view-all {
+    background-color: #fff;
+  }
+
+  .mk-header-bg {
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+    -o-opacity: 1;
+    opacity: 1;
+  }
+
+  .header-sticky-ready .mk-header-bg {
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+    -o-opacity: 1;
+    opacity: 1;
+  }
+
+  .mk-header-inner,
+  .header-sticky-ready .mk-header-inner,
+  .header-style-2.header-sticky-ready .mk-classic-nav-bg {
+    border-bottom: 1px solid #1b1b1b;
+  }
+
+  .header-style-4.header-align-left .mk-header-inner,
+  .header-style-4.header-align-center .mk-header-inner {
+    border-bottom: none;
+    border-right: 1px solid #1b1b1b;
+  }
+
+  .header-style-4.header-align-right .mk-header-inner {
+    border-bottom: none;
+    border-left: 1px solid #1b1b1b;
+  }
+
+  .header-style-2 .mk-header-nav-container {
+    border-top: 1px solid #1b1b1b;
+  }
+
+  #mk-header {
+    border-bottom: 1px solid #1b1b1b;
+  }
+
+  body {
+    font-size: 13px;
+    color: #777777;
+    font-weight: normal;
+    line-height: 1.66em;
+  }
+
+  p,
+  .mk-box-icon-2-content {
+    font-size: 13px;
+    color: #777777;
+    line-height: 1.66em;
+  }
+
+  a {
+    color: #2e2e2e;
+  }
+
+  a:hover {
+    color: #f97352;
+  }
+
+  #theme-page strong {
+    color: #f97352;
+  }
+
+  #theme-page h1 {
+    font-size: 36px;
+    color: #404040;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  #theme-page h2 {
+    font-size: 30px;
+    color: #404040;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  #theme-page h3 {
+    font-size: 24px;
+    color: #404040;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  #theme-page h4 {
+    font-size: 18px;
+    color: #404040;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  #theme-page h5 {
+    font-size: 16px;
+    color: #404040;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  #theme-page h6 {
+    font-size: 14px;
+    color: #404040;
+    font-weight: normal;
+    text-transform: uppercase;
+  }
+
+  .page-introduce-title {
+    font-size: 20px;
+    color: #4d4d4d;
+    text-transform: uppercase;
+    font-weight: normal;
+    letter-spacing: 2px;
+  }
+
+  .page-introduce-subtitle {
+    font-size: 14px;
+    line-height: 100%;
+    color: #a3a3a3;
+    font-size: 14px;
+    text-transform: none;
+  }
+
+  ::-webkit-selection {
+    background-color: #f97352;
+    color: #fff;
+  }
+
+  ::-moz-selection {
+    background-color: #f97352;
+    color: #fff;
+  }
+
+  ::selection {
+    background-color: #f97352;
+    color: #fff;
+  }
+
+  #mk-sidebar,
+  #mk-sidebar p {
+    font-size: 14px;
+    color: #999999;
+    font-weight: normal;
+  }
+
+  #mk-sidebar .widgettitle {
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #333333;
+    font-weight: bolder;
+  }
+
+  #mk-sidebar .widgettitle a {
+    color: #333333;
+  }
+
+  #mk-sidebar .widget a {
+    color: #999999;
+  }
+
+  #mk-footer,
+  #mk-footer p {
+    font-size: 14px;
+    color: #808080;
+    font-weight: normal;
+  }
+
+  #mk-footer .widgettitle {
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: 800;
+  }
+
+  #mk-footer .widgettitle a {
+    color: #ffffff;
+  }
+
+  #mk-footer .widget:not(.widget_social_networks) a {
+    color: #999999;
+  }
+
+  .mk-side-dashboard {
+    background-color: #1b1b1b;
+  }
+
+  .mk-side-dashboard,
+  .mk-side-dashboard p {
+    font-size: 12px;
+    color: #eeeeee;
+    font-weight: normal;
+  }
+
+  .mk-side-dashboard .widgettitle {
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #f16f4f;
+    font-weight: 800;
+  }
+
+  .mk-side-dashboard .widgettitle a {
+    color: #f16f4f;
+  }
+
+  .mk-side-dashboard .widget a {
+    color: #fafafa;
+  }
+
+  .sidedash-navigation-ul li a,
+  .sidedash-navigation-ul li .mk-nav-arrow {
+    color: #ffffff;
+  }
+
+  .sidedash-navigation-ul li a:hover {
+    color: #f16f4f;
+    background-color:;
+  }
+
+  .mk-fullscreen-nav {
+    background-color: #444444;
+  }
+
+  .mk-fullscreen-nav .mk-fullscreen-nav-wrapper .mk-fullscreen-nav-logo {
+    margin-bottom: 125px;
+  }
+
+  .mk-fullscreen-nav .fullscreen-navigation-ul .menu-item a {
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 0;
+    font-weight: 800;
+    padding: 25px 0;
+    color: #ffffff;
+  }
+
+  .mk-fullscreen-nav .fullscreen-navigation-ul .menu-item a:hover {
+    background-color: #ffffff;
+    color: #444444;
+  }
+
+  #mk-sidebar .widget:not(.widget_social_networks) a:hover {
+    color: #f97352;
+  }
+
+  #mk-footer .widget:not(.widget_social_networks) a:hover {
+    color: #f97352;
+  }
+
+  .mk-side-dashboard .widget:not(.widget_social_networks) a:hover {
+    color: #f97352;
+  }
+
+  .mk-grid {
+    max-width: 1140px;
+  }
+
+  .mk-header-nav-container,
+  .mk-classic-menu-wrapper {
+    width: 1140px;
+  }
+
+  .theme-page-wrapper #mk-sidebar.mk-builtin {
+    width: 27%;
+  }
+
+  .theme-page-wrapper.right-layout .theme-content,
+  .theme-page-wrapper.left-layout .theme-content {
+    width: 73%;
+  }
+
+  .mk-boxed-enabled #mk-boxed-layout,
+  .mk-boxed-enabled #mk-boxed-layout .header-style-1 .mk-header-holder,
+  .mk-boxed-enabled #mk-boxed-layout .header-style-3 .mk-header-holder {
+    max-width: 1200px;
+  }
+
+  .mk-boxed-enabled #mk-boxed-layout .header-style-1 .mk-header-holder,
+  .mk-boxed-enabled #mk-boxed-layout .header-style-3 .mk-header-holder {
+    width: 100% !important;
+    left: auto !important;
+  }
+
+  .mk-boxed-enabled #mk-boxed-layout .header-style-2.header-sticky-ready .mk-header-nav-container {
+    width: 1200px !important;
+    left: auto !important;
+  }
+
+  .header-style-1 .mk-header-start-tour,
+  .header-style-3 .mk-header-start-tour,
+  .header-style-1 .mk-header-inner #mk-header-search,
+  .header-style-1 .mk-header-inner,
+  .header-style-1 .mk-search-trigger,
+  .header-style-3 .mk-header-inner,
+  .header-style-1 .header-logo,
+  .header-style-3 .header-logo,
+  .header-style-1 .shopping-cart-header,
+  .header-style-3 .shopping-cart-header,
+  .header-style-1 #mk-header-social.header-section a,
+  .header-style-2 #mk-header-social.header-section a,
+  .header-style-3 #mk-header-social.header-section a {
+    height: 130px;
+    line-height: 130px;
+  }
+
+  @media handheld, only screen and (max-width: 1140px) {
+    .header-grid.mk-grid .header-logo.left-logo {
+      left: 15px !important;
+    }
+
+    .header-grid.mk-grid .header-logo.right-logo,
+    .mk-header-right {
+      right: 15px !important;
+    }
+
+    .header-style-3 .shopping-cart-header {
+      right: 30px;
+    }
+  }
+
+  #mk-theme-container:not(.mk-transparent-header) .header-style-1 .mk-header-padding-wrapper,
+  #mk-theme-container:not(.mk-transparent-header) .header-style-3 .mk-header-padding-wrapper {
+    padding-top: 130px;
+  }
+
+  @media handheld, only screen and (max-width: 960px) {
+    .theme-page-wrapper .theme-content {
+      width: 100% !important;
+      float: none !important;
+    }
+
+    .theme-page-wrapper {
+      padding-right: 15px !important;
+      padding-left: 15px !important;
+    }
+
+    .theme-page-wrapper .theme-content:not(.no-padding) {
+      padding: 25px 0 !important;
+    }
+
+    .theme-page-wrapper #mk-sidebar {
+      width: 100% !important;
+      float: none !important;
+      padding: 0 !important;
+    }
+
+    .theme-page-wrapper #mk-sidebar .sidebar-wrapper {
+      padding: 20px 0 !important;
+    }
+  }
+
+  @media handheld, only screen and (max-width: 1140px) {
+    .mk-go-top,
+    .mk-quick-contact-wrapper {
+      bottom: 70px !important;
+    }
+
+    .mk-grid {
+      width: 100%;
+    }
+
+    .mk-padding-wrapper {
+      padding: 0 20px;
+    }
+  }
+
+  #mk-toolbar-navigation ul li a,
+  .mk-language-nav > a,
+  .mk-header-login .mk-login-link,
+  .mk-subscribe-link,
+  .mk-checkout-btn,
+  .mk-header-tagline a,
+  .header-toolbar-contact a,
+  #mk-toolbar-navigation ul li a:hover,
+  .mk-language-nav > a:hover,
+  .mk-header-login .mk-login-link:hover,
+  .mk-subscribe-link:hover,
+  .mk-checkout-btn:hover,
+  .mk-header-tagline a:hover {
+    color: #999999;
+  }
+
+  .mk-header-tagline,
+  .header-toolbar-contact,
+  .mk-header-date {
+    color: #999999;
+  }
+
+  .mk-header-toolbar #mk-header-social a i {
+    color: #999999;
+  }
+
+  .header-section#mk-header-social ul li a i {
+    color: #999999;
+  }
+
+  .header-section#mk-header-social ul li a:hover i {
+    color: #cccccc;
+  }
+
+  .header-style-2 .header-logo,
+  .header-style-4 .header-logo {
+    height: 130px !important;
+  }
+
+  .header-style-4 .header-logo {
+    margin: 10px 0;
+  }
+
+  .header-style-2 .mk-header-inner {
+    line-height: 130px;
+  }
+
+  .mk-header-nav-container {
+    background-color:;
+  }
+
+  .mk-header-start-tour {
+    font-size: 14px;
+    color: #333333;
+  }
+
+  .mk-header-start-tour:hover {
+    color: #333333;
+  }
+
+  .mk-classic-nav-bg {
+    background-color: #1b1b1b;
+  }
+
+  .mk-search-trigger,
+  .mk-shoping-cart-link i,
+  .mk-header-cart-count,
+  .mk-toolbar-resposnive-icon i {
+    color: #ffffff;
+  }
+
+  .mk-css-icon-close div,
+  .mk-css-icon-menu div {
+    background-color: #ffffff;
+  }
+
+  #mk-header-searchform .text-input {
+    background-color: !important;
+    color: #c7c7c7;
+  }
+
+  #mk-header-searchform span i {
+    color: #c7c7c7;
+  }
+
+  #mk-header-searchform .text-input::-webkit-input-placeholder {
+    color: #c7c7c7;
+  }
+
+  #mk-header-searchform .text-input:-ms-input-placeholder {
+    color: #c7c7c7;
+  }
+
+  #mk-header-searchform .text-input:-moz-placeholder {
+    color: #c7c7c7;
+  }
+
+  .header-style-1.header-sticky-ready .menu-hover-style-1 .main-navigation-ul > li > a,
+  .header-style-3.header-sticky-ready .menu-hover-style-1 .main-navigation-ul > li > a,
+  .header-style-1.header-sticky-ready .menu-hover-style-5 .main-navigation-ul > li,
+  .header-style-1.header-sticky-ready .menu-hover-style-2 .main-navigation-ul > li > a,
+  .header-style-3.header-sticky-ready .menu-hover-style-2 .main-navigation-ul > li > a,
+  .header-style-1.header-style-1.header-sticky-ready .menu-hover-style-4 .main-navigation-ul > li > a,
+  .header-style-3.header-sticky-ready .menu-hover-style-4 .main-navigation-ul > li > a,
+  .header-style-1.header-sticky-ready .menu-hover-style-3 .main-navigation-ul > li,
+  .header-style-1.header-sticky-ready .mk-header-inner #mk-header-search,
+  .header-style-3.header-sticky-ready .mk-header-holder #mk-header-search,
+  .header-sticky-ready.header-style-3 .mk-header-start-tour,
+  .header-sticky-ready.header-style-1 .mk-header-start-tour,
+  .header-sticky-ready.header-style-1 .mk-header-inner,
+  .header-sticky-ready.header-style-3 .mk-header-inner,
+  .header-sticky-ready.header-style-3 .header-logo,
+  .header-sticky-ready.header-style-1 .header-logo,
+  .header-sticky-ready.header-style-1 .mk-search-trigger,
+  .header-sticky-ready.header-style-1 .mk-search-trigger i,
+  .header-sticky-ready.header-style-1 .shopping-cart-header,
+  .header-sticky-ready.header-style-1 .shopping-cart-header i,
+  .header-sticky-ready.header-style-3 .shopping-cart-header,
+  .header-sticky-ready.header-style-1 #mk-header-social.header-section a,
+  .header-sticky-ready.header-style-3 #mk-header-social.header-section a {
+    height: 55px !important;
+    line-height: 55px !important;
+  }
+
+  #mk-header-social.header-section a.small {
+    margin-top: 48px;
+  }
+
+  #mk-header-social.header-section a.medium {
+    margin-top: 40px;
+  }
+
+  #mk-header-social.header-section a.large {
+    margin-top: 32px;
+  }
+
+  .header-sticky-ready #mk-header-social.header-section a.small,
+  .header-sticky-ready #mk-header-social.header-section a.medium,
+  .header-sticky-ready #mk-header-social.header-section a.large {
+    margin-top: 10.5px;
+    line-height: 16px !important;
+    height: 16px !important;
+    font-size: 16px !important;
+    width: 16px !important;
+    padding: 8px !important;
+  }
+
+  .header-sticky-ready #mk-header-social.header-section a.small i:before,
+  .header-sticky-ready #mk-header-social.header-section a.medium i:before,
+  .header-sticky-ready #mk-header-social.header-section a.large i:before {
+    line-height: 16px !important;
+    font-size: 16px !important;
+  }
+
+  .main-navigation-ul > li.menu-item > a.menu-item-link {
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: bold;
+    padding-right: 20px !important;
+    padding-left: 20px !important;
+    text-transform: uppercase;
+    letter-spacing: 0px;
+  }
+
+  .mk-vm-menuwrapper ul li a {
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .mk-vm-menuwrapper li > a:after,
+  .mk-vm-menuwrapper li.mk-vm-back:after {
+    color: #ffffff;
+  }
+
+  .main-navigation-ul > li.no-mega-menu ul.sub-menu li.menu-item a.menu-item-link {
+    width: 230px;
+  }
+
+  .mk-header-3-menu-trigger {
+    color: #ffffff;
+  }
+
+  .menu-hover-style-1 .main-navigation-ul li.menu-item > a.menu-item-link:hover,
+  .menu-hover-style-1 .main-navigation-ul li.menu-item:hover > a.menu-item-link,
+  .menu-hover-style-1 .main-navigation-ul li.current-menu-item > a.menu-item-link,
+  .menu-hover-style-1 .main-navigation-ul li.current-menu-ancestor > a.menu-item-link,
+  .menu-hover-style-2 .main-navigation-ul li.menu-item > a.menu-item-link:hover,
+  .menu-hover-style-2 .main-navigation-ul li.menu-item:hover > a.menu-item-link,
+  .menu-hover-style-2 .main-navigation-ul li.current-menu-item > a.menu-item-link,
+  .menu-hover-style-2 .main-navigation-ul li.current-menu-ancestor > a.menu-item-link,
+  .menu-hover-style-1.mk-vm-menuwrapper li.menu-item > a:hover,
+  .menu-hover-style-1.mk-vm-menuwrapper li.menu-item:hover > a,
+  .menu-hover-style-1.mk-vm-menuwrapper li.current-menu-item > a,
+  .menu-hover-style-1.mk-vm-menuwrapper li.current-menu-ancestor > a,
+  .menu-hover-style-2.mk-vm-menuwrapper li.menu-item > a:hover,
+  .menu-hover-style-2.mk-vm-menuwrapper li.menu-item:hover > a,
+  .menu-hover-style-2.mk-vm-menuwrapper li.current-menu-item > a,
+  .menu-hover-style-2.mk-vm-menuwrapper li.current-menu-ancestor > a {
+    color: #f97352 !important;
+  }
+
+  .menu-hover-style-3 .main-navigation-ul > li.menu-item > a.menu-item-link:hover,
+  .menu-hover-style-3 .main-navigation-ul > li.menu-item:hover > a.menu-item-link,
+  .menu-hover-style-3.mk-vm-menuwrapper li > a:hover,
+  .menu-hover-style-3.mk-vm-menuwrapper li:hover > a {
+    border: 2px solid #f97352;
+  }
+
+  .menu-hover-style-3 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
+  .menu-hover-style-3 .main-navigation-ul > li.current-menu-ancestor > a.menu-item-link,
+  .menu-hover-style-3.mk-vm-menuwrapper li.current-menu-item > a,
+  .menu-hover-style-3.mk-vm-menuwrapper li.current-menu-ancestor > a {
+    border: 2px solid #f97352;
+    background-color: #f97352;
+    color: #ffffff;
+  }
+
+  .menu-hover-style-3.mk-vm-menuwrapper li.current-menu-ancestor > a:after {
+    color: #ffffff;
+  }
+
+  .menu-hover-style-4 .main-navigation-ul li.menu-item > a.menu-item-link:hover,
+  .menu-hover-style-4 .main-navigation-ul li.menu-item:hover > a.menu-item-link,
+  .menu-hover-style-4 .main-navigation-ul li.current-menu-item > a.menu-item-link,
+  .menu-hover-style-4 .main-navigation-ul li.current-menu-ancestor > a.menu-item-link,
+  .menu-hover-style-4.mk-vm-menuwrapper li a:hover,
+  .menu-hover-style-4.mk-vm-menuwrapper li:hover > a,
+  .menu-hover-style-4.mk-vm-menuwrapper li.current-menu-item > a,
+  .menu-hover-style-4.mk-vm-menuwrapper li.current-menu-ancestor > a,
+  .menu-hover-style-5 .main-navigation-ul > li.menu-item > a.menu-item-link:after {
+    background-color: #f97352;
+    color: #ffffff;
+  }
+
+  .menu-hover-style-4.mk-vm-menuwrapper li.current-menu-ancestor > a:after,
+  .menu-hover-style-4.mk-vm-menuwrapper li.current-menu-item > a:after,
+  .menu-hover-style-4.mk-vm-menuwrapper li:hover > a:after,
+  .menu-hover-style-4.mk-vm-menuwrapper li a:hover::after {
+    color: #ffffff;
+  }
+
+  .menu-hover-style-1 .main-navigation-ul > li.dropdownOpen > a.menu-item-link,
+  .menu-hover-style-1 .main-navigation-ul > li.active > a.menu-item-link,
+  .menu-hover-style-1 .main-navigation-ul > li.open > a.menu-item-link,
+  .menu-hover-style-1 .main-navigation-ul > li.menu-item > a:hover,
+  .menu-hover-style-1 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
+  .menu-hover-style-1 .main-navigation-ul > li.current-menu-ancestor > a.menu-item-link {
+    border-top-color: #f97352;
+  }
+
+  .menu-hover-style-1.mk-vm-menuwrapper li > a:hover,
+  .menu-hover-style-1.mk-vm-menuwrapper li.current-menu-item > a,
+  .menu-hover-style-1.mk-vm-menuwrapper li.current-menu-ancestor > a {
+    border-left-color: #f97352;
+  }
+
+  .header-style-1 .menu-hover-style-1 .main-navigation-ul > li > a,
+  .header-style-1 .menu-hover-style-2 .main-navigation-ul > li > a,
+  .header-style-1 .menu-hover-style-4 .main-navigation-ul > li > a,
+  .header-style-1 .menu-hover-style-5 .main-navigation-ul > li {
+    height: 130px;
+    line-height: 130px;
+  }
+
+  .header-style-1 .menu-hover-style-3 .main-navigation-ul > li,
+  .header-style-1 .menu-hover-style-5 .main-navigation-ul > li {
+    height: 130px;
+    line-height: 130px;
+  }
+
+  .header-style-1 .menu-hover-style-3 .main-navigation-ul > li > a {
+    line-height: 65px;
+  }
+
+  .header-style-1.header-sticky-ready .menu-hover-style-3 .main-navigation-ul > li > a {
+    line-height: 36.666666666667px;
+  }
+
+  .header-style-1 .menu-hover-style-5 .main-navigation-ul > li > a {
+    line-height: 20px;
+    vertical-align: middle;
+  }
+
+  .main-navigation-ul > li.no-mega-menu ul.sub-menu:after,
+  .main-navigation-ul > li.has-mega-menu > ul.sub-menu:after {
+    background-color: #f97352;
+  }
+
+  .mk-shopping-cart-box {
+    border-top: 2px solid #f97352;
+  }
+
+  #mk-main-navigation li.no-mega-menu ul.sub-menu,
+  #mk-main-navigation li.has-mega-menu > ul.sub-menu,
+  .mk-shopping-cart-box {
+    background-color: #333333;
+  }
+
+  #mk-main-navigation ul.sub-menu a.menu-item-link,
+  #mk-main-navigation ul .megamenu-title,
+  .megamenu-widgets-container a,
+  .mk-shopping-cart-box .product_list_widget li a,
+  .mk-shopping-cart-box .product_list_widget li.empty,
+  .mk-shopping-cart-box .product_list_widget li span,
+  .mk-shopping-cart-box .widget_shopping_cart .total {
+    color: #b3b3b3;
+  }
+
+  .mk-shopping-cart-box .mk-button.cart-widget-btn {
+    border-color: #b3b3b3;
+    color: #b3b3b3;
+  }
+
+  .mk-shopping-cart-box .mk-button.cart-widget-btn:hover {
+    background-color: #b3b3b3;
+    color: #333333;
+  }
+
+  #mk-main-navigation ul .megamenu-title {
+    color: #ffffff;
+  }
+
+  #mk-main-navigation ul .megamenu-title:after {
+    background-color: #ffffff;
+  }
+
+  .megamenu-widgets-container {
+    color: #b3b3b3;
+  }
+
+  .megamenu-widgets-container .widgettitle {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bolder;
+  }
+
+  #mk-main-navigation ul.sub-menu li.menu-item ul.sub-menu li.menu-item a.menu-item-link i {
+    color: #e0e0e0;
+  }
+
+  #mk-main-navigation ul.sub-menu a.menu-item-link:hover,
+  .main-navigation-ul ul.sub-menu li.current-menu-item > a.menu-item-link,
+  .main-navigation-ul ul.sub-menu li.current-menu-parent > a.menu-item-link {
+    color: #ffffff !important;
+  }
+
+  .megamenu-widgets-container a:hover {
+    color: #ffffff;
+  }
+
+  .main-navigation-ul li.menu-item ul.sub-menu li.menu-item a.menu-item-link:hover,
+  .main-navigation-ul li.menu-item ul.sub-menu li.menu-item:hover > a.menu-item-link,
+  .main-navigation-ul ul.sub-menu li.menu-item a.menu-item-link:hover,
+  .main-navigation-ul ul.sub-menu li.menu-item:hover > a.menu-item-link,
+  .main-navigation-ul ul.sub-menu li.current-menu-item > a.menu-item-link,
+  .main-navigation-ul ul.sub-menu li.current-menu-parent > a.menu-item-link {
+    background-color: transparent !important;
+  }
+
+  .mk-search-trigger:hover,
+  .mk-header-start-tour:hover {
+    color: #f97352;
+  }
+
+  .main-navigation-ul li.menu-item ul.sub-menu li.menu-item a.menu-item-link {
+    font-size: 12px;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .has-mega-menu .megamenu-title {
+    letter-spacing: 1px;
+  }
+
+  .header-style-4 {
+    text-align: left
+  }
+
+  .mk-vm-menuwrapper li > a {
+    padding-right: 45px;
+  }
+
+  @media handheld, only screen and (max-width: 1140px) {
+    .header-style-1 .mk-header-inner,
+    .header-style-3 .mk-header-inner,
+    .header-style-3 .header-logo,
+    .header-style-1 .header-logo,
+    .header-style-1 .shopping-cart-header,
+    .header-style-3 .shopping-cart-header {
+      height: 90px !important;
+      line-height: 90px;
+    }
+
+    #mk-header:not(.header-style-4) .mk-header-holder {
+      position: relative !important;
+      top: 0 !important;
+    }
+
+    .mk-header-padding-wrapper {
+      display: none !important;
+    }
+
+    .mk-header-nav-container {
+      width: auto !important;
+      display: none;
+    }
+
+    .header-style-1 .mk-header-right,
+    .header-style-2 .mk-header-right,
+    .header-style-3 .mk-header-right {
+      right: 55px !important;
+    }
+
+    .header-style-1 .mk-header-inner #mk-header-search,
+    .header-style-2 .mk-header-inner #mk-header-search,
+    .header-style-3 .mk-header-inner #mk-header-search {
+      display: none !important;
+    }
+
+    .mk-fullscreen-search-overlay {
+      display: none;
+    }
+
+    #mk-header-search {
+      padding-bottom: 10px !important;
+    }
+
+    #mk-header-searchform span .text-input {
+      width: 100% !important;
+    }
+
+    .header-style-2 .header-logo .center-logo {
+      text-align: right !important;
+    }
+
+    .header-style-2 .header-logo .center-logo a {
+      margin: 0 !important;
+    }
+
+    .header-logo,
+    .header-style-4 .header-logo {
+      height: 90px !important;
+    }
+
+    .header-style-4 .shopping-cart-header {
+      display: none;
+    }
+
+    .mk-header-inner {
+      padding-top: 0 !important;
+    }
+
+    .header-logo {
+      position: relative !important;
+      right: auto !important;
+      left: auto !important;
+      float: left !important;
+      text-align: left;
+    }
+
+    .shopping-cart-header {
+      margin: 0 20px 0 0 !important;
+    }
+
+    #mk-responsive-nav {
+      background-color: #ffffff !important;
+    }
+
+    .mk-header-nav-container #mk-responsive-nav {
+      visibility: hidden;
+    }
+
+    #mk-responsive-nav li ul li .megamenu-title:hover,
+    #mk-responsive-nav li ul li .megamenu-title,
+    #mk-responsive-nav li a,
+    #mk-responsive-nav li ul li a:hover,
+    #mk-responsive-nav .mk-nav-arrow {
+      color: #444444 !important;
+    }
+
+    .mk-mega-icon {
+      display: none !important;
+    }
+
+    .mk-header-bg {
+      zoom: 1 !important;
+      filter: alpha(opacity=100) !important;
+      opacity: 1 !important;
+    }
+
+    .header-style-1 .mk-nav-responsive-link,
+    .header-style-2 .mk-nav-responsive-link {
+      display: block !important;
+    }
+
+    .mk-header-nav-container {
+      height: 100%;
+      z-index: 200;
+    }
+
+    #mk-main-navigation {
+      position: relative;
+      z-index: 2;
+    }
+
+    .mk_megamenu_columns_2,
+    .mk_megamenu_columns_3,
+    .mk_megamenu_columns_4,
+    .mk_megamenu_columns_5,
+    .mk_megamenu_columns_6 {
+      width: 100% !important;
+    }
+
+    .header-style-1.header-align-right .header-logo img,
+    .header-style-3.header-align-right .header-logo img,
+    .header-style-3.header-align-center .header-logo img {
+      float: left !important;
+      right: auto !important;
+    }
+
+    .header-style-4 .mk-header-inner {
+      width: auto !important;
+      position: relative !important;
+      overflow: visible;
+      padding-bottom: 0;
+    }
+
+    .admin-bar .header-style-4 .mk-header-inner {
+      top: 0 !important;
+    }
+
+    .header-style-4 .mk-header-right {
+      display: none;
+    }
+
+    .header-style-4 .mk-nav-responsive-link {
+      display: block !important;
+    }
+
+    .header-style-4 .mk-vm-menuwrapper,
+    .header-style-4 #mk-header-search {
+      display: none;
+    }
+
+    .header-style-4 .header-logo {
+      width: auto !important;
+      display: inline-block !important;
+      text-align: left !important;
+      margin: 0 !important;
+    }
+
+    .vertical-header-enabled .header-style-4 .header-logo img {
+      max-width: 100% !important;
+      left: 20px !important;
+      top: 50% !important;
+      -webkit-transform: translate(0, -50%) !important;
+      -moz-transform: translate(0, -50%) !important;
+      -ms-transform: translate(0, -50%) !important;
+      -o-transform: translate(0, -50%) !important;
+      transform: translate(0, -50%) !important;
+      position: relative !important;
+    }
+
+    .vertical-header-enabled.vertical-header-left #theme-page > .mk-main-wrapper-holder,
+    .vertical-header-enabled.vertical-header-center #theme-page > .mk-main-wrapper-holder,
+    .vertical-header-enabled.vertical-header-left #theme-page > .mk-page-section,
+    .vertical-header-enabled.vertical-header-center #theme-page > .mk-page-section,
+    .vertical-header-enabled.vertical-header-left #theme-page > .wpb_row,
+    .vertical-header-enabled.vertical-header-center #theme-page > .wpb_row,
+    .vertical-header-enabled.vertical-header-left #mk-theme-container:not(.mk-transparent-header),
+    .vertical-header-enabled.vertical-header-center #mk-footer,
+    .vertical-header-enabled.vertical-header-left #mk-footer,
+    .vertical-header-enabled.vertical-header-center #mk-theme-container:not(.mk-transparent-header) {
+      padding-left: 0 !important;
+    }
+
+    .vertical-header-enabled.vertical-header-right #theme-page > .mk-main-wrapper-holder,
+    .vertical-header-enabled.vertical-header-right #theme-page > .mk-page-section,
+    .vertical-header-enabled.vertical-header-right #theme-page > .wpb_row,
+    .vertical-header-enabled.vertical-header-right #mk-footer,
+    .vertical-header-enabled.vertical-header-right #mk-theme-container:not(.mk-transparent-header) {
+      padding-right: 0 !important;
+    }
+  }
+
+  @media handheld, only screen and (min-width: 1140px) {
+    .mk-transparent-header .sticky-style-slide .mk-header-holder {
+      position: absolute;
+    }
+
+    .mk-transparent-header .remove-header-bg-true:not(.header-sticky-ready) .mk-header-bg {
+      opacity: 0;
+    }
+
+    .mk-transparent-header .remove-header-bg-true#mk-header:not(.header-sticky-ready) .mk-header-inner {
+      border: 0;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-desktop-logo.light-logo {
+      display: block !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-desktop-logo.dark-logo {
+      display: none !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .main-navigation-ul > li.menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-search-trigger,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-shoping-cart-link i,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-header-cart-count,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-header-start-tour,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) #mk-header-social a i,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.menu-item > a.menu-item-link:hover,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.menu-item:hover > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.current-menu-ancestor > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-2 .main-navigation-ul > li.menu-item > a.menu-item-link:hover,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-2 .main-navigation-ul > li.menu-item:hover > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-2 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-vm-menuwrapper li a,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-vm-menuwrapper li > a:after,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-vm-menuwrapper li.mk-vm-back:after {
+      color: #fff !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-css-icon-menu div {
+      background-color: #fff !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.dropdownOpen > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.active > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.open > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.menu-item > a:hover,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.current-menu-ancestor > a.menu-item-link {
+      border-top-color: #fff;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.current-menu-ancestor > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li.current-menu-item > a,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li.current-menu-ancestor > a {
+      border: 2px solid #fff;
+      background-color: #fff;
+      color: #222 !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.menu-item > a.menu-item-link:hover,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.menu-item:hover > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li > a:hover,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li:hover > a {
+      border: 2px solid #fff;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-4 .main-navigation-ul li.menu-item > a.menu-item-link:hover,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-4 .main-navigation-ul li.menu-item:hover > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-4 .main-navigation-ul li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-5 .main-navigation-ul > li.menu-item > a.menu-item-link:after {
+      background-color: #fff;
+      color: #222 !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-desktop-logo.dark-logo {
+      display: block !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-desktop-logo.light-logo {
+      display: none !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .main-navigation-ul > li.menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-search-trigger,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-shoping-cart-link i,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-header-cart-count,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-header-start-tour,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) #mk-header-social a i,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul li.menu-item > a.menu-item-link:hover,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul li.menu-item:hover > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul li.current-menu-ancestor > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-2 .main-navigation-ul li.menu-item > a.menu-item-link:hover,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-2 .main-navigation-ul li.menu-item:hover > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-2 .main-navigation-ul li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-2 .main-navigation-ul li.current-menu-ancestor > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-vm-menuwrapper li a,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-vm-menuwrapper li > a:after,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-vm-menuwrapper li.mk-vm-back:after {
+      color: #222 !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.dropdownOpen > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.active > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.open > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.menu-item > a:hover,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.current-menu-ancestor > a.menu-item-link {
+      border-top-color: #222;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-css-icon-menu div {
+      background-color: #222 !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.current-menu-ancestor > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li.current-menu-item > a,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li.current-menu-ancestor > a {
+      border: 2px solid #222;
+      background-color: #222;
+      color: #fff !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.menu-item > a.menu-item-link:hover,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.menu-item:hover > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li > a:hover,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li:hover > a {
+      border: 2px solid #222;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-4 .main-navigation-ul li.menu-item > a.menu-item-link:hover,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-4 .main-navigation-ul li.menu-item:hover > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-4 .main-navigation-ul li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-4 .main-navigation-ul li.current-menu-ancestor > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-5 .main-navigation-ul > li.menu-item > a.menu-item-link:after {
+      background-color: #222;
+      color: #fff !important;
+    }
+  }
+
+  .comment-reply a,
+  .mk-toggle .mk-toggle-title.active-toggle:before,
+  .mk-testimonial-author,
+  .modern-style .mk-testimonial-company,
+  #wp-calendar td#today,
+  .news-full-without-image .news-categories span,
+  .news-half-without-image .news-categories span,
+  .news-fourth-without-image .news-categories span,
+  .mk-read-more,
+  .news-single-social li a,
+  .portfolio-widget-cats,
+  .portfolio-carousel-cats,
+  .blog-showcase-more,
+  .simple-style .mk-employee-item:hover .team-member-position,
+  .mk-readmore,
+  .about-author-name,
+  .mk-portfolio-classic-item .portfolio-categories a,
+  .register-login-links a:hover,
+  .not-found-subtitle,
+  .mk-mini-callout a,
+  .search-loop-meta a,
+  .new-tab-readmore,
+  .mk-news-tab .mk-tabs-tabs li.ui-tabs-active a,
+  .mk-tooltip a,
+  .mk-accordion-single.current .mk-accordion-tab i,
+  .monocolor.pricing-table .pricing-price span,
+  .quantity .plus:hover,
+  .quantity .minus:hover,
+  .mk-woo-tabs .mk-tabs-tabs li.ui-state-active a,
+  .product .add_to_cart_button i,
+  .blog-modern-comment:hover,
+  .blog-modern-share:hover,
+  {
+    color: #f97352;
+  }
+
+  .mk-tabs .mk-tabs-tabs li.ui-tabs-active a > i,
+  .mk-accordion .mk-accordion-single.current .mk-accordion-tab:before,
+  .mk-tweet-list a,
+  .widget_testimonials .testimonial-slider .testimonial-author,
+  #mk-filter-portfolio li a:hover,
+  #mk-language-navigation ul li a:hover,
+  #mk-language-navigation ul li.current-menu-item > a,
+  .mk-quick-contact-wrapper h4,
+  .divider-go-top:hover i,
+  .widget-sub-navigation ul li a:hover,
+  #mk-footer .widget_posts_lists ul li .post-list-meta time,
+  .mk-footer-tweets .tweet-username,
+  .product-category .item-holder:hover h4,
+  {
+    color: #f97352 !important;
+  }
+
+  .image-hover-overlay,
+  .newspaper-portfolio,
+  .similar-posts-wrapper .post-thumbnail:hover > .overlay-pattern,
+  .portfolio-logo-section,
+  .post-list-document .post-type-thumb:hover,
+  #cboxTitle,
+  #cboxPrevious,
+  #cboxNext,
+  #cboxClose,
+  .comment-form-button,
+  .mk-dropcaps.fancy-style,
+  .mk-image-overlay,
+  .pinterest-item-overlay,
+  .news-full-with-image .news-categories span,
+  .news-half-with-image .news-categories span,
+  .news-fourth-with-image .news-categories span,
+  .widget-portfolio-overlay,
+  .portfolio-carousel-overlay,
+  .blog-carousel-overlay,
+  .mk-classic-comments span,
+  .mk-similiar-overlay,
+  .mk-skin-button,
+  .mk-flex-caption .flex-desc span,
+  .mk-icon-box .mk-icon-wrapper i:hover,
+  .mk-quick-contact-link:hover,
+  .quick-contact-active.mk-quick-contact-link,
+  .mk-fancy-table th,
+  .ui-slider-handle,
+  .widget_price_filter .ui-slider-range,
+  .shop-skin-btn,
+  #review_form_wrapper input[type=submit],
+  #mk-nav-search-wrapper form .nav-side-search-icon:hover,
+  form.ajax-search-complete i,
+  .blog-modern-btn,
+  .showcase-blog-overlay,
+  .gform_button[type=submit],
+  .button.alt,
+  #respond #submit,
+  .woocommerce .price_slider_amount .button.button,
+  .mk-shopping-cart-box .mk-button.checkout,
+  .widget_shopping_cart .mk-button.checkout,
+  .widget_shopping_cart .mk-button.checkout {
+    background-color: #f97352 !important;
+  }
+
+  .mk-circle-image .item-holder {
+    -webkit-box-shadow: 0 0 0 1px #f97352;
+    -moz-box-shadow: 0 0 0 1px #f97352;
+    box-shadow: 0 0 0 1px #f97352;
+  }
+
+  .mk-blockquote.line-style,
+  .bypostauthor .comment-content,
+  .bypostauthor .comment-content:after,
+  .mk-tabs.simple-style .mk-tabs-tabs li.ui-tabs-active a {
+    border-color: #f97352 !important;
+  }
+
+  .news-full-with-image .news-categories span,
+  .news-half-with-image .news-categories span,
+  .news-fourth-with-image .news-categories span,
+  .mk-flex-caption .flex-desc span {
+    box-shadow: 8px 0 0 #f97352, -8px 0 0 #f97352;
+  }
+
+  .monocolor.pricing-table .pricing-cols .pricing-col.featured-plan {
+    border: 1px solid #f97352 !important;
+  }
+
+  .mk-skin-button.three-dimension {
+    box-shadow: 0px 3px 0px 0px #c75c42;
+  }
+
+  .mk-skin-button.three-dimension:active {
+    box-shadow: 0px 1px 0px 0px #c75c42;
+  }
+
+  .mk-footer-copyright,
+  #mk-footer-navigation li a {
+    color: #8c8e91;
+  }
+
+  .mk-woocommerce-main-image img:hover,
+  .mk-single-thumbnails img:hover {
+    border: 1px solid #f97352 !important;
+  }
+
+  .product-loading-icon {
+    background-color: rgba(249, 115, 82, 0.6);
+  }
+
+  .mk-dynamic-styles {
+    display: none
+  }
+</style>
+<link rel='stylesheet' id='js_composer_front-css' href='/css/js_composer.css' type='text/css' media='all'/>
+<script type='text/javascript' src='https://code.jquery.com/jquery-1.11.3.min.js'></script>
+<script type='text/javascript' src='https://code.jquery.com/jquery-migrate-1.2.1.min.js'></script>
+<style type="text/css">.recentcomments a {
+  display: inline !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}</style>
+
+
+    <meta property="og:site_name" content="TomeCast"/>
+    <meta property="og:image"
+          content="/img/covers/freakonomics-radio.jpg"/>
+    <meta property="og:url" content="/podcasts/freakonomics-radio/2014/03/13/it-s-fun-to-smoke-marijuana.html"/>
+    <meta property="og:title" content="TomeCast Transcribed Podcast -  - “It’s Fun to Smoke Marijuana”"/>
+    <meta property="og:description"
+          content="Automatically Transcribed Podcast:  - “It’s Fun to Smoke Marijuana”"/>
+    <meta property="og:type" content="article"/>
+    <noscript>
+        <style>.wpb_animate_when_almost_visible {
+            opacity: 1;
+        }</style>
+    </noscript>
+</head>
+<body class="single single-post postid-591 single-format-standard  wpb-js-composer js-comp-ver-4.5.1 vc_responsive"
+      data-backText="Back" data-vm-anim="1">
+
+<div id="mk-boxed-layout">
+    <div id="mk-theme-container">
+        <header id="mk-header" data-height="130" data-hover-style="2" data-transparent-skin="" data-header-style="3" data-sticky-height="55" data-sticky-style="fixed" data-sticky-offset="header" class="header-style-3 header-align-left header-toolbar-false sticky-style-fixed  mk-background-stretch full-header ">
+  <div class="mk-header-holder">
+    <div class="mk-header-inner">
+      <div class="mk-header-bg "></div>
+      <div class="mk-dashboard-trigger header_dashboard_style">
+        <div class="mk-css-icon-menu icon-size-big">
+          <div class="mk-css-icon-menu-line-1"></div>
+          <div class="mk-css-icon-menu-line-2"></div>
+          <div class="mk-css-icon-menu-line-3"></div>
+        </div>
+      </div>
+      <div class="header-logo  ">
+        <a href="/" title="TomeCast - Homepage">
+          <img class="mk-desktop-logo dark-logo" alt="TomeCast - Homepage" src="/img/logo.png"/>
+        </a>
+      </div>
+      <div class="clearboth"></div>
+      <div class="mk-header-right">
+      </div>
+    </div>
+  </div>
+  <div class="clearboth"></div>
+  <div class="mk-header-padding-wrapper"></div>
+  <div class="clearboth"></div>
+  <div class="mk-zindex-fix">
+  </div>
+  <div class="clearboth"></div>
+</header>
+
+        <div id="theme-page">
+            <div class="mk-main-wrapper-holder">
+                <div class="theme-page-wrapper mk-blog-single full-layout vc_row-fluid mk-grid ">
+                    <div class="theme-content ">
+                        <article
+                                class=" post type-post status-publish format-standard has-post-thumbnail hentry category-articles category-business tag-audio tag-design">
+                            <div class="mk-audio-section mk-audio-shortcode" style="background-color:#acacac"><img
+                                    class="audio-thumb" alt="" title=""
+                                    src="/img/covers/freakonomics-radio.jpg" style="width:170px"/>
+
+                                <div id="jquery_jplayer" class="jp-jplayer mk-blog-audio"
+                                     data-mp3="http://feedproxy.google.com/~r/freakonomicsradio/~5/WjSOFis1uXQ/freakonomics_podcast031314.mp3"
+                                     data-ogg=""></div>
+                                <div id="jp_container" class="jp-audio audio-has-img">
+                                    <div class="jp-type-single">
+                                        <div class="jp-gui jp-interface">
+                                            <div class="jp-time-holder">
+                                                <div class="jp-current-time"></div>
+                                                <div class="jp-duration"></div>
+                                            </div>
+                                            <div class="jp-progress">
+                                                <div class="jp-seek-bar">
+                                                    <div class="jp-play-bar"></div>
+                                                </div>
+                                            </div>
+                                            <div class="jp-volume-bar">
+                                                <i class="mk-moon-volume-mute"></i>
+
+                                                <div class="inner-value-adjust">
+                                                    <div class="jp-volume-bar-value"></div>
+                                                </div>
+                                            </div>
+                                            <ul class="jp-controls">
+                                                <li><a href="javascript:;" class="jp-play" tabindex="1"><i
+                                                        class="mk-icon-play"></i></a></li>
+                                                <li><a href="javascript:;" class="jp-pause" tabindex="1"><i
+                                                        class="mk-icon-pause"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="jp-no-solution">
+                                            <span>Update Required</span>
+                                            To play the media you will need to either update your browser to a recent
+                                            version or update your <a href="http://get.adobe.com/flashplayer/"
+                                                                      target="_blank">Flash plugin</a>.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearboth"></div>
+                            </div>
+                            <h2 class="blog-single-title">“It’s Fun to Smoke Marijuana”</h2>
+
+                            <div class="blog-single-meta">
+                                <div class="mk-blog-author"><a href="/podcasts/freakonomics-radio"
+                                                               title='Posts in ' rel="section"></a></div>
+                                <div class="mk-blog-author">By <a title='Posted By ' rel="author"></a>
+                                </div>
+                                <time class="mk-post-date" datetime="2014-03-13 00:00:00 +0000">
+                                    Posted on <a href="">2014-03-13</a>
+                                </time>
+                            </div>
+                            <div class="single-social-section">
+                                <div class="mk-love-holder">
+                                    <a href="#" class="mk-love-this " id="mk-love">
+                                        <i class="mk-icon-heart"><span>&nbsp;</span></i>
+                                        <span class="mk-love-count">2</span>
+                                    </a>
+                                </div>
+                                <a href="#comments" class="blog-modern-comment">
+                                    <i class="mk-moon-bubble-9"></i><span> 0</span>
+                                </a>
+                                <div class="blog-share-container">
+                                    <div class="blog-single-share mk-toggle-trigger"><i class="mk-moon-share-2"></i>
+                                    </div>
+                                    <ul class="single-share-box mk-box-to-trigger">
+                                        <li><a class="facebook-share" data-title="Check out this Podcast:  - "
+    data-url=""
+    href=""><i
+            class="mk-jupiter-icon-simple-facebook"></i></a></li>
+<li><a class="twitter-share" data-title="Check out this Podcast:  - "
+    data-url=""
+    href="#"><i
+            class="mk-moon-twitter"></i></a></li>
+<li><a class="googleplus-share" data-title="Check out this Podcast:  - "
+    data-url=""
+    href=""><i
+            class="mk-jupiter-icon-simple-googleplus"></i></a></li>
+<li><a class="pinterest-share"
+       data-image="/img/covers/.jpg"
+       data-title="Check out this Podcast:  - "
+    data-url=""
+    href=""><i
+            class="mk-jupiter-icon-simple-pinterest"></i></a></li>
+<li><a class="linkedin-share"
+       data-desc=""
+       data-title="Check out this Podcast:  - "
+    data-url=""
+    href=""><i
+            class="mk-jupiter-icon-simple-linkedin"></i></a></li>
+
+                                    </ul>
+                                </div>
+                                <a class="mk-blog-print" onClick="window.print()"
+                                   href="#" title="Print"><i
+                                        class="mk-moon-print-3"></i></a>
+
+                                <div class="clearboth"></div>
+                            </div>
+                            <div class="clearboth"></div>
+                            <div class="mk-single-content" itemprop="mainContentOfPage">
+                                <div class="wpb_row vc_row  vc_row-fluid  mk-fullwidth-false  attched-false vc_row-fluid">
+                                    <div style="" class="vc_col-sm-12 wpb_column column_container ">
+                                        <div class="clearboth"></div>
+                                        <div class="mk-shortcode mk-padding-shortcode" style="height:40px"></div>
+                                        <div class="clearboth"></div>
+                                        <span id="drop-caps-555772840bc14"
+                                              class="mk-dropcaps mk-shortcode fancy-style ">D</span>
+
+                                        <div id="ajax-555772840bc14" class="mk-dynamic-styles"></div>
+                                        <div style=" margin-bottom:0px;text-align: left;" class="mk-text-block  "><p
+                                                style="text-align: justify;"><span style="color: #33cccc;"><strong>Duis
+                                            viverra</strong></span>
+
+
+                                        </p>
+
+                                            <div class="clearboth"></div>
+                                        </div>
+                                        <div style="font-size: 18px;" id="blockquote-555772840c9ac"
+                                             class="mk-shortcode mk-blockquote quote-style ">
+                                            <p>A psychology professor argues that the brain's greatest attribute is knowing what other people are thinking. And that a Queen song, played backwards, can improve your mind-reading skills.</p>
+                                        </div>
+                                        <div class="clearboth"></div>
+                                        <div class="mk-shortcode mk-padding-shortcode" style="height:20px"></div>
+                                        <div class="clearboth"></div>
+                                        <div style=" margin-bottom:0px;text-align: left;" class="mk-text-block  ">
+                                            <p>
+                                            
+                                            
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="0.99"
+                                                      data-length=""
+                                                      data-uuid="1cbae05d-ad18-4801-b400-272bdfb75dba"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="3.74"
+                                                      data-length=""
+                                                      data-uuid="14a58086-08d4-487a-95f4-1533b693f759"
+                                                      data-confidence="0.7227526">
+                                                    I'd like to meet nicholas zeppilli professor behavioral science at the university of chicago that's not is archana's it sounds I'm in the booth school of business
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="14.69"
+                                                      data-length=""
+                                                      data-uuid="6da767f2-8f77-482e-978b-be7eef7ab32d"
+                                                      data-confidence="0.5805527">
+                                                    know what do you think we all love about academia is how incredibly down to earth how ru did it is an incubus is the what exactly is appellees specialty istudy mind reading
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="32.76"
+                                                      data-length=""
+                                                      data-uuid="2f549cce-7174-45b6-a267-7af102ce7286"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S6"
+                                                      data-timestamp="41.26"
+                                                      data-length=""
+                                                      data-uuid="786615e7-5f64-4548-82cd-beffdb86d252"
+                                                      data-confidence="0.7084384">
+                                                    mw on my feet this is freakonomics radio podcast that explored the inside of everything
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S6"
+                                                      data-timestamp="48.85"
+                                                      data-length=""
+                                                      data-uuid="a731f38c-53aa-4e53-b7fd-6a8f45744004"
+                                                      data-confidence="0.3119432">
+                                                    here's your host stephen dubner
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="58.95"
+                                                      data-length=""
+                                                      data-uuid="205f048f-bceb-404e-82f3-295ef56fbe34"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S112"
+                                                      data-timestamp="63.0"
+                                                      data-length=""
+                                                      data-uuid="d896f14a-543f-4da0-bfb6-b7e7cdee0fd6"
+                                                      data-confidence="0.7501599">
+                                                    so why is a business school professor starring mind reading is nick with that we explained it's because being in business means constantly dealing with other people
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S112"
+                                                      data-timestamp="73.41"
+                                                      data-length=""
+                                                      data-uuid="12fe7b16-d6e3-499f-a0f4-fdb2df2a071a"
+                                                      data-confidence="0.7232496">
+                                                    and it's really helpful to understand what you can know what you know about how other people think whether their arrival partner whenever I tweet this written a book called mind why is how we understand what others think believe feel unwanted
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="92.66"
+                                                      data-length=""
+                                                      data-uuid="6369f319-4850-4944-9ccb-11c7c4ea8a09"
+                                                      data-confidence="0.8052245">
+                                                    ok so I'm experimental psychologist and what that means is that we put people in experiments to watch how they behave under certain conditions in so what we doing our research is we put people in experiments that put their mind reading capacities to the past 2 friends since we might bring in married couples
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="111.35"
+                                                      data-length=""
+                                                      data-uuid="132e372b-798f-4dd2-a302-76f8096286cc"
+                                                      data-confidence="0.721604">
+                                                    ask them to predict what their spouses additude RA long series of 20 different question say
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="117.68"
+                                                      data-length=""
+                                                      data-uuid="4bfcb469-e2a1-4b1b-b65f-133fbae3d4cc"
+                                                      data-confidence="0.7827664">
+                                                    we asked one person to predict how the other person will respond to this and then we look at all the other person actually responds and we compare the 2 we look to see if there are correlated with each other in it so
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="128.46"
+                                                      data-length=""
+                                                      data-uuid="ccddb502-0f8d-4a9f-ab5c-283ebbb2fbf9"
+                                                      data-confidence="0.8455123">
+                                                    how much so we also then randomly assign people to different conditions in an experiment in so we can see how they operate under different kinds of circumstances
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="137.82"
+                                                      data-length=""
+                                                      data-uuid="805446c7-f79d-4d0f-aaef-8a0a2c8fd9ed"
+                                                      data-confidence="0.7581621">
+                                                    that allows us to make inferences about how people actually reason about the minds of others what is it that allows us to make the source it in france is what tools are heuristics shortcut rules
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="148.79"
+                                                      data-length=""
+                                                      data-uuid="72f23529-ddbd-44e5-992a-30e640f8c8de"
+                                                      data-confidence="0.8180449">
+                                                    do we use to understand what somebody else thinks or believes orfeo's or wants it allows us to understand where people might fall short where we might make mistakes and it also allows us to test hypothesis about how to make people do better
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S143"
+                                                      data-timestamp="162.26"
+                                                      data-length=""
+                                                      data-uuid="694105d1-1411-4482-897e-3d7d22434904"
+                                                      data-confidence="0.8211817">
+                                                    so you are you in the book and I'll cook it yourself your brains greatest skill is its ability to think about the minds of others in order to understand them better
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S143"
+                                                      data-timestamp="173.26"
+                                                      data-length=""
+                                                      data-uuid="ec05c33d-28fa-4f11-9d57-976998642d2a"
+                                                      data-confidence="0.6958777">
+                                                    when I read that I thought wow that's incredibly gosh everything profound inspiring import and all that stuff and I thought really better brains greatest skill is the think about the minds of others in our understanding better what what makes you say that
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="190.42"
+                                                      data-length=""
+                                                      data-uuid="14d90c53-e2c4-4a75-8464-8e1f6263e89c"
+                                                      data-confidence="0.79">
+                                                    well if you look at what makes human beings unique from our closest primate relatives for instance we have big brains were really smart but we were really smart is in our social sciences in our social smart to do is it mean ormos experiment conducted handful of years ago buy some researchers at the max
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="209.85"
+                                                      data-length=""
+                                                      data-uuid="ee512082-1aab-478f-bf30-5fc4a9c1b44f"
+                                                      data-confidence="0.7908162">
+                                                    thank institute in germany what they did was they compared 105 human toddlers against 106 adult chimpanzees in their ability to solve certain kind of problems
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="221.64"
+                                                      data-length=""
+                                                      data-uuid="57f86183-68a8-463a-bdf7-95d7911e4d4f"
+                                                      data-confidence="0.8299733">
+                                                    one of these problems where is it all kinds of problems like your ability to use a tool for instance to achieve a goal or your ability to track where a reward was placed under some cops
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="234.5"
+                                                      data-length=""
+                                                      data-uuid="23f917a3-3426-4eb9-8c33-0a822f9144ec"
+                                                      data-confidence="0.75316">
+                                                    and are toddlers were doing just about as well as the chimpanzee's that is they were neck and neck and reasoning about
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="240.94"
+                                                      data-length=""
+                                                      data-uuid="a87f0c22-198d-4cb2-b8a4-fc759d2aa397"
+                                                      data-confidence="0.7450805">
+                                                    physical objects but then there was another class of questions bees were questions really required some mind reading required some social science studies were the social pass
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="252.31"
+                                                      data-length=""
+                                                      data-uuid="42538d95-5077-42f6-be24-2aefc3fe0a3e"
+                                                      data-confidence="0.7504091">
+                                                    where friends since you had to track the gays of another person to know what they wanted to know what their goal was or your ability to understand somebody else's intentions by watching their behavior anandhi social past sunday social kind of questions
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="268.54"
+                                                      data-length=""
+                                                      data-uuid="20f5e4bc-6b3b-427e-8614-9fb4c582488d"
+                                                      data-confidence="0.7249745">
+                                                    our 2 year old toddlers were crushing competition orchids for solving for more of these questions correctly then our adult primate relatives were in bats I think just one piece of evidence that suggests that this is what our brains were really
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="285.78"
+                                                      data-length=""
+                                                      data-uuid="d1fe9b0d-230c-49e7-b0a3-fa0f68a1d9df"
+                                                      data-confidence="0.7990485">
+                                                    meant to do we are one of the most social species on the planet we live in some of the biggest social networks have any organism on the planet and what separates us from others one allows us to cooperate in to compete into buildings collaboratively
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="301.13"
+                                                      data-length=""
+                                                      data-uuid="18affd46-6fe2-4715-97c1-977513d2d4cf"
+                                                      data-confidence="0.7541908">
+                                                    is our ability to connect with my father's to know weather in tensions are with their motives are 2 inches in feet weather gonna do next to know who knows what prince and you didn't call me out of the blue ray just talk to somebody randomly out for your show you knew that I knew something that might be of interest
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S128"
+                                                      data-timestamp="319.92"
+                                                      data-length=""
+                                                      data-uuid="17f5445f-45de-4787-aca2-ae164a4511d2"
+                                                      data-confidence="0.5583509">
+                                                    well we got when we got the envelope with cash in send soon so that'll foldaway where is spoken like an economist
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="327.7"
+                                                      data-length=""
+                                                      data-uuid="a3d402ed-98ff-4236-9e1d-0f6d1d51289d"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S128"
+                                                      data-timestamp="331.38"
+                                                      data-length=""
+                                                      data-uuid="b2a8f7e4-d33e-412c-b500-2e4146727bbe"
+                                                      data-confidence="0.7546597">
+                                                    tell us the story of the berryman latesha
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="333.85"
+                                                      data-length=""
+                                                      data-uuid="b8784959-aeee-41a9-8fb1-920338d7594d"
+                                                      data-confidence="0.7404615">
+                                                    so this is one of the most liberating experiments in alisa com
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="338.19"
+                                                      data-length=""
+                                                      data-uuid="e0ac2d14-1eca-41e6-84b4-ae094e13e9e8"
+                                                      data-confidence="0.6676622">
+                                                    please have an experiment conducted by my dissertation advisor tangalooma to cornell university and tubes rogerson's vicki matt back
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="346.95"
+                                                      data-length=""
+                                                      data-uuid="6be89057-ef98-4fae-9868-0e8ff4cadfde"
+                                                      data-confidence="0.6789736">
+                                                    oncken subitzky and what they did was they had people come to the laboratory and if you are the project manager imagine that are the participants kumamon you arrive in a lab room down the hall a little bit experiment igrici you thank you for coming as part of this experiment we just need you to put on this teacher
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="364.46"
+                                                      data-length=""
+                                                      data-uuid="48278cbe-5fd6-43c8-963c-e16483a1543e"
+                                                      data-confidence="0.7341249">
+                                                    new york applied subj you don't ask any questions you just do what your told and so you take this t shirt and you put it on azure sleeping over your head and pulling it out of your chance to see right there in front of you employees and right on your chest
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="377.3"
+                                                      data-length=""
+                                                      data-uuid="805e8f95-2e0a-4657-ab73-8db059d3ca16"
+                                                      data-confidence="0.9151385">
+                                                    is a great big picture of berry manolo
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S55"
+                                                      data-timestamp="380.54"
+                                                      data-length=""
+                                                      data-uuid="54ffab7d-3d68-49d6-98ef-f8cce804d528"
+                                                      data-confidence="0.1471429">
+                                                    open
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="384.46"
+                                                      data-length=""
+                                                      data-uuid="aeeb159f-6661-4a7b-afcb-cf08f1882593"
+                                                      data-confidence="0.5722023">
+                                                    fantastic you may be a famous band why don't you are well so maybe I should be a pride and do some kind of moment
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S128"
+                                                      data-timestamp="391.05"
+                                                      data-length=""
+                                                      data-uuid="dbb6571d-6abc-4a3e-ad82-680816a94435"
+                                                      data-confidence="0.7309855">
+                                                    sorry I just wanna get it straight so so when I put in my shirt on my prima berriman lotion on over when I'm wearing or am I wearing it like a regular shirt
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="399.34"
+                                                      data-length=""
+                                                      data-uuid="f64365d3-073b-4a5d-a322-737f88dbde97"
+                                                      data-confidence="0.7079765">
+                                                    I believe you are pulling over what you are wearing coz we tend not to have people get naked and experiments best different genres
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S128"
+                                                      data-timestamp="406.09"
+                                                      data-length=""
+                                                      data-uuid="bd33b0db-596e-4a2f-a732-82d640b0e3d4"
+                                                      data-confidence="0.6653207">
+                                                    matthews couldn't even more irregular locmariaquer not only am I now are in a berry manolo sure by mary berry manolo shirt over my clothes are you don't
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="414.54"
+                                                      data-length=""
+                                                      data-uuid="2e625acd-f096-4394-bb6d-632a8448187c"
+                                                      data-confidence="0.7030836">
+                                                    good that are clear and it's also a big shirt because it's gotta fit everybody so your not looking good so you got this big picture barry manolo on your chest and
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S128"
+                                                      data-timestamp="424.43"
+                                                      data-length=""
+                                                      data-uuid="62ab522d-4122-44ac-b859-59ad1efc625b"
+                                                      data-confidence="0.6222085">
+                                                    I have to say your anti menlo bias's really show me to come just say so
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="430.1"
+                                                      data-length=""
+                                                      data-uuid="b6d3dd07-7901-435d-9e10-48fd923a6fe1"
+                                                      data-confidence="0.6996699">
+                                                    yep I could be right I should tell you that bees the protest mats in these experiments were all undergraduates for home berry manolo is not typically pride inducing figure
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="440.27"
+                                                      data-length=""
+                                                      data-uuid="5d950b78-4167-4a83-bb50-4fa25f6353d6"
+                                                      data-confidence="0.8182293">
+                                                    that said they also ran the experiment later using it figures that people were in fact consistent happier to have on deck
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="450.4"
+                                                      data-length=""
+                                                      data-uuid="2242d1e6-3180-4ef4-85f1-999e3beba46d"
+                                                      data-confidence="0.8316303">
+                                                    just like martin luther king or jerry seinfeld or bob marley you get the same sex with him too
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S128"
+                                                      data-timestamp="456.72"
+                                                      data-length=""
+                                                      data-uuid="83bee44a-ec2a-49b2-bbca-3947dbce4932"
+                                                      data-confidence="0.671864">
+                                                    those are my choices mennello marley king in sign
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="460.22"
+                                                      data-length=""
+                                                      data-uuid="51fa7664-d21c-418d-9211-7e813d5b1c27"
+                                                      data-confidence="0.6340252">
+                                                    tell difference balmaseda different things also in some experiment is john tesh and vanilla ice so it's not just a berry manolo phanom ok ok but you get the idea
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="469.54"
+                                                      data-length=""
+                                                      data-uuid="fa819f7d-fdc9-4539-91ac-b67dfc40aa9e"
+                                                      data-confidence="0.7316094">
+                                                    so they put on this t shirt and I walk down the hallway and run into lab room rn there happen to be a few other people sitting around the room these are other participants an experiment are already filling out the questionnaire is an experiment are says you virada little bit late but it's ok
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="486.1"
+                                                      data-length=""
+                                                      data-uuid="dd911acb-eb51-4657-a6df-861c80531496"
+                                                      data-confidence="0.9010789">
+                                                    just go ahead and get started here you can sit down and you start filling out the questionnaire
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="491.82"
+                                                      data-length=""
+                                                      data-uuid="749a111b-a7c7-452f-8a26-718e637a3fe5"
+                                                      data-confidence="0.7709485">
+                                                    after just a moment do you spell me to turn back around coz you know when I'm afraid of started a little bit late when is just come on out of the room and you know it will get you started doing something else
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="503.26"
+                                                      data-length=""
+                                                      data-uuid="65c4cabb-d6c1-4e54-840e-58364bdd7aae"
+                                                      data-confidence="0.6963295">
+                                                    appointee experiment is really over
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="507.39"
+                                                      data-length=""
+                                                      data-uuid="b210beaf-f914-46a3-8c03-908a96773702"
+                                                      data-confidence="0.7416754">
+                                                    what happens now is the experimenter asked you
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="511.0"
+                                                      data-length=""
+                                                      data-uuid="cd3cc87d-a824-4844-8a63-b7a02c28c094"
+                                                      data-confidence="0.8630695">
+                                                    how many people in that room would be able to identify that it was berry manolo on your shirt
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S128"
+                                                      data-timestamp="517.62"
+                                                      data-length=""
+                                                      data-uuid="a5d39f50-7966-439f-b532-6bc70a02cf82"
+                                                      data-confidence="0.7390525">
+                                                    and when you say identify that was him not me like you don't mean how many people knew that that like this with him you talk matt did they notice whether I was wearing a very mellow chernogorsk didn't notice that you
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="527.85"
+                                                      data-length=""
+                                                      data-uuid="66c61536-f7bd-4673-8dcd-9835f8b474f8"
+                                                      data-confidence="0.6802145">
+                                                    bet wearing a berry manolo concert or not and so you predicted how many in the room it's awkward
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S128"
+                                                      data-timestamp="533.29"
+                                                      data-length=""
+                                                      data-uuid="0fb5ab61-6f5a-4cb6-ad93-4f0c41d66f3d"
+                                                      data-confidence="0.630605">
+                                                    why would my day hey I'm wearing a berry manolo shirts 100% of people do you know in some way to bury my letter
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="539.07"
+                                                      data-length=""
+                                                      data-uuid="8dc73bad-d5d4-46da-9042-c90c9256a470"
+                                                      data-confidence="0.7043794">
+                                                    yes I thought they did something like that yes I weather you are proud of it are embarrassed haven't taken anything but lots of people would notice in fact I thought about 50% of people in the room would notice
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="552.72"
+                                                      data-length=""
+                                                      data-uuid="12afd812-acdf-4dc0-9512-049f44ea78b1"
+                                                      data-confidence="0.769802">
+                                                    because you weren't in there for a long time you want the center of attention we could've made it to center vertucci to work so they were busy and other things but it was still pretty high
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="561.66"
+                                                      data-length=""
+                                                      data-uuid="2a490ff0-4d2a-4d35-8356-06e66e1ed045"
+                                                      data-confidence="0.7537261">
+                                                    bing porn comparison is not that it's how many the people in the room actually did notice that it was berry manolo on your shirt and there it looked as far is it to tell nobody was able to tell where is batman
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S128"
+                                                      data-timestamp="575.15"
+                                                      data-length=""
+                                                      data-uuid="2c8700de-be76-4ad1-be23-d3a980d5f4ae"
+                                                      data-confidence="0.7604094">
+                                                    do you mean to say that people aren't paying attention to everything that I do you it is possible yeah now so what do you call this affect and so this is a
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="586.91"
+                                                      data-length=""
+                                                      data-uuid="8557ef1d-966a-4251-ae73-d32c83a6af6f"
+                                                      data-confidence="0.7775306">
+                                                    a consistent problem with egocentrism so one thing that makes it hard to understand when others are thinking that we tend to rely on your own mind perhaps a little bit too much income tax when it's not necessarily
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="601.49"
+                                                      data-length=""
+                                                      data-uuid="8499c48f-b2d6-4441-9c77-d8ab88318ac7"
+                                                      data-confidence="0.7794031">
+                                                    perfectly appropriate to do so maybe rational thing to do but it still leads to an accuracy so in this situation here
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="607.99"
+                                                      data-length=""
+                                                      data-uuid="2a13d947-e6fd-4554-86fe-ede96adeb014"
+                                                      data-confidence="0.7379842">
+                                                    your where is barry manolo shirt even you're proud of this fact your your strut your stuff walking into this room
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="614.57"
+                                                      data-length=""
+                                                      data-uuid="c2683185-3641-4224-b5ca-57b29523fda2"
+                                                      data-confidence="0.7770479">
+                                                    and because you are so aware of yourself it's easy then to assume that others are more aware of you tonight actually are and that's just one of many different examples of where
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="626.65"
+                                                      data-length=""
+                                                      data-uuid="8967da28-5482-40f4-add1-aa03868697b7"
+                                                      data-confidence="0.8597381">
+                                                    egocentrism or inherent focus on ourselves you are always present when you are present you are always aware of yourself and your own thoughts and feelings when you're out in the world
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="636.9"
+                                                      data-length=""
+                                                      data-uuid="af19ade6-c33b-467a-b307-c422e350da5b"
+                                                      data-confidence="0.7806516">
+                                                    back and sometimes lead to errors this is one case we really do think that you notice more often than you actually are
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="642.4"
+                                                      data-length=""
+                                                      data-uuid="96c5b610-4fd3-4f9f-b97f-4381db8572cf"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S105"
+                                                      data-timestamp="652.78"
+                                                      data-length=""
+                                                      data-uuid="dba754e4-b498-4808-8429-2edb0a7481b5"
+                                                      data-confidence="0.7778515">
+                                                    what eppele is describing is sometimes called the spotlight the fact that when you feel a spotlight is always shining on you that for whatever reason people paying attention what you were doing
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S105"
+                                                      data-timestamp="663.42"
+                                                      data-length=""
+                                                      data-uuid="55a90505-457b-43e5-a9a8-c39e4ac693b8"
+                                                      data-confidence="0.6959016">
+                                                    the spotlight effect who is tom gilovich by the way apple is thesis advisor who coined that phrase the spotlight effect is the kind of thing that if we said greeley distort how we communicate with each other
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S105"
+                                                      data-timestamp="675.68"
+                                                      data-length=""
+                                                      data-uuid="c99525aa-87ff-44fb-ac28-0bca331a3694"
+                                                      data-confidence="0.7814531">
+                                                    so coming up on freakonomics radio can a song by queen help you get the spotlight off of yourself
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="686.17"
+                                                      data-length=""
+                                                      data-uuid="7c518650-446e-4a2d-bf15-dda11ea9dcfb"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="690.62"
+                                                      data-length=""
+                                                      data-uuid="507a27d4-8bc0-412b-a785-db1651e6753b"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="699.21"
+                                                      data-length=""
+                                                      data-uuid="9c58f556-97c5-43b9-975f-20c3a198f290"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S110"
+                                                      data-timestamp="702.58"
+                                                      data-length=""
+                                                      data-uuid="24f0b935-9777-4b09-81ff-6c67f2038341"
+                                                      data-confidence="0.7437581">
+                                                    from wmic this is freakonomics radio here's your host stephen dubner
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S112"
+                                                      data-timestamp="715.29"
+                                                      data-length=""
+                                                      data-uuid="651c1520-df1d-41eb-87cc-f7a10cedd3e0"
+                                                      data-confidence="0.7482513">
+                                                    nicholas eppele is a psychology professor at the university of chicago booth school of business
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S112"
+                                                      data-timestamp="720.46"
+                                                      data-length=""
+                                                      data-uuid="ed5c6cf7-011b-40e1-b5ce-1bd62d016b0d"
+                                                      data-confidence="0.7406881">
+                                                    is new book about mind reading not the kind of mind meeting you get for 20 bucks from a psychic kind of my meeting at academic researchers figure out by running lab experiments with the students were willing to do that if we believe that his research can greatly improve human relations how
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="739.41"
+                                                      data-length=""
+                                                      data-uuid="c553ca89-d86d-4fc2-bc56-35947efa624a"
+                                                      data-confidence="0.8194699">
+                                                    let me tell you how to do it
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="741.59"
+                                                      data-length=""
+                                                      data-uuid="a118f60b-f723-4c3e-889b-b4a423ee6b98"
+                                                      data-confidence="0.7118119">
+                                                    so what one of the things that surprisingly difficult in our everyday lives is predicting what other people think about
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="748.31"
+                                                      data-length=""
+                                                      data-uuid="ac5b815d-8f8f-432c-8f5e-2c42f08297fd"
+                                                      data-confidence="0.8747207">
+                                                    rent to do you know in a group who likes you and he doesn't do you know I'm on your audience members who think you're intelligent are not do I know in my class for instance which students really are like in my class this quarter and which ones are not
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="764.53"
+                                                      data-length=""
+                                                      data-uuid="654a8ae4-50c7-45f2-aa5c-91f61c1332e1"
+                                                      data-confidence="0.7663569">
+                                                    do I know how other people are valuating me when will pretty confident in our ability to do this without confidence tensta far outstrip our accuracy were not nearly as good as we think I'm one of the problems
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="777.74"
+                                                      data-length=""
+                                                      data-uuid="e5e967e2-8e08-437b-b467-5d4184617d09"
+                                                      data-confidence="0.7764392">
+                                                    is egocentrism where experts about ourselves we know a lot about AR sounds of outer appearance about her abilities and that makes it hard to recognize how somebody else who doesn't know as much about us will judge us
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="793.98"
+                                                      data-length=""
+                                                      data-uuid="1eae8449-7508-42c1-b8f7-5528b5cb7cc4"
+                                                      data-confidence="0.802735">
+                                                    and is one example let me play a song for you here in just a second when I'm gonna do is I'm gonna make you an expert in sk
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="802.97"
+                                                      data-length=""
+                                                      data-uuid="cba01fea-224c-4af2-9c0f-f79901be526b"
+                                                      data-confidence="0.7681994">
+                                                    granuaile see how becoming an expert learning some additional information knowing more about this particular clip
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="810.9"
+                                                      data-length=""
+                                                      data-uuid="7d604a12-a45f-47cf-a039-626848f82d2b"
+                                                      data-confidence="0.7943117">
+                                                    changes your perception of it in a way that makes it very hard for you now don't understand how an ama somebody wasn't an expert my to valuate the same stimulus ok can you ask you that music up
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="824.27"
+                                                      data-length=""
+                                                      data-uuid="9317a063-3da1-408d-b5b3-0c4ba48d0b07"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S128"
+                                                      data-timestamp="829.46"
+                                                      data-length=""
+                                                      data-uuid="3a3cdf6b-ae47-4797-83c4-3cf2975548cb"
+                                                      data-confidence="0.6161001">
+                                                    doctor you hate berry manolo but freddie mercury's ok I love it for this exam ok thanks so this is
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="837.42"
+                                                      data-length=""
+                                                      data-uuid="e5fd22e0-4d5c-4b3d-a68f-4bd3713ec070"
+                                                      data-confidence="0.7577502">
+                                                    a song I'm sorry miss you recognize this is the chorus from another one bites the dust queen song and what we're gonna do now is we're gonna take that very same clip for you I'm gonna play backwards I think I get my backwards im just listen to it
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="853.89"
+                                                      data-length=""
+                                                      data-uuid="573a1caa-0ea5-4635-9ae9-5cc923f8fdd9"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="856.55"
+                                                      data-length=""
+                                                      data-uuid="4cb58595-bc87-4b87-8382-bd35253e7574"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="858.75"
+                                                      data-length=""
+                                                      data-uuid="6d13f7c8-4332-4a80-ac54-f79fa456091e"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S128"
+                                                      data-timestamp="863.06"
+                                                      data-length=""
+                                                      data-uuid="7b5a6863-5202-461f-a040-4ef2c801fa5c"
+                                                      data-confidence="0.5963297">
+                                                    that was crystal clear yeah what's an atom yeah did you hear anything about I heard that are a mess LI hear and yes something like that yeah well this is this is
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="874.35"
+                                                      data-length=""
+                                                      data-uuid="1342563b-affc-4abc-8b7a-8c5170bf79c9"
+                                                      data-confidence="0.697215">
+                                                    clip that has been targeted is an example of backmasking olmsted is of paul is encia yes exactly of musicians who threw some kind of magic either intentional or accidental manage to take
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="889.96"
+                                                      data-length=""
+                                                      data-uuid="387fea61-9975-4c6b-96eb-f1e90e6725ee"
+                                                      data-confidence="0.74">
+                                                    afrer is an encrypted backwards into their song came to this is an example of one of these and so now so you were in office when you just perdis you didn't hear anything in this clip it sounds just like gibberish do you I'm gonna make you an expert on it now and see if it sounds different to you this time
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="908.07"
+                                                      data-length=""
+                                                      data-uuid="29ab12ff-952f-43de-9d3e-7618e059e0b7"
+                                                      data-confidence="0.7752965">
+                                                    so now and I want you to do are gonna play it again and I want you to listen for the words it's fun to smoke marijuana can I find a smoke marijuana find a smoke marijuana what's fun to smoke marijuana ok ok do it again listen to the words are trying to smoke marijuana
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S127"
+                                                      data-timestamp="925.51"
+                                                      data-length=""
+                                                      data-uuid="b924757a-c9f6-4808-9989-599ee31318de"
+                                                      data-confidence="0.4706666">
+                                                    well there it is yeah
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S127"
+                                                      data-timestamp="930.13"
+                                                      data-length=""
+                                                      data-uuid="5a5b25b8-6875-47c7-8518-c21514bbc3d8"
+                                                      data-confidence="0.747981">
+                                                    how to smoke marijuana
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S128"
+                                                      data-timestamp="934.06"
+                                                      data-length=""
+                                                      data-uuid="051168d4-0ce0-4859-b25f-4c6d6b7c446c"
+                                                      data-confidence="0.6157204">
+                                                    where is you can hardly not how could you think readable I'm at isn't it amazing I bet remarkable so ok so
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S143"
+                                                      data-timestamp="940.55"
+                                                      data-length=""
+                                                      data-uuid="e473c3c3-5bc6-4d6f-804a-1f4185315218"
+                                                      data-confidence="0.7883676">
+                                                    I didn't hear it before I hear it now after tell me how old is that however the spotlight affector my egocentrism
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="949.88"
+                                                      data-length=""
+                                                      data-uuid="e3ebfae7-3bb4-4a40-a630-cf246d7b1b55"
+                                                      data-confidence="0.8081822">
+                                                    it's a problem with egocentrism because what we've done there's we change your own perspective on that song in a way that makes it hard for you to appreciate how somebody else has a different perspective on it in as you do will interpret that so in my dissertation for instance when I was in grad school some years ago I played
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="968.33"
+                                                      data-length=""
+                                                      data-uuid="022f3352-1adf-465c-9971-1284b00db190"
+                                                      data-confidence="0.66509">
+                                                    all those songs does does backmask messages
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="971.91"
+                                                      data-length=""
+                                                      data-uuid="079467b7-4f53-4251-a664-96aaadffe114"
+                                                      data-confidence="0.7392082">
+                                                    one group was on informed and been told what to listen for the other group is called want to listen for and they hurt it just like you did the second night of one group porn office is the other breckenridge we had that happen predict what percentage of people who told nothing about the clip would be able to hear those words in that song
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="989.23"
+                                                      data-length=""
+                                                      data-uuid="d38b158b-c2f1-4495-9f96-bddbb56cf959"
+                                                      data-confidence="0.8846166">
+                                                    and what we found was that when you know what to listen for
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="992.25"
+                                                      data-length=""
+                                                      data-uuid="34eaaefe-cc64-4fee-9a8c-7d86cbad3ecd"
+                                                      data-confidence="0.7640766">
+                                                    jump out at you you are an expert on the song because I gave you additional information on it
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="996.98"
+                                                      data-length=""
+                                                      data-uuid="f1409b96-2acd-49fb-a244-fa12f6b54f15"
+                                                      data-confidence="0.8113674">
+                                                    you thought much higher percentage of people would be able to hear that back mass message in a song and when you knew nothing about it when you thought it was gibberish
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S128"
+                                                      data-timestamp="1006.54"
+                                                      data-length=""
+                                                      data-uuid="5175a5d6-19e8-4e4a-82ac-d5ad79ef4a32"
+                                                      data-confidence="0.8499457">
+                                                    are so so I'm a little curious I'm not sure how that illustrates you know egocentrism
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S143"
+                                                      data-timestamp="1011.86"
+                                                      data-length=""
+                                                      data-uuid="bd5211e3-3b3a-40a8-8157-e1a25d48fffc"
+                                                      data-confidence="0.7090582">
+                                                    as much as you know it's a simple case of sort of cognitive priming world record me I mean I get that is the prediction part that makes it spot lady but still
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="1022.86"
+                                                      data-length=""
+                                                      data-uuid="64bbfe21-5c9e-45b6-a7b5-0d0e9c801902"
+                                                      data-confidence="0.7554454">
+                                                    yep know it will because I change your perspective on the song so I want kiss your neck spin on it and in the other case you're not a song that I need to centrism part is that you assume the other peoples perspectives will maccherone right use your own is it gotten this is a problem
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="1036.65"
+                                                      data-length=""
+                                                      data-uuid="8a64c3e8-7ad9-4e20-b2d5-0e3b10a46bdb"
+                                                      data-confidence="0.9245476">
+                                                    more generally out in the world for an understanding
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="1039.67"
+                                                      data-length=""
+                                                      data-uuid="07026bc6-9ad0-468c-9872-2171c837ef89"
+                                                      data-confidence="0.8310863">
+                                                    how other people evaluate us because notice that you're an expert on yourself you know a lot about yourself but other people don't you know for instance that is podcast is going way better or way worse than most you know and friends that are more attractive today perhaps than you were yesterday
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="1058.35"
+                                                      data-length=""
+                                                      data-uuid="47bb586a-627c-4ce3-9da3-6fedf8227186"
+                                                      data-confidence="0.7193268">
+                                                    how do people don't notice about you I don't have all of this detailed information when we put people in experiments for instance inuyasha's that we take a picture of them and we ask them to predict
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="1069.86"
+                                                      data-length=""
+                                                      data-uuid="11a2cb18-0163-4a99-aae7-ee015e91e2ac"
+                                                      data-confidence="0.8586353">
+                                                    how attractive they will be rated by member of the opposite sex on a scale from zero to 10 we find others virtually no correlation between how people predict will be rated on the basis of this picture and heather actually write it on the basis of this picture and the reason is
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="1087.09"
+                                                      data-length=""
+                                                      data-uuid="44626ad6-48b4-4f1c-a7d8-4fc18bce114d"
+                                                      data-confidence="0.8012986">
+                                                    is it you're an expert about yourself so you when you when you look at a picture of yourself you look at every fine grained to tell you can notice that this girl is slightly out of place and your smile is a bit weird there and are they really supposed to see my undershirt under the collar back right
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="1103.73"
+                                                      data-length=""
+                                                      data-uuid="fa95c3c1-b341-460d-979e-543ad0e8d336"
+                                                      data-confidence="0.7356427">
+                                                    you notice all of these fine grain details about yourself just as an expert would an expert is able to dial in the microscope on a problem a note is all kinds of nuances and subtleties that others can't
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="1116.32"
+                                                      data-length=""
+                                                      data-uuid="3839f5e6-870d-4e80-bced-d343647c44f4"
+                                                      data-confidence="0.7629446">
+                                                    observers just the random person isn't an expert on you and I create a gap that makes it hard to know what somebody else thinks of you
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S112"
+                                                      data-timestamp="1136.66"
+                                                      data-length=""
+                                                      data-uuid="4a1e50a3-4851-4fef-a270-8ac43376e060"
+                                                      data-confidence="0.7237762">
+                                                    ok so according to nichols in please
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S112"
+                                                      data-timestamp="1139.42"
+                                                      data-length=""
+                                                      data-uuid="cebe5aaf-92cc-4189-a1bb-dcd9f314b4fc"
+                                                      data-confidence="0.6209904">
+                                                    oldest egocentrism can really make up how we communicate with one another
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S112"
+                                                      data-timestamp="1145.06"
+                                                      data-length=""
+                                                      data-uuid="2406abc0-c722-4eb8-9662-2f4b17304baf"
+                                                      data-confidence="0.6968029">
+                                                    how can we improve what is he learned all his years of study what are the tricks that would turn it all into great mind reader smta great human
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="1157.08"
+                                                      data-length=""
+                                                      data-uuid="ee03c4af-c24a-44f6-8ca9-9d99e15cbc11"
+                                                      data-confidence="0.7256958">
+                                                    the data sadly doesn't support any magic tricks that you supports
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="1162.11"
+                                                      data-length=""
+                                                      data-uuid="f114bc92-bedc-4bfb-9d0c-eeedc189b62d"
+                                                      data-confidence="0.7482091">
+                                                    the hard careful relational work getting perspective from someone else
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="1166.18"
+                                                      data-length=""
+                                                      data-uuid="3ff22295-95cb-4448-98fe-3542cc2dde63"
+                                                      data-confidence="0.8002938">
+                                                    you wanna know it's like to be waterboarded you either need to try it yourself as christopher hitchens frandsen's famously get in rota vanity fair piece about it or you have to talk to somebody who's actually been in that situation
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="1179.05"
+                                                      data-length=""
+                                                      data-uuid="7f077b23-05c8-4825-af0b-173be64be50b"
+                                                      data-confidence="0.810014">
+                                                    ask them questions and get their answers directly a person's mind computer mouse
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S184"
+                                                      data-timestamp="1186.55"
+                                                      data-length=""
+                                                      data-uuid="4f1be6b7-c7ed-4430-b027-179ddcecde85"
+                                                      data-confidence="0.8732399">
+                                                    ok so let me to see if you may be mastered this ability more than you think that if they do you know this is kind of osmotic process of researching and writing this book that is really made you are truly superior mind reader
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S184"
+                                                      data-timestamp="1203.66"
+                                                      data-length=""
+                                                      data-uuid="249eface-0b06-4b05-bacd-2bbfa5e9e474"
+                                                      data-confidence="0.78591">
+                                                    niclaus what do you think I'm thinking let's just say for the record also you're in chicago I'm in new york yes and we're just on these newspapers know video it all just were talking over radiophone myers what you think I'm thinking right now
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="1216.53"
+                                                      data-length=""
+                                                      data-uuid="282f662e-20a6-4a7d-a37e-5a1693d44acc"
+                                                      data-confidence="0.9236944">
+                                                    I don't have any idea
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S128"
+                                                      data-timestamp="1218.76"
+                                                      data-length=""
+                                                      data-uuid="a23638e6-3327-4bfa-b7c9-7422149741d8"
+                                                      data-confidence="0.7503288">
+                                                    how come I'm so am and one at 1:27 pm
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="1224.28"
+                                                      data-length=""
+                                                      data-uuid="bb95adcd-26a6-41d3-b5d0-1da9c7044590"
+                                                      data-confidence="0.907141">
+                                                    I think you're ready to be done with the interview
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="1226.29"
+                                                      data-length=""
+                                                      data-uuid="9831b9a1-d9ef-49f9-88f3-7618f5ebead5"
+                                                      data-confidence="0.7335165">
+                                                    are you go back to see if you don't look it was the one thing that you find out where I have anything happens to you when you study psychology ryu's you study the mistakes that we make in judgment
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="1239.88"
+                                                      data-length=""
+                                                      data-uuid="dd4dc4d4-b2b5-41f1-b092-b9b254cc139f"
+                                                      data-confidence="0.7519049">
+                                                    is it to become a little more humble about what you know and what you don'T&I don't know how humble I'm actually got to tell you they still make plenty of snap judgement and I make mistakes plenty often
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="1252.83"
+                                                      data-length=""
+                                                      data-uuid="531c07a7-c29f-4798-a61f-09af561159a0"
+                                                      data-confidence="0.6862743">
+                                                    but I do think that I've become more are more likely to ask questions are people so for instance one when trying to figure out with my wife wants for christmas you ask don't assume that I can guess you gonna ask if anna turns out well magic turns out to work pretty well
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S128"
+                                                      data-timestamp="1270.18"
+                                                      data-length=""
+                                                      data-uuid="101b31ec-3d12-44d2-acb1-cab74c247353"
+                                                      data-confidence="0.6750823">
+                                                    that is worth the price of admission right there this is the second
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="1276.18"
+                                                      data-length=""
+                                                      data-uuid="bc448291-fb47-4a48-af99-ffd5e24437af"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="1280.12"
+                                                      data-length=""
+                                                      data-uuid="01fef1bf-52a6-4c06-9f6d-98800745c78f"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S200"
+                                                      data-timestamp="1285.83"
+                                                      data-length=""
+                                                      data-uuid="b1e306af-baa6-42d3-a43d-0ce20a319c5e"
+                                                      data-confidence="0.7217468">
+                                                    hey pick up the stairs now that you can read my mind I don't really need me to tell you with the next week so I'll do it anyway it's on court one of our most popular episode is called women are not men women don't edit wicca pedia as much they compete differently patent west bus like to get struck by lightning doncellas hey
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S202"
+                                                      data-timestamp="1303.88"
+                                                      data-length=""
+                                                      data-uuid="79127610-1499-449f-a590-6d5e65999ca6"
+                                                      data-confidence="0.7299494">
+                                                    women told us that they were happy with their lives in the 70s and then were so we had a happiness gap in the 70s wear women reported greater well being then then then what we have now is a new gas
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S202"
+                                                      data-timestamp="1319.8"
+                                                      data-length=""
+                                                      data-uuid="2ac88c0d-8b04-4856-b5bc-ed514aa12fb7"
+                                                      data-confidence="0.7448774">
+                                                    where men report crater life satisfaction
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S200"
+                                                      data-timestamp="1322.86"
+                                                      data-length=""
+                                                      data-uuid="801721bb-beb0-43f6-9953-b67ef2f8498d"
+                                                      data-confidence="0.7754713">
+                                                    enlightment the many ways in which women are not meant for better or worse that's next time I'm freakonomics radio
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="1331.55"
+                                                      data-length=""
+                                                      data-uuid="3f28ab17-5749-4410-91d4-fce0bd739a71"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S207"
+                                                      data-timestamp="1334.04"
+                                                      data-length=""
+                                                      data-uuid="1d0637d2-1280-4f70-a8a9-438fe5f0f564"
+                                                      data-confidence="0.7327429">
+                                                    freakonomics radio is produced byWNYCN.net production our staff includes david herman greg brozowski creditstone breiland susie lechtenberg and chris banning
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S207"
+                                                      data-timestamp="1345.49"
+                                                      data-length=""
+                                                      data-uuid="88ff19e1-bcc8-4e0e-9359-f5de9a3b5a73"
+                                                      data-confidence="0.7651121">
+                                                    with engineering help from jim briggs do you want more freakonomics radio you can subscribe to a podcast on itunes or go to freakonomics.com will find lots of radio ablas the books and more
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="1357.56"
+                                                      data-length=""
+                                                      data-uuid="b0dfb9b1-d891-4832-8d8b-7b493cc3be1e"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="1368.28"
+                                                      data-length=""
+                                                      data-uuid="0e53e7a2-0080-4bfd-bebf-1b41faff462e"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S105"
+                                                      data-timestamp="1370.64"
+                                                      data-length=""
+                                                      data-uuid="96efd580-a9c0-436a-92e5-f21c99f3d45e"
+                                                      data-confidence="0.8202906">
+                                                    freakonomics radio is supported by new york life who's been helping families protector financial futures to 170 years and mom lengyel's may think they're too young for life insurance learn why it's best to start early at new yorklife.com slash freak
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S213"
+                                                      data-timestamp="1385.94"
+                                                      data-length=""
+                                                      data-uuid="42b05b09-55cc-4d97-887a-96a0db2b1044"
+                                                      data-confidence="0.8677468">
+                                                    freakonomics radio is supported by wealthfront wealthfront is an automated investment service built for the modern era in to make it easier than ever to invest your money well
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S213"
+                                                      data-timestamp="1396.71"
+                                                      data-length=""
+                                                      data-uuid="e7d59796-409d-4061-aea2-47a218573662"
+                                                      data-confidence="0.8029571">
+                                                    will front you the software instead of retail locations are salespeople so it can offer sophistical investment advice at low cost that were previously impossible
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S213"
+                                                      data-timestamp="1406.02"
+                                                      data-length=""
+                                                      data-uuid="933b1545-10a7-4ab8-8185-3028c3d78c21"
+                                                      data-confidence="0.8977089">
+                                                    it is exploded in popularity in last 2 years I know it more than $2.5 Billion under management check them out atwealthfront.com slash freak to get up to $10000 manage for free
+                                                </span>
+                                            
+                                            
+                                            </p>
+                                            <div class="clearboth"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mk-about-author-wrapper">
+                                <div class="avatar-wrapper"><img alt=''
+                                                                 src='/img/covers/freakonomics-radio.jpg'
+                                                                 class='avatar avatar-65 photo' height='65' width='65'/>
+                                </div>
+                                <div class="mk-about-author-meta">
+                                    <a class="about-author-name" href=""></a>
+
+                                    <div class="about-author-desc"></div>
+
+                                </div>
+                                <div class="clearboth"></div>
+                            </div>
+                            <section class="blog-similar-posts">
+                                <div class="similar-post-title">Recent Podcasts</div>
+                                <ul class="four-cols">
+                                    
+                                    <li>
+                                        <div class="similar-post-holder"><a class="mk-similiar-thumbnail"
+                                                                            href=""
+                                                                            title="“It’s Fun to Smoke Marijuana”"><img
+                                                src="/img/covers/freakonomics-radio.jpg"
+                                                alt="“It’s Fun to Smoke Marijuana”"/>
+
+                                            <div class="image-hover-overlay"></div>
+                                        </a><a href="" class="mk-similiar-title">“It’s Fun to Smoke Marijuana”</a></div>
+                                    </li>
+                                    
+                                </ul>
+                                <div class="clearboth"></div>
+                            </section>
+                            <section id="comments">
+                            </section>
+                        </article>
+                        <div class="clearboth"></div>
+                    </div>
+                    <div class="clearboth"></div>
+                </div>
+            </div>
+        </div>
+        <section id="mk-footer" class="">
+  <div class="footer-wrapper mk-grid">
+    <div class="mk-padding-wrapper">
+      <div class=""><section id="text-2" class="widget widget_text"> <div class="textwidget"><div style="text-align: center; color: #999999;"> Copyright TomeCast All Rights Reserved © 2015 </div></div>
+      </section></div>
+      <div class="clearboth"></div>
+    </div>
+  </div>
+</section>
+
+    </div>
+    <div class="mk-side-dashboard">
+    <div class="side-dash-top-widgets">
+        <section id="text-4" class="widget widget_text">
+            <div class="textwidget"><img
+                    src="/img/D-logo.png">
+            </div>
+        </section>
+    </div>
+    <nav id="mk-sidedash-navigation" class="side_dashboard_menu">
+        <ul id="menu-main-menu" class="sidedash-navigation-ul">
+            <li id="menu-item-4533" class="menu-item menu-item-type-post_type menu-item-object-page"><a
+                    href="/">Home</a></li>
+            <li id="menu-item-4527" class="menu-item menu-item-type-post_type menu-item-object-page"><a
+                    href="/about.html">About</a></li>
+            <li id="menu-item-4529"
+                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><a
+                    href="">Podcasts</a>
+                <ul class="sub-menu">
+                    
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                        <a href="//"></a>
+                    </li>
+                    
+
+
+                </ul>
+            </li>
+
+            <li id="menu-item-4525" class="menu-item menu-item-type-post_type menu-item-object-page"><a
+                    href="/contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="side-dash-bottom-widgets">
+        <section id="social-2" class="widget widget_social_networks">
+            <div id="social-55560e5fcc0ca" class="align-left"><a href="#"
+                                                                 rel="nofollow"
+                                                                 class="builtin-icons mk-square-pointed custom small facebook-hover"
+                                                                 target="_blank" alt="Follow Us on facebook"
+                                                                 title="Follow Us on facebook"><i
+                    class="mk-jupiter-icon-simple-facebook"></i></a><a href="#"
+                                                                       rel="nofollow"
+                                                                       class="builtin-icons mk-square-pointed custom small googleplus-hover"
+                                                                       target="_blank" alt="Follow Us on googleplus"
+                                                                       title="Follow Us on googleplus"><i
+                    class="mk-jupiter-icon-simple-googleplus"></i></a><a href="#"
+                                                                         rel="nofollow"
+                                                                         class="builtin-icons mk-square-pointed custom small twitter-hover"
+                                                                         target="_blank" alt="Follow Us on twitter"
+                                                                         title="Follow Us on twitter"><i
+                    class="mk-jupiter-icon-simple-twitter"></i></a>
+                <style>#social-55560e5fcc0ca a {
+                    opacity: 100 !important;
+                    color: #ffffff !important;
+                }
+
+                #social-55560e5fcc0ca a:hover {
+                    color: #f16f4f !important;
+                }</style>
+            </div>
+        </section>
+    </div>
+</div>
+
+</div>
+<a href="#" class="mk-go-top"><i class="mk-icon-chevron-up"></i></a>
+
+
+
+<a class="mk-post-nav mk-post-prev with-image" href="/podcasts/freakonomics-radio/2014/03/06/is-learning-a-foreign-language-really-worth-it.html"><span
+        class="pagnav-wrapper"><span class="pagenav-top"><span class="pagenav-image"><img width="150" height="150"
+              src="/img/covers/freakonomics-radio.jpg"
+              class="attachment-thumbnail wp-post-image"
+              alt="Is Learning a Foreign Language Really Worth It? Podcast"/></span><span
+        class="mk-pavnav-icon"><i class="mk-icon-long-arrow-left"></i></span></span><div class="nav-info-container">
+    <span class="pagenav-bottom"><span class="pagenav-title">Is Learning a Foreign Language Really Worth It?</span>2014-03-06</span></div></span></a>
+
+
+
+
+<a class="mk-post-nav mk-post-next with-image" href="/podcasts/freakonomics-radio/2014/03/20/women-are-not-men-rebroadcast.html"><span
+        class="pagnav-wrapper"><span class="pagenav-top"><span class="mk-pavnav-icon"><i
+        class="mk-icon-long-arrow-right"></i></span><span class="pagenav-image"><img width="150" height="150"
+             src="/img/covers/freakonomics-radio.jpg"
+             class="attachment-thumbnail wp-post-image"
+             alt="Women Are Not Men (Rebroadcast) Podcast"/></span></span><div
+        class="nav-info-container"><span class="pagenav-bottom"><span
+        class="pagenav-title">Women Are Not Men (Rebroadcast)</span>
+    2014-03-20
+</span></div></span></a>
+
+
+
+<script type='text/javascript' src='/js/scripts-vendors.js'></script>
+<script type='text/javascript' src='/js/app.js'></script>
+<script type='text/javascript' src='/js/smoothscroll.js'></script>
+<script type='text/javascript'
+        src='//cdnjs.cloudflare.com/ajax/libs/jquery.transit/0.9.12/jquery.transit.min.js'></script>
+
+<script type="text/javascript">
+    window.$ = jQuery
+
+    $('.mk-dynamic-styles').each(function () {
+        $(this).remove();
+    });
+
+    function ajaxStylesInjector() {
+        $('.mk-dynamic-styles').each(function () {
+            var $this = $(this),
+                    id = $this.attr('id'),
+                    commentedStyles = $this.html();
+            styles = commentedStyles
+                    .replace('<!--', '')
+                    .replace('-->', '');
+
+
+            if (dynamic_styles_ids.indexOf(id) === -1) {
+                $('style[data-ajax]').append(styles);
+                $this.remove();
+            }
+
+            dynamic_styles_ids.push(id);
+        });
+    }
+    ;
+
+    abb.modules.theme_header.init({
+        id: 'mk-header',
+        height: '130',
+        stickyHeight: '55',
+        stickyOffset: 'header',
+        hasToolbar: 'false'
+    });
+    abb.init();    </script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-69068664-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>
+ 

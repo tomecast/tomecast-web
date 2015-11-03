@@ -1,0 +1,3421 @@
+<!DOCTYPE html>
+<html itemscope="itemscope" itemtype="http://schema.org/Article" xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="format-detection" content="telephone=no">
+<title itemprop="name">TomeCast Template</title>
+
+<script type="text/javascript">
+  // Init aplication namespace
+  var abb = {};
+  var php = {};
+
+  var mk_header_parallax, mk_banner_parallax, mk_page_parallax, mk_footer_parallax, mk_body_parallax;
+  var mk_captcha_placeholder = "Enter Captcha",
+          mk_captcha_invalid_txt = "Invalid. Try again.",
+          mk_captcha_correct_txt = "Captcha correct.",
+          mk_responsive_nav_width = 1140,
+          mk_check_rtl = true,
+          mk_grid_width = 1140,
+          mk_ajax_search_option = "disable",
+          mk_preloader_txt_color = "#444444",
+          mk_preloader_bg_color = "#ffffff",
+          mk_accent_color = "#f97352",
+          mk_preloader_bar_color = "#f97352",
+          mk_preloader_logo = "";
+  var mk_header_parallax = false,
+          mk_banner_parallax = false,
+          mk_page_parallax = false,
+          mk_footer_parallax = false,
+          mk_body_parallax = false,
+          mk_no_more_posts = "No More Posts";
+
+  function is_touch_device() {
+    return ('ontouchstart' in document.documentElement);
+  }
+
+</script>
+
+<link rel='stylesheet' id='theme-styles-css' href='/css/theme-styles.min.css' type='text/css' media='all'/>
+<link rel='stylesheet' id='mk-pe-line-icon-css' href='/css/pe-line-icons.min.css' type='text/css' media='all'/>
+<link rel='stylesheet' id='mk-font-awesome-css' href='/css/font-awesome.min.css' type='text/css' media='all'/>
+<link rel='stylesheet' id='mk-icomoon-fonts-css' href='/css/icomoon-fonts.min.css' type='text/css' media='all'/>
+<link rel='stylesheet' id='mk-theme-icons-css' href='/css/theme-icons.min.css' type='text/css' media='all'/>
+<link rel='stylesheet' id='google-font-api-special-1-css' href='http://fonts.googleapis.com/css?family=Open+Sans%3A100italic%2C200italic%2C300italic%2C400italic%2C500italic%2C600italic%2C700italic%2C800italic%2C900italic%2C100%2C200%2C300%2C400%2C500%2C600%2C700%2C800%2C900&#038;ver=4.2.2' type='text/css' media='all'/>
+<link rel='stylesheet' id='mk-style-css' href='/css/style.css' type='text/css' media='all'/>
+<link rel='stylesheet' id='theme-dynamic-styles-css' href='/css/custom.css' type='text/css' media='all'/>
+<style id='theme-dynamic-styles-inline-css' type='text/css'>
+  body {
+  }
+
+  body,
+  p {
+    font-family: Open Sans
+  }
+
+  body {
+    background-color: #fff;
+  }
+
+  #mk-header {
+    background-color: #1b1b1b;
+  }
+
+  .mk-header-bg {
+    background-color: #1b1b1b;
+  }
+
+  .mk-header-toolbar {
+    background-color: #ffffff;
+  }
+
+  #theme-page {
+    background-color: #fff;
+  }
+
+  #mk-footer {
+    background-color: #1b1b1b;
+  }
+
+  #mk-footer .footer-wrapper {
+    padding: 30px 0;
+  }
+
+  #mk-footer .widget {
+    margin-bottom: 40px;
+  }
+
+  #mk-footer [class*='mk-col-'] {
+    padding: 0 2%;
+  }
+
+  #sub-footer {
+    background-color: #43474d;
+  }
+
+  .mk-footer-copyright {
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+
+  #mk-boxed-layout {
+    -webkit-box-shadow: 0 0 0px rgba(0, 0, 0, 0);
+    -moz-box-shadow: 0 0 0px rgba(0, 0, 0, 0);
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0);
+  }
+
+  .mk-tabs-panes,
+  .mk-news-tab .mk-tabs-tabs li.ui-tabs-active a,
+  .mk-divider .divider-go-top,
+  .ajax-container,
+  .mk-fancy-title.pattern-style span,
+  .mk-portfolio-view-all,
+  .mk-woo-view-all,
+  .mk-blog-view-all {
+    background-color: #fff;
+  }
+
+  .mk-header-bg {
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+    -o-opacity: 1;
+    opacity: 1;
+  }
+
+  .header-sticky-ready .mk-header-bg {
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+    -o-opacity: 1;
+    opacity: 1;
+  }
+
+  .mk-header-inner,
+  .header-sticky-ready .mk-header-inner,
+  .header-style-2.header-sticky-ready .mk-classic-nav-bg {
+    border-bottom: 1px solid #1b1b1b;
+  }
+
+  .header-style-4.header-align-left .mk-header-inner,
+  .header-style-4.header-align-center .mk-header-inner {
+    border-bottom: none;
+    border-right: 1px solid #1b1b1b;
+  }
+
+  .header-style-4.header-align-right .mk-header-inner {
+    border-bottom: none;
+    border-left: 1px solid #1b1b1b;
+  }
+
+  .header-style-2 .mk-header-nav-container {
+    border-top: 1px solid #1b1b1b;
+  }
+
+  #mk-header {
+    border-bottom: 1px solid #1b1b1b;
+  }
+
+  body {
+    font-size: 13px;
+    color: #777777;
+    font-weight: normal;
+    line-height: 1.66em;
+  }
+
+  p,
+  .mk-box-icon-2-content {
+    font-size: 13px;
+    color: #777777;
+    line-height: 1.66em;
+  }
+
+  a {
+    color: #2e2e2e;
+  }
+
+  a:hover {
+    color: #f97352;
+  }
+
+  #theme-page strong {
+    color: #f97352;
+  }
+
+  #theme-page h1 {
+    font-size: 36px;
+    color: #404040;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  #theme-page h2 {
+    font-size: 30px;
+    color: #404040;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  #theme-page h3 {
+    font-size: 24px;
+    color: #404040;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  #theme-page h4 {
+    font-size: 18px;
+    color: #404040;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  #theme-page h5 {
+    font-size: 16px;
+    color: #404040;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  #theme-page h6 {
+    font-size: 14px;
+    color: #404040;
+    font-weight: normal;
+    text-transform: uppercase;
+  }
+
+  .page-introduce-title {
+    font-size: 20px;
+    color: #4d4d4d;
+    text-transform: uppercase;
+    font-weight: normal;
+    letter-spacing: 2px;
+  }
+
+  .page-introduce-subtitle {
+    font-size: 14px;
+    line-height: 100%;
+    color: #a3a3a3;
+    font-size: 14px;
+    text-transform: none;
+  }
+
+  ::-webkit-selection {
+    background-color: #f97352;
+    color: #fff;
+  }
+
+  ::-moz-selection {
+    background-color: #f97352;
+    color: #fff;
+  }
+
+  ::selection {
+    background-color: #f97352;
+    color: #fff;
+  }
+
+  #mk-sidebar,
+  #mk-sidebar p {
+    font-size: 14px;
+    color: #999999;
+    font-weight: normal;
+  }
+
+  #mk-sidebar .widgettitle {
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #333333;
+    font-weight: bolder;
+  }
+
+  #mk-sidebar .widgettitle a {
+    color: #333333;
+  }
+
+  #mk-sidebar .widget a {
+    color: #999999;
+  }
+
+  #mk-footer,
+  #mk-footer p {
+    font-size: 14px;
+    color: #808080;
+    font-weight: normal;
+  }
+
+  #mk-footer .widgettitle {
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: 800;
+  }
+
+  #mk-footer .widgettitle a {
+    color: #ffffff;
+  }
+
+  #mk-footer .widget:not(.widget_social_networks) a {
+    color: #999999;
+  }
+
+  .mk-side-dashboard {
+    background-color: #1b1b1b;
+  }
+
+  .mk-side-dashboard,
+  .mk-side-dashboard p {
+    font-size: 12px;
+    color: #eeeeee;
+    font-weight: normal;
+  }
+
+  .mk-side-dashboard .widgettitle {
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #f16f4f;
+    font-weight: 800;
+  }
+
+  .mk-side-dashboard .widgettitle a {
+    color: #f16f4f;
+  }
+
+  .mk-side-dashboard .widget a {
+    color: #fafafa;
+  }
+
+  .sidedash-navigation-ul li a,
+  .sidedash-navigation-ul li .mk-nav-arrow {
+    color: #ffffff;
+  }
+
+  .sidedash-navigation-ul li a:hover {
+    color: #f16f4f;
+    background-color:;
+  }
+
+  .mk-fullscreen-nav {
+    background-color: #444444;
+  }
+
+  .mk-fullscreen-nav .mk-fullscreen-nav-wrapper .mk-fullscreen-nav-logo {
+    margin-bottom: 125px;
+  }
+
+  .mk-fullscreen-nav .fullscreen-navigation-ul .menu-item a {
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 0;
+    font-weight: 800;
+    padding: 25px 0;
+    color: #ffffff;
+  }
+
+  .mk-fullscreen-nav .fullscreen-navigation-ul .menu-item a:hover {
+    background-color: #ffffff;
+    color: #444444;
+  }
+
+  #mk-sidebar .widget:not(.widget_social_networks) a:hover {
+    color: #f97352;
+  }
+
+  #mk-footer .widget:not(.widget_social_networks) a:hover {
+    color: #f97352;
+  }
+
+  .mk-side-dashboard .widget:not(.widget_social_networks) a:hover {
+    color: #f97352;
+  }
+
+  .mk-grid {
+    max-width: 1140px;
+  }
+
+  .mk-header-nav-container,
+  .mk-classic-menu-wrapper {
+    width: 1140px;
+  }
+
+  .theme-page-wrapper #mk-sidebar.mk-builtin {
+    width: 27%;
+  }
+
+  .theme-page-wrapper.right-layout .theme-content,
+  .theme-page-wrapper.left-layout .theme-content {
+    width: 73%;
+  }
+
+  .mk-boxed-enabled #mk-boxed-layout,
+  .mk-boxed-enabled #mk-boxed-layout .header-style-1 .mk-header-holder,
+  .mk-boxed-enabled #mk-boxed-layout .header-style-3 .mk-header-holder {
+    max-width: 1200px;
+  }
+
+  .mk-boxed-enabled #mk-boxed-layout .header-style-1 .mk-header-holder,
+  .mk-boxed-enabled #mk-boxed-layout .header-style-3 .mk-header-holder {
+    width: 100% !important;
+    left: auto !important;
+  }
+
+  .mk-boxed-enabled #mk-boxed-layout .header-style-2.header-sticky-ready .mk-header-nav-container {
+    width: 1200px !important;
+    left: auto !important;
+  }
+
+  .header-style-1 .mk-header-start-tour,
+  .header-style-3 .mk-header-start-tour,
+  .header-style-1 .mk-header-inner #mk-header-search,
+  .header-style-1 .mk-header-inner,
+  .header-style-1 .mk-search-trigger,
+  .header-style-3 .mk-header-inner,
+  .header-style-1 .header-logo,
+  .header-style-3 .header-logo,
+  .header-style-1 .shopping-cart-header,
+  .header-style-3 .shopping-cart-header,
+  .header-style-1 #mk-header-social.header-section a,
+  .header-style-2 #mk-header-social.header-section a,
+  .header-style-3 #mk-header-social.header-section a {
+    height: 130px;
+    line-height: 130px;
+  }
+
+  @media handheld, only screen and (max-width: 1140px) {
+    .header-grid.mk-grid .header-logo.left-logo {
+      left: 15px !important;
+    }
+
+    .header-grid.mk-grid .header-logo.right-logo,
+    .mk-header-right {
+      right: 15px !important;
+    }
+
+    .header-style-3 .shopping-cart-header {
+      right: 30px;
+    }
+  }
+
+  #mk-theme-container:not(.mk-transparent-header) .header-style-1 .mk-header-padding-wrapper,
+  #mk-theme-container:not(.mk-transparent-header) .header-style-3 .mk-header-padding-wrapper {
+    padding-top: 130px;
+  }
+
+  @media handheld, only screen and (max-width: 960px) {
+    .theme-page-wrapper .theme-content {
+      width: 100% !important;
+      float: none !important;
+    }
+
+    .theme-page-wrapper {
+      padding-right: 15px !important;
+      padding-left: 15px !important;
+    }
+
+    .theme-page-wrapper .theme-content:not(.no-padding) {
+      padding: 25px 0 !important;
+    }
+
+    .theme-page-wrapper #mk-sidebar {
+      width: 100% !important;
+      float: none !important;
+      padding: 0 !important;
+    }
+
+    .theme-page-wrapper #mk-sidebar .sidebar-wrapper {
+      padding: 20px 0 !important;
+    }
+  }
+
+  @media handheld, only screen and (max-width: 1140px) {
+    .mk-go-top,
+    .mk-quick-contact-wrapper {
+      bottom: 70px !important;
+    }
+
+    .mk-grid {
+      width: 100%;
+    }
+
+    .mk-padding-wrapper {
+      padding: 0 20px;
+    }
+  }
+
+  #mk-toolbar-navigation ul li a,
+  .mk-language-nav > a,
+  .mk-header-login .mk-login-link,
+  .mk-subscribe-link,
+  .mk-checkout-btn,
+  .mk-header-tagline a,
+  .header-toolbar-contact a,
+  #mk-toolbar-navigation ul li a:hover,
+  .mk-language-nav > a:hover,
+  .mk-header-login .mk-login-link:hover,
+  .mk-subscribe-link:hover,
+  .mk-checkout-btn:hover,
+  .mk-header-tagline a:hover {
+    color: #999999;
+  }
+
+  .mk-header-tagline,
+  .header-toolbar-contact,
+  .mk-header-date {
+    color: #999999;
+  }
+
+  .mk-header-toolbar #mk-header-social a i {
+    color: #999999;
+  }
+
+  .header-section#mk-header-social ul li a i {
+    color: #999999;
+  }
+
+  .header-section#mk-header-social ul li a:hover i {
+    color: #cccccc;
+  }
+
+  .header-style-2 .header-logo,
+  .header-style-4 .header-logo {
+    height: 130px !important;
+  }
+
+  .header-style-4 .header-logo {
+    margin: 10px 0;
+  }
+
+  .header-style-2 .mk-header-inner {
+    line-height: 130px;
+  }
+
+  .mk-header-nav-container {
+    background-color:;
+  }
+
+  .mk-header-start-tour {
+    font-size: 14px;
+    color: #333333;
+  }
+
+  .mk-header-start-tour:hover {
+    color: #333333;
+  }
+
+  .mk-classic-nav-bg {
+    background-color: #1b1b1b;
+  }
+
+  .mk-search-trigger,
+  .mk-shoping-cart-link i,
+  .mk-header-cart-count,
+  .mk-toolbar-resposnive-icon i {
+    color: #ffffff;
+  }
+
+  .mk-css-icon-close div,
+  .mk-css-icon-menu div {
+    background-color: #ffffff;
+  }
+
+  #mk-header-searchform .text-input {
+    background-color: !important;
+    color: #c7c7c7;
+  }
+
+  #mk-header-searchform span i {
+    color: #c7c7c7;
+  }
+
+  #mk-header-searchform .text-input::-webkit-input-placeholder {
+    color: #c7c7c7;
+  }
+
+  #mk-header-searchform .text-input:-ms-input-placeholder {
+    color: #c7c7c7;
+  }
+
+  #mk-header-searchform .text-input:-moz-placeholder {
+    color: #c7c7c7;
+  }
+
+  .header-style-1.header-sticky-ready .menu-hover-style-1 .main-navigation-ul > li > a,
+  .header-style-3.header-sticky-ready .menu-hover-style-1 .main-navigation-ul > li > a,
+  .header-style-1.header-sticky-ready .menu-hover-style-5 .main-navigation-ul > li,
+  .header-style-1.header-sticky-ready .menu-hover-style-2 .main-navigation-ul > li > a,
+  .header-style-3.header-sticky-ready .menu-hover-style-2 .main-navigation-ul > li > a,
+  .header-style-1.header-style-1.header-sticky-ready .menu-hover-style-4 .main-navigation-ul > li > a,
+  .header-style-3.header-sticky-ready .menu-hover-style-4 .main-navigation-ul > li > a,
+  .header-style-1.header-sticky-ready .menu-hover-style-3 .main-navigation-ul > li,
+  .header-style-1.header-sticky-ready .mk-header-inner #mk-header-search,
+  .header-style-3.header-sticky-ready .mk-header-holder #mk-header-search,
+  .header-sticky-ready.header-style-3 .mk-header-start-tour,
+  .header-sticky-ready.header-style-1 .mk-header-start-tour,
+  .header-sticky-ready.header-style-1 .mk-header-inner,
+  .header-sticky-ready.header-style-3 .mk-header-inner,
+  .header-sticky-ready.header-style-3 .header-logo,
+  .header-sticky-ready.header-style-1 .header-logo,
+  .header-sticky-ready.header-style-1 .mk-search-trigger,
+  .header-sticky-ready.header-style-1 .mk-search-trigger i,
+  .header-sticky-ready.header-style-1 .shopping-cart-header,
+  .header-sticky-ready.header-style-1 .shopping-cart-header i,
+  .header-sticky-ready.header-style-3 .shopping-cart-header,
+  .header-sticky-ready.header-style-1 #mk-header-social.header-section a,
+  .header-sticky-ready.header-style-3 #mk-header-social.header-section a {
+    height: 55px !important;
+    line-height: 55px !important;
+  }
+
+  #mk-header-social.header-section a.small {
+    margin-top: 48px;
+  }
+
+  #mk-header-social.header-section a.medium {
+    margin-top: 40px;
+  }
+
+  #mk-header-social.header-section a.large {
+    margin-top: 32px;
+  }
+
+  .header-sticky-ready #mk-header-social.header-section a.small,
+  .header-sticky-ready #mk-header-social.header-section a.medium,
+  .header-sticky-ready #mk-header-social.header-section a.large {
+    margin-top: 10.5px;
+    line-height: 16px !important;
+    height: 16px !important;
+    font-size: 16px !important;
+    width: 16px !important;
+    padding: 8px !important;
+  }
+
+  .header-sticky-ready #mk-header-social.header-section a.small i:before,
+  .header-sticky-ready #mk-header-social.header-section a.medium i:before,
+  .header-sticky-ready #mk-header-social.header-section a.large i:before {
+    line-height: 16px !important;
+    font-size: 16px !important;
+  }
+
+  .main-navigation-ul > li.menu-item > a.menu-item-link {
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: bold;
+    padding-right: 20px !important;
+    padding-left: 20px !important;
+    text-transform: uppercase;
+    letter-spacing: 0px;
+  }
+
+  .mk-vm-menuwrapper ul li a {
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .mk-vm-menuwrapper li > a:after,
+  .mk-vm-menuwrapper li.mk-vm-back:after {
+    color: #ffffff;
+  }
+
+  .main-navigation-ul > li.no-mega-menu ul.sub-menu li.menu-item a.menu-item-link {
+    width: 230px;
+  }
+
+  .mk-header-3-menu-trigger {
+    color: #ffffff;
+  }
+
+  .menu-hover-style-1 .main-navigation-ul li.menu-item > a.menu-item-link:hover,
+  .menu-hover-style-1 .main-navigation-ul li.menu-item:hover > a.menu-item-link,
+  .menu-hover-style-1 .main-navigation-ul li.current-menu-item > a.menu-item-link,
+  .menu-hover-style-1 .main-navigation-ul li.current-menu-ancestor > a.menu-item-link,
+  .menu-hover-style-2 .main-navigation-ul li.menu-item > a.menu-item-link:hover,
+  .menu-hover-style-2 .main-navigation-ul li.menu-item:hover > a.menu-item-link,
+  .menu-hover-style-2 .main-navigation-ul li.current-menu-item > a.menu-item-link,
+  .menu-hover-style-2 .main-navigation-ul li.current-menu-ancestor > a.menu-item-link,
+  .menu-hover-style-1.mk-vm-menuwrapper li.menu-item > a:hover,
+  .menu-hover-style-1.mk-vm-menuwrapper li.menu-item:hover > a,
+  .menu-hover-style-1.mk-vm-menuwrapper li.current-menu-item > a,
+  .menu-hover-style-1.mk-vm-menuwrapper li.current-menu-ancestor > a,
+  .menu-hover-style-2.mk-vm-menuwrapper li.menu-item > a:hover,
+  .menu-hover-style-2.mk-vm-menuwrapper li.menu-item:hover > a,
+  .menu-hover-style-2.mk-vm-menuwrapper li.current-menu-item > a,
+  .menu-hover-style-2.mk-vm-menuwrapper li.current-menu-ancestor > a {
+    color: #f97352 !important;
+  }
+
+  .menu-hover-style-3 .main-navigation-ul > li.menu-item > a.menu-item-link:hover,
+  .menu-hover-style-3 .main-navigation-ul > li.menu-item:hover > a.menu-item-link,
+  .menu-hover-style-3.mk-vm-menuwrapper li > a:hover,
+  .menu-hover-style-3.mk-vm-menuwrapper li:hover > a {
+    border: 2px solid #f97352;
+  }
+
+  .menu-hover-style-3 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
+  .menu-hover-style-3 .main-navigation-ul > li.current-menu-ancestor > a.menu-item-link,
+  .menu-hover-style-3.mk-vm-menuwrapper li.current-menu-item > a,
+  .menu-hover-style-3.mk-vm-menuwrapper li.current-menu-ancestor > a {
+    border: 2px solid #f97352;
+    background-color: #f97352;
+    color: #ffffff;
+  }
+
+  .menu-hover-style-3.mk-vm-menuwrapper li.current-menu-ancestor > a:after {
+    color: #ffffff;
+  }
+
+  .menu-hover-style-4 .main-navigation-ul li.menu-item > a.menu-item-link:hover,
+  .menu-hover-style-4 .main-navigation-ul li.menu-item:hover > a.menu-item-link,
+  .menu-hover-style-4 .main-navigation-ul li.current-menu-item > a.menu-item-link,
+  .menu-hover-style-4 .main-navigation-ul li.current-menu-ancestor > a.menu-item-link,
+  .menu-hover-style-4.mk-vm-menuwrapper li a:hover,
+  .menu-hover-style-4.mk-vm-menuwrapper li:hover > a,
+  .menu-hover-style-4.mk-vm-menuwrapper li.current-menu-item > a,
+  .menu-hover-style-4.mk-vm-menuwrapper li.current-menu-ancestor > a,
+  .menu-hover-style-5 .main-navigation-ul > li.menu-item > a.menu-item-link:after {
+    background-color: #f97352;
+    color: #ffffff;
+  }
+
+  .menu-hover-style-4.mk-vm-menuwrapper li.current-menu-ancestor > a:after,
+  .menu-hover-style-4.mk-vm-menuwrapper li.current-menu-item > a:after,
+  .menu-hover-style-4.mk-vm-menuwrapper li:hover > a:after,
+  .menu-hover-style-4.mk-vm-menuwrapper li a:hover::after {
+    color: #ffffff;
+  }
+
+  .menu-hover-style-1 .main-navigation-ul > li.dropdownOpen > a.menu-item-link,
+  .menu-hover-style-1 .main-navigation-ul > li.active > a.menu-item-link,
+  .menu-hover-style-1 .main-navigation-ul > li.open > a.menu-item-link,
+  .menu-hover-style-1 .main-navigation-ul > li.menu-item > a:hover,
+  .menu-hover-style-1 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
+  .menu-hover-style-1 .main-navigation-ul > li.current-menu-ancestor > a.menu-item-link {
+    border-top-color: #f97352;
+  }
+
+  .menu-hover-style-1.mk-vm-menuwrapper li > a:hover,
+  .menu-hover-style-1.mk-vm-menuwrapper li.current-menu-item > a,
+  .menu-hover-style-1.mk-vm-menuwrapper li.current-menu-ancestor > a {
+    border-left-color: #f97352;
+  }
+
+  .header-style-1 .menu-hover-style-1 .main-navigation-ul > li > a,
+  .header-style-1 .menu-hover-style-2 .main-navigation-ul > li > a,
+  .header-style-1 .menu-hover-style-4 .main-navigation-ul > li > a,
+  .header-style-1 .menu-hover-style-5 .main-navigation-ul > li {
+    height: 130px;
+    line-height: 130px;
+  }
+
+  .header-style-1 .menu-hover-style-3 .main-navigation-ul > li,
+  .header-style-1 .menu-hover-style-5 .main-navigation-ul > li {
+    height: 130px;
+    line-height: 130px;
+  }
+
+  .header-style-1 .menu-hover-style-3 .main-navigation-ul > li > a {
+    line-height: 65px;
+  }
+
+  .header-style-1.header-sticky-ready .menu-hover-style-3 .main-navigation-ul > li > a {
+    line-height: 36.666666666667px;
+  }
+
+  .header-style-1 .menu-hover-style-5 .main-navigation-ul > li > a {
+    line-height: 20px;
+    vertical-align: middle;
+  }
+
+  .main-navigation-ul > li.no-mega-menu ul.sub-menu:after,
+  .main-navigation-ul > li.has-mega-menu > ul.sub-menu:after {
+    background-color: #f97352;
+  }
+
+  .mk-shopping-cart-box {
+    border-top: 2px solid #f97352;
+  }
+
+  #mk-main-navigation li.no-mega-menu ul.sub-menu,
+  #mk-main-navigation li.has-mega-menu > ul.sub-menu,
+  .mk-shopping-cart-box {
+    background-color: #333333;
+  }
+
+  #mk-main-navigation ul.sub-menu a.menu-item-link,
+  #mk-main-navigation ul .megamenu-title,
+  .megamenu-widgets-container a,
+  .mk-shopping-cart-box .product_list_widget li a,
+  .mk-shopping-cart-box .product_list_widget li.empty,
+  .mk-shopping-cart-box .product_list_widget li span,
+  .mk-shopping-cart-box .widget_shopping_cart .total {
+    color: #b3b3b3;
+  }
+
+  .mk-shopping-cart-box .mk-button.cart-widget-btn {
+    border-color: #b3b3b3;
+    color: #b3b3b3;
+  }
+
+  .mk-shopping-cart-box .mk-button.cart-widget-btn:hover {
+    background-color: #b3b3b3;
+    color: #333333;
+  }
+
+  #mk-main-navigation ul .megamenu-title {
+    color: #ffffff;
+  }
+
+  #mk-main-navigation ul .megamenu-title:after {
+    background-color: #ffffff;
+  }
+
+  .megamenu-widgets-container {
+    color: #b3b3b3;
+  }
+
+  .megamenu-widgets-container .widgettitle {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bolder;
+  }
+
+  #mk-main-navigation ul.sub-menu li.menu-item ul.sub-menu li.menu-item a.menu-item-link i {
+    color: #e0e0e0;
+  }
+
+  #mk-main-navigation ul.sub-menu a.menu-item-link:hover,
+  .main-navigation-ul ul.sub-menu li.current-menu-item > a.menu-item-link,
+  .main-navigation-ul ul.sub-menu li.current-menu-parent > a.menu-item-link {
+    color: #ffffff !important;
+  }
+
+  .megamenu-widgets-container a:hover {
+    color: #ffffff;
+  }
+
+  .main-navigation-ul li.menu-item ul.sub-menu li.menu-item a.menu-item-link:hover,
+  .main-navigation-ul li.menu-item ul.sub-menu li.menu-item:hover > a.menu-item-link,
+  .main-navigation-ul ul.sub-menu li.menu-item a.menu-item-link:hover,
+  .main-navigation-ul ul.sub-menu li.menu-item:hover > a.menu-item-link,
+  .main-navigation-ul ul.sub-menu li.current-menu-item > a.menu-item-link,
+  .main-navigation-ul ul.sub-menu li.current-menu-parent > a.menu-item-link {
+    background-color: transparent !important;
+  }
+
+  .mk-search-trigger:hover,
+  .mk-header-start-tour:hover {
+    color: #f97352;
+  }
+
+  .main-navigation-ul li.menu-item ul.sub-menu li.menu-item a.menu-item-link {
+    font-size: 12px;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .has-mega-menu .megamenu-title {
+    letter-spacing: 1px;
+  }
+
+  .header-style-4 {
+    text-align: left
+  }
+
+  .mk-vm-menuwrapper li > a {
+    padding-right: 45px;
+  }
+
+  @media handheld, only screen and (max-width: 1140px) {
+    .header-style-1 .mk-header-inner,
+    .header-style-3 .mk-header-inner,
+    .header-style-3 .header-logo,
+    .header-style-1 .header-logo,
+    .header-style-1 .shopping-cart-header,
+    .header-style-3 .shopping-cart-header {
+      height: 90px !important;
+      line-height: 90px;
+    }
+
+    #mk-header:not(.header-style-4) .mk-header-holder {
+      position: relative !important;
+      top: 0 !important;
+    }
+
+    .mk-header-padding-wrapper {
+      display: none !important;
+    }
+
+    .mk-header-nav-container {
+      width: auto !important;
+      display: none;
+    }
+
+    .header-style-1 .mk-header-right,
+    .header-style-2 .mk-header-right,
+    .header-style-3 .mk-header-right {
+      right: 55px !important;
+    }
+
+    .header-style-1 .mk-header-inner #mk-header-search,
+    .header-style-2 .mk-header-inner #mk-header-search,
+    .header-style-3 .mk-header-inner #mk-header-search {
+      display: none !important;
+    }
+
+    .mk-fullscreen-search-overlay {
+      display: none;
+    }
+
+    #mk-header-search {
+      padding-bottom: 10px !important;
+    }
+
+    #mk-header-searchform span .text-input {
+      width: 100% !important;
+    }
+
+    .header-style-2 .header-logo .center-logo {
+      text-align: right !important;
+    }
+
+    .header-style-2 .header-logo .center-logo a {
+      margin: 0 !important;
+    }
+
+    .header-logo,
+    .header-style-4 .header-logo {
+      height: 90px !important;
+    }
+
+    .header-style-4 .shopping-cart-header {
+      display: none;
+    }
+
+    .mk-header-inner {
+      padding-top: 0 !important;
+    }
+
+    .header-logo {
+      position: relative !important;
+      right: auto !important;
+      left: auto !important;
+      float: left !important;
+      text-align: left;
+    }
+
+    .shopping-cart-header {
+      margin: 0 20px 0 0 !important;
+    }
+
+    #mk-responsive-nav {
+      background-color: #ffffff !important;
+    }
+
+    .mk-header-nav-container #mk-responsive-nav {
+      visibility: hidden;
+    }
+
+    #mk-responsive-nav li ul li .megamenu-title:hover,
+    #mk-responsive-nav li ul li .megamenu-title,
+    #mk-responsive-nav li a,
+    #mk-responsive-nav li ul li a:hover,
+    #mk-responsive-nav .mk-nav-arrow {
+      color: #444444 !important;
+    }
+
+    .mk-mega-icon {
+      display: none !important;
+    }
+
+    .mk-header-bg {
+      zoom: 1 !important;
+      filter: alpha(opacity=100) !important;
+      opacity: 1 !important;
+    }
+
+    .header-style-1 .mk-nav-responsive-link,
+    .header-style-2 .mk-nav-responsive-link {
+      display: block !important;
+    }
+
+    .mk-header-nav-container {
+      height: 100%;
+      z-index: 200;
+    }
+
+    #mk-main-navigation {
+      position: relative;
+      z-index: 2;
+    }
+
+    .mk_megamenu_columns_2,
+    .mk_megamenu_columns_3,
+    .mk_megamenu_columns_4,
+    .mk_megamenu_columns_5,
+    .mk_megamenu_columns_6 {
+      width: 100% !important;
+    }
+
+    .header-style-1.header-align-right .header-logo img,
+    .header-style-3.header-align-right .header-logo img,
+    .header-style-3.header-align-center .header-logo img {
+      float: left !important;
+      right: auto !important;
+    }
+
+    .header-style-4 .mk-header-inner {
+      width: auto !important;
+      position: relative !important;
+      overflow: visible;
+      padding-bottom: 0;
+    }
+
+    .admin-bar .header-style-4 .mk-header-inner {
+      top: 0 !important;
+    }
+
+    .header-style-4 .mk-header-right {
+      display: none;
+    }
+
+    .header-style-4 .mk-nav-responsive-link {
+      display: block !important;
+    }
+
+    .header-style-4 .mk-vm-menuwrapper,
+    .header-style-4 #mk-header-search {
+      display: none;
+    }
+
+    .header-style-4 .header-logo {
+      width: auto !important;
+      display: inline-block !important;
+      text-align: left !important;
+      margin: 0 !important;
+    }
+
+    .vertical-header-enabled .header-style-4 .header-logo img {
+      max-width: 100% !important;
+      left: 20px !important;
+      top: 50% !important;
+      -webkit-transform: translate(0, -50%) !important;
+      -moz-transform: translate(0, -50%) !important;
+      -ms-transform: translate(0, -50%) !important;
+      -o-transform: translate(0, -50%) !important;
+      transform: translate(0, -50%) !important;
+      position: relative !important;
+    }
+
+    .vertical-header-enabled.vertical-header-left #theme-page > .mk-main-wrapper-holder,
+    .vertical-header-enabled.vertical-header-center #theme-page > .mk-main-wrapper-holder,
+    .vertical-header-enabled.vertical-header-left #theme-page > .mk-page-section,
+    .vertical-header-enabled.vertical-header-center #theme-page > .mk-page-section,
+    .vertical-header-enabled.vertical-header-left #theme-page > .wpb_row,
+    .vertical-header-enabled.vertical-header-center #theme-page > .wpb_row,
+    .vertical-header-enabled.vertical-header-left #mk-theme-container:not(.mk-transparent-header),
+    .vertical-header-enabled.vertical-header-center #mk-footer,
+    .vertical-header-enabled.vertical-header-left #mk-footer,
+    .vertical-header-enabled.vertical-header-center #mk-theme-container:not(.mk-transparent-header) {
+      padding-left: 0 !important;
+    }
+
+    .vertical-header-enabled.vertical-header-right #theme-page > .mk-main-wrapper-holder,
+    .vertical-header-enabled.vertical-header-right #theme-page > .mk-page-section,
+    .vertical-header-enabled.vertical-header-right #theme-page > .wpb_row,
+    .vertical-header-enabled.vertical-header-right #mk-footer,
+    .vertical-header-enabled.vertical-header-right #mk-theme-container:not(.mk-transparent-header) {
+      padding-right: 0 !important;
+    }
+  }
+
+  @media handheld, only screen and (min-width: 1140px) {
+    .mk-transparent-header .sticky-style-slide .mk-header-holder {
+      position: absolute;
+    }
+
+    .mk-transparent-header .remove-header-bg-true:not(.header-sticky-ready) .mk-header-bg {
+      opacity: 0;
+    }
+
+    .mk-transparent-header .remove-header-bg-true#mk-header:not(.header-sticky-ready) .mk-header-inner {
+      border: 0;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-desktop-logo.light-logo {
+      display: block !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-desktop-logo.dark-logo {
+      display: none !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .main-navigation-ul > li.menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-search-trigger,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-shoping-cart-link i,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-header-cart-count,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-header-start-tour,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) #mk-header-social a i,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.menu-item > a.menu-item-link:hover,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.menu-item:hover > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.current-menu-ancestor > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-2 .main-navigation-ul > li.menu-item > a.menu-item-link:hover,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-2 .main-navigation-ul > li.menu-item:hover > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-2 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-vm-menuwrapper li a,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-vm-menuwrapper li > a:after,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-vm-menuwrapper li.mk-vm-back:after {
+      color: #fff !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-css-icon-menu div {
+      background-color: #fff !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.dropdownOpen > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.active > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.open > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.menu-item > a:hover,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.current-menu-ancestor > a.menu-item-link {
+      border-top-color: #fff;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.current-menu-ancestor > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li.current-menu-item > a,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li.current-menu-ancestor > a {
+      border: 2px solid #fff;
+      background-color: #fff;
+      color: #222 !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.menu-item > a.menu-item-link:hover,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.menu-item:hover > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li > a:hover,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li:hover > a {
+      border: 2px solid #fff;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-4 .main-navigation-ul li.menu-item > a.menu-item-link:hover,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-4 .main-navigation-ul li.menu-item:hover > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-4 .main-navigation-ul li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-5 .main-navigation-ul > li.menu-item > a.menu-item-link:after {
+      background-color: #fff;
+      color: #222 !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-desktop-logo.dark-logo {
+      display: block !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-desktop-logo.light-logo {
+      display: none !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .main-navigation-ul > li.menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-search-trigger,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-shoping-cart-link i,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-header-cart-count,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-header-start-tour,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) #mk-header-social a i,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul li.menu-item > a.menu-item-link:hover,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul li.menu-item:hover > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul li.current-menu-ancestor > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-2 .main-navigation-ul li.menu-item > a.menu-item-link:hover,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-2 .main-navigation-ul li.menu-item:hover > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-2 .main-navigation-ul li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-2 .main-navigation-ul li.current-menu-ancestor > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-vm-menuwrapper li a,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-vm-menuwrapper li > a:after,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-vm-menuwrapper li.mk-vm-back:after {
+      color: #222 !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.dropdownOpen > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.active > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.open > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.menu-item > a:hover,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.current-menu-ancestor > a.menu-item-link {
+      border-top-color: #222;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-css-icon-menu div {
+      background-color: #222 !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.current-menu-ancestor > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li.current-menu-item > a,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li.current-menu-ancestor > a {
+      border: 2px solid #222;
+      background-color: #222;
+      color: #fff !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.menu-item > a.menu-item-link:hover,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.menu-item:hover > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li > a:hover,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li:hover > a {
+      border: 2px solid #222;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-4 .main-navigation-ul li.menu-item > a.menu-item-link:hover,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-4 .main-navigation-ul li.menu-item:hover > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-4 .main-navigation-ul li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-4 .main-navigation-ul li.current-menu-ancestor > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-5 .main-navigation-ul > li.menu-item > a.menu-item-link:after {
+      background-color: #222;
+      color: #fff !important;
+    }
+  }
+
+  .comment-reply a,
+  .mk-toggle .mk-toggle-title.active-toggle:before,
+  .mk-testimonial-author,
+  .modern-style .mk-testimonial-company,
+  #wp-calendar td#today,
+  .news-full-without-image .news-categories span,
+  .news-half-without-image .news-categories span,
+  .news-fourth-without-image .news-categories span,
+  .mk-read-more,
+  .news-single-social li a,
+  .portfolio-widget-cats,
+  .portfolio-carousel-cats,
+  .blog-showcase-more,
+  .simple-style .mk-employee-item:hover .team-member-position,
+  .mk-readmore,
+  .about-author-name,
+  .mk-portfolio-classic-item .portfolio-categories a,
+  .register-login-links a:hover,
+  .not-found-subtitle,
+  .mk-mini-callout a,
+  .search-loop-meta a,
+  .new-tab-readmore,
+  .mk-news-tab .mk-tabs-tabs li.ui-tabs-active a,
+  .mk-tooltip a,
+  .mk-accordion-single.current .mk-accordion-tab i,
+  .monocolor.pricing-table .pricing-price span,
+  .quantity .plus:hover,
+  .quantity .minus:hover,
+  .mk-woo-tabs .mk-tabs-tabs li.ui-state-active a,
+  .product .add_to_cart_button i,
+  .blog-modern-comment:hover,
+  .blog-modern-share:hover,
+  {
+    color: #f97352;
+  }
+
+  .mk-tabs .mk-tabs-tabs li.ui-tabs-active a > i,
+  .mk-accordion .mk-accordion-single.current .mk-accordion-tab:before,
+  .mk-tweet-list a,
+  .widget_testimonials .testimonial-slider .testimonial-author,
+  #mk-filter-portfolio li a:hover,
+  #mk-language-navigation ul li a:hover,
+  #mk-language-navigation ul li.current-menu-item > a,
+  .mk-quick-contact-wrapper h4,
+  .divider-go-top:hover i,
+  .widget-sub-navigation ul li a:hover,
+  #mk-footer .widget_posts_lists ul li .post-list-meta time,
+  .mk-footer-tweets .tweet-username,
+  .product-category .item-holder:hover h4,
+  {
+    color: #f97352 !important;
+  }
+
+  .image-hover-overlay,
+  .newspaper-portfolio,
+  .similar-posts-wrapper .post-thumbnail:hover > .overlay-pattern,
+  .portfolio-logo-section,
+  .post-list-document .post-type-thumb:hover,
+  #cboxTitle,
+  #cboxPrevious,
+  #cboxNext,
+  #cboxClose,
+  .comment-form-button,
+  .mk-dropcaps.fancy-style,
+  .mk-image-overlay,
+  .pinterest-item-overlay,
+  .news-full-with-image .news-categories span,
+  .news-half-with-image .news-categories span,
+  .news-fourth-with-image .news-categories span,
+  .widget-portfolio-overlay,
+  .portfolio-carousel-overlay,
+  .blog-carousel-overlay,
+  .mk-classic-comments span,
+  .mk-similiar-overlay,
+  .mk-skin-button,
+  .mk-flex-caption .flex-desc span,
+  .mk-icon-box .mk-icon-wrapper i:hover,
+  .mk-quick-contact-link:hover,
+  .quick-contact-active.mk-quick-contact-link,
+  .mk-fancy-table th,
+  .ui-slider-handle,
+  .widget_price_filter .ui-slider-range,
+  .shop-skin-btn,
+  #review_form_wrapper input[type=submit],
+  #mk-nav-search-wrapper form .nav-side-search-icon:hover,
+  form.ajax-search-complete i,
+  .blog-modern-btn,
+  .showcase-blog-overlay,
+  .gform_button[type=submit],
+  .button.alt,
+  #respond #submit,
+  .woocommerce .price_slider_amount .button.button,
+  .mk-shopping-cart-box .mk-button.checkout,
+  .widget_shopping_cart .mk-button.checkout,
+  .widget_shopping_cart .mk-button.checkout {
+    background-color: #f97352 !important;
+  }
+
+  .mk-circle-image .item-holder {
+    -webkit-box-shadow: 0 0 0 1px #f97352;
+    -moz-box-shadow: 0 0 0 1px #f97352;
+    box-shadow: 0 0 0 1px #f97352;
+  }
+
+  .mk-blockquote.line-style,
+  .bypostauthor .comment-content,
+  .bypostauthor .comment-content:after,
+  .mk-tabs.simple-style .mk-tabs-tabs li.ui-tabs-active a {
+    border-color: #f97352 !important;
+  }
+
+  .news-full-with-image .news-categories span,
+  .news-half-with-image .news-categories span,
+  .news-fourth-with-image .news-categories span,
+  .mk-flex-caption .flex-desc span {
+    box-shadow: 8px 0 0 #f97352, -8px 0 0 #f97352;
+  }
+
+  .monocolor.pricing-table .pricing-cols .pricing-col.featured-plan {
+    border: 1px solid #f97352 !important;
+  }
+
+  .mk-skin-button.three-dimension {
+    box-shadow: 0px 3px 0px 0px #c75c42;
+  }
+
+  .mk-skin-button.three-dimension:active {
+    box-shadow: 0px 1px 0px 0px #c75c42;
+  }
+
+  .mk-footer-copyright,
+  #mk-footer-navigation li a {
+    color: #8c8e91;
+  }
+
+  .mk-woocommerce-main-image img:hover,
+  .mk-single-thumbnails img:hover {
+    border: 1px solid #f97352 !important;
+  }
+
+  .product-loading-icon {
+    background-color: rgba(249, 115, 82, 0.6);
+  }
+
+  .mk-dynamic-styles {
+    display: none
+  }
+</style>
+<link rel='stylesheet' id='js_composer_front-css' href='/css/js_composer.css' type='text/css' media='all'/>
+<script type='text/javascript' src='https://code.jquery.com/jquery-1.11.3.min.js'></script>
+<script type='text/javascript' src='https://code.jquery.com/jquery-migrate-1.2.1.min.js'></script>
+<style type="text/css">.recentcomments a {
+  display: inline !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}</style>
+
+
+    <meta property="og:site_name" content="TomeCast"/>
+    <meta property="og:image"
+          content="/img/covers/freakonomics-radio.jpg"/>
+    <meta property="og:url" content="/podcasts/freakonomics-radio/2014/03/06/is-learning-a-foreign-language-really-worth-it.html"/>
+    <meta property="og:title" content="TomeCast Transcribed Podcast -  - Is Learning a Foreign Language Really Worth It?"/>
+    <meta property="og:description"
+          content="Automatically Transcribed Podcast:  - Is Learning a Foreign Language Really Worth It?"/>
+    <meta property="og:type" content="article"/>
+    <noscript>
+        <style>.wpb_animate_when_almost_visible {
+            opacity: 1;
+        }</style>
+    </noscript>
+</head>
+<body class="single single-post postid-591 single-format-standard  wpb-js-composer js-comp-ver-4.5.1 vc_responsive"
+      data-backText="Back" data-vm-anim="1">
+
+<div id="mk-boxed-layout">
+    <div id="mk-theme-container">
+        <header id="mk-header" data-height="130" data-hover-style="2" data-transparent-skin="" data-header-style="3" data-sticky-height="55" data-sticky-style="fixed" data-sticky-offset="header" class="header-style-3 header-align-left header-toolbar-false sticky-style-fixed  mk-background-stretch full-header ">
+  <div class="mk-header-holder">
+    <div class="mk-header-inner">
+      <div class="mk-header-bg "></div>
+      <div class="mk-dashboard-trigger header_dashboard_style">
+        <div class="mk-css-icon-menu icon-size-big">
+          <div class="mk-css-icon-menu-line-1"></div>
+          <div class="mk-css-icon-menu-line-2"></div>
+          <div class="mk-css-icon-menu-line-3"></div>
+        </div>
+      </div>
+      <div class="header-logo  ">
+        <a href="/" title="TomeCast - Homepage">
+          <img class="mk-desktop-logo dark-logo" alt="TomeCast - Homepage" src="/img/logo.png"/>
+        </a>
+      </div>
+      <div class="clearboth"></div>
+      <div class="mk-header-right">
+      </div>
+    </div>
+  </div>
+  <div class="clearboth"></div>
+  <div class="mk-header-padding-wrapper"></div>
+  <div class="clearboth"></div>
+  <div class="mk-zindex-fix">
+  </div>
+  <div class="clearboth"></div>
+</header>
+
+        <div id="theme-page">
+            <div class="mk-main-wrapper-holder">
+                <div class="theme-page-wrapper mk-blog-single full-layout vc_row-fluid mk-grid ">
+                    <div class="theme-content ">
+                        <article
+                                class=" post type-post status-publish format-standard has-post-thumbnail hentry category-articles category-business tag-audio tag-design">
+                            <div class="mk-audio-section mk-audio-shortcode" style="background-color:#acacac"><img
+                                    class="audio-thumb" alt="" title=""
+                                    src="/img/covers/freakonomics-radio.jpg" style="width:170px"/>
+
+                                <div id="jquery_jplayer" class="jp-jplayer mk-blog-audio"
+                                     data-mp3="http://feedproxy.google.com/~r/freakonomicsradio/~5/hj7i6Tc7Z_U/freakonomics_podcast030614.mp3"
+                                     data-ogg=""></div>
+                                <div id="jp_container" class="jp-audio audio-has-img">
+                                    <div class="jp-type-single">
+                                        <div class="jp-gui jp-interface">
+                                            <div class="jp-time-holder">
+                                                <div class="jp-current-time"></div>
+                                                <div class="jp-duration"></div>
+                                            </div>
+                                            <div class="jp-progress">
+                                                <div class="jp-seek-bar">
+                                                    <div class="jp-play-bar"></div>
+                                                </div>
+                                            </div>
+                                            <div class="jp-volume-bar">
+                                                <i class="mk-moon-volume-mute"></i>
+
+                                                <div class="inner-value-adjust">
+                                                    <div class="jp-volume-bar-value"></div>
+                                                </div>
+                                            </div>
+                                            <ul class="jp-controls">
+                                                <li><a href="javascript:;" class="jp-play" tabindex="1"><i
+                                                        class="mk-icon-play"></i></a></li>
+                                                <li><a href="javascript:;" class="jp-pause" tabindex="1"><i
+                                                        class="mk-icon-pause"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="jp-no-solution">
+                                            <span>Update Required</span>
+                                            To play the media you will need to either update your browser to a recent
+                                            version or update your <a href="http://get.adobe.com/flashplayer/"
+                                                                      target="_blank">Flash plugin</a>.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearboth"></div>
+                            </div>
+                            <h2 class="blog-single-title">Is Learning a Foreign Language Really Worth It?</h2>
+
+                            <div class="blog-single-meta">
+                                <div class="mk-blog-author"><a href="/podcasts/freakonomics-radio"
+                                                               title='Posts in ' rel="section"></a></div>
+                                <div class="mk-blog-author">By <a title='Posted By ' rel="author"></a>
+                                </div>
+                                <time class="mk-post-date" datetime="2014-03-06 00:00:00 +0000">
+                                    Posted on <a href="">2014-03-06</a>
+                                </time>
+                            </div>
+                            <div class="single-social-section">
+                                <div class="mk-love-holder">
+                                    <a href="#" class="mk-love-this " id="mk-love">
+                                        <i class="mk-icon-heart"><span>&nbsp;</span></i>
+                                        <span class="mk-love-count">2</span>
+                                    </a>
+                                </div>
+                                <a href="#comments" class="blog-modern-comment">
+                                    <i class="mk-moon-bubble-9"></i><span> 0</span>
+                                </a>
+                                <div class="blog-share-container">
+                                    <div class="blog-single-share mk-toggle-trigger"><i class="mk-moon-share-2"></i>
+                                    </div>
+                                    <ul class="single-share-box mk-box-to-trigger">
+                                        <li><a class="facebook-share" data-title="Check out this Podcast:  - "
+    data-url=""
+    href=""><i
+            class="mk-jupiter-icon-simple-facebook"></i></a></li>
+<li><a class="twitter-share" data-title="Check out this Podcast:  - "
+    data-url=""
+    href="#"><i
+            class="mk-moon-twitter"></i></a></li>
+<li><a class="googleplus-share" data-title="Check out this Podcast:  - "
+    data-url=""
+    href=""><i
+            class="mk-jupiter-icon-simple-googleplus"></i></a></li>
+<li><a class="pinterest-share"
+       data-image="/img/covers/.jpg"
+       data-title="Check out this Podcast:  - "
+    data-url=""
+    href=""><i
+            class="mk-jupiter-icon-simple-pinterest"></i></a></li>
+<li><a class="linkedin-share"
+       data-desc=""
+       data-title="Check out this Podcast:  - "
+    data-url=""
+    href=""><i
+            class="mk-jupiter-icon-simple-linkedin"></i></a></li>
+
+                                    </ul>
+                                </div>
+                                <a class="mk-blog-print" onClick="window.print()"
+                                   href="#" title="Print"><i
+                                        class="mk-moon-print-3"></i></a>
+
+                                <div class="clearboth"></div>
+                            </div>
+                            <div class="clearboth"></div>
+                            <div class="mk-single-content" itemprop="mainContentOfPage">
+                                <div class="wpb_row vc_row  vc_row-fluid  mk-fullwidth-false  attched-false vc_row-fluid">
+                                    <div style="" class="vc_col-sm-12 wpb_column column_container ">
+                                        <div class="clearboth"></div>
+                                        <div class="mk-shortcode mk-padding-shortcode" style="height:40px"></div>
+                                        <div class="clearboth"></div>
+                                        <span id="drop-caps-555772840bc14"
+                                              class="mk-dropcaps mk-shortcode fancy-style ">D</span>
+
+                                        <div id="ajax-555772840bc14" class="mk-dynamic-styles"></div>
+                                        <div style=" margin-bottom:0px;text-align: left;" class="mk-text-block  "><p
+                                                style="text-align: justify;"><span style="color: #33cccc;"><strong>Duis
+                                            viverra</strong></span>
+
+
+                                        </p>
+
+                                            <div class="clearboth"></div>
+                                        </div>
+                                        <div style="font-size: 18px;" id="blockquote-555772840c9ac"
+                                             class="mk-shortcode mk-blockquote quote-style ">
+                                            <p>Yes, it expands the mind but we usually don't retain much -- and then there's the opportunity cost.</p>
+                                        </div>
+                                        <div class="clearboth"></div>
+                                        <div class="mk-shortcode mk-padding-shortcode" style="height:20px"></div>
+                                        <div class="clearboth"></div>
+                                        <div style=" margin-bottom:0px;text-align: left;" class="mk-text-block  ">
+                                            <p>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S0"
+                                                      data-timestamp="2.38"
+                                                      data-length=""
+                                                      data-uuid="30a5a9c3-bb06-4879-a7cb-8c1dd5787d87"
+                                                      data-confidence="0.7167321">
+                                                    if I guess this means you are but here in episode about the RAY or return on investment of studying in foreign language
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S0"
+                                                      data-timestamp="13.03"
+                                                      data-length=""
+                                                      data-uuid="15589fcb-b2ad-4593-b246-e729f7223361"
+                                                      data-confidence="0.495082">
+                                                    what's the roi on listening to freakonomics radio podcast well if it
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S2"
+                                                      data-timestamp="18.61"
+                                                      data-length=""
+                                                      data-uuid="67a7273e-9349-491a-95f1-aa11f8c68178"
+                                                      data-confidence="0.7239928">
+                                                    anything above zero then we hope that you consider making a contribution to keep this public radio podcasts free and easy just go to freakonomics.com and click on tony merci beaucoup to daraba
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S2"
+                                                      data-timestamp="32.03"
+                                                      data-length=""
+                                                      data-uuid="4a601a8c-139c-4ece-9468-e88468b8f4cf"
+                                                      data-confidence="0.3670477">
+                                                    and they create erebea patch
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S3"
+                                                      data-timestamp="41.22"
+                                                      data-length=""
+                                                      data-uuid="2e5e3257-a2a9-416e-84de-30c5e71ff0d9"
+                                                      data-confidence="0.7168697">
+                                                    the average american students who study a foreign language for 2 or 3 years little red schoolhouse is a well regarded private school manhattan the progressive style here kids start with a second language in pre kindergarten go all the way to graduation
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S5"
+                                                      data-timestamp="57.06"
+                                                      data-length=""
+                                                      data-uuid="a45916b3-4179-41fa-943b-ba4254d96f85"
+                                                      data-confidence="0.4691153">
+                                                    ok but little red elizabeth irwin
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S5"
+                                                      data-timestamp="59.43"
+                                                      data-length=""
+                                                      data-uuid="77ffa2cc-dcbf-4379-baca-a842291c311d"
+                                                      data-confidence="0.6599749">
+                                                    and some were going to be on in the classroom the fourth grade spanish word
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S5"
+                                                      data-timestamp="66.84"
+                                                      data-length=""
+                                                      data-uuid="bbf2bb3e-5177-4919-9331-54bd93847698"
+                                                      data-confidence="0.4173379">
+                                                    which is the best phone in the room
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S12"
+                                                      data-timestamp="70.63"
+                                                      data-length=""
+                                                      data-uuid="c2a095ec-a161-41c9-89b0-49915f2420f0"
+                                                      data-confidence="0.4456266">
+                                                    cute little red start out studying spanish jenest mahlsdorf get a gusta mucha
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S11"
+                                                      data-timestamp="78.16"
+                                                      data-length=""
+                                                      data-uuid="12936a8e-9921-4c56-b072-9b71c6624458"
+                                                      data-confidence="0.695999">
+                                                    anitha get older they can you to stick with spanish or take mandron for french
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S18"
+                                                      data-timestamp="83.16"
+                                                      data-length=""
+                                                      data-uuid="aa5380ef-ec77-4ff3-b4d6-4b958a560b81"
+                                                      data-confidence="0.6171992">
+                                                    how are they doing so far compared to like a normal spanish speaking person through and say we're pretty bad spelling for person in fourth grade who's winning spanish aeca 2 PM
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S11"
+                                                      data-timestamp="97.16"
+                                                      data-length=""
+                                                      data-uuid="f75de7f9-3bfe-421f-8e29-ec97f5521d86"
+                                                      data-confidence="0.7817324">
+                                                    are good and they have big dreams about what learning a foreign language will help them accomplish
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S12"
+                                                      data-timestamp="103.95"
+                                                      data-length=""
+                                                      data-uuid="81998138-dc67-4843-8440-3fe270394df3"
+                                                      data-confidence="0.7400154">
+                                                    if you have like a big business deal done and they don't speak english then you could make like
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="108.47"
+                                                      data-length=""
+                                                      data-uuid="3fc7386a-a3ee-486e-858e-a12ced876073"
+                                                      data-confidence="0.592137">
+                                                    lie lie I think I might wanna work at peachtree showboy bakery and maybe then we can use are french people so I can talk to them
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="118.72"
+                                                      data-length=""
+                                                      data-uuid="e453d9ac-5866-4c32-8e1c-079ace4ced4d"
+                                                      data-confidence="0.6558262">
+                                                    make another bengalis don't say like that in a different language I am I
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S12"
+                                                      data-timestamp="123.61"
+                                                      data-length=""
+                                                      data-uuid="f7d85aeb-8eda-477d-bf5c-8d28a3f4ea44"
+                                                      data-confidence="0.6794852">
+                                                    where can I love story because then people who speak other languages me asking questions
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S12"
+                                                      data-timestamp="131.46"
+                                                      data-length=""
+                                                      data-uuid="15d45904-b918-4178-9f80-4d7e4d82fe0b"
+                                                      data-confidence="0.4833837">
+                                                    so I'm gonna be a world shivling architext where am I
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S18"
+                                                      data-timestamp="136.26"
+                                                      data-length=""
+                                                      data-uuid="b0767f4a-6927-423e-b68e-7a3274eee66b"
+                                                      data-confidence="0.4808368">
+                                                    is scientists 4
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S18"
+                                                      data-timestamp="138.73"
+                                                      data-length=""
+                                                      data-uuid="e956a8e8-843a-48c1-aa0b-5f8b459e44f5"
+                                                      data-confidence="0.7145894">
+                                                    I might be a mechanic or I might be a person who invented the car and get my installers
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S11"
+                                                      data-timestamp="149.42"
+                                                      data-length=""
+                                                      data-uuid="ceed9b1a-5072-4963-accb-1b7253f8763b"
+                                                      data-confidence="0.7119961">
+                                                    I'm tricia were asking what is the value of learning a second language it started with an email to melissa morning doug zaman hirotake
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S11"
+                                                      data-timestamp="159.14"
+                                                      data-length=""
+                                                      data-uuid="d1b2cd4d-7033-416a-a6f1-66c05378dfa3"
+                                                      data-confidence="0.7632502">
+                                                    I'm very curious how it came to be the teaching students foreign languages which the status it has in the us my oldest daughter is a college freshman in not only am I paid for her to study spanish us for more years even do in grade school now he writes
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S11"
+                                                      data-timestamp="173.75"
+                                                      data-length=""
+                                                      data-uuid="0ae5d5b6-1638-47be-872a-50b236a9905b"
+                                                      data-confidence="0.7984026">
+                                                    what are college is requiring her to study even more all caps exclamation point it goes on what on earth is going on I'm never got this far in a day and age were schools in every level are complaining about limited resources why on earth do we continue to force these kids to study a foreign language
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S11"
+                                                      data-timestamp="192.09"
+                                                      data-length=""
+                                                      data-uuid="c0596482-d0ed-440b-a072-c05d527e3877"
+                                                      data-confidence="0.75942">
+                                                    if you ever use in virtually all do not retain 4 to put in economic terms where is the RAY
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S0"
+                                                      data-timestamp="205.28"
+                                                      data-length=""
+                                                      data-uuid="091d480b-6f36-401c-9ad9-6e495fe31a17"
+                                                      data-confidence="0.6262779">
+                                                    what is the arle I am learning farm
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="208.47"
+                                                      data-length=""
+                                                      data-uuid="4388e4ae-1599-4b47-8fed-b04b8976471e"
+                                                      data-confidence="0.4824327">
+                                                    did you learn like spanish version palinda schools on
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S16"
+                                                      data-timestamp="213.48"
+                                                      data-length=""
+                                                      data-uuid="985ce6ca-cb1f-495a-ab87-58d59170560b"
+                                                      data-confidence="0.6598621">
+                                                    maybe 20 years later do you could become a billionaire in another country mary
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="219.62"
+                                                      data-length=""
+                                                      data-uuid="a77fbb68-f1a6-4bee-b4d0-b2afb8a758dc"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="224.62"
+                                                      data-length=""
+                                                      data-uuid="dfc9d470-4d03-4184-8c8c-e07a4ae6f73d"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S33"
+                                                      data-timestamp="233.33"
+                                                      data-length=""
+                                                      data-uuid="29343542-2f97-4339-991b-20513eedf203"
+                                                      data-confidence="0.675742">
+                                                    I'm wmic this is freakonomics radio the podcast that explored the inside of everything
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S33"
+                                                      data-timestamp="240.92"
+                                                      data-length=""
+                                                      data-uuid="be969a55-b00f-437a-a1dd-9706538129a8"
+                                                      data-confidence="0.3636856">
+                                                    here's your host stephen dubner
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S35"
+                                                      data-timestamp="249.35"
+                                                      data-length=""
+                                                      data-uuid="94c32feb-12d3-494b-9bd0-417f724dad4d"
+                                                      data-confidence="0.6184943">
+                                                    boo boo boo boo boo boo boo boo boo boo boo boo
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S11"
+                                                      data-timestamp="256.49"
+                                                      data-length=""
+                                                      data-uuid="2602623b-7363-4771-bc14-701ca63c8219"
+                                                      data-confidence="0.6014968">
+                                                    today show or talk about learning foreign language like mander
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S37"
+                                                      data-timestamp="260.34"
+                                                      data-length=""
+                                                      data-uuid="4bcefdb8-2b5d-46b1-8ab5-11193a334fa8"
+                                                      data-confidence="0.3844254">
+                                                    send nigi swagatham how old he was going he said why should this way he say
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S39"
+                                                      data-timestamp="271.6"
+                                                      data-length=""
+                                                      data-uuid="aebf1df9-272b-4a9a-ad84-19824b631158"
+                                                      data-confidence="0.6250057">
+                                                    why do we do this teacher kid the second language answer it might seem obvious mcboal education speech is your brain on any number to mention let's try to quantify a bit more than that
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S39"
+                                                      data-timestamp="282.86"
+                                                      data-length=""
+                                                      data-uuid="dbee7a7f-b6ac-4038-b444-2ea8767a70ad"
+                                                      data-confidence="0.6884791">
+                                                    start with bow as keisai he's a psychology professor at university of chicago is specialty is communication
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S41"
+                                                      data-timestamp="289.86"
+                                                      data-length=""
+                                                      data-uuid="458ade6d-feb2-4c8a-b591-fd2363834d45"
+                                                      data-confidence="0.7413768">
+                                                    really am starting communication is the entire the autobiographical because I realize the time I'm different when I'm using both any language other than hebrew
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S39"
+                                                      data-timestamp="301.07"
+                                                      data-length=""
+                                                      data-uuid="4aae128f-2cbc-41eb-8aca-25b47346ad32"
+                                                      data-confidence="0.7264475">
+                                                    he starts from israel to protect your interest in communication has to do with how our decision making is affected when we operate in a foreign language
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S41"
+                                                      data-timestamp="310.56"
+                                                      data-length=""
+                                                      data-uuid="bf0e7837-77c5-4ca7-9d5c-094cf9f150cf"
+                                                      data-confidence="0.798382">
+                                                    things like um making investments I'm much more likely to invest in the stock market when I do it in english if I think about it in hebrew I feel when I become more conservative
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S39"
+                                                      data-timestamp="321.94"
+                                                      data-length=""
+                                                      data-uuid="df4720c8-ced5-4e5b-ae07-9908b9a7376d"
+                                                      data-confidence="0.6178923">
+                                                    surprising but maybe
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S39"
+                                                      data-timestamp="324.85"
+                                                      data-length=""
+                                                      data-uuid="7f03faf5-4929-4520-8595-aba2bf0261ab"
+                                                      data-confidence="0.7551227">
+                                                    he thought it was just him so here in an experiment with university of chicago students with little game with money team ed and I give you $20 here's the way casarse game works if he gives you $20 you play a game with 20 rounds dollar round
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S39"
+                                                      data-timestamp="341.1"
+                                                      data-length=""
+                                                      data-uuid="3e425d63-06ec-4b2d-b789-2fe79758b77b"
+                                                      data-confidence="0.8089453">
+                                                    if each round you can either keep the dogs put in your pocket or put the dollarama table in flip a coin if its tails you lose a dollar but if it's heads you get 2050 cents meaning your original dollar back and you win a dollar and a half
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S41"
+                                                      data-timestamp="357.41"
+                                                      data-length=""
+                                                      data-uuid="2653452a-8c5e-430e-b8f2-d4ea65aebea2"
+                                                      data-confidence="0.7295468">
+                                                    so you don't need to know lots of math do realize that the expected value is positive another word
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S52"
+                                                      data-timestamp="365.01"
+                                                      data-length=""
+                                                      data-uuid="364c4ce7-5f4b-451d-9cd1-c762b5937c45"
+                                                      data-confidence="0.6977898">
+                                                    is that on average you better off with a bet then pocketing the dollar
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S126"
+                                                      data-timestamp="371.34"
+                                                      data-length=""
+                                                      data-uuid="1df836d9-58bd-4fc5-ad1a-268dd05487ab"
+                                                      data-confidence="0.7561718">
+                                                    no what is that to do with a foreign language
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S52"
+                                                      data-timestamp="373.69"
+                                                      data-length=""
+                                                      data-uuid="dd75f026-9ffe-43a0-a6ea-e47021b7c6f9"
+                                                      data-confidence="0.8234193">
+                                                    we will interested to see what happens when you make this decision when you using foreign language
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S126"
+                                                      data-timestamp="379.18"
+                                                      data-length=""
+                                                      data-uuid="3d834460-f582-436e-bff9-da5915e74afc"
+                                                      data-confidence="0.8024794">
+                                                    to the researchers had some student plain english and other students play in foreign language spanish
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S52"
+                                                      data-timestamp="385.2"
+                                                      data-length=""
+                                                      data-uuid="06c84cc9-560c-4c22-ac07-57344944f411"
+                                                      data-confidence="0.7159023">
+                                                    and turns out indian people will like almost 20 percentage points more willing to take bets they were significantly more willing to take the risk in a foreign language
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S167"
+                                                      data-timestamp="395.79"
+                                                      data-length=""
+                                                      data-uuid="d3edaaab-27e2-40b5-9f79-c4a8b6d4542e"
+                                                      data-confidence="0.7444628">
+                                                    and that is not at all the result that he's expecting
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S52"
+                                                      data-timestamp="402.54"
+                                                      data-length=""
+                                                      data-uuid="792c9ff8-3c38-4fc9-af8f-bd36fc0f2620"
+                                                      data-confidence="0.6079534">
+                                                    I will not respond to that happen soon because it's really the same person who that person dog is used in spanish now and um is the same dollar the same person but just randomly the case that you doing in spanish
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S103"
+                                                      data-timestamp="416.63"
+                                                      data-length=""
+                                                      data-uuid="af36d685-f269-4799-b637-4fd5dc2479f9"
+                                                      data-confidence="0.7193314">
+                                                    I know it could be the people just don't understand is well in the second language to this is more of a comprehension issue than risk issue with case or at least was persuaded that he was on the sun
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S62"
+                                                      data-timestamp="427.83"
+                                                      data-length=""
+                                                      data-uuid="555d2cd0-d85c-46e6-b1bf-0977aef1e6ae"
+                                                      data-confidence="0.6953892">
+                                                    how about we start thinking that maybe it's a even stronger and more pervasive phenomenon then we even think
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S62"
+                                                      data-timestamp="436.73"
+                                                      data-length=""
+                                                      data-uuid="70d34a5a-9740-41f4-b902-c7ac395a9138"
+                                                      data-confidence="0.697604">
+                                                    and not just about risk and indeed we find that there's also the systematic differences that exist when you using for lunch for instance like the one we ask people to think about moral dilemma
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S62"
+                                                      data-timestamp="450.66"
+                                                      data-length=""
+                                                      data-uuid="cf561ef8-6149-4181-ad9a-d872f26ce482"
+                                                      data-confidence="0.7168614">
+                                                    so would you sacrificed one person to say
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S11"
+                                                      data-timestamp="455.64"
+                                                      data-length=""
+                                                      data-uuid="657a6e87-f867-495e-aa55-c5a36fbe069e"
+                                                      data-confidence="0.8011801">
+                                                    you heard this kind of dilemma before try to bus driver let's say is going to run over 5 people killed am so do you go ahead and kill the driver before he can kill the other 5 note normally people are reluctant to say yes but if you ask them in a foreign language
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S52"
+                                                      data-timestamp="473.29"
+                                                      data-length=""
+                                                      data-uuid="4b50a5be-1b17-4dac-97b9-96484c067d52"
+                                                      data-confidence="0.7246807">
+                                                    we found that people are twice as likely to do that to actually go for you to terry an option 2
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S52"
+                                                      data-timestamp="481.2"
+                                                      data-length=""
+                                                      data-uuid="c6b57dbc-e0b3-4f48-820c-1f94f6bd78d6"
+                                                      data-confidence="0.8099825">
+                                                    sacrificed one person to say 5 not we didn't do this for real
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S52"
+                                                      data-timestamp="485.17"
+                                                      data-length=""
+                                                      data-uuid="4b3ba0c0-d0f3-4ab2-aea4-d8621fbf57a2"
+                                                      data-confidence="0.2124212">
+                                                    bing fat butt
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S62"
+                                                      data-timestamp="487.66"
+                                                      data-length=""
+                                                      data-uuid="b6f9d452-53e2-423c-822f-bc09dbd291d1"
+                                                      data-confidence="0.4696243">
+                                                    daru diputada go arsenal is better but still they said yes I will do that
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S52"
+                                                      data-timestamp="494.59"
+                                                      data-length=""
+                                                      data-uuid="a57f0f60-a9fb-48bc-a3f1-9c7996b28583"
+                                                      data-confidence="0.7540111">
+                                                    so why might this happen to know the reason that it could be interesting is that we know that the 4 language is much less emotional it's a go to less emotional resonance when you use it the same word
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S52"
+                                                      data-timestamp="508.12"
+                                                      data-length=""
+                                                      data-uuid="dfcc6964-8272-4f70-b2c2-973b2db4fec8"
+                                                      data-confidence="0.7026138">
+                                                    LOL in time or even know you know exactly the meaning and you know if the meaning meaning meaning is identical
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S52"
+                                                      data-timestamp="516.81"
+                                                      data-length=""
+                                                      data-uuid="bfec273a-1110-41fd-8ecc-18dda6c8ef2a"
+                                                      data-confidence="0.7067978">
+                                                    you still make your native english speaker you get a lot more out of luck on that's been done with jayden off at the weather also physiological reaction so you can show the people's arousal is a higher wednesday is the native tongue when these kind of emotional related words are used
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S126"
+                                                      data-timestamp="535.8"
+                                                      data-length=""
+                                                      data-uuid="eef54aaa-be8d-4df2-a3ea-75a9cca4430a"
+                                                      data-confidence="0.6778331">
+                                                    pencil case arces when people stink in a foreign language no more reflective about
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S52"
+                                                      data-timestamp="541.98"
+                                                      data-length=""
+                                                      data-uuid="aae9331a-c3b6-4955-aecc-786c4f0331b6"
+                                                      data-confidence="0.6703712">
+                                                    their choices than willing to engage in kaufman fresnels is no way and less likely to be swayed by all sorts of emotional reactions that they might have in general
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="558.77"
+                                                      data-length=""
+                                                      data-uuid="ff163337-4a98-47c5-a4fe-57fd2238445d"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S137"
+                                                      data-timestamp="561.7"
+                                                      data-length=""
+                                                      data-uuid="079fe921-ca80-4375-a4a0-c1d641f4054b"
+                                                      data-confidence="0.7377663">
+                                                    from keytars pov this is not necessarily a good thing or bad thing in fact his experimental examples aren't very consistently since like me that way
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S137"
+                                                      data-timestamp="571.74"
+                                                      data-length=""
+                                                      data-uuid="d99102a0-2411-4498-883a-847813096298"
+                                                      data-confidence="0.8292389">
+                                                    in one instance the foreign language seems to increase your appetite for risk in another it makes you more reflective what matters is it the language always seems to fax something in the way you think or process information or make a decision in bakke really is the point of the argument in favor
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S137"
+                                                      data-timestamp="591.39"
+                                                      data-length=""
+                                                      data-uuid="02fed1a3-138d-43a2-9cff-84401a2953aa"
+                                                      data-confidence="0.7212425">
+                                                    teaching of foreign language the kids because learning a foreign language changes the brain now be evidence for this is pretty compelling bilingual kids have been shown a better memory an executive function there is some evidence of being bilingual stole the onset of alzheimer's disease
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S137"
+                                                      data-timestamp="609.22"
+                                                      data-length=""
+                                                      data-uuid="441b1e91-d1df-4136-b791-5ac6fcab5fa3"
+                                                      data-confidence="0.7456723">
+                                                    in there other more utilitarian parsons as the fourth graders at little red schoolhouse reminder
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S90"
+                                                      data-timestamp="616.62"
+                                                      data-length=""
+                                                      data-uuid="1341c8da-38d5-4023-8fd1-54e6dd03bdf6"
+                                                      data-confidence="0.6523989">
+                                                    well I think I can sing a christmas tree for languages that you can speak more people who knows how to speak to other people and they don't speak your language schoettler language and also is there is make me smarter to know all these different languages can I help you and you kacian
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="634.2"
+                                                      data-length=""
+                                                      data-uuid="0959a15d-afdc-4b34-a924-824e5bf35d6e"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S94"
+                                                      data-timestamp="637.29"
+                                                      data-length=""
+                                                      data-uuid="c60fb3cd-30ba-4098-af81-7fcff4e2a36f"
+                                                      data-confidence="0.7371302">
+                                                    ok settle good stuff but coming up at freakonomics radio what about the opportunity cost of all that time spent learning a second language there so many kids to remain barely literate enumerate in their own language
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="652.62"
+                                                      data-length=""
+                                                      data-uuid="7efe5bce-a061-4cd7-b390-45b4949bb980"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="660.14"
+                                                      data-length=""
+                                                      data-uuid="6c5a6988-c525-49d4-80ab-1a43f3575e4f"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="663.27"
+                                                      data-length=""
+                                                      data-uuid="229d0288-70ab-47c5-9eea-56e8ba80fd92"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S96"
+                                                      data-timestamp="668.2"
+                                                      data-length=""
+                                                      data-uuid="880a4964-7685-4a66-870e-1ab0327de8af"
+                                                      data-confidence="0.7694269">
+                                                    from wmic this is freakonomics radio here's your host stephen dubner
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S103"
+                                                      data-timestamp="679.97"
+                                                      data-length=""
+                                                      data-uuid="752bb6ff-c019-46fb-9755-a9f2cbaf58b2"
+                                                      data-confidence="0.3145306">
+                                                    I'd like in the alberts I eat out albert einstein says saaz adamidis trat hoping I'd like you to meet albert cyyz missouri
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="695.95"
+                                                      data-length=""
+                                                      data-uuid="7f661188-4a4d-4581-9aa8-c74c97e34411"
+                                                      data-confidence="0.6590018">
+                                                    almost everything so I don't mind it
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="698.1"
+                                                      data-length=""
+                                                      data-uuid="24856de6-a18e-4f61-8675-a040ef03cd5d"
+                                                      data-confidence="0.6087769">
+                                                    sorry albertse it to spanish name anita pronounce I've exactly like the agricultural tool used to mow the grass but it's spelled FAIZ sea see me at all and again in I got all types of fish bones fish and some time I'm used to it whenever you do you say
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S103"
+                                                      data-timestamp="719.49"
+                                                      data-length=""
+                                                      data-uuid="1b2f3c5f-58ea-421a-8c08-945b29527ba1"
+                                                      data-confidence="0.7620529">
+                                                    flights from barcelona barcelona and even come sit on my t where he teaches urban planning on today show we are asking about return on investment of learning a foreign language when you know it face to calculate it exactly that he tracked about 9000 college graduates to see
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S103"
+                                                      data-timestamp="738.16"
+                                                      data-length=""
+                                                      data-uuid="e185d475-2898-48a7-a782-8e049a069dba"
+                                                      data-confidence="0.7284932">
+                                                    how a foreign language affected their wages
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S105"
+                                                      data-timestamp="743.98"
+                                                      data-length=""
+                                                      data-uuid="6654eef3-fc4d-4772-b348-ed3a4736fb86"
+                                                      data-confidence="0.7162845">
+                                                    unfortunately and I have to say of course because you know why I try to speak 3 I am I was pretty disappointed and actually at we found a very very small return what we did find is it after controlling for the host of characteristic sing using
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S105"
+                                                      data-timestamp="760.8"
+                                                      data-length=""
+                                                      data-uuid="94b9664c-e826-4fff-9dd2-9bf7e9c71016"
+                                                      data-confidence="0.6771604">
+                                                    a lot of experimental research designs a busy girl trying to compare people who are identical
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S105"
+                                                      data-timestamp="767.16"
+                                                      data-length=""
+                                                      data-uuid="095a83f1-be5a-4fee-ac1c-7f11b707a576"
+                                                      data-confidence="0.7453057">
+                                                    for everything except for the second language with the time to find a premium in the labor market off about 2% off of wages
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="778.64"
+                                                      data-length=""
+                                                      data-uuid="ff0eac67-146b-4a00-a13a-e333bd8813ba"
+                                                      data-confidence="0.879725">
+                                                    in other words if you
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S105"
+                                                      data-timestamp="780.31"
+                                                      data-length=""
+                                                      data-uuid="f06cef04-e859-41fc-b553-ecd55d9bfca6"
+                                                      data-confidence="0.7285031">
+                                                    speak a second language you can expect to earn on average nuts across many many from people on average you can be expected to learn about 2% higher wages don't act like this app think about
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S112"
+                                                      data-timestamp="794.15"
+                                                      data-length=""
+                                                      data-uuid="39544b78-f47e-4e23-8394-1ae7e5d5957b"
+                                                      data-confidence="0.7102922">
+                                                    your income are your wage bing about $30,000 then you would expect to learn about $600 more per year
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="803.81"
+                                                      data-length=""
+                                                      data-uuid="c33ee5be-6a6c-47fa-bf5c-54358e04550c"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S11"
+                                                      data-timestamp="805.96"
+                                                      data-length=""
+                                                      data-uuid="751edc12-4cd8-4f51-ad1b-fbde3ffc54aa"
+                                                      data-confidence="0.7968734">
+                                                    it's not nothing there a lot of things you can do that but increase your earnings by even 2% but still it's not a huge premium and I hate to tell is to our young spanish speakers back in the little red schoolhouse in new york
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S114"
+                                                      data-timestamp="819.15"
+                                                      data-length=""
+                                                      data-uuid="a56e787c-66ca-435f-931d-37ddcb71e748"
+                                                      data-confidence="0.4053929">
+                                                    can I kiss me my love kiss kiss kiss kiss kiss
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S126"
+                                                      data-timestamp="824.46"
+                                                      data-length=""
+                                                      data-uuid="69b29f30-e92c-4f2d-a4d0-4705bffe7ec7"
+                                                      data-confidence="0.8344694">
+                                                    but there's a rank order in terms of how different foreign languages translate into higher earnings
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S105"
+                                                      data-timestamp="830.42"
+                                                      data-length=""
+                                                      data-uuid="d9aa0cfe-33a3-41a6-a245-9fcdeceb77ca"
+                                                      data-confidence="0.7078568">
+                                                    we know that the lowest return it's a spanish word when you get up at 1.5 percent and then french 2.7 percent and and german 4% so you know learning a second language it's something that's worth to do by itself
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S105"
+                                                      data-timestamp="845.16"
+                                                      data-length=""
+                                                      data-uuid="49797207-78b7-4554-a4b3-8a07a2f0d8bd"
+                                                      data-confidence="0.4749286">
+                                                    bezucha financialization opro leave if you're focusing on financial returns bairrada below and you should focus on languages that are rarely spoken english
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="856.87"
+                                                      data-length=""
+                                                      data-uuid="2ca38f2a-559a-4fa3-9f48-f41f1865f3a5"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="858.7"
+                                                      data-length=""
+                                                      data-uuid="e12741ac-46ed-4156-9d47-654c4b5cdd8e"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S11"
+                                                      data-timestamp="861.29"
+                                                      data-length=""
+                                                      data-uuid="424c0bc8-0361-4e10-b58a-4772c14a14e2"
+                                                      data-confidence="0.7534947">
+                                                    ok so the financial returns to learning foreign language or not so large which need some economists to think that it's mostly a waste of time
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S122"
+                                                      data-timestamp="871.87"
+                                                      data-length=""
+                                                      data-uuid="49ba6d11-36db-49d4-9448-488694ae7465"
+                                                      data-confidence="0.7968724">
+                                                    make me think the people spending 3 years their lives to acquire very few skills brian kaplan at george mason university all the study seems to be totally failed to teach people how to fluently speak 4 languages
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S122"
+                                                      data-timestamp="885.37"
+                                                      data-length=""
+                                                      data-uuid="940fc545-69db-4518-ae62-ca585f74c103"
+                                                      data-confidence="0.8755884">
+                                                    are so we can actually see in the data is that under 1% of americans have learn to speak a foreign language very well in school and he's very well according to them
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S122"
+                                                      data-timestamp="896.84"
+                                                      data-length=""
+                                                      data-uuid="102b5e13-bfde-48eb-b12d-98538c293fb0"
+                                                      data-confidence="0.6837101">
+                                                    assassin people tend to exaggerated how good they are things if under 1% clean but they learn to speak a foreign language very well in school then god knows how few actually did
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S126"
+                                                      data-timestamp="906.21"
+                                                      data-length=""
+                                                      data-uuid="1e5e0ca6-648e-4ba7-8fdf-ca425e1dcd7b"
+                                                      data-confidence="0.8890218">
+                                                    kaplan tells us that about a quarter of american city speak a language other than english in the people who say they speak it well tended to learn at home not at school and I'm at school instruction does not come cheap in money or time
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S129"
+                                                      data-timestamp="921.34"
+                                                      data-length=""
+                                                      data-uuid="b1792c52-a79c-466d-aedd-fccd333676e0"
+                                                      data-confidence="0.8094204">
+                                                    it's pretty close to about 16 of the time students are spending high school assuming they start a foreign language in high school so maybe if you average over junior high and high school then you might be spending it to buy the 12th of your time
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S129"
+                                                      data-timestamp="934.55"
+                                                      data-length=""
+                                                      data-uuid="61d1619e-8e01-40ef-b785-95fb6264b571"
+                                                      data-confidence="0.7787686">
+                                                    so I think a pretty reasonable first pass to say that the cost of foreign language study in your schools about a 12 for the cost of junior high and high school when you multiply that by the total miner spending that is a lot
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S129"
+                                                      data-timestamp="947.77"
+                                                      data-length=""
+                                                      data-uuid="088fb2e0-f63b-48f1-86b9-0051eb27aa1d"
+                                                      data-confidence="0.746251">
+                                                    do you remember something else that's doing sweetheart and bring a time there so many kids to remain barely literate enumerate in their own language and that something where yes it's true he would he would probably not dramatically change their ability to read and write just to go and take the time in foreign language and pudding it into that but
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S129"
+                                                      data-timestamp="965.52"
+                                                      data-length=""
+                                                      data-uuid="3d5fdfb6-f039-4105-b781-0e72017d5e4f"
+                                                      data-confidence="0.766221">
+                                                    all that just killed it actually really does pay in the world so it's really were thinking about doing that
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="970.68"
+                                                      data-length=""
+                                                      data-uuid="d156fd00-c065-444c-afad-f103af63065f"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="975.19"
+                                                      data-length=""
+                                                      data-uuid="fd31f1f7-d8e9-4068-8218-c66f5fea3d02"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S126"
+                                                      data-timestamp="976.82"
+                                                      data-length=""
+                                                      data-uuid="0d01eef3-3de1-4763-ace0-b8a68d572d24"
+                                                      data-confidence="0.7373217">
+                                                    who is brian kaplan season learning a foreign language especially in school may not be worth it unless
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S137"
+                                                      data-timestamp="984.61"
+                                                      data-length=""
+                                                      data-uuid="e3570f34-0aa2-48c8-9f7a-4b1d613e90c9"
+                                                      data-confidence="0.6836463">
+                                                    that foreign language is english men put albert sixfields his study of college graduates found only 2% wage premium for learning foreign language those were american college graduates
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S138"
+                                                      data-timestamp="998.82"
+                                                      data-length=""
+                                                      data-uuid="f5c4161b-ad0e-4611-894f-59a21daa0427"
+                                                      data-confidence="0.6386932">
+                                                    I can tell you that there's researching other countries actually the findings in the united states do contracts with other people falling symptomology found in turkey in russia on in israel
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S138"
+                                                      data-timestamp="1011.53"
+                                                      data-length=""
+                                                      data-uuid="5cfeb1e0-7484-461e-92aa-85e6e52d6441"
+                                                      data-confidence="0.6261268">
+                                                    these 3 countries like you speaking english which would be astika language
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S138"
+                                                      data-timestamp="1016.16"
+                                                      data-length=""
+                                                      data-uuid="933930a3-cc42-42ea-8840-952c94c2fe03"
+                                                      data-confidence="0.6364748">
+                                                    what's associated with a substantial we turn off around 10 to 20% so it's it's really I think english speaking countries where it will not affect its friday LOL when I get my things that's funny <profanity>shit</profanity> right here in michigan it's not telling my phone
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S103"
+                                                      data-timestamp="1032.74"
+                                                      data-length=""
+                                                      data-uuid="1f6e9bc7-0ee6-4d63-8957-8aa57d7fc40a"
+                                                      data-confidence="0.7679803">
+                                                    even brian kaplan our language skeptik is not so surprised by the english language premium
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S144"
+                                                      data-timestamp="1039.65"
+                                                      data-length=""
+                                                      data-uuid="6196a862-8d13-4320-9a96-ed902f55f3e9"
+                                                      data-confidence="0.7393948">
+                                                    bright do you think of a real life is very strong
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S144"
+                                                      data-timestamp="1042.59"
+                                                      data-length=""
+                                                      data-uuid="9cda381c-0acf-4cdd-8e8b-8a84cded2666"
+                                                      data-confidence="0.7186325">
+                                                    swingers in why so many people in or thorne english is there a lot of jobs in north even get it has been a much and it also opens a lot of doors open source for you in terms of things you can read movies you can watch
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S144"
+                                                      data-timestamp="1054.49"
+                                                      data-length=""
+                                                      data-uuid="0c64b02c-a6c4-46ff-92cc-efd4bd8f6edd"
+                                                      data-confidence="0.6079255">
+                                                    people do you can talk to you after assembly all these things already sure all doors are open by english 120 is in guatemala I was actually asking them so how much is english improve your life here do you know speak english with your life here
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S144"
+                                                      data-timestamp="1066.73"
+                                                      data-length=""
+                                                      data-uuid="43b7d794-4fa6-4ebb-bcc8-696b216aa769"
+                                                      data-confidence="0.5074881">
+                                                    angie aldag almost like talk to you posted speak you get english talijan it's a nice night day it's really the doorway into the international world breaking the share
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S126"
+                                                      data-timestamp="1086.85"
+                                                      data-length=""
+                                                      data-uuid="7f741de6-4606-478f-acf3-8a2e89b525d5"
+                                                      data-confidence="0.8076882">
+                                                    and by the way brian kaplan for all that he sounds like a language skeptic core the baby still language utilitarian in real life
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S152"
+                                                      data-timestamp="1095.34"
+                                                      data-length=""
+                                                      data-uuid="87b22274-3c4d-479f-8be5-e47655224eea"
+                                                      data-confidence="0.8034333">
+                                                    he's a language romantic
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S152"
+                                                      data-timestamp="1098.52"
+                                                      data-length=""
+                                                      data-uuid="ae4e48e1-5787-4380-98c1-24d19e4b35ea"
+                                                      data-confidence="0.8244781">
+                                                    who's in college he fell in love with german
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S152"
+                                                      data-timestamp="1101.77"
+                                                      data-length=""
+                                                      data-uuid="7955b938-5839-4fba-8dea-35e8e175facc"
+                                                      data-confidence="0.6136855">
+                                                    litteratur you I can read nietzsche in german cuisine ice blocks in cockroaches survive fancy sunday in some really good german music my favor composer is wickatunk yeah of course
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S103"
+                                                      data-timestamp="1123.0"
+                                                      data-length=""
+                                                      data-uuid="fa38d181-05fe-4fb8-afba-12fc850d4116"
+                                                      data-confidence="0.525229">
+                                                    would still be coming in him trumps the romantic
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S144"
+                                                      data-timestamp="1127.64"
+                                                      data-length=""
+                                                      data-uuid="a2f93383-5637-4eba-b6b3-0fea7137a026"
+                                                      data-confidence="0.6452407">
+                                                    sergen in for me if the afic the basic story of
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S144"
+                                                      data-timestamp="1131.39"
+                                                      data-length=""
+                                                      data-uuid="a768a51b-0d08-46fa-ab8b-f43744a9766c"
+                                                      data-confidence="0.6544891">
+                                                    if people either going to get some big krit benefit out of it orlin rich is a personal life then for language studies great
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S144"
+                                                      data-timestamp="1138.98"
+                                                      data-length=""
+                                                      data-uuid="afa35612-8b7e-4e62-bbec-04b0512aed7f"
+                                                      data-confidence="0.7255583">
+                                                    but if it's the average language that doesn't really help akarere than I can use it in there not happy when I'm there
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S144"
+                                                      data-timestamp="1144.54"
+                                                      data-length=""
+                                                      data-uuid="015e5aa8-c633-48e4-9153-5869076805cd"
+                                                      data-confidence="0.765707">
+                                                    I really do not see a point to go to me
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="1149.78"
+                                                      data-length=""
+                                                      data-uuid="f20357d3-8168-4176-8a15-be22dab55040"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S11"
+                                                      data-timestamp="1162.05"
+                                                      data-length=""
+                                                      data-uuid="2a90f928-5361-4340-8ca8-c29699bb1584"
+                                                      data-confidence="0.5070617">
+                                                    what is worth
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S11"
+                                                      data-timestamp="1163.97"
+                                                      data-length=""
+                                                      data-uuid="f540c1ba-1215-4ad4-a1eb-ab537495f345"
+                                                      data-confidence="0.7336757">
+                                                    we get emails all the time from listeners in foreign countries are teleset babe listen to this freakonomics radio podcast in order to learn english
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S11"
+                                                      data-timestamp="1172.95"
+                                                      data-length=""
+                                                      data-uuid="b2fe5ad2-9553-4f58-a252-2a6bf9d9d30b"
+                                                      data-confidence="0.7077584">
+                                                    with 2 things to say to you people
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S11"
+                                                      data-timestamp="1175.16"
+                                                      data-length=""
+                                                      data-uuid="cd07eee6-ed26-4c8a-b2af-58bb9d9e1334"
+                                                      data-confidence="0.8062087">
+                                                    one good luck with that
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="1184.94"
+                                                      data-length=""
+                                                      data-uuid="0cb24268-26b8-498f-a474-831aa6bf95fd"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="1189.67"
+                                                      data-length=""
+                                                      data-uuid="9579b860-1ba6-42bd-8139-f7321b46896a"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S126"
+                                                      data-timestamp="1196.04"
+                                                      data-length=""
+                                                      data-uuid="262f3115-689f-4f08-85d4-156f88ffb568"
+                                                      data-confidence="0.7994196">
+                                                    if I guess there's next week on the show we listen to a song by queen
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="1200.48"
+                                                      data-length=""
+                                                      data-uuid="f8c53948-9ff9-42cb-a2f4-394efa3122e9"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S103"
+                                                      data-timestamp="1203.51"
+                                                      data-length=""
+                                                      data-uuid="9d62962c-0afe-4f9a-aecb-622787a32065"
+                                                      data-confidence="0.7568755">
+                                                    and then we listen to the queen song backwards
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="1208.2"
+                                                      data-length=""
+                                                      data-uuid="46a69bb4-dc23-43c8-9064-bc4dc4950efa"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S167"
+                                                      data-timestamp="1210.32"
+                                                      data-length=""
+                                                      data-uuid="17500c90-ff04-4a77-881a-22effde0dc39"
+                                                      data-confidence="0.8326924">
+                                                    I listen to it again listen to the words it's fun to smoke marijuana at
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="1215.44"
+                                                      data-length=""
+                                                      data-uuid="0496de2c-a290-4331-ad5b-49d14d693ebd"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S103"
+                                                      data-timestamp="1217.68"
+                                                      data-length=""
+                                                      data-uuid="219f4a70-8fd8-443f-85e8-2275813e9eb3"
+                                                      data-confidence="0.6747862">
+                                                    in what kind of pizzas about mind reading books
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S0"
+                                                      data-timestamp="1224.89"
+                                                      data-length=""
+                                                      data-uuid="0ca62ea6-f53c-41a3-990f-e9d77c93efeb"
+                                                      data-confidence="0.4324217">
+                                                    next time free I'm free
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S171"
+                                                      data-timestamp="1231.75"
+                                                      data-length=""
+                                                      data-uuid="c7bb1427-e0c0-4e25-8551-c8df77f48f04"
+                                                      data-confidence="0.106036">
+                                                    books
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S172"
+                                                      data-timestamp="1235.32"
+                                                      data-length=""
+                                                      data-uuid="635d05f2-617b-4b6d-af0f-e6310dad0c5e"
+                                                      data-confidence="0.7329667">
+                                                    freakonomics radio is produced byWNYCN.net production our staff include david herman greg rozalski credico nbra lamb do you like tim burton crispins and if you want more freakonomics radio you can subscribe to a podcast on itunes or go to freakonomics.com
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S172"
+                                                      data-timestamp="1253.55"
+                                                      data-length=""
+                                                      data-uuid="53a75237-b1ad-4a64-8c4d-bb1451d484c1"
+                                                      data-confidence="0.6586539">
+                                                    will find lots of radio oblog the books in morn
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S171"
+                                                      data-timestamp="1257.36"
+                                                      data-length=""
+                                                      data-uuid="4c6abac3-4a1d-4c9a-af57-80e10aa7a4c8"
+                                                      data-confidence="0.4202058">
+                                                    add another one another one bites the dust
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S119"
+                                                      data-timestamp="1261.44"
+                                                      data-length=""
+                                                      data-uuid="1fe22513-e3a4-440f-a06b-09c7fab295ae"
+                                                      data-confidence="0.1535101">
+                                                    bing games
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="1266.76"
+                                                      data-length=""
+                                                      data-uuid="1105d161-b3c2-4c01-8811-a57cc0d7dcd1"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S177"
+                                                      data-timestamp="1272.0"
+                                                      data-length=""
+                                                      data-uuid="d7ee6c88-d15e-4bd4-98e8-abb676f63330"
+                                                      data-confidence="0.8273432">
+                                                    freakonomics radio is supported by wealthfront wealthfront is an automated investment service built for the modern era and make it easier than ever to invest your money well will front you the software instead of retail locations are salespeople so it can offer sophistical investment advice at low cost that were previously impossible
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S177"
+                                                      data-timestamp="1291.28"
+                                                      data-length=""
+                                                      data-uuid="f20981d8-b809-45c8-98d1-bca7b71f737d"
+                                                      data-confidence="0.8922797">
+                                                    it is exploded in popularity in last 2 years I know it more than $2.5 Billion under management check them out atwealthfront.com slash freak to get up to $10000 managepro free
+                                                </span>
+                                            
+                                            
+                                            </p>
+                                            <div class="clearboth"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mk-about-author-wrapper">
+                                <div class="avatar-wrapper"><img alt=''
+                                                                 src='/img/covers/freakonomics-radio.jpg'
+                                                                 class='avatar avatar-65 photo' height='65' width='65'/>
+                                </div>
+                                <div class="mk-about-author-meta">
+                                    <a class="about-author-name" href=""></a>
+
+                                    <div class="about-author-desc"></div>
+
+                                </div>
+                                <div class="clearboth"></div>
+                            </div>
+                            <section class="blog-similar-posts">
+                                <div class="similar-post-title">Recent Podcasts</div>
+                                <ul class="four-cols">
+                                    
+                                    <li>
+                                        <div class="similar-post-holder"><a class="mk-similiar-thumbnail"
+                                                                            href=""
+                                                                            title="Is Learning a Foreign Language Really Worth It?"><img
+                                                src="/img/covers/freakonomics-radio.jpg"
+                                                alt="Is Learning a Foreign Language Really Worth It?"/>
+
+                                            <div class="image-hover-overlay"></div>
+                                        </a><a href="" class="mk-similiar-title">Is Learning a Foreign Language Really Worth It?</a></div>
+                                    </li>
+                                    
+                                </ul>
+                                <div class="clearboth"></div>
+                            </section>
+                            <section id="comments">
+                            </section>
+                        </article>
+                        <div class="clearboth"></div>
+                    </div>
+                    <div class="clearboth"></div>
+                </div>
+            </div>
+        </div>
+        <section id="mk-footer" class="">
+  <div class="footer-wrapper mk-grid">
+    <div class="mk-padding-wrapper">
+      <div class=""><section id="text-2" class="widget widget_text"> <div class="textwidget"><div style="text-align: center; color: #999999;"> Copyright TomeCast All Rights Reserved © 2015 </div></div>
+      </section></div>
+      <div class="clearboth"></div>
+    </div>
+  </div>
+</section>
+
+    </div>
+    <div class="mk-side-dashboard">
+    <div class="side-dash-top-widgets">
+        <section id="text-4" class="widget widget_text">
+            <div class="textwidget"><img
+                    src="/img/D-logo.png">
+            </div>
+        </section>
+    </div>
+    <nav id="mk-sidedash-navigation" class="side_dashboard_menu">
+        <ul id="menu-main-menu" class="sidedash-navigation-ul">
+            <li id="menu-item-4533" class="menu-item menu-item-type-post_type menu-item-object-page"><a
+                    href="/">Home</a></li>
+            <li id="menu-item-4527" class="menu-item menu-item-type-post_type menu-item-object-page"><a
+                    href="/about.html">About</a></li>
+            <li id="menu-item-4529"
+                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><a
+                    href="">Podcasts</a>
+                <ul class="sub-menu">
+                    
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                        <a href="//"></a>
+                    </li>
+                    
+
+
+                </ul>
+            </li>
+
+            <li id="menu-item-4525" class="menu-item menu-item-type-post_type menu-item-object-page"><a
+                    href="/contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="side-dash-bottom-widgets">
+        <section id="social-2" class="widget widget_social_networks">
+            <div id="social-55560e5fcc0ca" class="align-left"><a href="#"
+                                                                 rel="nofollow"
+                                                                 class="builtin-icons mk-square-pointed custom small facebook-hover"
+                                                                 target="_blank" alt="Follow Us on facebook"
+                                                                 title="Follow Us on facebook"><i
+                    class="mk-jupiter-icon-simple-facebook"></i></a><a href="#"
+                                                                       rel="nofollow"
+                                                                       class="builtin-icons mk-square-pointed custom small googleplus-hover"
+                                                                       target="_blank" alt="Follow Us on googleplus"
+                                                                       title="Follow Us on googleplus"><i
+                    class="mk-jupiter-icon-simple-googleplus"></i></a><a href="#"
+                                                                         rel="nofollow"
+                                                                         class="builtin-icons mk-square-pointed custom small twitter-hover"
+                                                                         target="_blank" alt="Follow Us on twitter"
+                                                                         title="Follow Us on twitter"><i
+                    class="mk-jupiter-icon-simple-twitter"></i></a>
+                <style>#social-55560e5fcc0ca a {
+                    opacity: 100 !important;
+                    color: #ffffff !important;
+                }
+
+                #social-55560e5fcc0ca a:hover {
+                    color: #f16f4f !important;
+                }</style>
+            </div>
+        </section>
+    </div>
+</div>
+
+</div>
+<a href="#" class="mk-go-top"><i class="mk-icon-chevron-up"></i></a>
+
+
+
+<a class="mk-post-nav mk-post-prev with-image" href="/podcasts/freakonomics-radio/2014/02/27/why-are-japanese-homes-disposable.html"><span
+        class="pagnav-wrapper"><span class="pagenav-top"><span class="pagenav-image"><img width="150" height="150"
+              src="/img/covers/freakonomics-radio.jpg"
+              class="attachment-thumbnail wp-post-image"
+              alt="Why Are Japanese Homes Disposable? Podcast"/></span><span
+        class="mk-pavnav-icon"><i class="mk-icon-long-arrow-left"></i></span></span><div class="nav-info-container">
+    <span class="pagenav-bottom"><span class="pagenav-title">Why Are Japanese Homes Disposable?</span>2014-02-27</span></div></span></a>
+
+
+
+
+<a class="mk-post-nav mk-post-next with-image" href="/podcasts/freakonomics-radio/2014/03/13/it-s-fun-to-smoke-marijuana.html"><span
+        class="pagnav-wrapper"><span class="pagenav-top"><span class="mk-pavnav-icon"><i
+        class="mk-icon-long-arrow-right"></i></span><span class="pagenav-image"><img width="150" height="150"
+             src="/img/covers/freakonomics-radio.jpg"
+             class="attachment-thumbnail wp-post-image"
+             alt="“It’s Fun to Smoke Marijuana” Podcast"/></span></span><div
+        class="nav-info-container"><span class="pagenav-bottom"><span
+        class="pagenav-title">“It’s Fun to Smoke Marijuana”</span>
+    2014-03-13
+</span></div></span></a>
+
+
+
+<script type='text/javascript' src='/js/scripts-vendors.js'></script>
+<script type='text/javascript' src='/js/app.js'></script>
+<script type='text/javascript' src='/js/smoothscroll.js'></script>
+<script type='text/javascript'
+        src='//cdnjs.cloudflare.com/ajax/libs/jquery.transit/0.9.12/jquery.transit.min.js'></script>
+
+<script type="text/javascript">
+    window.$ = jQuery
+
+    $('.mk-dynamic-styles').each(function () {
+        $(this).remove();
+    });
+
+    function ajaxStylesInjector() {
+        $('.mk-dynamic-styles').each(function () {
+            var $this = $(this),
+                    id = $this.attr('id'),
+                    commentedStyles = $this.html();
+            styles = commentedStyles
+                    .replace('<!--', '')
+                    .replace('-->', '');
+
+
+            if (dynamic_styles_ids.indexOf(id) === -1) {
+                $('style[data-ajax]').append(styles);
+                $this.remove();
+            }
+
+            dynamic_styles_ids.push(id);
+        });
+    }
+    ;
+
+    abb.modules.theme_header.init({
+        id: 'mk-header',
+        height: '130',
+        stickyHeight: '55',
+        stickyOffset: 'header',
+        hasToolbar: 'false'
+    });
+    abb.init();    </script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-69068664-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>
+ 

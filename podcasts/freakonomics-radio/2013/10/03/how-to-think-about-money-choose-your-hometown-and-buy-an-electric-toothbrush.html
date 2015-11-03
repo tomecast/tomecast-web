@@ -1,0 +1,3371 @@
+<!DOCTYPE html>
+<html itemscope="itemscope" itemtype="http://schema.org/Article" xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="format-detection" content="telephone=no">
+<title itemprop="name">TomeCast Template</title>
+
+<script type="text/javascript">
+  // Init aplication namespace
+  var abb = {};
+  var php = {};
+
+  var mk_header_parallax, mk_banner_parallax, mk_page_parallax, mk_footer_parallax, mk_body_parallax;
+  var mk_captcha_placeholder = "Enter Captcha",
+          mk_captcha_invalid_txt = "Invalid. Try again.",
+          mk_captcha_correct_txt = "Captcha correct.",
+          mk_responsive_nav_width = 1140,
+          mk_check_rtl = true,
+          mk_grid_width = 1140,
+          mk_ajax_search_option = "disable",
+          mk_preloader_txt_color = "#444444",
+          mk_preloader_bg_color = "#ffffff",
+          mk_accent_color = "#f97352",
+          mk_preloader_bar_color = "#f97352",
+          mk_preloader_logo = "";
+  var mk_header_parallax = false,
+          mk_banner_parallax = false,
+          mk_page_parallax = false,
+          mk_footer_parallax = false,
+          mk_body_parallax = false,
+          mk_no_more_posts = "No More Posts";
+
+  function is_touch_device() {
+    return ('ontouchstart' in document.documentElement);
+  }
+
+</script>
+
+<link rel='stylesheet' id='theme-styles-css' href='/css/theme-styles.min.css' type='text/css' media='all'/>
+<link rel='stylesheet' id='mk-pe-line-icon-css' href='/css/pe-line-icons.min.css' type='text/css' media='all'/>
+<link rel='stylesheet' id='mk-font-awesome-css' href='/css/font-awesome.min.css' type='text/css' media='all'/>
+<link rel='stylesheet' id='mk-icomoon-fonts-css' href='/css/icomoon-fonts.min.css' type='text/css' media='all'/>
+<link rel='stylesheet' id='mk-theme-icons-css' href='/css/theme-icons.min.css' type='text/css' media='all'/>
+<link rel='stylesheet' id='google-font-api-special-1-css' href='http://fonts.googleapis.com/css?family=Open+Sans%3A100italic%2C200italic%2C300italic%2C400italic%2C500italic%2C600italic%2C700italic%2C800italic%2C900italic%2C100%2C200%2C300%2C400%2C500%2C600%2C700%2C800%2C900&#038;ver=4.2.2' type='text/css' media='all'/>
+<link rel='stylesheet' id='mk-style-css' href='/css/style.css' type='text/css' media='all'/>
+<link rel='stylesheet' id='theme-dynamic-styles-css' href='/css/custom.css' type='text/css' media='all'/>
+<style id='theme-dynamic-styles-inline-css' type='text/css'>
+  body {
+  }
+
+  body,
+  p {
+    font-family: Open Sans
+  }
+
+  body {
+    background-color: #fff;
+  }
+
+  #mk-header {
+    background-color: #1b1b1b;
+  }
+
+  .mk-header-bg {
+    background-color: #1b1b1b;
+  }
+
+  .mk-header-toolbar {
+    background-color: #ffffff;
+  }
+
+  #theme-page {
+    background-color: #fff;
+  }
+
+  #mk-footer {
+    background-color: #1b1b1b;
+  }
+
+  #mk-footer .footer-wrapper {
+    padding: 30px 0;
+  }
+
+  #mk-footer .widget {
+    margin-bottom: 40px;
+  }
+
+  #mk-footer [class*='mk-col-'] {
+    padding: 0 2%;
+  }
+
+  #sub-footer {
+    background-color: #43474d;
+  }
+
+  .mk-footer-copyright {
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+
+  #mk-boxed-layout {
+    -webkit-box-shadow: 0 0 0px rgba(0, 0, 0, 0);
+    -moz-box-shadow: 0 0 0px rgba(0, 0, 0, 0);
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0);
+  }
+
+  .mk-tabs-panes,
+  .mk-news-tab .mk-tabs-tabs li.ui-tabs-active a,
+  .mk-divider .divider-go-top,
+  .ajax-container,
+  .mk-fancy-title.pattern-style span,
+  .mk-portfolio-view-all,
+  .mk-woo-view-all,
+  .mk-blog-view-all {
+    background-color: #fff;
+  }
+
+  .mk-header-bg {
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+    -o-opacity: 1;
+    opacity: 1;
+  }
+
+  .header-sticky-ready .mk-header-bg {
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+    -o-opacity: 1;
+    opacity: 1;
+  }
+
+  .mk-header-inner,
+  .header-sticky-ready .mk-header-inner,
+  .header-style-2.header-sticky-ready .mk-classic-nav-bg {
+    border-bottom: 1px solid #1b1b1b;
+  }
+
+  .header-style-4.header-align-left .mk-header-inner,
+  .header-style-4.header-align-center .mk-header-inner {
+    border-bottom: none;
+    border-right: 1px solid #1b1b1b;
+  }
+
+  .header-style-4.header-align-right .mk-header-inner {
+    border-bottom: none;
+    border-left: 1px solid #1b1b1b;
+  }
+
+  .header-style-2 .mk-header-nav-container {
+    border-top: 1px solid #1b1b1b;
+  }
+
+  #mk-header {
+    border-bottom: 1px solid #1b1b1b;
+  }
+
+  body {
+    font-size: 13px;
+    color: #777777;
+    font-weight: normal;
+    line-height: 1.66em;
+  }
+
+  p,
+  .mk-box-icon-2-content {
+    font-size: 13px;
+    color: #777777;
+    line-height: 1.66em;
+  }
+
+  a {
+    color: #2e2e2e;
+  }
+
+  a:hover {
+    color: #f97352;
+  }
+
+  #theme-page strong {
+    color: #f97352;
+  }
+
+  #theme-page h1 {
+    font-size: 36px;
+    color: #404040;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  #theme-page h2 {
+    font-size: 30px;
+    color: #404040;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  #theme-page h3 {
+    font-size: 24px;
+    color: #404040;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  #theme-page h4 {
+    font-size: 18px;
+    color: #404040;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  #theme-page h5 {
+    font-size: 16px;
+    color: #404040;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  #theme-page h6 {
+    font-size: 14px;
+    color: #404040;
+    font-weight: normal;
+    text-transform: uppercase;
+  }
+
+  .page-introduce-title {
+    font-size: 20px;
+    color: #4d4d4d;
+    text-transform: uppercase;
+    font-weight: normal;
+    letter-spacing: 2px;
+  }
+
+  .page-introduce-subtitle {
+    font-size: 14px;
+    line-height: 100%;
+    color: #a3a3a3;
+    font-size: 14px;
+    text-transform: none;
+  }
+
+  ::-webkit-selection {
+    background-color: #f97352;
+    color: #fff;
+  }
+
+  ::-moz-selection {
+    background-color: #f97352;
+    color: #fff;
+  }
+
+  ::selection {
+    background-color: #f97352;
+    color: #fff;
+  }
+
+  #mk-sidebar,
+  #mk-sidebar p {
+    font-size: 14px;
+    color: #999999;
+    font-weight: normal;
+  }
+
+  #mk-sidebar .widgettitle {
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #333333;
+    font-weight: bolder;
+  }
+
+  #mk-sidebar .widgettitle a {
+    color: #333333;
+  }
+
+  #mk-sidebar .widget a {
+    color: #999999;
+  }
+
+  #mk-footer,
+  #mk-footer p {
+    font-size: 14px;
+    color: #808080;
+    font-weight: normal;
+  }
+
+  #mk-footer .widgettitle {
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: 800;
+  }
+
+  #mk-footer .widgettitle a {
+    color: #ffffff;
+  }
+
+  #mk-footer .widget:not(.widget_social_networks) a {
+    color: #999999;
+  }
+
+  .mk-side-dashboard {
+    background-color: #1b1b1b;
+  }
+
+  .mk-side-dashboard,
+  .mk-side-dashboard p {
+    font-size: 12px;
+    color: #eeeeee;
+    font-weight: normal;
+  }
+
+  .mk-side-dashboard .widgettitle {
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #f16f4f;
+    font-weight: 800;
+  }
+
+  .mk-side-dashboard .widgettitle a {
+    color: #f16f4f;
+  }
+
+  .mk-side-dashboard .widget a {
+    color: #fafafa;
+  }
+
+  .sidedash-navigation-ul li a,
+  .sidedash-navigation-ul li .mk-nav-arrow {
+    color: #ffffff;
+  }
+
+  .sidedash-navigation-ul li a:hover {
+    color: #f16f4f;
+    background-color:;
+  }
+
+  .mk-fullscreen-nav {
+    background-color: #444444;
+  }
+
+  .mk-fullscreen-nav .mk-fullscreen-nav-wrapper .mk-fullscreen-nav-logo {
+    margin-bottom: 125px;
+  }
+
+  .mk-fullscreen-nav .fullscreen-navigation-ul .menu-item a {
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 0;
+    font-weight: 800;
+    padding: 25px 0;
+    color: #ffffff;
+  }
+
+  .mk-fullscreen-nav .fullscreen-navigation-ul .menu-item a:hover {
+    background-color: #ffffff;
+    color: #444444;
+  }
+
+  #mk-sidebar .widget:not(.widget_social_networks) a:hover {
+    color: #f97352;
+  }
+
+  #mk-footer .widget:not(.widget_social_networks) a:hover {
+    color: #f97352;
+  }
+
+  .mk-side-dashboard .widget:not(.widget_social_networks) a:hover {
+    color: #f97352;
+  }
+
+  .mk-grid {
+    max-width: 1140px;
+  }
+
+  .mk-header-nav-container,
+  .mk-classic-menu-wrapper {
+    width: 1140px;
+  }
+
+  .theme-page-wrapper #mk-sidebar.mk-builtin {
+    width: 27%;
+  }
+
+  .theme-page-wrapper.right-layout .theme-content,
+  .theme-page-wrapper.left-layout .theme-content {
+    width: 73%;
+  }
+
+  .mk-boxed-enabled #mk-boxed-layout,
+  .mk-boxed-enabled #mk-boxed-layout .header-style-1 .mk-header-holder,
+  .mk-boxed-enabled #mk-boxed-layout .header-style-3 .mk-header-holder {
+    max-width: 1200px;
+  }
+
+  .mk-boxed-enabled #mk-boxed-layout .header-style-1 .mk-header-holder,
+  .mk-boxed-enabled #mk-boxed-layout .header-style-3 .mk-header-holder {
+    width: 100% !important;
+    left: auto !important;
+  }
+
+  .mk-boxed-enabled #mk-boxed-layout .header-style-2.header-sticky-ready .mk-header-nav-container {
+    width: 1200px !important;
+    left: auto !important;
+  }
+
+  .header-style-1 .mk-header-start-tour,
+  .header-style-3 .mk-header-start-tour,
+  .header-style-1 .mk-header-inner #mk-header-search,
+  .header-style-1 .mk-header-inner,
+  .header-style-1 .mk-search-trigger,
+  .header-style-3 .mk-header-inner,
+  .header-style-1 .header-logo,
+  .header-style-3 .header-logo,
+  .header-style-1 .shopping-cart-header,
+  .header-style-3 .shopping-cart-header,
+  .header-style-1 #mk-header-social.header-section a,
+  .header-style-2 #mk-header-social.header-section a,
+  .header-style-3 #mk-header-social.header-section a {
+    height: 130px;
+    line-height: 130px;
+  }
+
+  @media handheld, only screen and (max-width: 1140px) {
+    .header-grid.mk-grid .header-logo.left-logo {
+      left: 15px !important;
+    }
+
+    .header-grid.mk-grid .header-logo.right-logo,
+    .mk-header-right {
+      right: 15px !important;
+    }
+
+    .header-style-3 .shopping-cart-header {
+      right: 30px;
+    }
+  }
+
+  #mk-theme-container:not(.mk-transparent-header) .header-style-1 .mk-header-padding-wrapper,
+  #mk-theme-container:not(.mk-transparent-header) .header-style-3 .mk-header-padding-wrapper {
+    padding-top: 130px;
+  }
+
+  @media handheld, only screen and (max-width: 960px) {
+    .theme-page-wrapper .theme-content {
+      width: 100% !important;
+      float: none !important;
+    }
+
+    .theme-page-wrapper {
+      padding-right: 15px !important;
+      padding-left: 15px !important;
+    }
+
+    .theme-page-wrapper .theme-content:not(.no-padding) {
+      padding: 25px 0 !important;
+    }
+
+    .theme-page-wrapper #mk-sidebar {
+      width: 100% !important;
+      float: none !important;
+      padding: 0 !important;
+    }
+
+    .theme-page-wrapper #mk-sidebar .sidebar-wrapper {
+      padding: 20px 0 !important;
+    }
+  }
+
+  @media handheld, only screen and (max-width: 1140px) {
+    .mk-go-top,
+    .mk-quick-contact-wrapper {
+      bottom: 70px !important;
+    }
+
+    .mk-grid {
+      width: 100%;
+    }
+
+    .mk-padding-wrapper {
+      padding: 0 20px;
+    }
+  }
+
+  #mk-toolbar-navigation ul li a,
+  .mk-language-nav > a,
+  .mk-header-login .mk-login-link,
+  .mk-subscribe-link,
+  .mk-checkout-btn,
+  .mk-header-tagline a,
+  .header-toolbar-contact a,
+  #mk-toolbar-navigation ul li a:hover,
+  .mk-language-nav > a:hover,
+  .mk-header-login .mk-login-link:hover,
+  .mk-subscribe-link:hover,
+  .mk-checkout-btn:hover,
+  .mk-header-tagline a:hover {
+    color: #999999;
+  }
+
+  .mk-header-tagline,
+  .header-toolbar-contact,
+  .mk-header-date {
+    color: #999999;
+  }
+
+  .mk-header-toolbar #mk-header-social a i {
+    color: #999999;
+  }
+
+  .header-section#mk-header-social ul li a i {
+    color: #999999;
+  }
+
+  .header-section#mk-header-social ul li a:hover i {
+    color: #cccccc;
+  }
+
+  .header-style-2 .header-logo,
+  .header-style-4 .header-logo {
+    height: 130px !important;
+  }
+
+  .header-style-4 .header-logo {
+    margin: 10px 0;
+  }
+
+  .header-style-2 .mk-header-inner {
+    line-height: 130px;
+  }
+
+  .mk-header-nav-container {
+    background-color:;
+  }
+
+  .mk-header-start-tour {
+    font-size: 14px;
+    color: #333333;
+  }
+
+  .mk-header-start-tour:hover {
+    color: #333333;
+  }
+
+  .mk-classic-nav-bg {
+    background-color: #1b1b1b;
+  }
+
+  .mk-search-trigger,
+  .mk-shoping-cart-link i,
+  .mk-header-cart-count,
+  .mk-toolbar-resposnive-icon i {
+    color: #ffffff;
+  }
+
+  .mk-css-icon-close div,
+  .mk-css-icon-menu div {
+    background-color: #ffffff;
+  }
+
+  #mk-header-searchform .text-input {
+    background-color: !important;
+    color: #c7c7c7;
+  }
+
+  #mk-header-searchform span i {
+    color: #c7c7c7;
+  }
+
+  #mk-header-searchform .text-input::-webkit-input-placeholder {
+    color: #c7c7c7;
+  }
+
+  #mk-header-searchform .text-input:-ms-input-placeholder {
+    color: #c7c7c7;
+  }
+
+  #mk-header-searchform .text-input:-moz-placeholder {
+    color: #c7c7c7;
+  }
+
+  .header-style-1.header-sticky-ready .menu-hover-style-1 .main-navigation-ul > li > a,
+  .header-style-3.header-sticky-ready .menu-hover-style-1 .main-navigation-ul > li > a,
+  .header-style-1.header-sticky-ready .menu-hover-style-5 .main-navigation-ul > li,
+  .header-style-1.header-sticky-ready .menu-hover-style-2 .main-navigation-ul > li > a,
+  .header-style-3.header-sticky-ready .menu-hover-style-2 .main-navigation-ul > li > a,
+  .header-style-1.header-style-1.header-sticky-ready .menu-hover-style-4 .main-navigation-ul > li > a,
+  .header-style-3.header-sticky-ready .menu-hover-style-4 .main-navigation-ul > li > a,
+  .header-style-1.header-sticky-ready .menu-hover-style-3 .main-navigation-ul > li,
+  .header-style-1.header-sticky-ready .mk-header-inner #mk-header-search,
+  .header-style-3.header-sticky-ready .mk-header-holder #mk-header-search,
+  .header-sticky-ready.header-style-3 .mk-header-start-tour,
+  .header-sticky-ready.header-style-1 .mk-header-start-tour,
+  .header-sticky-ready.header-style-1 .mk-header-inner,
+  .header-sticky-ready.header-style-3 .mk-header-inner,
+  .header-sticky-ready.header-style-3 .header-logo,
+  .header-sticky-ready.header-style-1 .header-logo,
+  .header-sticky-ready.header-style-1 .mk-search-trigger,
+  .header-sticky-ready.header-style-1 .mk-search-trigger i,
+  .header-sticky-ready.header-style-1 .shopping-cart-header,
+  .header-sticky-ready.header-style-1 .shopping-cart-header i,
+  .header-sticky-ready.header-style-3 .shopping-cart-header,
+  .header-sticky-ready.header-style-1 #mk-header-social.header-section a,
+  .header-sticky-ready.header-style-3 #mk-header-social.header-section a {
+    height: 55px !important;
+    line-height: 55px !important;
+  }
+
+  #mk-header-social.header-section a.small {
+    margin-top: 48px;
+  }
+
+  #mk-header-social.header-section a.medium {
+    margin-top: 40px;
+  }
+
+  #mk-header-social.header-section a.large {
+    margin-top: 32px;
+  }
+
+  .header-sticky-ready #mk-header-social.header-section a.small,
+  .header-sticky-ready #mk-header-social.header-section a.medium,
+  .header-sticky-ready #mk-header-social.header-section a.large {
+    margin-top: 10.5px;
+    line-height: 16px !important;
+    height: 16px !important;
+    font-size: 16px !important;
+    width: 16px !important;
+    padding: 8px !important;
+  }
+
+  .header-sticky-ready #mk-header-social.header-section a.small i:before,
+  .header-sticky-ready #mk-header-social.header-section a.medium i:before,
+  .header-sticky-ready #mk-header-social.header-section a.large i:before {
+    line-height: 16px !important;
+    font-size: 16px !important;
+  }
+
+  .main-navigation-ul > li.menu-item > a.menu-item-link {
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: bold;
+    padding-right: 20px !important;
+    padding-left: 20px !important;
+    text-transform: uppercase;
+    letter-spacing: 0px;
+  }
+
+  .mk-vm-menuwrapper ul li a {
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .mk-vm-menuwrapper li > a:after,
+  .mk-vm-menuwrapper li.mk-vm-back:after {
+    color: #ffffff;
+  }
+
+  .main-navigation-ul > li.no-mega-menu ul.sub-menu li.menu-item a.menu-item-link {
+    width: 230px;
+  }
+
+  .mk-header-3-menu-trigger {
+    color: #ffffff;
+  }
+
+  .menu-hover-style-1 .main-navigation-ul li.menu-item > a.menu-item-link:hover,
+  .menu-hover-style-1 .main-navigation-ul li.menu-item:hover > a.menu-item-link,
+  .menu-hover-style-1 .main-navigation-ul li.current-menu-item > a.menu-item-link,
+  .menu-hover-style-1 .main-navigation-ul li.current-menu-ancestor > a.menu-item-link,
+  .menu-hover-style-2 .main-navigation-ul li.menu-item > a.menu-item-link:hover,
+  .menu-hover-style-2 .main-navigation-ul li.menu-item:hover > a.menu-item-link,
+  .menu-hover-style-2 .main-navigation-ul li.current-menu-item > a.menu-item-link,
+  .menu-hover-style-2 .main-navigation-ul li.current-menu-ancestor > a.menu-item-link,
+  .menu-hover-style-1.mk-vm-menuwrapper li.menu-item > a:hover,
+  .menu-hover-style-1.mk-vm-menuwrapper li.menu-item:hover > a,
+  .menu-hover-style-1.mk-vm-menuwrapper li.current-menu-item > a,
+  .menu-hover-style-1.mk-vm-menuwrapper li.current-menu-ancestor > a,
+  .menu-hover-style-2.mk-vm-menuwrapper li.menu-item > a:hover,
+  .menu-hover-style-2.mk-vm-menuwrapper li.menu-item:hover > a,
+  .menu-hover-style-2.mk-vm-menuwrapper li.current-menu-item > a,
+  .menu-hover-style-2.mk-vm-menuwrapper li.current-menu-ancestor > a {
+    color: #f97352 !important;
+  }
+
+  .menu-hover-style-3 .main-navigation-ul > li.menu-item > a.menu-item-link:hover,
+  .menu-hover-style-3 .main-navigation-ul > li.menu-item:hover > a.menu-item-link,
+  .menu-hover-style-3.mk-vm-menuwrapper li > a:hover,
+  .menu-hover-style-3.mk-vm-menuwrapper li:hover > a {
+    border: 2px solid #f97352;
+  }
+
+  .menu-hover-style-3 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
+  .menu-hover-style-3 .main-navigation-ul > li.current-menu-ancestor > a.menu-item-link,
+  .menu-hover-style-3.mk-vm-menuwrapper li.current-menu-item > a,
+  .menu-hover-style-3.mk-vm-menuwrapper li.current-menu-ancestor > a {
+    border: 2px solid #f97352;
+    background-color: #f97352;
+    color: #ffffff;
+  }
+
+  .menu-hover-style-3.mk-vm-menuwrapper li.current-menu-ancestor > a:after {
+    color: #ffffff;
+  }
+
+  .menu-hover-style-4 .main-navigation-ul li.menu-item > a.menu-item-link:hover,
+  .menu-hover-style-4 .main-navigation-ul li.menu-item:hover > a.menu-item-link,
+  .menu-hover-style-4 .main-navigation-ul li.current-menu-item > a.menu-item-link,
+  .menu-hover-style-4 .main-navigation-ul li.current-menu-ancestor > a.menu-item-link,
+  .menu-hover-style-4.mk-vm-menuwrapper li a:hover,
+  .menu-hover-style-4.mk-vm-menuwrapper li:hover > a,
+  .menu-hover-style-4.mk-vm-menuwrapper li.current-menu-item > a,
+  .menu-hover-style-4.mk-vm-menuwrapper li.current-menu-ancestor > a,
+  .menu-hover-style-5 .main-navigation-ul > li.menu-item > a.menu-item-link:after {
+    background-color: #f97352;
+    color: #ffffff;
+  }
+
+  .menu-hover-style-4.mk-vm-menuwrapper li.current-menu-ancestor > a:after,
+  .menu-hover-style-4.mk-vm-menuwrapper li.current-menu-item > a:after,
+  .menu-hover-style-4.mk-vm-menuwrapper li:hover > a:after,
+  .menu-hover-style-4.mk-vm-menuwrapper li a:hover::after {
+    color: #ffffff;
+  }
+
+  .menu-hover-style-1 .main-navigation-ul > li.dropdownOpen > a.menu-item-link,
+  .menu-hover-style-1 .main-navigation-ul > li.active > a.menu-item-link,
+  .menu-hover-style-1 .main-navigation-ul > li.open > a.menu-item-link,
+  .menu-hover-style-1 .main-navigation-ul > li.menu-item > a:hover,
+  .menu-hover-style-1 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
+  .menu-hover-style-1 .main-navigation-ul > li.current-menu-ancestor > a.menu-item-link {
+    border-top-color: #f97352;
+  }
+
+  .menu-hover-style-1.mk-vm-menuwrapper li > a:hover,
+  .menu-hover-style-1.mk-vm-menuwrapper li.current-menu-item > a,
+  .menu-hover-style-1.mk-vm-menuwrapper li.current-menu-ancestor > a {
+    border-left-color: #f97352;
+  }
+
+  .header-style-1 .menu-hover-style-1 .main-navigation-ul > li > a,
+  .header-style-1 .menu-hover-style-2 .main-navigation-ul > li > a,
+  .header-style-1 .menu-hover-style-4 .main-navigation-ul > li > a,
+  .header-style-1 .menu-hover-style-5 .main-navigation-ul > li {
+    height: 130px;
+    line-height: 130px;
+  }
+
+  .header-style-1 .menu-hover-style-3 .main-navigation-ul > li,
+  .header-style-1 .menu-hover-style-5 .main-navigation-ul > li {
+    height: 130px;
+    line-height: 130px;
+  }
+
+  .header-style-1 .menu-hover-style-3 .main-navigation-ul > li > a {
+    line-height: 65px;
+  }
+
+  .header-style-1.header-sticky-ready .menu-hover-style-3 .main-navigation-ul > li > a {
+    line-height: 36.666666666667px;
+  }
+
+  .header-style-1 .menu-hover-style-5 .main-navigation-ul > li > a {
+    line-height: 20px;
+    vertical-align: middle;
+  }
+
+  .main-navigation-ul > li.no-mega-menu ul.sub-menu:after,
+  .main-navigation-ul > li.has-mega-menu > ul.sub-menu:after {
+    background-color: #f97352;
+  }
+
+  .mk-shopping-cart-box {
+    border-top: 2px solid #f97352;
+  }
+
+  #mk-main-navigation li.no-mega-menu ul.sub-menu,
+  #mk-main-navigation li.has-mega-menu > ul.sub-menu,
+  .mk-shopping-cart-box {
+    background-color: #333333;
+  }
+
+  #mk-main-navigation ul.sub-menu a.menu-item-link,
+  #mk-main-navigation ul .megamenu-title,
+  .megamenu-widgets-container a,
+  .mk-shopping-cart-box .product_list_widget li a,
+  .mk-shopping-cart-box .product_list_widget li.empty,
+  .mk-shopping-cart-box .product_list_widget li span,
+  .mk-shopping-cart-box .widget_shopping_cart .total {
+    color: #b3b3b3;
+  }
+
+  .mk-shopping-cart-box .mk-button.cart-widget-btn {
+    border-color: #b3b3b3;
+    color: #b3b3b3;
+  }
+
+  .mk-shopping-cart-box .mk-button.cart-widget-btn:hover {
+    background-color: #b3b3b3;
+    color: #333333;
+  }
+
+  #mk-main-navigation ul .megamenu-title {
+    color: #ffffff;
+  }
+
+  #mk-main-navigation ul .megamenu-title:after {
+    background-color: #ffffff;
+  }
+
+  .megamenu-widgets-container {
+    color: #b3b3b3;
+  }
+
+  .megamenu-widgets-container .widgettitle {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bolder;
+  }
+
+  #mk-main-navigation ul.sub-menu li.menu-item ul.sub-menu li.menu-item a.menu-item-link i {
+    color: #e0e0e0;
+  }
+
+  #mk-main-navigation ul.sub-menu a.menu-item-link:hover,
+  .main-navigation-ul ul.sub-menu li.current-menu-item > a.menu-item-link,
+  .main-navigation-ul ul.sub-menu li.current-menu-parent > a.menu-item-link {
+    color: #ffffff !important;
+  }
+
+  .megamenu-widgets-container a:hover {
+    color: #ffffff;
+  }
+
+  .main-navigation-ul li.menu-item ul.sub-menu li.menu-item a.menu-item-link:hover,
+  .main-navigation-ul li.menu-item ul.sub-menu li.menu-item:hover > a.menu-item-link,
+  .main-navigation-ul ul.sub-menu li.menu-item a.menu-item-link:hover,
+  .main-navigation-ul ul.sub-menu li.menu-item:hover > a.menu-item-link,
+  .main-navigation-ul ul.sub-menu li.current-menu-item > a.menu-item-link,
+  .main-navigation-ul ul.sub-menu li.current-menu-parent > a.menu-item-link {
+    background-color: transparent !important;
+  }
+
+  .mk-search-trigger:hover,
+  .mk-header-start-tour:hover {
+    color: #f97352;
+  }
+
+  .main-navigation-ul li.menu-item ul.sub-menu li.menu-item a.menu-item-link {
+    font-size: 12px;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .has-mega-menu .megamenu-title {
+    letter-spacing: 1px;
+  }
+
+  .header-style-4 {
+    text-align: left
+  }
+
+  .mk-vm-menuwrapper li > a {
+    padding-right: 45px;
+  }
+
+  @media handheld, only screen and (max-width: 1140px) {
+    .header-style-1 .mk-header-inner,
+    .header-style-3 .mk-header-inner,
+    .header-style-3 .header-logo,
+    .header-style-1 .header-logo,
+    .header-style-1 .shopping-cart-header,
+    .header-style-3 .shopping-cart-header {
+      height: 90px !important;
+      line-height: 90px;
+    }
+
+    #mk-header:not(.header-style-4) .mk-header-holder {
+      position: relative !important;
+      top: 0 !important;
+    }
+
+    .mk-header-padding-wrapper {
+      display: none !important;
+    }
+
+    .mk-header-nav-container {
+      width: auto !important;
+      display: none;
+    }
+
+    .header-style-1 .mk-header-right,
+    .header-style-2 .mk-header-right,
+    .header-style-3 .mk-header-right {
+      right: 55px !important;
+    }
+
+    .header-style-1 .mk-header-inner #mk-header-search,
+    .header-style-2 .mk-header-inner #mk-header-search,
+    .header-style-3 .mk-header-inner #mk-header-search {
+      display: none !important;
+    }
+
+    .mk-fullscreen-search-overlay {
+      display: none;
+    }
+
+    #mk-header-search {
+      padding-bottom: 10px !important;
+    }
+
+    #mk-header-searchform span .text-input {
+      width: 100% !important;
+    }
+
+    .header-style-2 .header-logo .center-logo {
+      text-align: right !important;
+    }
+
+    .header-style-2 .header-logo .center-logo a {
+      margin: 0 !important;
+    }
+
+    .header-logo,
+    .header-style-4 .header-logo {
+      height: 90px !important;
+    }
+
+    .header-style-4 .shopping-cart-header {
+      display: none;
+    }
+
+    .mk-header-inner {
+      padding-top: 0 !important;
+    }
+
+    .header-logo {
+      position: relative !important;
+      right: auto !important;
+      left: auto !important;
+      float: left !important;
+      text-align: left;
+    }
+
+    .shopping-cart-header {
+      margin: 0 20px 0 0 !important;
+    }
+
+    #mk-responsive-nav {
+      background-color: #ffffff !important;
+    }
+
+    .mk-header-nav-container #mk-responsive-nav {
+      visibility: hidden;
+    }
+
+    #mk-responsive-nav li ul li .megamenu-title:hover,
+    #mk-responsive-nav li ul li .megamenu-title,
+    #mk-responsive-nav li a,
+    #mk-responsive-nav li ul li a:hover,
+    #mk-responsive-nav .mk-nav-arrow {
+      color: #444444 !important;
+    }
+
+    .mk-mega-icon {
+      display: none !important;
+    }
+
+    .mk-header-bg {
+      zoom: 1 !important;
+      filter: alpha(opacity=100) !important;
+      opacity: 1 !important;
+    }
+
+    .header-style-1 .mk-nav-responsive-link,
+    .header-style-2 .mk-nav-responsive-link {
+      display: block !important;
+    }
+
+    .mk-header-nav-container {
+      height: 100%;
+      z-index: 200;
+    }
+
+    #mk-main-navigation {
+      position: relative;
+      z-index: 2;
+    }
+
+    .mk_megamenu_columns_2,
+    .mk_megamenu_columns_3,
+    .mk_megamenu_columns_4,
+    .mk_megamenu_columns_5,
+    .mk_megamenu_columns_6 {
+      width: 100% !important;
+    }
+
+    .header-style-1.header-align-right .header-logo img,
+    .header-style-3.header-align-right .header-logo img,
+    .header-style-3.header-align-center .header-logo img {
+      float: left !important;
+      right: auto !important;
+    }
+
+    .header-style-4 .mk-header-inner {
+      width: auto !important;
+      position: relative !important;
+      overflow: visible;
+      padding-bottom: 0;
+    }
+
+    .admin-bar .header-style-4 .mk-header-inner {
+      top: 0 !important;
+    }
+
+    .header-style-4 .mk-header-right {
+      display: none;
+    }
+
+    .header-style-4 .mk-nav-responsive-link {
+      display: block !important;
+    }
+
+    .header-style-4 .mk-vm-menuwrapper,
+    .header-style-4 #mk-header-search {
+      display: none;
+    }
+
+    .header-style-4 .header-logo {
+      width: auto !important;
+      display: inline-block !important;
+      text-align: left !important;
+      margin: 0 !important;
+    }
+
+    .vertical-header-enabled .header-style-4 .header-logo img {
+      max-width: 100% !important;
+      left: 20px !important;
+      top: 50% !important;
+      -webkit-transform: translate(0, -50%) !important;
+      -moz-transform: translate(0, -50%) !important;
+      -ms-transform: translate(0, -50%) !important;
+      -o-transform: translate(0, -50%) !important;
+      transform: translate(0, -50%) !important;
+      position: relative !important;
+    }
+
+    .vertical-header-enabled.vertical-header-left #theme-page > .mk-main-wrapper-holder,
+    .vertical-header-enabled.vertical-header-center #theme-page > .mk-main-wrapper-holder,
+    .vertical-header-enabled.vertical-header-left #theme-page > .mk-page-section,
+    .vertical-header-enabled.vertical-header-center #theme-page > .mk-page-section,
+    .vertical-header-enabled.vertical-header-left #theme-page > .wpb_row,
+    .vertical-header-enabled.vertical-header-center #theme-page > .wpb_row,
+    .vertical-header-enabled.vertical-header-left #mk-theme-container:not(.mk-transparent-header),
+    .vertical-header-enabled.vertical-header-center #mk-footer,
+    .vertical-header-enabled.vertical-header-left #mk-footer,
+    .vertical-header-enabled.vertical-header-center #mk-theme-container:not(.mk-transparent-header) {
+      padding-left: 0 !important;
+    }
+
+    .vertical-header-enabled.vertical-header-right #theme-page > .mk-main-wrapper-holder,
+    .vertical-header-enabled.vertical-header-right #theme-page > .mk-page-section,
+    .vertical-header-enabled.vertical-header-right #theme-page > .wpb_row,
+    .vertical-header-enabled.vertical-header-right #mk-footer,
+    .vertical-header-enabled.vertical-header-right #mk-theme-container:not(.mk-transparent-header) {
+      padding-right: 0 !important;
+    }
+  }
+
+  @media handheld, only screen and (min-width: 1140px) {
+    .mk-transparent-header .sticky-style-slide .mk-header-holder {
+      position: absolute;
+    }
+
+    .mk-transparent-header .remove-header-bg-true:not(.header-sticky-ready) .mk-header-bg {
+      opacity: 0;
+    }
+
+    .mk-transparent-header .remove-header-bg-true#mk-header:not(.header-sticky-ready) .mk-header-inner {
+      border: 0;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-desktop-logo.light-logo {
+      display: block !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-desktop-logo.dark-logo {
+      display: none !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .main-navigation-ul > li.menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-search-trigger,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-shoping-cart-link i,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-header-cart-count,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-header-start-tour,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) #mk-header-social a i,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.menu-item > a.menu-item-link:hover,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.menu-item:hover > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.current-menu-ancestor > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-2 .main-navigation-ul > li.menu-item > a.menu-item-link:hover,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-2 .main-navigation-ul > li.menu-item:hover > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-2 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-vm-menuwrapper li a,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-vm-menuwrapper li > a:after,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-vm-menuwrapper li.mk-vm-back:after {
+      color: #fff !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-css-icon-menu div {
+      background-color: #fff !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.dropdownOpen > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.active > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.open > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.menu-item > a:hover,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.current-menu-ancestor > a.menu-item-link {
+      border-top-color: #fff;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.current-menu-ancestor > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li.current-menu-item > a,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li.current-menu-ancestor > a {
+      border: 2px solid #fff;
+      background-color: #fff;
+      color: #222 !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.menu-item > a.menu-item-link:hover,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.menu-item:hover > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li > a:hover,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li:hover > a {
+      border: 2px solid #fff;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-4 .main-navigation-ul li.menu-item > a.menu-item-link:hover,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-4 .main-navigation-ul li.menu-item:hover > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-4 .main-navigation-ul li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-5 .main-navigation-ul > li.menu-item > a.menu-item-link:after {
+      background-color: #fff;
+      color: #222 !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-desktop-logo.dark-logo {
+      display: block !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-desktop-logo.light-logo {
+      display: none !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .main-navigation-ul > li.menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-search-trigger,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-shoping-cart-link i,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-header-cart-count,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-header-start-tour,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) #mk-header-social a i,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul li.menu-item > a.menu-item-link:hover,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul li.menu-item:hover > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul li.current-menu-ancestor > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-2 .main-navigation-ul li.menu-item > a.menu-item-link:hover,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-2 .main-navigation-ul li.menu-item:hover > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-2 .main-navigation-ul li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-2 .main-navigation-ul li.current-menu-ancestor > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-vm-menuwrapper li a,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-vm-menuwrapper li > a:after,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-vm-menuwrapper li.mk-vm-back:after {
+      color: #222 !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.dropdownOpen > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.active > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.open > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.menu-item > a:hover,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.current-menu-ancestor > a.menu-item-link {
+      border-top-color: #222;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-css-icon-menu div {
+      background-color: #222 !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.current-menu-ancestor > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li.current-menu-item > a,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li.current-menu-ancestor > a {
+      border: 2px solid #222;
+      background-color: #222;
+      color: #fff !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.menu-item > a.menu-item-link:hover,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.menu-item:hover > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li > a:hover,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li:hover > a {
+      border: 2px solid #222;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-4 .main-navigation-ul li.menu-item > a.menu-item-link:hover,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-4 .main-navigation-ul li.menu-item:hover > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-4 .main-navigation-ul li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-4 .main-navigation-ul li.current-menu-ancestor > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-5 .main-navigation-ul > li.menu-item > a.menu-item-link:after {
+      background-color: #222;
+      color: #fff !important;
+    }
+  }
+
+  .comment-reply a,
+  .mk-toggle .mk-toggle-title.active-toggle:before,
+  .mk-testimonial-author,
+  .modern-style .mk-testimonial-company,
+  #wp-calendar td#today,
+  .news-full-without-image .news-categories span,
+  .news-half-without-image .news-categories span,
+  .news-fourth-without-image .news-categories span,
+  .mk-read-more,
+  .news-single-social li a,
+  .portfolio-widget-cats,
+  .portfolio-carousel-cats,
+  .blog-showcase-more,
+  .simple-style .mk-employee-item:hover .team-member-position,
+  .mk-readmore,
+  .about-author-name,
+  .mk-portfolio-classic-item .portfolio-categories a,
+  .register-login-links a:hover,
+  .not-found-subtitle,
+  .mk-mini-callout a,
+  .search-loop-meta a,
+  .new-tab-readmore,
+  .mk-news-tab .mk-tabs-tabs li.ui-tabs-active a,
+  .mk-tooltip a,
+  .mk-accordion-single.current .mk-accordion-tab i,
+  .monocolor.pricing-table .pricing-price span,
+  .quantity .plus:hover,
+  .quantity .minus:hover,
+  .mk-woo-tabs .mk-tabs-tabs li.ui-state-active a,
+  .product .add_to_cart_button i,
+  .blog-modern-comment:hover,
+  .blog-modern-share:hover,
+  {
+    color: #f97352;
+  }
+
+  .mk-tabs .mk-tabs-tabs li.ui-tabs-active a > i,
+  .mk-accordion .mk-accordion-single.current .mk-accordion-tab:before,
+  .mk-tweet-list a,
+  .widget_testimonials .testimonial-slider .testimonial-author,
+  #mk-filter-portfolio li a:hover,
+  #mk-language-navigation ul li a:hover,
+  #mk-language-navigation ul li.current-menu-item > a,
+  .mk-quick-contact-wrapper h4,
+  .divider-go-top:hover i,
+  .widget-sub-navigation ul li a:hover,
+  #mk-footer .widget_posts_lists ul li .post-list-meta time,
+  .mk-footer-tweets .tweet-username,
+  .product-category .item-holder:hover h4,
+  {
+    color: #f97352 !important;
+  }
+
+  .image-hover-overlay,
+  .newspaper-portfolio,
+  .similar-posts-wrapper .post-thumbnail:hover > .overlay-pattern,
+  .portfolio-logo-section,
+  .post-list-document .post-type-thumb:hover,
+  #cboxTitle,
+  #cboxPrevious,
+  #cboxNext,
+  #cboxClose,
+  .comment-form-button,
+  .mk-dropcaps.fancy-style,
+  .mk-image-overlay,
+  .pinterest-item-overlay,
+  .news-full-with-image .news-categories span,
+  .news-half-with-image .news-categories span,
+  .news-fourth-with-image .news-categories span,
+  .widget-portfolio-overlay,
+  .portfolio-carousel-overlay,
+  .blog-carousel-overlay,
+  .mk-classic-comments span,
+  .mk-similiar-overlay,
+  .mk-skin-button,
+  .mk-flex-caption .flex-desc span,
+  .mk-icon-box .mk-icon-wrapper i:hover,
+  .mk-quick-contact-link:hover,
+  .quick-contact-active.mk-quick-contact-link,
+  .mk-fancy-table th,
+  .ui-slider-handle,
+  .widget_price_filter .ui-slider-range,
+  .shop-skin-btn,
+  #review_form_wrapper input[type=submit],
+  #mk-nav-search-wrapper form .nav-side-search-icon:hover,
+  form.ajax-search-complete i,
+  .blog-modern-btn,
+  .showcase-blog-overlay,
+  .gform_button[type=submit],
+  .button.alt,
+  #respond #submit,
+  .woocommerce .price_slider_amount .button.button,
+  .mk-shopping-cart-box .mk-button.checkout,
+  .widget_shopping_cart .mk-button.checkout,
+  .widget_shopping_cart .mk-button.checkout {
+    background-color: #f97352 !important;
+  }
+
+  .mk-circle-image .item-holder {
+    -webkit-box-shadow: 0 0 0 1px #f97352;
+    -moz-box-shadow: 0 0 0 1px #f97352;
+    box-shadow: 0 0 0 1px #f97352;
+  }
+
+  .mk-blockquote.line-style,
+  .bypostauthor .comment-content,
+  .bypostauthor .comment-content:after,
+  .mk-tabs.simple-style .mk-tabs-tabs li.ui-tabs-active a {
+    border-color: #f97352 !important;
+  }
+
+  .news-full-with-image .news-categories span,
+  .news-half-with-image .news-categories span,
+  .news-fourth-with-image .news-categories span,
+  .mk-flex-caption .flex-desc span {
+    box-shadow: 8px 0 0 #f97352, -8px 0 0 #f97352;
+  }
+
+  .monocolor.pricing-table .pricing-cols .pricing-col.featured-plan {
+    border: 1px solid #f97352 !important;
+  }
+
+  .mk-skin-button.three-dimension {
+    box-shadow: 0px 3px 0px 0px #c75c42;
+  }
+
+  .mk-skin-button.three-dimension:active {
+    box-shadow: 0px 1px 0px 0px #c75c42;
+  }
+
+  .mk-footer-copyright,
+  #mk-footer-navigation li a {
+    color: #8c8e91;
+  }
+
+  .mk-woocommerce-main-image img:hover,
+  .mk-single-thumbnails img:hover {
+    border: 1px solid #f97352 !important;
+  }
+
+  .product-loading-icon {
+    background-color: rgba(249, 115, 82, 0.6);
+  }
+
+  .mk-dynamic-styles {
+    display: none
+  }
+</style>
+<link rel='stylesheet' id='js_composer_front-css' href='/css/js_composer.css' type='text/css' media='all'/>
+<script type='text/javascript' src='https://code.jquery.com/jquery-1.11.3.min.js'></script>
+<script type='text/javascript' src='https://code.jquery.com/jquery-migrate-1.2.1.min.js'></script>
+<style type="text/css">.recentcomments a {
+  display: inline !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}</style>
+
+
+    <meta property="og:site_name" content="TomeCast"/>
+    <meta property="og:image"
+          content="/img/covers/freakonomics-radio.jpg"/>
+    <meta property="og:url" content="/podcasts/freakonomics-radio/2013/10/03/how-to-think-about-money-choose-your-hometown-and-buy-an-electric-toothbrush.html"/>
+    <meta property="og:title" content="TomeCast Transcribed Podcast -  - How to Think About Money, Choose Your Hometown, and Buy an Electric Toothbrush"/>
+    <meta property="og:description"
+          content="Automatically Transcribed Podcast:  - How to Think About Money, Choose Your Hometown, and Buy an Electric Toothbrush"/>
+    <meta property="og:type" content="article"/>
+    <noscript>
+        <style>.wpb_animate_when_almost_visible {
+            opacity: 1;
+        }</style>
+    </noscript>
+</head>
+<body class="single single-post postid-591 single-format-standard  wpb-js-composer js-comp-ver-4.5.1 vc_responsive"
+      data-backText="Back" data-vm-anim="1">
+
+<div id="mk-boxed-layout">
+    <div id="mk-theme-container">
+        <header id="mk-header" data-height="130" data-hover-style="2" data-transparent-skin="" data-header-style="3" data-sticky-height="55" data-sticky-style="fixed" data-sticky-offset="header" class="header-style-3 header-align-left header-toolbar-false sticky-style-fixed  mk-background-stretch full-header ">
+  <div class="mk-header-holder">
+    <div class="mk-header-inner">
+      <div class="mk-header-bg "></div>
+      <div class="mk-dashboard-trigger header_dashboard_style">
+        <div class="mk-css-icon-menu icon-size-big">
+          <div class="mk-css-icon-menu-line-1"></div>
+          <div class="mk-css-icon-menu-line-2"></div>
+          <div class="mk-css-icon-menu-line-3"></div>
+        </div>
+      </div>
+      <div class="header-logo  ">
+        <a href="/" title="TomeCast - Homepage">
+          <img class="mk-desktop-logo dark-logo" alt="TomeCast - Homepage" src="/img/logo.png"/>
+        </a>
+      </div>
+      <div class="clearboth"></div>
+      <div class="mk-header-right">
+      </div>
+    </div>
+  </div>
+  <div class="clearboth"></div>
+  <div class="mk-header-padding-wrapper"></div>
+  <div class="clearboth"></div>
+  <div class="mk-zindex-fix">
+  </div>
+  <div class="clearboth"></div>
+</header>
+
+        <div id="theme-page">
+            <div class="mk-main-wrapper-holder">
+                <div class="theme-page-wrapper mk-blog-single full-layout vc_row-fluid mk-grid ">
+                    <div class="theme-content ">
+                        <article
+                                class=" post type-post status-publish format-standard has-post-thumbnail hentry category-articles category-business tag-audio tag-design">
+                            <div class="mk-audio-section mk-audio-shortcode" style="background-color:#acacac"><img
+                                    class="audio-thumb" alt="" title=""
+                                    src="/img/covers/freakonomics-radio.jpg" style="width:170px"/>
+
+                                <div id="jquery_jplayer" class="jp-jplayer mk-blog-audio"
+                                     data-mp3="http://feedproxy.google.com/~r/freakonomicsradio/~5/zt0L-r-X3_M/freakonomics_podcast100313.mp3"
+                                     data-ogg=""></div>
+                                <div id="jp_container" class="jp-audio audio-has-img">
+                                    <div class="jp-type-single">
+                                        <div class="jp-gui jp-interface">
+                                            <div class="jp-time-holder">
+                                                <div class="jp-current-time"></div>
+                                                <div class="jp-duration"></div>
+                                            </div>
+                                            <div class="jp-progress">
+                                                <div class="jp-seek-bar">
+                                                    <div class="jp-play-bar"></div>
+                                                </div>
+                                            </div>
+                                            <div class="jp-volume-bar">
+                                                <i class="mk-moon-volume-mute"></i>
+
+                                                <div class="inner-value-adjust">
+                                                    <div class="jp-volume-bar-value"></div>
+                                                </div>
+                                            </div>
+                                            <ul class="jp-controls">
+                                                <li><a href="javascript:;" class="jp-play" tabindex="1"><i
+                                                        class="mk-icon-play"></i></a></li>
+                                                <li><a href="javascript:;" class="jp-pause" tabindex="1"><i
+                                                        class="mk-icon-pause"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="jp-no-solution">
+                                            <span>Update Required</span>
+                                            To play the media you will need to either update your browser to a recent
+                                            version or update your <a href="http://get.adobe.com/flashplayer/"
+                                                                      target="_blank">Flash plugin</a>.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearboth"></div>
+                            </div>
+                            <h2 class="blog-single-title">How to Think About Money, Choose Your Hometown, and Buy an Electric Toothbrush</h2>
+
+                            <div class="blog-single-meta">
+                                <div class="mk-blog-author"><a href="/podcasts/freakonomics-radio"
+                                                               title='Posts in ' rel="section"></a></div>
+                                <div class="mk-blog-author">By <a title='Posted By ' rel="author"></a>
+                                </div>
+                                <time class="mk-post-date" datetime="2013-10-03 00:00:00 +0000">
+                                    Posted on <a href="">2013-10-03</a>
+                                </time>
+                            </div>
+                            <div class="single-social-section">
+                                <div class="mk-love-holder">
+                                    <a href="#" class="mk-love-this " id="mk-love">
+                                        <i class="mk-icon-heart"><span>&nbsp;</span></i>
+                                        <span class="mk-love-count">2</span>
+                                    </a>
+                                </div>
+                                <a href="#comments" class="blog-modern-comment">
+                                    <i class="mk-moon-bubble-9"></i><span> 0</span>
+                                </a>
+                                <div class="blog-share-container">
+                                    <div class="blog-single-share mk-toggle-trigger"><i class="mk-moon-share-2"></i>
+                                    </div>
+                                    <ul class="single-share-box mk-box-to-trigger">
+                                        <li><a class="facebook-share" data-title="Check out this Podcast:  - "
+    data-url=""
+    href=""><i
+            class="mk-jupiter-icon-simple-facebook"></i></a></li>
+<li><a class="twitter-share" data-title="Check out this Podcast:  - "
+    data-url=""
+    href="#"><i
+            class="mk-moon-twitter"></i></a></li>
+<li><a class="googleplus-share" data-title="Check out this Podcast:  - "
+    data-url=""
+    href=""><i
+            class="mk-jupiter-icon-simple-googleplus"></i></a></li>
+<li><a class="pinterest-share"
+       data-image="/img/covers/.jpg"
+       data-title="Check out this Podcast:  - "
+    data-url=""
+    href=""><i
+            class="mk-jupiter-icon-simple-pinterest"></i></a></li>
+<li><a class="linkedin-share"
+       data-desc=""
+       data-title="Check out this Podcast:  - "
+    data-url=""
+    href=""><i
+            class="mk-jupiter-icon-simple-linkedin"></i></a></li>
+
+                                    </ul>
+                                </div>
+                                <a class="mk-blog-print" onClick="window.print()"
+                                   href="#" title="Print"><i
+                                        class="mk-moon-print-3"></i></a>
+
+                                <div class="clearboth"></div>
+                            </div>
+                            <div class="clearboth"></div>
+                            <div class="mk-single-content" itemprop="mainContentOfPage">
+                                <div class="wpb_row vc_row  vc_row-fluid  mk-fullwidth-false  attched-false vc_row-fluid">
+                                    <div style="" class="vc_col-sm-12 wpb_column column_container ">
+                                        <div class="clearboth"></div>
+                                        <div class="mk-shortcode mk-padding-shortcode" style="height:40px"></div>
+                                        <div class="clearboth"></div>
+                                        <span id="drop-caps-555772840bc14"
+                                              class="mk-dropcaps mk-shortcode fancy-style ">D</span>
+
+                                        <div id="ajax-555772840bc14" class="mk-dynamic-styles"></div>
+                                        <div style=" margin-bottom:0px;text-align: left;" class="mk-text-block  "><p
+                                                style="text-align: justify;"><span style="color: #33cccc;"><strong>Duis
+                                            viverra</strong></span>
+
+
+                                        </p>
+
+                                            <div class="clearboth"></div>
+                                        </div>
+                                        <div style="font-size: 18px;" id="blockquote-555772840c9ac"
+                                             class="mk-shortcode mk-blockquote quote-style ">
+                                            <p>Dubner and Levitt field your queries in this latest installment of our FREAK-quently Asked Questions.</p>
+                                        </div>
+                                        <div class="clearboth"></div>
+                                        <div class="mk-shortcode mk-padding-shortcode" style="height:20px"></div>
+                                        <div class="clearboth"></div>
+                                        <div style=" margin-bottom:0px;text-align: left;" class="mk-text-block  ">
+                                            <p>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="5.75"
+                                                      data-length=""
+                                                      data-uuid="1614f257-486e-462b-8929-120808af2906"
+                                                      data-confidence="0.7310674">
+                                                    hey love what are your very
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="8.53"
+                                                      data-length=""
+                                                      data-uuid="54b6749b-3ba8-4f21-887f-e05e7a6e36f2"
+                                                      data-confidence="0.7982557">
+                                                    favourite 3 letters in the english alphabet
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="13.96"
+                                                      data-length=""
+                                                      data-uuid="ab96b318-6c00-4e80-9c56-51f891d33c6b"
+                                                      data-confidence="0.880835">
+                                                    I have no idea
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="16.53"
+                                                      data-length=""
+                                                      data-uuid="0c1684ec-db1f-4c44-946f-2c85fed393ac"
+                                                      data-confidence="0.5608771">
+                                                    when you mean you have no idea he must be fate letters
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="19.73"
+                                                      data-length=""
+                                                      data-uuid="18ffdfa1-4916-4ff6-baa9-788362fe22a2"
+                                                      data-confidence="0.714699">
+                                                    give me night in a row to spell a word yeah but maybe
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="35.32"
+                                                      data-length=""
+                                                      data-uuid="3b3e90d0-bf51-4864-92f0-a6f0ec45427c"
+                                                      data-confidence="0.5041332">
+                                                    I left china know what does spell fa q edit what's the meaning of muse I'm having a confused right now
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="45.1"
+                                                      data-length=""
+                                                      data-uuid="fe6afb3f-5855-4668-bbd8-f4c0656d45af"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S234"
+                                                      data-timestamp="53.81"
+                                                      data-length=""
+                                                      data-uuid="bb1b46bc-3bc1-43a7-a026-ab350158b96b"
+                                                      data-confidence="0.6197086">
+                                                    mw on my feet this is freakonomics radio podcast explored the inside of everything
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S9"
+                                                      data-timestamp="61.4"
+                                                      data-length=""
+                                                      data-uuid="8ce69394-6817-4fdb-9ae8-5a08a8ff0c46"
+                                                      data-confidence="0.346211">
+                                                    here's your help steven dubner
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S11"
+                                                      data-timestamp="75.8"
+                                                      data-length=""
+                                                      data-uuid="10c30864-ff3d-4cb8-be76-11d0a896f321"
+                                                      data-confidence="0.5757066">
+                                                    every now and again steve webb and I ask u parilis nearest meters to send of questions and then we try to answer them on this contest it is called freak we ask questions
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S11"
+                                                      data-timestamp="90.04"
+                                                      data-length=""
+                                                      data-uuid="fa2a1444-14c5-4913-a423-bafbdf8f0726"
+                                                      data-confidence="0.6590402">
+                                                    ok so let let's take some questions from readers in the stars of this find freakonomics radio podcast <profanity>fucking</profanity> ready for couple sure that this is from a felony in at steve and rita ora rita rita I guess he says this morning I was
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S123"
+                                                      data-timestamp="103.84"
+                                                      data-length=""
+                                                      data-uuid="47fa1be6-5de1-4831-9d8f-813cd0754701"
+                                                      data-confidence="0.7822922">
+                                                    in article on health credit card spending is making a skoti responsible and go because it removes the quote pain of pain with cold hard cash I found this assertion to be untrue for those of my age group i'm 22 years old steve wright
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S123"
+                                                      data-timestamp="118.53"
+                                                      data-length=""
+                                                      data-uuid="88b4f499-b578-4759-8679-e3d7aedf2bd6"
+                                                      data-confidence="0.7936434">
+                                                    full time quality assurance analyst adanggaman contrec outside washington dc for me and my colleagues we found on the rare occasion we actually have cold hard cash and actually feels almost like spare money it doesn't come up in our bank account since we've already eaten with drawn it sometime goerkes septa does repayment for something else
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S123"
+                                                      data-timestamp="137.24"
+                                                      data-length=""
+                                                      data-uuid="d8099e32-30fa-47bd-aab9-ceb1b407775b"
+                                                      data-confidence="0.7807467">
+                                                    it seems to be widely accepted come to pay credit cards are causing us to be poor spenders but could it be
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S123"
+                                                      data-timestamp="144.56"
+                                                      data-length=""
+                                                      data-uuid="1ad517c9-cd15-44f3-97a3-e09230c8a99d"
+                                                      data-confidence="0.798922">
+                                                    that the so called irresponsibility of credit cards is simply an issue for those who grew up using hard cash instead of hard plastic leather I love this question is this is exactly the kind of question got me interested in you can I mix langone
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S123"
+                                                      data-timestamp="158.95"
+                                                      data-length=""
+                                                      data-uuid="47429fcf-bf7d-4bcc-9640-c9f2024780ec"
+                                                      data-confidence="0.7858225">
+                                                    work of richard thaler in before that comment for skin mental accounting all the stuff so what do you say first of all let's address steve's assumption about the yard is it true that people spend credit cash differently and maybe has the paradigm shifted for them the younger generation now
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="176.71"
+                                                      data-length=""
+                                                      data-uuid="4970e271-1ad9-4fa9-b677-bbb08ce98dab"
+                                                      data-confidence="0.7187722">
+                                                    siliqua do I know I don't know anything but it sounds completely and totally wrong to me I medicine completely off I mean um III believe firmly mecidi of mental accounting that that people don't think of a dollar is a dollar they dalgate money differently
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="194.36"
+                                                      data-length=""
+                                                      data-uuid="ad9b0af4-c7c5-454c-a700-cb111e9c6031"
+                                                      data-confidence="0.8119148">
+                                                    I am but everything we know about the intersection of psychology and economic says that
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="201.09"
+                                                      data-length=""
+                                                      data-uuid="253dfe16-a2bc-4386-911e-4a7093689222"
+                                                      data-confidence="0.672705">
+                                                    I if you delay pain it doesn't hurt you as much and clearly the pain would be seen it said the painful part in the consumption is the bare root tree warden and apang is the punishment
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="213.84"
+                                                      data-length=""
+                                                      data-uuid="3bc4f2e5-8a43-4ff2-9bc7-1596731b5ad3"
+                                                      data-confidence="0.6993349">
+                                                    I'm at any big <profanity>tit</profanity> paying for gas is a good example people talk incessantly about the price of gas in hautman to get food
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="222.07"
+                                                      data-length=""
+                                                      data-uuid="d64defea-234c-41e4-868b-332b2193a9a1"
+                                                      data-confidence="0.8128139">
+                                                    and the reason is because I have to go to pump every couple weeks and actually watch $60 roll up on the gas pump
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="227.97"
+                                                      data-length=""
+                                                      data-uuid="42b0f9f2-5faa-4365-90cc-5b1c34b1ab40"
+                                                      data-confidence="0.8087766">
+                                                    where is other things which are more invisible which might be much more like your cell phone bill with you know might be 50 or $100 per person but it's invisible because you automatically directly pants
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="238.74"
+                                                      data-length=""
+                                                      data-uuid="6cd891df-77bb-4552-8997-396fb02710a7"
+                                                      data-confidence="0.7264473">
+                                                    it don't seem like anything else I do you think it completely backwards I think they didn't give us we have to put the money in your pocket and you have to dole out those bills it's just got to be more painful in more real then I flashing critical
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S123"
+                                                      data-timestamp="253.72"
+                                                      data-length=""
+                                                      data-uuid="cf5e1d56-cf51-4686-9e7b-c6f5af5fb74c"
+                                                      data-confidence="0.7677714">
+                                                    I see what you're saying and I probably agree with you and look there's there's alotta research on the cash versus credit so here's a paper called always leave home without it further investigation of the credit card affect unwillingness to pay williams paving at freeze it you can't miss use a lot with nobody else does
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S123"
+                                                      data-timestamp="271.79"
+                                                      data-length=""
+                                                      data-uuid="638f55f9-df40-4c3c-a9c6-68dbfa34d111"
+                                                      data-confidence="0.8101429">
+                                                    is it in studies involving genuine transaction the potentially high value we should willingness to pay can be increased when customers are instructed to use credit card rather than cash the fact maybe large up to 100%
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S123"
+                                                      data-timestamp="286.24"
+                                                      data-length=""
+                                                      data-uuid="f5e9b740-fca7-4408-bbb3-1562ed26ecfd"
+                                                      data-confidence="0.7307286">
+                                                    in appears unlikely that it arises do solely to liquid lee constraints can you translate that a little bit from a comma speak to us with what is that mean appears unlikely is the rise do so little equally constraints
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="298.96"
+                                                      data-length=""
+                                                      data-uuid="3db44cab-1941-4cd8-92bf-2204c3e5dae5"
+                                                      data-confidence="0.7627601">
+                                                    when the first part in english means that if you try to get me to buy something with a credit card or cash to pay a lot more difficult than cash
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="307.59"
+                                                      data-length=""
+                                                      data-uuid="7dc9658a-baa0-4fa4-9db4-a9eb5e69040f"
+                                                      data-confidence="0.7569686">
+                                                    by the query constraints I think with implying is that sometimes you just run out of money can't buy something even if you want to and are saying the way they designed this experiment it wasn't that he just ran out of money see can buy it with users other psychological factor about the differing of the pain
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S123"
+                                                      data-timestamp="325.46"
+                                                      data-length=""
+                                                      data-uuid="303cf686-08cc-48ae-8dd2-19cf02b9091c"
+                                                      data-confidence="0.7286698">
+                                                    let me hear an anecdote let's say show me show me the way in which you do mental accounting in that's in leeds alabama
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="331.43"
+                                                      data-length=""
+                                                      data-uuid="d3a9a401-d4c6-4f82-9ca4-209109f20067"
+                                                      data-confidence="0.7434736">
+                                                    when example of mental counting that I do for sure is if I buy a big object set computer and I slept a computer versus an electric toothbrush which cost me $20 and it comes time to decide how to have it shipped
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="348.32"
+                                                      data-length=""
+                                                      data-uuid="861600d4-9b4c-4a1d-b43c-95d725bc10bd"
+                                                      data-confidence="0.7961253">
+                                                    I might want electric toothbrush just as much the next day as I want the laptop back today but I'm much more likely to pay an extra 30 or $50 in shipping
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="358.31"
+                                                      data-length=""
+                                                      data-uuid="13714eec-47bc-48be-ac80-2192fae79f1e"
+                                                      data-confidence="0.7498077">
+                                                    to get the laptop sent to me and I would never agree to have a $50 shipping charge put on top of a $20 2 past but it take to clean in economix if I really do want to press the next day he updated do you tell them to get out the clippers next day that I did you tell me to get out of that that laptop
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="374.83"
+                                                      data-length=""
+                                                      data-uuid="d5602130-7d22-4cb7-832a-0c16036d6cd7"
+                                                      data-confidence="0.7358277">
+                                                    I should be willing to pay the shipping charge higley and the 2 different pages and almost everybody does this and it really violation of a simple basic economic printable in one that fit in very well with the idea of mental
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S123"
+                                                      data-timestamp="388.29"
+                                                      data-length=""
+                                                      data-uuid="1e393747-0a66-4ee6-a5fa-1d9502c4950b"
+                                                      data-confidence="0.7068154">
+                                                    and we've talked on this program before but danny condominio some a wonderful human and brilliant guy and a lot of this mental accounting was popularized by richard thaler at your college university chicago really grew out of condiments for skyworks
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S123"
+                                                      data-timestamp="403.04"
+                                                      data-length=""
+                                                      data-uuid="791886b3-ac23-4199-97c4-2c1b3021937a"
+                                                      data-confidence="0.7919934">
+                                                    I did one thing to make danny so appealing is a scholar is that he identifies these flaws in himself as much as in other people he doesn't pretend to be the guy who smarter than everybody else
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S123"
+                                                      data-timestamp="412.37"
+                                                      data-length=""
+                                                      data-uuid="4227e857-b8f7-404f-87ae-51399f254add"
+                                                      data-confidence="0.7325105">
+                                                    you sing a great example of this am was when you buy a new house murthy pet spend $700,000 on this house
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S123"
+                                                      data-timestamp="421.96"
+                                                      data-length=""
+                                                      data-uuid="4063f7a8-72d7-405c-93eb-710a139733f1"
+                                                      data-confidence="0.848924">
+                                                    and how's the new furniture curtains and you have to buy that stuff and you look at the total bill under one scenario at 100 thousand dollars for that stuff and you say one that's not so much I just paid the money gram to the house
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S123"
+                                                      data-timestamp="436.43"
+                                                      data-length=""
+                                                      data-uuid="adea7186-dd0d-40bd-86a4-05f7fa161a70"
+                                                      data-confidence="0.7364681">
+                                                    where is if you're actually to buy it maybe piece by piece or not right after bought the house are freaking furnished and you are buying buying furniture separately you consider 100 thousand dollars exorbitant
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S123"
+                                                      data-timestamp="448.37"
+                                                      data-length=""
+                                                      data-uuid="d26cfcca-b21b-4646-b798-d02c42f6d3d8"
+                                                      data-confidence="0.788349">
+                                                    but you're much more likely to do it when its proportionally relatively small do it you just bought
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S123"
+                                                      data-timestamp="454.58"
+                                                      data-length=""
+                                                      data-uuid="85395e35-fc0c-45f3-b181-f902cce04f00"
+                                                      data-confidence="0.5518786">
+                                                    frisco isd in here now um have you ever known anybody is really done at the door yeah I did
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S123"
+                                                      data-timestamp="463.12"
+                                                      data-length=""
+                                                      data-uuid="7d0c98c5-ba35-491a-9a2a-6d3c407233b0"
+                                                      data-confidence="0.8133519">
+                                                    I'm so it'll be easy even for smart people to make that kind of mistake but is it a mistake or is is there some way in which that kind of mental accounting is in open forest helpful for phones on my
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="476.23"
+                                                      data-length=""
+                                                      data-uuid="95d72495-a070-49cb-b5d2-fc4217812ccd"
+                                                      data-confidence="0.7309274">
+                                                    unit great question and I don't know the answer to that I'm minnie of the quote d facs people have spoken with DV 8 from russian behavior
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="488.8"
+                                                      data-length=""
+                                                      data-uuid="7c9814be-ad5e-41ae-b9de-6d0d0a38a97b"
+                                                      data-confidence="0.7516816">
+                                                    you can attribute to eat in the complexity of the problem or simple rules of thumb would usually work but occasionally backfire
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="497.91"
+                                                      data-length=""
+                                                      data-uuid="e6b36a80-d70d-4079-849c-7665e048e07c"
+                                                      data-confidence="0.7828704">
+                                                    and you know that's probably true of mental accounting they probably are situations where in general I can save a lot of time and effort and heartache by following rules of thumb with chicken 50 with mental county
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="511.34"
+                                                      data-length=""
+                                                      data-uuid="56eb5d5c-013c-4173-b7f9-14cf5c6f4feb"
+                                                      data-confidence="0.7703069">
+                                                    but I've never really seen the problem talk to bout in that way to die I gotta say that is windows good questions that off the top my head I don't know the answer too
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S78"
+                                                      data-timestamp="530.42"
+                                                      data-length=""
+                                                      data-uuid="02f319f8-1437-4e45-ad22-eddca268b7d5"
+                                                      data-confidence="0.6839745">
+                                                    coming up at 3 can I mix radio what kind of akamas to tell you
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="534.12"
+                                                      data-length=""
+                                                      data-uuid="d3250551-6e9e-41f5-8a8a-bae587a4d4d7"
+                                                      data-confidence="0.6561888">
+                                                    young people should be spending more money saving left I think I'm so often young people don't consume as much is a shed
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="543.88"
+                                                      data-length=""
+                                                      data-uuid="d0ddd346-aa3c-48bf-b5d4-2042ee3cb7c1"
+                                                      data-confidence="0.6185057">
+                                                    and they end up here with the scrim pingin saving wasting tons of time
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S78"
+                                                      data-timestamp="550.0"
+                                                      data-length=""
+                                                      data-uuid="f01a31d6-243a-49cb-8800-3287fa2e2b43"
+                                                      data-confidence="0.6272442">
+                                                    also some the questions we didn't get to do cardboard cut out of policeman really detur theft how many sexual
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S218"
+                                                      data-timestamp="560.14"
+                                                      data-length=""
+                                                      data-uuid="70993f46-3a0b-46f5-87d1-5366dc4fad5d"
+                                                      data-confidence="0.4439011">
+                                                    still have the airport
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="572.17"
+                                                      data-length=""
+                                                      data-uuid="c46e7163-17d8-4c64-9e65-d05e34d322e5"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S86"
+                                                      data-timestamp="574.5"
+                                                      data-length=""
+                                                      data-uuid="8ea9318e-55a0-4df3-afce-cc309f3d008e"
+                                                      data-confidence="0.906997">
+                                                    freakonomics radio is supported by 23 and me dot CAA personalized genetic service available in canada 23 in the reports provide genetic information based on a small saliva sample
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S86"
+                                                      data-timestamp="587.81"
+                                                      data-length=""
+                                                      data-uuid="cbc59ae9-b014-4ee9-b2fa-213075212ffd"
+                                                      data-confidence="0.8892149">
+                                                    canadians can learn about their genetic information to publish study's have associated with conditions in traits like celiac disease cystic fibrosis and even response to certain medications
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S86"
+                                                      data-timestamp="598.78"
+                                                      data-length=""
+                                                      data-uuid="18e1017b-7f71-40c2-8c3b-36737449833b"
+                                                      data-confidence="0.8975039">
+                                                    more information is available at 23 the number in me dot CA
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S89"
+                                                      data-timestamp="605.96"
+                                                      data-length=""
+                                                      data-uuid="589ed844-b814-4cd5-8632-43e45f79ccc0"
+                                                      data-confidence="0.7961181">
+                                                    from WNYC this is freakonomics radio here's your host stephen dubner
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S11"
+                                                      data-timestamp="620.97"
+                                                      data-length=""
+                                                      data-uuid="13162532-378c-4dd3-8d8e-31778f6a4661"
+                                                      data-confidence="0.6522864">
+                                                    welcome back to faq in which might come uspenski web night answer your question sometimes less each other questions
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S11"
+                                                      data-timestamp="631.8"
+                                                      data-length=""
+                                                      data-uuid="1e175189-531c-42d1-a326-560e98b0de8b"
+                                                      data-confidence="0.5762751">
+                                                    to let me ask you this year
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S11"
+                                                      data-timestamp="633.86"
+                                                      data-length=""
+                                                      data-uuid="e9c4f92a-f2c2-4e0f-9fca-b1a4558aaf8a"
+                                                      data-confidence="0.7915064">
+                                                    oldest kids mine are about the same age tho in 567 years are gonna be sunny
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S123"
+                                                      data-timestamp="639.82"
+                                                      data-length=""
+                                                      data-uuid="0b3573b2-bc5e-4997-aebd-b6df90f9b307"
+                                                      data-confidence="0.7558292">
+                                                    I'm off to college hopefully what's the financial are spending advice you give your kids going out the world the first time without me to get my debit card credit card you go to my podcast how do you how do you teach them about money in the real world
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="655.2"
+                                                      data-length=""
+                                                      data-uuid="a130aa62-866c-4813-ab79-763f258aa3a2"
+                                                      data-confidence="0.8184738">
+                                                    you know I care so little about money and I've always cared till about money and I've never really want anything
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="662.0"
+                                                      data-length=""
+                                                      data-uuid="722112c7-0c34-4099-b757-d43a8cec1f60"
+                                                      data-confidence="0.713036">
+                                                    that I'm certainly started as a parent to basically tell kids that nothings really worth anything you don't really need anything until I hope we make it will going to the world pudding almost no value on material possessions bitama maybe I felt that but if I succeeded that ben is really no lesson about anything give me credit card
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="681.91"
+                                                      data-length=""
+                                                      data-uuid="dc8574b5-5028-43fe-9003-617f273928b0"
+                                                      data-confidence="0.7128623">
+                                                    they don't want anything if there in a jam
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="684.3"
+                                                      data-length=""
+                                                      data-uuid="535a3e65-7125-4cd7-a1ef-0d4fb4185594"
+                                                      data-confidence="0.7649235">
+                                                    they use it down the flip side of elsa probably spoil my kids
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="689.45"
+                                                      data-length=""
+                                                      data-uuid="ab573689-ddab-4491-9efb-64fb5a90521f"
+                                                      data-confidence="0.8162296">
+                                                    by giving them what they want coz I don't really want anything into my kid probably have almost no understanding of the meaning of a dollar in and what hard work entails
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S101"
+                                                      data-timestamp="700.52"
+                                                      data-length=""
+                                                      data-uuid="893a1769-5699-4ab5-a125-1def3f0a0301"
+                                                      data-confidence="0.7899454">
+                                                    so
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="704.1"
+                                                      data-length=""
+                                                      data-uuid="91205d1f-1250-4cfc-bbac-8b1217de91fd"
+                                                      data-confidence="0.8786085">
+                                                    I don't know I think my kids might be in trouble
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S104"
+                                                      data-timestamp="712.18"
+                                                      data-length=""
+                                                      data-uuid="481973a4-599e-4959-acf4-fe4bce96952a"
+                                                      data-confidence="0.7694474">
+                                                    what is the best pizza the financial advice I ever got was from his senior economist in chicago
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="719.09"
+                                                      data-length=""
+                                                      data-uuid="db31d824-d7c9-40d2-8071-2cea58b80d20"
+                                                      data-confidence="0.5074021">
+                                                    at her name shows a shampain
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="721.51"
+                                                      data-length=""
+                                                      data-uuid="26831c66-0471-4dc6-9044-9b56169390cc"
+                                                      data-confidence="0.8119497">
+                                                    what she told me is actually something that he said milton friedman told him
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="726.64"
+                                                      data-length=""
+                                                      data-uuid="856251f7-c3e1-4545-b374-54f8759638f9"
+                                                      data-confidence="0.7806007">
+                                                    and what he said was you should spend more in save less because I think what happens in to young people young people are always told to be thrifty to save save save
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="739.23"
+                                                      data-length=""
+                                                      data-uuid="a84c167e-e88c-4f20-b268-527b4f557fca"
+                                                      data-confidence="0.6210523">
+                                                    bertuzzi's but with this thank you never gonna be poor than you are today and this is when I was the first year professor the vrisko your cell he will only go up there any power only go up
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="749.73"
+                                                      data-length=""
+                                                      data-uuid="fc7500ca-8eaf-4f04-a57d-2ebf6a45cecf"
+                                                      data-confidence="0.7762583">
+                                                    and so you should be saving now he should be borrowing you should be you should be living today in much they will be living in 10 are 15 years and it's crazy taxi b scrim pingin saving which is what it be someone like me with robin a middle class family was taught to do
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="767.55"
+                                                      data-length=""
+                                                      data-uuid="386c5620-8f2b-4194-86d0-fde124d06ee6"
+                                                      data-confidence="0.8304402">
+                                                    and eminem is the time I'm in a member for many years where I would refuse to buy anything in an airport out of the sense that it was too expensive you know that I was frivolous to buy a soda in the airport for $3
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="782.35"
+                                                      data-length=""
+                                                      data-uuid="8126fdbc-a773-4026-a2c7-ae889f8d068e"
+                                                      data-confidence="0.7693321">
+                                                    an invention I said well now that's crazy I'm gonna give myself the freedom to anything below $5 I'm is not gonna worry about it it's a big blow $5 in I want it I'm just gonna buy in overtime the numbers going up and up and up
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="795.86"
+                                                      data-length=""
+                                                      data-uuid="22917a1a-cc6c-4203-a334-c78adb81ddb9"
+                                                      data-confidence="0.7556683">
+                                                    and I mean obviously you and I had some success with the books and stuff so we have more money than we thought would happen just in general
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="802.74"
+                                                      data-length=""
+                                                      data-uuid="8362438a-b5e8-4a10-91eb-c5711edf621c"
+                                                      data-confidence="0.7662513">
+                                                    I think I'm so often young people don't consume as much as they should and they end up in really scrim pingin saving wasting tons of time I mean
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="813.4"
+                                                      data-length=""
+                                                      data-uuid="5ebd4ad5-e7fe-4802-a846-0b86a268ba5b"
+                                                      data-confidence="0.8131401">
+                                                    if you think about how people will spend hours and hours to save a few dollars he makes no sense right now if you have any value time you shouldn't go across
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S123"
+                                                      data-timestamp="823.32"
+                                                      data-length=""
+                                                      data-uuid="82d72a03-85b0-458e-a19a-d99c1045da2b"
+                                                      data-confidence="0.8103147">
+                                                    how can I just ate so this by sound like I'm the worst advice ever heard haha except maybe in your very narrow situation because we are leaving out there is it uberti me a massive investment in your education and now your investment is starting to pay off returns in dividends and basically an annuity
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S123"
+                                                      data-timestamp="840.92"
+                                                      data-length=""
+                                                      data-uuid="b329a2f1-9ec7-4135-b987-c6977e0e2865"
+                                                      data-confidence="0.8575724">
+                                                    but not everybody's in that situation like most people are not in that situation right so you would basically turn yourself into a walking human annuity by the time you are whatever 2728 years old and she totally screwed up
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S123"
+                                                      data-timestamp="854.56"
+                                                      data-length=""
+                                                      data-uuid="bfcb1bca-2d7c-4414-bd17-b26179c63045"
+                                                      data-confidence="0.8460793">
+                                                    and knowing that I can see why you might wanna consume more than you have been conditioned to do so but apps windows fax you don't wanna do what you're describing or do you in other words a lot of people now to get a first good job let's say 2425 2830
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S123"
+                                                      data-timestamp="871.34"
+                                                      data-length=""
+                                                      data-uuid="59ab3de8-8f48-4249-9580-eded95c66062"
+                                                      data-confidence="0.8229287">
+                                                    did they have the sense that you would a pad of the young academic of that age that they're just going to be on an upward trend I think most people don't feel that
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="880.09"
+                                                      data-length=""
+                                                      data-uuid="e275ae4b-e888-4281-ac8d-884f8d5dad87"
+                                                      data-confidence="0.7229931">
+                                                    show the actual question you asked her to do with your kids going off to college the college student people were going to graduate from college
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="887.26"
+                                                      data-length=""
+                                                      data-uuid="588333ea-963c-4f99-9434-d90a9d67bbd4"
+                                                      data-confidence="0.6588071">
+                                                    are never pour then they are in college in a few min appearance in helping them and then if you look at the overall earnings trajectory of college graduates it goes up for 2530 if it were more going down yes so in general what I'm saying is true then then people get richer of the lifecycle in south
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="905.79"
+                                                      data-length=""
+                                                      data-uuid="bebbece2-c775-4a71-844f-1a187bb72766"
+                                                      data-confidence="0.7989271">
+                                                    at what we expected you doing today should I'm not say when they're young they should start saving in their thirties and forties
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="913.62"
+                                                      data-length=""
+                                                      data-uuid="497752d1-8f4b-4b5e-a7ee-95b682bc8df1"
+                                                      data-confidence="0.5800259">
+                                                    nicia disable in there in the 60s and 70s fashion minisink so II stand by what are playing at I think people are 2350 not 15
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="923.04"
+                                                      data-length=""
+                                                      data-uuid="47c7ef82-fa69-4e3b-8ece-87836cf5d0dc"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="929.38"
+                                                      data-length=""
+                                                      data-uuid="56150419-b446-4186-be51-665635714be6"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S123"
+                                                      data-timestamp="934.98"
+                                                      data-length=""
+                                                      data-uuid="72a80e51-755c-4151-9c78-5acec4792f8a"
+                                                      data-confidence="0.5802793">
+                                                    here's a question from joe west ed the subject line is the economics of choosing hometown he writes hi chaps I've never done the very back to call the steps for like that
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S123"
+                                                      data-timestamp="946.75"
+                                                      data-length=""
+                                                      data-uuid="7ea8ecda-b371-4adc-b52f-fb12804a035b"
+                                                      data-confidence="0.698212">
+                                                    do you feel chappie he must not be american is the american now I can't tell from any of those identifiers with that read email
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S123"
+                                                      data-timestamp="955.86"
+                                                      data-length=""
+                                                      data-uuid="db03da6c-db64-4386-a3f8-b2e91d286958"
+                                                      data-confidence="0.7883645">
+                                                    right so here's a question I've been pondering he write perhaps you'll find it interesting I'm gonna be growing number people can work remotely from a laptop as long as I have internet I'm free to live in any city I like presently any non city 2
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S123"
+                                                      data-timestamp="968.78"
+                                                      data-length=""
+                                                      data-uuid="08ae83cb-244b-45f2-8ba8-3562e135fd31"
+                                                      data-confidence="0.7961363">
+                                                    how would an economist go about choosing a place to live attempting not to be biased by prejudice
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S123"
+                                                      data-timestamp="974.64"
+                                                      data-length=""
+                                                      data-uuid="49db32eb-ab45-4e86-8f30-6e8c7dfc3d77"
+                                                      data-confidence="0.7574077">
+                                                    how should you quantifiably choose hometown joe what is a lot if you were starting from scratch even have to be in any particular place what are the dimensions in the metrics in the yardsticks that you begin to assemble to figure out kinda place neotraditionalist
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="991.96"
+                                                      data-length=""
+                                                      data-uuid="ba86aa97-7da8-4a46-9161-fa9a07115869"
+                                                      data-confidence="0.7562108">
+                                                    so when can we talk about location they use the word amenities
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="997.39"
+                                                      data-length=""
+                                                      data-uuid="d6627d85-20af-49a0-b45b-e13e1faee2d3"
+                                                      data-confidence="0.6031044">
+                                                    tamine the kinds of things that people are willing to pay for so I access this theater ordet in nature
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="1005.47"
+                                                      data-length=""
+                                                      data-uuid="4a843f40-aa68-4cfb-b21e-759dc4b1e363"
+                                                      data-confidence="0.7502974">
+                                                    or 2 a good bar scene I think like that and the thing about amenities entity does it need to market rate so that the places that have lots of amenities like san francisco in new york city
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="1020.03"
+                                                      data-length=""
+                                                      data-uuid="9bf92a24-f920-4456-9f90-c2312689f2e6"
+                                                      data-confidence="0.7925414">
+                                                    also tend to be extremely expensive because space is scarce and people will pay to be close to those amenities
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="1027.45"
+                                                      data-length=""
+                                                      data-uuid="2c0b563c-93a7-44eb-a630-97873f6ddd16"
+                                                      data-confidence="0.8580897">
+                                                    so the problem you face we need to decide where to live is to figure out how do you find a way to a city or location that has a lot of amenities you like
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="1037.87"
+                                                      data-length=""
+                                                      data-uuid="cf57464a-5f05-4073-90f3-316f974e5a76"
+                                                      data-confidence="0.8183049">
+                                                    but not a lot of them in it easy don't really care about to do an interesting example is that couples who have no children don't want typically to live in places that spend a lot of money on education that have a good school systems
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="1053.11"
+                                                      data-length=""
+                                                      data-uuid="b9758c5f-d3c8-4891-b84b-231ee5a7edb4"
+                                                      data-confidence="0.7430645">
+                                                    and so consequently there's a lot of self selection away from spain t suburbs by people who are topless me maybe also in addition fanty cubbert don't have a lot of the fun things to do that out with couples are looking for
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="1069.99"
+                                                      data-length=""
+                                                      data-uuid="28c7fdf9-1435-4b07-b57c-2d30e4e4ac63"
+                                                      data-confidence="0.8078704">
+                                                    I'm different some interesting research done on homosexual couples and where they tend to live they tend to be more affluent in the typical person and they tend to like different set of amenities and not have as many kids
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="1086.87"
+                                                      data-length=""
+                                                      data-uuid="f325971a-1754-434b-8c5f-2bd3371d6294"
+                                                      data-confidence="0.8300503">
+                                                    and it turns out that if you want if you were all the nice places in the country are you just go to the places where the homosexual couples
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="1093.71"
+                                                      data-length=""
+                                                      data-uuid="bb7e2107-cf58-4858-a35c-e529d8c3f16b"
+                                                      data-confidence="0.7511849">
+                                                    end up because they tend to be concentrating up later than everyone else is willing to pay a whole lot of money to go live in south
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="1100.11"
+                                                      data-length=""
+                                                      data-uuid="a7d5f203-a2e7-4084-aa63-79d36c177870"
+                                                      data-confidence="0.734048">
+                                                    I think that's what I was just here looking don't be a jealous so he should look for weather lot of gay couples living what did you know but I did not too clear because a lot of what you're buying
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="1111.11"
+                                                      data-length=""
+                                                      data-uuid="db70ecb1-2970-4187-b4dd-de8390f55ae7"
+                                                      data-confidence="0.7153805">
+                                                    in the city is proximity 2 places to work so I was actually like you I was surprised t stewart city so let me ask you this you live in a city in chicago is coming up the place he would've picked absent the job at university chicago the right right I wouldn't live in chicago probably if I didn t tadim is chicago
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="1131.09"
+                                                      data-length=""
+                                                      data-uuid="46b5f355-1223-49bb-b42a-51193dbabaae"
+                                                      data-confidence="0.8013125">
+                                                    can I wouldn't live in hyde park new puppy would live in the city even would you are would you know I would be I would live in a suburb record
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="1138.27"
+                                                      data-length=""
+                                                      data-uuid="80587e76-fdad-4bec-b1c7-e272b2239671"
+                                                      data-confidence="0.7889674">
+                                                    pretty much everything I like is in suburbs you know I like fast food I like golf courses I like big houses in big yard some stuff like that so you
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="1148.93"
+                                                      data-length=""
+                                                      data-uuid="36fe406c-8257-43b0-93e4-767c341666c2"
+                                                      data-confidence="0.7410505">
+                                                    pretty much they like making u turns across 6 lane highway is like dairy queens right but you know I'm not big into kulturni you you never been the museum in your life if you not very often now
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="1160.87"
+                                                      data-length=""
+                                                      data-uuid="27441d62-7b71-41c2-8c1c-04212f853491"
+                                                      data-confidence="0.8555276">
+                                                    not not is it will you help it I'm not really the kind of person who would pay lot of money to be close to central city
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S123"
+                                                      data-timestamp="1177.75"
+                                                      data-length=""
+                                                      data-uuid="db81d478-faba-4446-8932-dbf500df6461"
+                                                      data-confidence="0.726063">
+                                                    so let me ask alisa tell me what is a great book I live in new york I never planned with the new york city bidoun out of with your long time and I've come to love it to me one bit unexpected benefits unexpected to me only coz I was naive
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S123"
+                                                      data-timestamp="1191.2"
+                                                      data-length=""
+                                                      data-uuid="5167a9fe-ef92-4015-bfad-393276358917"
+                                                      data-confidence="0.8417439">
+                                                    of living in the city especially new york is propinquity lake the density of people and ideas and stuff but I don't really like being around people that much are being in the know around a lot of people but I like being in a place we've got that density in propinquity because the spillover affect are massive
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S123"
+                                                      data-timestamp="1210.45"
+                                                      data-length=""
+                                                      data-uuid="e16a992f-a787-4db1-8ca3-8ef8a223d201"
+                                                      data-confidence="0.9585738">
+                                                    so I wonder if you might feel the same even though you think you don't like city
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="1215.55"
+                                                      data-length=""
+                                                      data-uuid="0c54edd4-0c68-4961-95ec-83708a05bb29"
+                                                      data-confidence="0.6859873">
+                                                    2 I think you make a good point which is that location really matters in yeah I think I turned back down next to who do I write my papers right people in tendrement papers with the people that I go to lunch with ya and I go to lunch with AP
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="1229.69"
+                                                      data-length=""
+                                                      data-uuid="471033e6-e9c8-48af-968a-26be56484697"
+                                                      data-confidence="0.7335006">
+                                                    blue who's offices are right I mean you can see how much distance matters I mean even even one floor
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="1237.81"
+                                                      data-length=""
+                                                      data-uuid="4d6feca7-aa12-4b14-9d78-915a7fa2ecf6"
+                                                      data-confidence="0.7249773">
+                                                    or certainly a building had an enormous impact on who you interact with anything interesting that this somehow procesi even in the world in which so much
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S104"
+                                                      data-timestamp="1249.21"
+                                                      data-length=""
+                                                      data-uuid="8e8d3f4c-b9cb-4f58-91c9-fed8915d83dc"
+                                                      data-confidence="0.6002768">
+                                                    occures virtually just because it any social interaction it takes more things not to happen
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S123"
+                                                      data-timestamp="1259.3"
+                                                      data-length=""
+                                                      data-uuid="5ed59906-5cf5-4195-a9cf-3654cff17eec"
+                                                      data-confidence="0.8215175">
+                                                    getting back to joe's question about you know how you pick the place with no what's lake if you're gonna look for a place to live what'S1 thing that you have to have in that place letsinger one thing maybe not but you have to have one thing that to you is really good
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S123"
+                                                      data-timestamp="1276.31"
+                                                      data-length=""
+                                                      data-uuid="54d65788-89b2-4f26-a3ef-fdc4326e5fc2"
+                                                      data-confidence="0.823963">
+                                                    find poster arbiter the add this is the place that I can live
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="1280.61"
+                                                      data-length=""
+                                                      data-uuid="9c351fb4-a6df-4df5-8670-98df6722b792"
+                                                      data-confidence="0.7192579">
+                                                    you're saying about me personally yeah yeah well for me right now but it's all about the kids schools and I mean II care more about to get school renton anything else
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S123"
+                                                      data-timestamp="1292.46"
+                                                      data-length=""
+                                                      data-uuid="bdccafd6-ef7b-4709-996e-42c2ed647568"
+                                                      data-confidence="0.7406632">
+                                                    I love china but it's kind of a standard
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S123"
+                                                      data-timestamp="1296.05"
+                                                      data-length=""
+                                                      data-uuid="3c9378f8-f847-4297-9d1e-37a3ae984fe8"
+                                                      data-confidence="0.7714795">
+                                                    standard middle questair an answer no fences let's pretend you're a different you that's it that's all you have your preference is that you do have a steve levitt but you're not thinking about a family right now you just met you what's what's the opposite of the canary in the coal mine with that I play with my nose here's the thing I could never live
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S123"
+                                                      data-timestamp="1313.0"
+                                                      data-length=""
+                                                      data-uuid="fd2284a2-3065-4a16-9a4b-672f8dc1c0bd"
+                                                      data-confidence="0.8676457">
+                                                    in a place that doesn't have a good diner because I feel like even if I don't wanna go to the diner at lakewood diner at diner is like all things to all people you know it kind of it democratizes the whole idea of eating
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S123"
+                                                      data-timestamp="1327.28"
+                                                      data-length=""
+                                                      data-uuid="19a47901-9792-4090-8138-f9542328d87e"
+                                                      data-confidence="0.8694738">
+                                                    do you have like in your neighborhood your salonika your greek diner you like to get your steak and eggs and bring home your bones for the dogs right
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S123"
+                                                      data-timestamp="1333.92"
+                                                      data-length=""
+                                                      data-uuid="6d9205f0-0b1e-4f0a-b738-8a36591b99ee"
+                                                      data-confidence="0.8669139">
+                                                    that's the kind of thing that has do this for me in a place where I wanna live I like the idea there's a place where people of all different kinds can get together and if you got a breakfast at 5 in the afternoon we understand laughter masaka for breakfast we can arrange that too what about for you
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="1351.09"
+                                                      data-length=""
+                                                      data-uuid="afe0f144-cd57-4bbb-91a1-f8f1cc2b5cc2"
+                                                      data-confidence="0.4655067">
+                                                    I hear me tomorrow
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="1355.09"
+                                                      data-length=""
+                                                      data-uuid="8469beaa-a6d1-4cdc-9f0e-7a8eff3e0f10"
+                                                      data-confidence="0.6486409">
+                                                    multiplayer than I am I think I mean can I think about of all the things I do
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="1360.82"
+                                                      data-length=""
+                                                      data-uuid="d82ac2f9-f5f4-4ed8-a577-d2806e5ee9f7"
+                                                      data-confidence="0.7649665">
+                                                    the only thing that I really would be nuts about will be up there wasn't a place where I could play golf this silly goose
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S123"
+                                                      data-timestamp="1371.57"
+                                                      data-length=""
+                                                      data-uuid="95ff9d41-c57a-412b-87a5-f7a77e1dd75c"
+                                                      data-confidence="0.7994245">
+                                                    so in a nutshell were gonna say to joe you wanna move to a place that has a lot of gay couples out enough wealth that you can handle it golf in a good diner
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S102"
+                                                      data-timestamp="1383.99"
+                                                      data-length=""
+                                                      data-uuid="3a25caa6-e136-4a81-a95e-89c42c1b6342"
+                                                      data-confidence="0.3652503">
+                                                    seth can jodies move india after
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S123"
+                                                      data-timestamp="1388.97"
+                                                      data-length=""
+                                                      data-uuid="060cceb9-c590-41d8-a222-e5c10eae9d60"
+                                                      data-confidence="0.7211263">
+                                                    I don't know if I had a spare bedroom that you be me put a putting green in but um yeah we can we could often
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="1396.91"
+                                                      data-length=""
+                                                      data-uuid="79ab98e6-818f-4138-bab8-7644853354dc"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="1402.32"
+                                                      data-length=""
+                                                      data-uuid="a48f2433-78d2-4181-880d-88f445545495"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S215"
+                                                      data-timestamp="1407.73"
+                                                      data-length=""
+                                                      data-uuid="fc0d935d-ee5c-4130-a4ea-1651a35e4ebd"
+                                                      data-confidence="0.7534805">
+                                                    what does it for this edition of faq thanks for listening thanks especially for sending in your questions
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S215"
+                                                      data-timestamp="1415.03"
+                                                      data-length=""
+                                                      data-uuid="f28ba22e-8ef5-407d-a144-c8d8dd1534c4"
+                                                      data-confidence="0.6840985">
+                                                    here's some of your questions that we didn't get to and in some cases I'm sure you understand why is central heating a primary cause of obesity why do south asians dominate the hotel motel business why do corporate honchos in mafia dress them sells inexpensive things for people
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S218"
+                                                      data-timestamp="1433.93"
+                                                      data-length=""
+                                                      data-uuid="fe2fc72b-76d3-413d-b7c9-9acdc5d10100"
+                                                      data-confidence="0.7153506">
+                                                    her about the environment more or less likely to use a toilet
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S215"
+                                                      data-timestamp="1439.37"
+                                                      data-length=""
+                                                      data-uuid="76017963-a085-4997-b6d3-793089cfe56f"
+                                                      data-confidence="0.5906099">
+                                                    does being able to swim increase your likelihood of dying due to drowning
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S218"
+                                                      data-timestamp="1444.53"
+                                                      data-length=""
+                                                      data-uuid="2c1d9109-8190-42c5-bdd8-b4ad45b3dcf0"
+                                                      data-confidence="0.6853451">
+                                                    why is it that the north of east african descent pentatominae distance running for runners in the us in jamaica of west african descent tend to dominate sprint
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S215"
+                                                      data-timestamp="1454.55"
+                                                      data-length=""
+                                                      data-uuid="8ba70a9a-2d53-4051-a100-c30669bc4f7d"
+                                                      data-confidence="0.7258983">
+                                                    do cardboard cut outs of policeman really the truth that's how to traffic violations
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S218"
+                                                      data-timestamp="1460.53"
+                                                      data-length=""
+                                                      data-uuid="8e42103e-5b7b-4483-9049-94cb2ac83183"
+                                                      data-confidence="0.7316388">
+                                                    how many sexual predators still have their foreskins
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="1464.87"
+                                                      data-length=""
+                                                      data-uuid="b5f0326b-f492-4eb9-ba31-7835cd04108c"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S225"
+                                                      data-timestamp="1474.92"
+                                                      data-length=""
+                                                      data-uuid="ed50a179-0e34-41a7-873f-bf91d2a3f373"
+                                                      data-confidence="0.7618044">
+                                                    hey pocketless miss america is one of the most generous nations in the world cup in history of the world next week so what really makes people get in how can we get them to give more
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S228"
+                                                      data-timestamp="1489.47"
+                                                      data-length=""
+                                                      data-uuid="362b7502-3b1e-463b-be91-596642c9182c"
+                                                      data-confidence="0.7550592">
+                                                    beautiful women ended up raising the most money of all this lyster's that we had this entire physical attractiveness result is driven by management
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S230"
+                                                      data-timestamp="1502.15"
+                                                      data-length=""
+                                                      data-uuid="ccc3db56-bae5-4983-8510-e19f432ad682"
+                                                      data-confidence="0.7584968">
+                                                    door they say awesome tell me more about this really fun tell me how I can help I'd love to help you just can't beat a beautiful blonde who's going door to door to raise money for your cars
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S224"
+                                                      data-timestamp="1515.13"
+                                                      data-length=""
+                                                      data-uuid="21fc78cd-1756-4ad0-8847-06b9708fde4b"
+                                                      data-confidence="0.6197815">
+                                                    the science of fundraising the next time and freakonomics radio
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S234"
+                                                      data-timestamp="1525.34"
+                                                      data-length=""
+                                                      data-uuid="280fc2ad-97f9-4bd0-a462-691f1f48e3de"
+                                                      data-confidence="0.7391267">
+                                                    freakonomics radio is produced by WNYC in dubner production our staff includes david herman greg rozalski parade lampuki lechtenberg in crispins in
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S234"
+                                                      data-timestamp="1535.7"
+                                                      data-length=""
+                                                      data-uuid="1341e787-8737-4008-8060-c4b7a57e955a"
+                                                      data-confidence="0.7789587">
+                                                    if you want more freakonomics radio you can subscribe to a podcast on itunes or go to freakonomics.com real find lots of radio up loud the book morning
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="1545.58"
+                                                      data-length=""
+                                                      data-uuid="e283ed74-7c5e-4c32-9d71-5adb92396f32"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S238"
+                                                      data-timestamp="1549.28"
+                                                      data-length=""
+                                                      data-uuid="f1deefed-04ce-483e-bdd2-e3651f3d3326"
+                                                      data-confidence="0.392595">
+                                                    I'm
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S239"
+                                                      data-timestamp="1554.04"
+                                                      data-length=""
+                                                      data-uuid="0a59ae31-ead8-4962-9a18-9ede8b27cbe6"
+                                                      data-confidence="0.8022062">
+                                                    freakonomics radio is supported by wealthfront wealthfront is an automated investment service built for the modern era in to make it easier than ever to invest your money well will front you the software instead of retail locations are salespeople so it can offer sophisticat in bethany bisat lokos that were previously impossible
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S239"
+                                                      data-timestamp="1573.35"
+                                                      data-length=""
+                                                      data-uuid="bc539525-349a-4e2d-a052-59dbc698b87b"
+                                                      data-confidence="0.8925765">
+                                                    it is exploded in popularity in last 2 years I know it more than $2.5 Billion under management check them out atwealthfront.com slash freak to get up to $10000 managepro free
+                                                </span>
+                                            
+                                            
+                                            </p>
+                                            <div class="clearboth"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mk-about-author-wrapper">
+                                <div class="avatar-wrapper"><img alt=''
+                                                                 src='/img/covers/freakonomics-radio.jpg'
+                                                                 class='avatar avatar-65 photo' height='65' width='65'/>
+                                </div>
+                                <div class="mk-about-author-meta">
+                                    <a class="about-author-name" href=""></a>
+
+                                    <div class="about-author-desc"></div>
+
+                                </div>
+                                <div class="clearboth"></div>
+                            </div>
+                            <section class="blog-similar-posts">
+                                <div class="similar-post-title">Recent Podcasts</div>
+                                <ul class="four-cols">
+                                    
+                                    <li>
+                                        <div class="similar-post-holder"><a class="mk-similiar-thumbnail"
+                                                                            href=""
+                                                                            title="How to Think About Money, Choose Your Hometown, and Buy an Electric Toothbrush"><img
+                                                src="/img/covers/freakonomics-radio.jpg"
+                                                alt="How to Think About Money, Choose Your Hometown, and Buy an Electric Toothbrush"/>
+
+                                            <div class="image-hover-overlay"></div>
+                                        </a><a href="" class="mk-similiar-title">How to Think About Money, Choose Your Hometown, and Buy an Electric Toothbrush</a></div>
+                                    </li>
+                                    
+                                </ul>
+                                <div class="clearboth"></div>
+                            </section>
+                            <section id="comments">
+                            </section>
+                        </article>
+                        <div class="clearboth"></div>
+                    </div>
+                    <div class="clearboth"></div>
+                </div>
+            </div>
+        </div>
+        <section id="mk-footer" class="">
+  <div class="footer-wrapper mk-grid">
+    <div class="mk-padding-wrapper">
+      <div class=""><section id="text-2" class="widget widget_text"> <div class="textwidget"><div style="text-align: center; color: #999999;"> Copyright TomeCast All Rights Reserved © 2015 </div></div>
+      </section></div>
+      <div class="clearboth"></div>
+    </div>
+  </div>
+</section>
+
+    </div>
+    <div class="mk-side-dashboard">
+    <div class="side-dash-top-widgets">
+        <section id="text-4" class="widget widget_text">
+            <div class="textwidget"><img
+                    src="/img/D-logo.png">
+            </div>
+        </section>
+    </div>
+    <nav id="mk-sidedash-navigation" class="side_dashboard_menu">
+        <ul id="menu-main-menu" class="sidedash-navigation-ul">
+            <li id="menu-item-4533" class="menu-item menu-item-type-post_type menu-item-object-page"><a
+                    href="/">Home</a></li>
+            <li id="menu-item-4527" class="menu-item menu-item-type-post_type menu-item-object-page"><a
+                    href="/about.html">About</a></li>
+            <li id="menu-item-4529"
+                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><a
+                    href="">Podcasts</a>
+                <ul class="sub-menu">
+                    
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                        <a href="//"></a>
+                    </li>
+                    
+
+
+                </ul>
+            </li>
+
+            <li id="menu-item-4525" class="menu-item menu-item-type-post_type menu-item-object-page"><a
+                    href="/contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="side-dash-bottom-widgets">
+        <section id="social-2" class="widget widget_social_networks">
+            <div id="social-55560e5fcc0ca" class="align-left"><a href="#"
+                                                                 rel="nofollow"
+                                                                 class="builtin-icons mk-square-pointed custom small facebook-hover"
+                                                                 target="_blank" alt="Follow Us on facebook"
+                                                                 title="Follow Us on facebook"><i
+                    class="mk-jupiter-icon-simple-facebook"></i></a><a href="#"
+                                                                       rel="nofollow"
+                                                                       class="builtin-icons mk-square-pointed custom small googleplus-hover"
+                                                                       target="_blank" alt="Follow Us on googleplus"
+                                                                       title="Follow Us on googleplus"><i
+                    class="mk-jupiter-icon-simple-googleplus"></i></a><a href="#"
+                                                                         rel="nofollow"
+                                                                         class="builtin-icons mk-square-pointed custom small twitter-hover"
+                                                                         target="_blank" alt="Follow Us on twitter"
+                                                                         title="Follow Us on twitter"><i
+                    class="mk-jupiter-icon-simple-twitter"></i></a>
+                <style>#social-55560e5fcc0ca a {
+                    opacity: 100 !important;
+                    color: #ffffff !important;
+                }
+
+                #social-55560e5fcc0ca a:hover {
+                    color: #f16f4f !important;
+                }</style>
+            </div>
+        </section>
+    </div>
+</div>
+
+</div>
+<a href="#" class="mk-go-top"><i class="mk-icon-chevron-up"></i></a>
+
+
+
+<a class="mk-post-nav mk-post-prev with-image" href="/podcasts/freakonomics-radio/2013/09/26/would-a-big-bucket-of-cash-really-change-your-life.html"><span
+        class="pagnav-wrapper"><span class="pagenav-top"><span class="pagenav-image"><img width="150" height="150"
+              src="/img/covers/freakonomics-radio.jpg"
+              class="attachment-thumbnail wp-post-image"
+              alt="Would a Big Bucket of Cash Really Change Your Life? Podcast"/></span><span
+        class="mk-pavnav-icon"><i class="mk-icon-long-arrow-left"></i></span></span><div class="nav-info-container">
+    <span class="pagenav-bottom"><span class="pagenav-title">Would a Big Bucket of Cash Really Change Your Life?</span>2013-09-26</span></div></span></a>
+
+
+
+
+<a class="mk-post-nav mk-post-next with-image" href="/podcasts/freakonomics-radio/2013/10/10/how-to-raise-money-without-killing-a-kitten.html"><span
+        class="pagnav-wrapper"><span class="pagenav-top"><span class="mk-pavnav-icon"><i
+        class="mk-icon-long-arrow-right"></i></span><span class="pagenav-image"><img width="150" height="150"
+             src="/img/covers/freakonomics-radio.jpg"
+             class="attachment-thumbnail wp-post-image"
+             alt="How to Raise Money Without Killing a Kitten Podcast"/></span></span><div
+        class="nav-info-container"><span class="pagenav-bottom"><span
+        class="pagenav-title">How to Raise Money Without Killing a Kitten</span>
+    2013-10-10
+</span></div></span></a>
+
+
+
+<script type='text/javascript' src='/js/scripts-vendors.js'></script>
+<script type='text/javascript' src='/js/app.js'></script>
+<script type='text/javascript' src='/js/smoothscroll.js'></script>
+<script type='text/javascript'
+        src='//cdnjs.cloudflare.com/ajax/libs/jquery.transit/0.9.12/jquery.transit.min.js'></script>
+
+<script type="text/javascript">
+    window.$ = jQuery
+
+    $('.mk-dynamic-styles').each(function () {
+        $(this).remove();
+    });
+
+    function ajaxStylesInjector() {
+        $('.mk-dynamic-styles').each(function () {
+            var $this = $(this),
+                    id = $this.attr('id'),
+                    commentedStyles = $this.html();
+            styles = commentedStyles
+                    .replace('<!--', '')
+                    .replace('-->', '');
+
+
+            if (dynamic_styles_ids.indexOf(id) === -1) {
+                $('style[data-ajax]').append(styles);
+                $this.remove();
+            }
+
+            dynamic_styles_ids.push(id);
+        });
+    }
+    ;
+
+    abb.modules.theme_header.init({
+        id: 'mk-header',
+        height: '130',
+        stickyHeight: '55',
+        stickyOffset: 'header',
+        hasToolbar: 'false'
+    });
+    abb.init();    </script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-69068664-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>
+ 

@@ -1,0 +1,3291 @@
+<!DOCTYPE html>
+<html itemscope="itemscope" itemtype="http://schema.org/Article" xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="format-detection" content="telephone=no">
+<title itemprop="name">TomeCast Template</title>
+
+<script type="text/javascript">
+  // Init aplication namespace
+  var abb = {};
+  var php = {};
+
+  var mk_header_parallax, mk_banner_parallax, mk_page_parallax, mk_footer_parallax, mk_body_parallax;
+  var mk_captcha_placeholder = "Enter Captcha",
+          mk_captcha_invalid_txt = "Invalid. Try again.",
+          mk_captcha_correct_txt = "Captcha correct.",
+          mk_responsive_nav_width = 1140,
+          mk_check_rtl = true,
+          mk_grid_width = 1140,
+          mk_ajax_search_option = "disable",
+          mk_preloader_txt_color = "#444444",
+          mk_preloader_bg_color = "#ffffff",
+          mk_accent_color = "#f97352",
+          mk_preloader_bar_color = "#f97352",
+          mk_preloader_logo = "";
+  var mk_header_parallax = false,
+          mk_banner_parallax = false,
+          mk_page_parallax = false,
+          mk_footer_parallax = false,
+          mk_body_parallax = false,
+          mk_no_more_posts = "No More Posts";
+
+  function is_touch_device() {
+    return ('ontouchstart' in document.documentElement);
+  }
+
+</script>
+
+<link rel='stylesheet' id='theme-styles-css' href='/css/theme-styles.min.css' type='text/css' media='all'/>
+<link rel='stylesheet' id='mk-pe-line-icon-css' href='/css/pe-line-icons.min.css' type='text/css' media='all'/>
+<link rel='stylesheet' id='mk-font-awesome-css' href='/css/font-awesome.min.css' type='text/css' media='all'/>
+<link rel='stylesheet' id='mk-icomoon-fonts-css' href='/css/icomoon-fonts.min.css' type='text/css' media='all'/>
+<link rel='stylesheet' id='mk-theme-icons-css' href='/css/theme-icons.min.css' type='text/css' media='all'/>
+<link rel='stylesheet' id='google-font-api-special-1-css' href='http://fonts.googleapis.com/css?family=Open+Sans%3A100italic%2C200italic%2C300italic%2C400italic%2C500italic%2C600italic%2C700italic%2C800italic%2C900italic%2C100%2C200%2C300%2C400%2C500%2C600%2C700%2C800%2C900&#038;ver=4.2.2' type='text/css' media='all'/>
+<link rel='stylesheet' id='mk-style-css' href='/css/style.css' type='text/css' media='all'/>
+<link rel='stylesheet' id='theme-dynamic-styles-css' href='/css/custom.css' type='text/css' media='all'/>
+<style id='theme-dynamic-styles-inline-css' type='text/css'>
+  body {
+  }
+
+  body,
+  p {
+    font-family: Open Sans
+  }
+
+  body {
+    background-color: #fff;
+  }
+
+  #mk-header {
+    background-color: #1b1b1b;
+  }
+
+  .mk-header-bg {
+    background-color: #1b1b1b;
+  }
+
+  .mk-header-toolbar {
+    background-color: #ffffff;
+  }
+
+  #theme-page {
+    background-color: #fff;
+  }
+
+  #mk-footer {
+    background-color: #1b1b1b;
+  }
+
+  #mk-footer .footer-wrapper {
+    padding: 30px 0;
+  }
+
+  #mk-footer .widget {
+    margin-bottom: 40px;
+  }
+
+  #mk-footer [class*='mk-col-'] {
+    padding: 0 2%;
+  }
+
+  #sub-footer {
+    background-color: #43474d;
+  }
+
+  .mk-footer-copyright {
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+
+  #mk-boxed-layout {
+    -webkit-box-shadow: 0 0 0px rgba(0, 0, 0, 0);
+    -moz-box-shadow: 0 0 0px rgba(0, 0, 0, 0);
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0);
+  }
+
+  .mk-tabs-panes,
+  .mk-news-tab .mk-tabs-tabs li.ui-tabs-active a,
+  .mk-divider .divider-go-top,
+  .ajax-container,
+  .mk-fancy-title.pattern-style span,
+  .mk-portfolio-view-all,
+  .mk-woo-view-all,
+  .mk-blog-view-all {
+    background-color: #fff;
+  }
+
+  .mk-header-bg {
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+    -o-opacity: 1;
+    opacity: 1;
+  }
+
+  .header-sticky-ready .mk-header-bg {
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+    -o-opacity: 1;
+    opacity: 1;
+  }
+
+  .mk-header-inner,
+  .header-sticky-ready .mk-header-inner,
+  .header-style-2.header-sticky-ready .mk-classic-nav-bg {
+    border-bottom: 1px solid #1b1b1b;
+  }
+
+  .header-style-4.header-align-left .mk-header-inner,
+  .header-style-4.header-align-center .mk-header-inner {
+    border-bottom: none;
+    border-right: 1px solid #1b1b1b;
+  }
+
+  .header-style-4.header-align-right .mk-header-inner {
+    border-bottom: none;
+    border-left: 1px solid #1b1b1b;
+  }
+
+  .header-style-2 .mk-header-nav-container {
+    border-top: 1px solid #1b1b1b;
+  }
+
+  #mk-header {
+    border-bottom: 1px solid #1b1b1b;
+  }
+
+  body {
+    font-size: 13px;
+    color: #777777;
+    font-weight: normal;
+    line-height: 1.66em;
+  }
+
+  p,
+  .mk-box-icon-2-content {
+    font-size: 13px;
+    color: #777777;
+    line-height: 1.66em;
+  }
+
+  a {
+    color: #2e2e2e;
+  }
+
+  a:hover {
+    color: #f97352;
+  }
+
+  #theme-page strong {
+    color: #f97352;
+  }
+
+  #theme-page h1 {
+    font-size: 36px;
+    color: #404040;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  #theme-page h2 {
+    font-size: 30px;
+    color: #404040;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  #theme-page h3 {
+    font-size: 24px;
+    color: #404040;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  #theme-page h4 {
+    font-size: 18px;
+    color: #404040;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  #theme-page h5 {
+    font-size: 16px;
+    color: #404040;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  #theme-page h6 {
+    font-size: 14px;
+    color: #404040;
+    font-weight: normal;
+    text-transform: uppercase;
+  }
+
+  .page-introduce-title {
+    font-size: 20px;
+    color: #4d4d4d;
+    text-transform: uppercase;
+    font-weight: normal;
+    letter-spacing: 2px;
+  }
+
+  .page-introduce-subtitle {
+    font-size: 14px;
+    line-height: 100%;
+    color: #a3a3a3;
+    font-size: 14px;
+    text-transform: none;
+  }
+
+  ::-webkit-selection {
+    background-color: #f97352;
+    color: #fff;
+  }
+
+  ::-moz-selection {
+    background-color: #f97352;
+    color: #fff;
+  }
+
+  ::selection {
+    background-color: #f97352;
+    color: #fff;
+  }
+
+  #mk-sidebar,
+  #mk-sidebar p {
+    font-size: 14px;
+    color: #999999;
+    font-weight: normal;
+  }
+
+  #mk-sidebar .widgettitle {
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #333333;
+    font-weight: bolder;
+  }
+
+  #mk-sidebar .widgettitle a {
+    color: #333333;
+  }
+
+  #mk-sidebar .widget a {
+    color: #999999;
+  }
+
+  #mk-footer,
+  #mk-footer p {
+    font-size: 14px;
+    color: #808080;
+    font-weight: normal;
+  }
+
+  #mk-footer .widgettitle {
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: 800;
+  }
+
+  #mk-footer .widgettitle a {
+    color: #ffffff;
+  }
+
+  #mk-footer .widget:not(.widget_social_networks) a {
+    color: #999999;
+  }
+
+  .mk-side-dashboard {
+    background-color: #1b1b1b;
+  }
+
+  .mk-side-dashboard,
+  .mk-side-dashboard p {
+    font-size: 12px;
+    color: #eeeeee;
+    font-weight: normal;
+  }
+
+  .mk-side-dashboard .widgettitle {
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #f16f4f;
+    font-weight: 800;
+  }
+
+  .mk-side-dashboard .widgettitle a {
+    color: #f16f4f;
+  }
+
+  .mk-side-dashboard .widget a {
+    color: #fafafa;
+  }
+
+  .sidedash-navigation-ul li a,
+  .sidedash-navigation-ul li .mk-nav-arrow {
+    color: #ffffff;
+  }
+
+  .sidedash-navigation-ul li a:hover {
+    color: #f16f4f;
+    background-color:;
+  }
+
+  .mk-fullscreen-nav {
+    background-color: #444444;
+  }
+
+  .mk-fullscreen-nav .mk-fullscreen-nav-wrapper .mk-fullscreen-nav-logo {
+    margin-bottom: 125px;
+  }
+
+  .mk-fullscreen-nav .fullscreen-navigation-ul .menu-item a {
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 0;
+    font-weight: 800;
+    padding: 25px 0;
+    color: #ffffff;
+  }
+
+  .mk-fullscreen-nav .fullscreen-navigation-ul .menu-item a:hover {
+    background-color: #ffffff;
+    color: #444444;
+  }
+
+  #mk-sidebar .widget:not(.widget_social_networks) a:hover {
+    color: #f97352;
+  }
+
+  #mk-footer .widget:not(.widget_social_networks) a:hover {
+    color: #f97352;
+  }
+
+  .mk-side-dashboard .widget:not(.widget_social_networks) a:hover {
+    color: #f97352;
+  }
+
+  .mk-grid {
+    max-width: 1140px;
+  }
+
+  .mk-header-nav-container,
+  .mk-classic-menu-wrapper {
+    width: 1140px;
+  }
+
+  .theme-page-wrapper #mk-sidebar.mk-builtin {
+    width: 27%;
+  }
+
+  .theme-page-wrapper.right-layout .theme-content,
+  .theme-page-wrapper.left-layout .theme-content {
+    width: 73%;
+  }
+
+  .mk-boxed-enabled #mk-boxed-layout,
+  .mk-boxed-enabled #mk-boxed-layout .header-style-1 .mk-header-holder,
+  .mk-boxed-enabled #mk-boxed-layout .header-style-3 .mk-header-holder {
+    max-width: 1200px;
+  }
+
+  .mk-boxed-enabled #mk-boxed-layout .header-style-1 .mk-header-holder,
+  .mk-boxed-enabled #mk-boxed-layout .header-style-3 .mk-header-holder {
+    width: 100% !important;
+    left: auto !important;
+  }
+
+  .mk-boxed-enabled #mk-boxed-layout .header-style-2.header-sticky-ready .mk-header-nav-container {
+    width: 1200px !important;
+    left: auto !important;
+  }
+
+  .header-style-1 .mk-header-start-tour,
+  .header-style-3 .mk-header-start-tour,
+  .header-style-1 .mk-header-inner #mk-header-search,
+  .header-style-1 .mk-header-inner,
+  .header-style-1 .mk-search-trigger,
+  .header-style-3 .mk-header-inner,
+  .header-style-1 .header-logo,
+  .header-style-3 .header-logo,
+  .header-style-1 .shopping-cart-header,
+  .header-style-3 .shopping-cart-header,
+  .header-style-1 #mk-header-social.header-section a,
+  .header-style-2 #mk-header-social.header-section a,
+  .header-style-3 #mk-header-social.header-section a {
+    height: 130px;
+    line-height: 130px;
+  }
+
+  @media handheld, only screen and (max-width: 1140px) {
+    .header-grid.mk-grid .header-logo.left-logo {
+      left: 15px !important;
+    }
+
+    .header-grid.mk-grid .header-logo.right-logo,
+    .mk-header-right {
+      right: 15px !important;
+    }
+
+    .header-style-3 .shopping-cart-header {
+      right: 30px;
+    }
+  }
+
+  #mk-theme-container:not(.mk-transparent-header) .header-style-1 .mk-header-padding-wrapper,
+  #mk-theme-container:not(.mk-transparent-header) .header-style-3 .mk-header-padding-wrapper {
+    padding-top: 130px;
+  }
+
+  @media handheld, only screen and (max-width: 960px) {
+    .theme-page-wrapper .theme-content {
+      width: 100% !important;
+      float: none !important;
+    }
+
+    .theme-page-wrapper {
+      padding-right: 15px !important;
+      padding-left: 15px !important;
+    }
+
+    .theme-page-wrapper .theme-content:not(.no-padding) {
+      padding: 25px 0 !important;
+    }
+
+    .theme-page-wrapper #mk-sidebar {
+      width: 100% !important;
+      float: none !important;
+      padding: 0 !important;
+    }
+
+    .theme-page-wrapper #mk-sidebar .sidebar-wrapper {
+      padding: 20px 0 !important;
+    }
+  }
+
+  @media handheld, only screen and (max-width: 1140px) {
+    .mk-go-top,
+    .mk-quick-contact-wrapper {
+      bottom: 70px !important;
+    }
+
+    .mk-grid {
+      width: 100%;
+    }
+
+    .mk-padding-wrapper {
+      padding: 0 20px;
+    }
+  }
+
+  #mk-toolbar-navigation ul li a,
+  .mk-language-nav > a,
+  .mk-header-login .mk-login-link,
+  .mk-subscribe-link,
+  .mk-checkout-btn,
+  .mk-header-tagline a,
+  .header-toolbar-contact a,
+  #mk-toolbar-navigation ul li a:hover,
+  .mk-language-nav > a:hover,
+  .mk-header-login .mk-login-link:hover,
+  .mk-subscribe-link:hover,
+  .mk-checkout-btn:hover,
+  .mk-header-tagline a:hover {
+    color: #999999;
+  }
+
+  .mk-header-tagline,
+  .header-toolbar-contact,
+  .mk-header-date {
+    color: #999999;
+  }
+
+  .mk-header-toolbar #mk-header-social a i {
+    color: #999999;
+  }
+
+  .header-section#mk-header-social ul li a i {
+    color: #999999;
+  }
+
+  .header-section#mk-header-social ul li a:hover i {
+    color: #cccccc;
+  }
+
+  .header-style-2 .header-logo,
+  .header-style-4 .header-logo {
+    height: 130px !important;
+  }
+
+  .header-style-4 .header-logo {
+    margin: 10px 0;
+  }
+
+  .header-style-2 .mk-header-inner {
+    line-height: 130px;
+  }
+
+  .mk-header-nav-container {
+    background-color:;
+  }
+
+  .mk-header-start-tour {
+    font-size: 14px;
+    color: #333333;
+  }
+
+  .mk-header-start-tour:hover {
+    color: #333333;
+  }
+
+  .mk-classic-nav-bg {
+    background-color: #1b1b1b;
+  }
+
+  .mk-search-trigger,
+  .mk-shoping-cart-link i,
+  .mk-header-cart-count,
+  .mk-toolbar-resposnive-icon i {
+    color: #ffffff;
+  }
+
+  .mk-css-icon-close div,
+  .mk-css-icon-menu div {
+    background-color: #ffffff;
+  }
+
+  #mk-header-searchform .text-input {
+    background-color: !important;
+    color: #c7c7c7;
+  }
+
+  #mk-header-searchform span i {
+    color: #c7c7c7;
+  }
+
+  #mk-header-searchform .text-input::-webkit-input-placeholder {
+    color: #c7c7c7;
+  }
+
+  #mk-header-searchform .text-input:-ms-input-placeholder {
+    color: #c7c7c7;
+  }
+
+  #mk-header-searchform .text-input:-moz-placeholder {
+    color: #c7c7c7;
+  }
+
+  .header-style-1.header-sticky-ready .menu-hover-style-1 .main-navigation-ul > li > a,
+  .header-style-3.header-sticky-ready .menu-hover-style-1 .main-navigation-ul > li > a,
+  .header-style-1.header-sticky-ready .menu-hover-style-5 .main-navigation-ul > li,
+  .header-style-1.header-sticky-ready .menu-hover-style-2 .main-navigation-ul > li > a,
+  .header-style-3.header-sticky-ready .menu-hover-style-2 .main-navigation-ul > li > a,
+  .header-style-1.header-style-1.header-sticky-ready .menu-hover-style-4 .main-navigation-ul > li > a,
+  .header-style-3.header-sticky-ready .menu-hover-style-4 .main-navigation-ul > li > a,
+  .header-style-1.header-sticky-ready .menu-hover-style-3 .main-navigation-ul > li,
+  .header-style-1.header-sticky-ready .mk-header-inner #mk-header-search,
+  .header-style-3.header-sticky-ready .mk-header-holder #mk-header-search,
+  .header-sticky-ready.header-style-3 .mk-header-start-tour,
+  .header-sticky-ready.header-style-1 .mk-header-start-tour,
+  .header-sticky-ready.header-style-1 .mk-header-inner,
+  .header-sticky-ready.header-style-3 .mk-header-inner,
+  .header-sticky-ready.header-style-3 .header-logo,
+  .header-sticky-ready.header-style-1 .header-logo,
+  .header-sticky-ready.header-style-1 .mk-search-trigger,
+  .header-sticky-ready.header-style-1 .mk-search-trigger i,
+  .header-sticky-ready.header-style-1 .shopping-cart-header,
+  .header-sticky-ready.header-style-1 .shopping-cart-header i,
+  .header-sticky-ready.header-style-3 .shopping-cart-header,
+  .header-sticky-ready.header-style-1 #mk-header-social.header-section a,
+  .header-sticky-ready.header-style-3 #mk-header-social.header-section a {
+    height: 55px !important;
+    line-height: 55px !important;
+  }
+
+  #mk-header-social.header-section a.small {
+    margin-top: 48px;
+  }
+
+  #mk-header-social.header-section a.medium {
+    margin-top: 40px;
+  }
+
+  #mk-header-social.header-section a.large {
+    margin-top: 32px;
+  }
+
+  .header-sticky-ready #mk-header-social.header-section a.small,
+  .header-sticky-ready #mk-header-social.header-section a.medium,
+  .header-sticky-ready #mk-header-social.header-section a.large {
+    margin-top: 10.5px;
+    line-height: 16px !important;
+    height: 16px !important;
+    font-size: 16px !important;
+    width: 16px !important;
+    padding: 8px !important;
+  }
+
+  .header-sticky-ready #mk-header-social.header-section a.small i:before,
+  .header-sticky-ready #mk-header-social.header-section a.medium i:before,
+  .header-sticky-ready #mk-header-social.header-section a.large i:before {
+    line-height: 16px !important;
+    font-size: 16px !important;
+  }
+
+  .main-navigation-ul > li.menu-item > a.menu-item-link {
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: bold;
+    padding-right: 20px !important;
+    padding-left: 20px !important;
+    text-transform: uppercase;
+    letter-spacing: 0px;
+  }
+
+  .mk-vm-menuwrapper ul li a {
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .mk-vm-menuwrapper li > a:after,
+  .mk-vm-menuwrapper li.mk-vm-back:after {
+    color: #ffffff;
+  }
+
+  .main-navigation-ul > li.no-mega-menu ul.sub-menu li.menu-item a.menu-item-link {
+    width: 230px;
+  }
+
+  .mk-header-3-menu-trigger {
+    color: #ffffff;
+  }
+
+  .menu-hover-style-1 .main-navigation-ul li.menu-item > a.menu-item-link:hover,
+  .menu-hover-style-1 .main-navigation-ul li.menu-item:hover > a.menu-item-link,
+  .menu-hover-style-1 .main-navigation-ul li.current-menu-item > a.menu-item-link,
+  .menu-hover-style-1 .main-navigation-ul li.current-menu-ancestor > a.menu-item-link,
+  .menu-hover-style-2 .main-navigation-ul li.menu-item > a.menu-item-link:hover,
+  .menu-hover-style-2 .main-navigation-ul li.menu-item:hover > a.menu-item-link,
+  .menu-hover-style-2 .main-navigation-ul li.current-menu-item > a.menu-item-link,
+  .menu-hover-style-2 .main-navigation-ul li.current-menu-ancestor > a.menu-item-link,
+  .menu-hover-style-1.mk-vm-menuwrapper li.menu-item > a:hover,
+  .menu-hover-style-1.mk-vm-menuwrapper li.menu-item:hover > a,
+  .menu-hover-style-1.mk-vm-menuwrapper li.current-menu-item > a,
+  .menu-hover-style-1.mk-vm-menuwrapper li.current-menu-ancestor > a,
+  .menu-hover-style-2.mk-vm-menuwrapper li.menu-item > a:hover,
+  .menu-hover-style-2.mk-vm-menuwrapper li.menu-item:hover > a,
+  .menu-hover-style-2.mk-vm-menuwrapper li.current-menu-item > a,
+  .menu-hover-style-2.mk-vm-menuwrapper li.current-menu-ancestor > a {
+    color: #f97352 !important;
+  }
+
+  .menu-hover-style-3 .main-navigation-ul > li.menu-item > a.menu-item-link:hover,
+  .menu-hover-style-3 .main-navigation-ul > li.menu-item:hover > a.menu-item-link,
+  .menu-hover-style-3.mk-vm-menuwrapper li > a:hover,
+  .menu-hover-style-3.mk-vm-menuwrapper li:hover > a {
+    border: 2px solid #f97352;
+  }
+
+  .menu-hover-style-3 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
+  .menu-hover-style-3 .main-navigation-ul > li.current-menu-ancestor > a.menu-item-link,
+  .menu-hover-style-3.mk-vm-menuwrapper li.current-menu-item > a,
+  .menu-hover-style-3.mk-vm-menuwrapper li.current-menu-ancestor > a {
+    border: 2px solid #f97352;
+    background-color: #f97352;
+    color: #ffffff;
+  }
+
+  .menu-hover-style-3.mk-vm-menuwrapper li.current-menu-ancestor > a:after {
+    color: #ffffff;
+  }
+
+  .menu-hover-style-4 .main-navigation-ul li.menu-item > a.menu-item-link:hover,
+  .menu-hover-style-4 .main-navigation-ul li.menu-item:hover > a.menu-item-link,
+  .menu-hover-style-4 .main-navigation-ul li.current-menu-item > a.menu-item-link,
+  .menu-hover-style-4 .main-navigation-ul li.current-menu-ancestor > a.menu-item-link,
+  .menu-hover-style-4.mk-vm-menuwrapper li a:hover,
+  .menu-hover-style-4.mk-vm-menuwrapper li:hover > a,
+  .menu-hover-style-4.mk-vm-menuwrapper li.current-menu-item > a,
+  .menu-hover-style-4.mk-vm-menuwrapper li.current-menu-ancestor > a,
+  .menu-hover-style-5 .main-navigation-ul > li.menu-item > a.menu-item-link:after {
+    background-color: #f97352;
+    color: #ffffff;
+  }
+
+  .menu-hover-style-4.mk-vm-menuwrapper li.current-menu-ancestor > a:after,
+  .menu-hover-style-4.mk-vm-menuwrapper li.current-menu-item > a:after,
+  .menu-hover-style-4.mk-vm-menuwrapper li:hover > a:after,
+  .menu-hover-style-4.mk-vm-menuwrapper li a:hover::after {
+    color: #ffffff;
+  }
+
+  .menu-hover-style-1 .main-navigation-ul > li.dropdownOpen > a.menu-item-link,
+  .menu-hover-style-1 .main-navigation-ul > li.active > a.menu-item-link,
+  .menu-hover-style-1 .main-navigation-ul > li.open > a.menu-item-link,
+  .menu-hover-style-1 .main-navigation-ul > li.menu-item > a:hover,
+  .menu-hover-style-1 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
+  .menu-hover-style-1 .main-navigation-ul > li.current-menu-ancestor > a.menu-item-link {
+    border-top-color: #f97352;
+  }
+
+  .menu-hover-style-1.mk-vm-menuwrapper li > a:hover,
+  .menu-hover-style-1.mk-vm-menuwrapper li.current-menu-item > a,
+  .menu-hover-style-1.mk-vm-menuwrapper li.current-menu-ancestor > a {
+    border-left-color: #f97352;
+  }
+
+  .header-style-1 .menu-hover-style-1 .main-navigation-ul > li > a,
+  .header-style-1 .menu-hover-style-2 .main-navigation-ul > li > a,
+  .header-style-1 .menu-hover-style-4 .main-navigation-ul > li > a,
+  .header-style-1 .menu-hover-style-5 .main-navigation-ul > li {
+    height: 130px;
+    line-height: 130px;
+  }
+
+  .header-style-1 .menu-hover-style-3 .main-navigation-ul > li,
+  .header-style-1 .menu-hover-style-5 .main-navigation-ul > li {
+    height: 130px;
+    line-height: 130px;
+  }
+
+  .header-style-1 .menu-hover-style-3 .main-navigation-ul > li > a {
+    line-height: 65px;
+  }
+
+  .header-style-1.header-sticky-ready .menu-hover-style-3 .main-navigation-ul > li > a {
+    line-height: 36.666666666667px;
+  }
+
+  .header-style-1 .menu-hover-style-5 .main-navigation-ul > li > a {
+    line-height: 20px;
+    vertical-align: middle;
+  }
+
+  .main-navigation-ul > li.no-mega-menu ul.sub-menu:after,
+  .main-navigation-ul > li.has-mega-menu > ul.sub-menu:after {
+    background-color: #f97352;
+  }
+
+  .mk-shopping-cart-box {
+    border-top: 2px solid #f97352;
+  }
+
+  #mk-main-navigation li.no-mega-menu ul.sub-menu,
+  #mk-main-navigation li.has-mega-menu > ul.sub-menu,
+  .mk-shopping-cart-box {
+    background-color: #333333;
+  }
+
+  #mk-main-navigation ul.sub-menu a.menu-item-link,
+  #mk-main-navigation ul .megamenu-title,
+  .megamenu-widgets-container a,
+  .mk-shopping-cart-box .product_list_widget li a,
+  .mk-shopping-cart-box .product_list_widget li.empty,
+  .mk-shopping-cart-box .product_list_widget li span,
+  .mk-shopping-cart-box .widget_shopping_cart .total {
+    color: #b3b3b3;
+  }
+
+  .mk-shopping-cart-box .mk-button.cart-widget-btn {
+    border-color: #b3b3b3;
+    color: #b3b3b3;
+  }
+
+  .mk-shopping-cart-box .mk-button.cart-widget-btn:hover {
+    background-color: #b3b3b3;
+    color: #333333;
+  }
+
+  #mk-main-navigation ul .megamenu-title {
+    color: #ffffff;
+  }
+
+  #mk-main-navigation ul .megamenu-title:after {
+    background-color: #ffffff;
+  }
+
+  .megamenu-widgets-container {
+    color: #b3b3b3;
+  }
+
+  .megamenu-widgets-container .widgettitle {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bolder;
+  }
+
+  #mk-main-navigation ul.sub-menu li.menu-item ul.sub-menu li.menu-item a.menu-item-link i {
+    color: #e0e0e0;
+  }
+
+  #mk-main-navigation ul.sub-menu a.menu-item-link:hover,
+  .main-navigation-ul ul.sub-menu li.current-menu-item > a.menu-item-link,
+  .main-navigation-ul ul.sub-menu li.current-menu-parent > a.menu-item-link {
+    color: #ffffff !important;
+  }
+
+  .megamenu-widgets-container a:hover {
+    color: #ffffff;
+  }
+
+  .main-navigation-ul li.menu-item ul.sub-menu li.menu-item a.menu-item-link:hover,
+  .main-navigation-ul li.menu-item ul.sub-menu li.menu-item:hover > a.menu-item-link,
+  .main-navigation-ul ul.sub-menu li.menu-item a.menu-item-link:hover,
+  .main-navigation-ul ul.sub-menu li.menu-item:hover > a.menu-item-link,
+  .main-navigation-ul ul.sub-menu li.current-menu-item > a.menu-item-link,
+  .main-navigation-ul ul.sub-menu li.current-menu-parent > a.menu-item-link {
+    background-color: transparent !important;
+  }
+
+  .mk-search-trigger:hover,
+  .mk-header-start-tour:hover {
+    color: #f97352;
+  }
+
+  .main-navigation-ul li.menu-item ul.sub-menu li.menu-item a.menu-item-link {
+    font-size: 12px;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .has-mega-menu .megamenu-title {
+    letter-spacing: 1px;
+  }
+
+  .header-style-4 {
+    text-align: left
+  }
+
+  .mk-vm-menuwrapper li > a {
+    padding-right: 45px;
+  }
+
+  @media handheld, only screen and (max-width: 1140px) {
+    .header-style-1 .mk-header-inner,
+    .header-style-3 .mk-header-inner,
+    .header-style-3 .header-logo,
+    .header-style-1 .header-logo,
+    .header-style-1 .shopping-cart-header,
+    .header-style-3 .shopping-cart-header {
+      height: 90px !important;
+      line-height: 90px;
+    }
+
+    #mk-header:not(.header-style-4) .mk-header-holder {
+      position: relative !important;
+      top: 0 !important;
+    }
+
+    .mk-header-padding-wrapper {
+      display: none !important;
+    }
+
+    .mk-header-nav-container {
+      width: auto !important;
+      display: none;
+    }
+
+    .header-style-1 .mk-header-right,
+    .header-style-2 .mk-header-right,
+    .header-style-3 .mk-header-right {
+      right: 55px !important;
+    }
+
+    .header-style-1 .mk-header-inner #mk-header-search,
+    .header-style-2 .mk-header-inner #mk-header-search,
+    .header-style-3 .mk-header-inner #mk-header-search {
+      display: none !important;
+    }
+
+    .mk-fullscreen-search-overlay {
+      display: none;
+    }
+
+    #mk-header-search {
+      padding-bottom: 10px !important;
+    }
+
+    #mk-header-searchform span .text-input {
+      width: 100% !important;
+    }
+
+    .header-style-2 .header-logo .center-logo {
+      text-align: right !important;
+    }
+
+    .header-style-2 .header-logo .center-logo a {
+      margin: 0 !important;
+    }
+
+    .header-logo,
+    .header-style-4 .header-logo {
+      height: 90px !important;
+    }
+
+    .header-style-4 .shopping-cart-header {
+      display: none;
+    }
+
+    .mk-header-inner {
+      padding-top: 0 !important;
+    }
+
+    .header-logo {
+      position: relative !important;
+      right: auto !important;
+      left: auto !important;
+      float: left !important;
+      text-align: left;
+    }
+
+    .shopping-cart-header {
+      margin: 0 20px 0 0 !important;
+    }
+
+    #mk-responsive-nav {
+      background-color: #ffffff !important;
+    }
+
+    .mk-header-nav-container #mk-responsive-nav {
+      visibility: hidden;
+    }
+
+    #mk-responsive-nav li ul li .megamenu-title:hover,
+    #mk-responsive-nav li ul li .megamenu-title,
+    #mk-responsive-nav li a,
+    #mk-responsive-nav li ul li a:hover,
+    #mk-responsive-nav .mk-nav-arrow {
+      color: #444444 !important;
+    }
+
+    .mk-mega-icon {
+      display: none !important;
+    }
+
+    .mk-header-bg {
+      zoom: 1 !important;
+      filter: alpha(opacity=100) !important;
+      opacity: 1 !important;
+    }
+
+    .header-style-1 .mk-nav-responsive-link,
+    .header-style-2 .mk-nav-responsive-link {
+      display: block !important;
+    }
+
+    .mk-header-nav-container {
+      height: 100%;
+      z-index: 200;
+    }
+
+    #mk-main-navigation {
+      position: relative;
+      z-index: 2;
+    }
+
+    .mk_megamenu_columns_2,
+    .mk_megamenu_columns_3,
+    .mk_megamenu_columns_4,
+    .mk_megamenu_columns_5,
+    .mk_megamenu_columns_6 {
+      width: 100% !important;
+    }
+
+    .header-style-1.header-align-right .header-logo img,
+    .header-style-3.header-align-right .header-logo img,
+    .header-style-3.header-align-center .header-logo img {
+      float: left !important;
+      right: auto !important;
+    }
+
+    .header-style-4 .mk-header-inner {
+      width: auto !important;
+      position: relative !important;
+      overflow: visible;
+      padding-bottom: 0;
+    }
+
+    .admin-bar .header-style-4 .mk-header-inner {
+      top: 0 !important;
+    }
+
+    .header-style-4 .mk-header-right {
+      display: none;
+    }
+
+    .header-style-4 .mk-nav-responsive-link {
+      display: block !important;
+    }
+
+    .header-style-4 .mk-vm-menuwrapper,
+    .header-style-4 #mk-header-search {
+      display: none;
+    }
+
+    .header-style-4 .header-logo {
+      width: auto !important;
+      display: inline-block !important;
+      text-align: left !important;
+      margin: 0 !important;
+    }
+
+    .vertical-header-enabled .header-style-4 .header-logo img {
+      max-width: 100% !important;
+      left: 20px !important;
+      top: 50% !important;
+      -webkit-transform: translate(0, -50%) !important;
+      -moz-transform: translate(0, -50%) !important;
+      -ms-transform: translate(0, -50%) !important;
+      -o-transform: translate(0, -50%) !important;
+      transform: translate(0, -50%) !important;
+      position: relative !important;
+    }
+
+    .vertical-header-enabled.vertical-header-left #theme-page > .mk-main-wrapper-holder,
+    .vertical-header-enabled.vertical-header-center #theme-page > .mk-main-wrapper-holder,
+    .vertical-header-enabled.vertical-header-left #theme-page > .mk-page-section,
+    .vertical-header-enabled.vertical-header-center #theme-page > .mk-page-section,
+    .vertical-header-enabled.vertical-header-left #theme-page > .wpb_row,
+    .vertical-header-enabled.vertical-header-center #theme-page > .wpb_row,
+    .vertical-header-enabled.vertical-header-left #mk-theme-container:not(.mk-transparent-header),
+    .vertical-header-enabled.vertical-header-center #mk-footer,
+    .vertical-header-enabled.vertical-header-left #mk-footer,
+    .vertical-header-enabled.vertical-header-center #mk-theme-container:not(.mk-transparent-header) {
+      padding-left: 0 !important;
+    }
+
+    .vertical-header-enabled.vertical-header-right #theme-page > .mk-main-wrapper-holder,
+    .vertical-header-enabled.vertical-header-right #theme-page > .mk-page-section,
+    .vertical-header-enabled.vertical-header-right #theme-page > .wpb_row,
+    .vertical-header-enabled.vertical-header-right #mk-footer,
+    .vertical-header-enabled.vertical-header-right #mk-theme-container:not(.mk-transparent-header) {
+      padding-right: 0 !important;
+    }
+  }
+
+  @media handheld, only screen and (min-width: 1140px) {
+    .mk-transparent-header .sticky-style-slide .mk-header-holder {
+      position: absolute;
+    }
+
+    .mk-transparent-header .remove-header-bg-true:not(.header-sticky-ready) .mk-header-bg {
+      opacity: 0;
+    }
+
+    .mk-transparent-header .remove-header-bg-true#mk-header:not(.header-sticky-ready) .mk-header-inner {
+      border: 0;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-desktop-logo.light-logo {
+      display: block !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-desktop-logo.dark-logo {
+      display: none !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .main-navigation-ul > li.menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-search-trigger,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-shoping-cart-link i,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-header-cart-count,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-header-start-tour,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) #mk-header-social a i,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.menu-item > a.menu-item-link:hover,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.menu-item:hover > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.current-menu-ancestor > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-2 .main-navigation-ul > li.menu-item > a.menu-item-link:hover,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-2 .main-navigation-ul > li.menu-item:hover > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-2 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-vm-menuwrapper li a,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-vm-menuwrapper li > a:after,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-vm-menuwrapper li.mk-vm-back:after {
+      color: #fff !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-css-icon-menu div {
+      background-color: #fff !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.dropdownOpen > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.active > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.open > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.menu-item > a:hover,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.current-menu-ancestor > a.menu-item-link {
+      border-top-color: #fff;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.current-menu-ancestor > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li.current-menu-item > a,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li.current-menu-ancestor > a {
+      border: 2px solid #fff;
+      background-color: #fff;
+      color: #222 !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.menu-item > a.menu-item-link:hover,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.menu-item:hover > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li > a:hover,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li:hover > a {
+      border: 2px solid #fff;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-4 .main-navigation-ul li.menu-item > a.menu-item-link:hover,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-4 .main-navigation-ul li.menu-item:hover > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-4 .main-navigation-ul li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-5 .main-navigation-ul > li.menu-item > a.menu-item-link:after {
+      background-color: #fff;
+      color: #222 !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-desktop-logo.dark-logo {
+      display: block !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-desktop-logo.light-logo {
+      display: none !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .main-navigation-ul > li.menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-search-trigger,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-shoping-cart-link i,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-header-cart-count,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-header-start-tour,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) #mk-header-social a i,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul li.menu-item > a.menu-item-link:hover,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul li.menu-item:hover > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul li.current-menu-ancestor > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-2 .main-navigation-ul li.menu-item > a.menu-item-link:hover,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-2 .main-navigation-ul li.menu-item:hover > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-2 .main-navigation-ul li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-2 .main-navigation-ul li.current-menu-ancestor > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-vm-menuwrapper li a,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-vm-menuwrapper li > a:after,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-vm-menuwrapper li.mk-vm-back:after {
+      color: #222 !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.dropdownOpen > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.active > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.open > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.menu-item > a:hover,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.current-menu-ancestor > a.menu-item-link {
+      border-top-color: #222;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-css-icon-menu div {
+      background-color: #222 !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.current-menu-ancestor > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li.current-menu-item > a,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li.current-menu-ancestor > a {
+      border: 2px solid #222;
+      background-color: #222;
+      color: #fff !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.menu-item > a.menu-item-link:hover,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.menu-item:hover > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li > a:hover,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li:hover > a {
+      border: 2px solid #222;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-4 .main-navigation-ul li.menu-item > a.menu-item-link:hover,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-4 .main-navigation-ul li.menu-item:hover > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-4 .main-navigation-ul li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-4 .main-navigation-ul li.current-menu-ancestor > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-5 .main-navigation-ul > li.menu-item > a.menu-item-link:after {
+      background-color: #222;
+      color: #fff !important;
+    }
+  }
+
+  .comment-reply a,
+  .mk-toggle .mk-toggle-title.active-toggle:before,
+  .mk-testimonial-author,
+  .modern-style .mk-testimonial-company,
+  #wp-calendar td#today,
+  .news-full-without-image .news-categories span,
+  .news-half-without-image .news-categories span,
+  .news-fourth-without-image .news-categories span,
+  .mk-read-more,
+  .news-single-social li a,
+  .portfolio-widget-cats,
+  .portfolio-carousel-cats,
+  .blog-showcase-more,
+  .simple-style .mk-employee-item:hover .team-member-position,
+  .mk-readmore,
+  .about-author-name,
+  .mk-portfolio-classic-item .portfolio-categories a,
+  .register-login-links a:hover,
+  .not-found-subtitle,
+  .mk-mini-callout a,
+  .search-loop-meta a,
+  .new-tab-readmore,
+  .mk-news-tab .mk-tabs-tabs li.ui-tabs-active a,
+  .mk-tooltip a,
+  .mk-accordion-single.current .mk-accordion-tab i,
+  .monocolor.pricing-table .pricing-price span,
+  .quantity .plus:hover,
+  .quantity .minus:hover,
+  .mk-woo-tabs .mk-tabs-tabs li.ui-state-active a,
+  .product .add_to_cart_button i,
+  .blog-modern-comment:hover,
+  .blog-modern-share:hover,
+  {
+    color: #f97352;
+  }
+
+  .mk-tabs .mk-tabs-tabs li.ui-tabs-active a > i,
+  .mk-accordion .mk-accordion-single.current .mk-accordion-tab:before,
+  .mk-tweet-list a,
+  .widget_testimonials .testimonial-slider .testimonial-author,
+  #mk-filter-portfolio li a:hover,
+  #mk-language-navigation ul li a:hover,
+  #mk-language-navigation ul li.current-menu-item > a,
+  .mk-quick-contact-wrapper h4,
+  .divider-go-top:hover i,
+  .widget-sub-navigation ul li a:hover,
+  #mk-footer .widget_posts_lists ul li .post-list-meta time,
+  .mk-footer-tweets .tweet-username,
+  .product-category .item-holder:hover h4,
+  {
+    color: #f97352 !important;
+  }
+
+  .image-hover-overlay,
+  .newspaper-portfolio,
+  .similar-posts-wrapper .post-thumbnail:hover > .overlay-pattern,
+  .portfolio-logo-section,
+  .post-list-document .post-type-thumb:hover,
+  #cboxTitle,
+  #cboxPrevious,
+  #cboxNext,
+  #cboxClose,
+  .comment-form-button,
+  .mk-dropcaps.fancy-style,
+  .mk-image-overlay,
+  .pinterest-item-overlay,
+  .news-full-with-image .news-categories span,
+  .news-half-with-image .news-categories span,
+  .news-fourth-with-image .news-categories span,
+  .widget-portfolio-overlay,
+  .portfolio-carousel-overlay,
+  .blog-carousel-overlay,
+  .mk-classic-comments span,
+  .mk-similiar-overlay,
+  .mk-skin-button,
+  .mk-flex-caption .flex-desc span,
+  .mk-icon-box .mk-icon-wrapper i:hover,
+  .mk-quick-contact-link:hover,
+  .quick-contact-active.mk-quick-contact-link,
+  .mk-fancy-table th,
+  .ui-slider-handle,
+  .widget_price_filter .ui-slider-range,
+  .shop-skin-btn,
+  #review_form_wrapper input[type=submit],
+  #mk-nav-search-wrapper form .nav-side-search-icon:hover,
+  form.ajax-search-complete i,
+  .blog-modern-btn,
+  .showcase-blog-overlay,
+  .gform_button[type=submit],
+  .button.alt,
+  #respond #submit,
+  .woocommerce .price_slider_amount .button.button,
+  .mk-shopping-cart-box .mk-button.checkout,
+  .widget_shopping_cart .mk-button.checkout,
+  .widget_shopping_cart .mk-button.checkout {
+    background-color: #f97352 !important;
+  }
+
+  .mk-circle-image .item-holder {
+    -webkit-box-shadow: 0 0 0 1px #f97352;
+    -moz-box-shadow: 0 0 0 1px #f97352;
+    box-shadow: 0 0 0 1px #f97352;
+  }
+
+  .mk-blockquote.line-style,
+  .bypostauthor .comment-content,
+  .bypostauthor .comment-content:after,
+  .mk-tabs.simple-style .mk-tabs-tabs li.ui-tabs-active a {
+    border-color: #f97352 !important;
+  }
+
+  .news-full-with-image .news-categories span,
+  .news-half-with-image .news-categories span,
+  .news-fourth-with-image .news-categories span,
+  .mk-flex-caption .flex-desc span {
+    box-shadow: 8px 0 0 #f97352, -8px 0 0 #f97352;
+  }
+
+  .monocolor.pricing-table .pricing-cols .pricing-col.featured-plan {
+    border: 1px solid #f97352 !important;
+  }
+
+  .mk-skin-button.three-dimension {
+    box-shadow: 0px 3px 0px 0px #c75c42;
+  }
+
+  .mk-skin-button.three-dimension:active {
+    box-shadow: 0px 1px 0px 0px #c75c42;
+  }
+
+  .mk-footer-copyright,
+  #mk-footer-navigation li a {
+    color: #8c8e91;
+  }
+
+  .mk-woocommerce-main-image img:hover,
+  .mk-single-thumbnails img:hover {
+    border: 1px solid #f97352 !important;
+  }
+
+  .product-loading-icon {
+    background-color: rgba(249, 115, 82, 0.6);
+  }
+
+  .mk-dynamic-styles {
+    display: none
+  }
+</style>
+<link rel='stylesheet' id='js_composer_front-css' href='/css/js_composer.css' type='text/css' media='all'/>
+<script type='text/javascript' src='https://code.jquery.com/jquery-1.11.3.min.js'></script>
+<script type='text/javascript' src='https://code.jquery.com/jquery-migrate-1.2.1.min.js'></script>
+<style type="text/css">.recentcomments a {
+  display: inline !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}</style>
+
+
+    <meta property="og:site_name" content="TomeCast"/>
+    <meta property="og:image"
+          content="/img/covers/freakonomics-radio.jpg"/>
+    <meta property="og:url" content="/podcasts/freakonomics-radio/2013/10/24/why-bad-environmentalism-is-such-an-easy-sell.html"/>
+    <meta property="og:title" content="TomeCast Transcribed Podcast -  - Why Bad Environmentalism Is Such an Easy Sell"/>
+    <meta property="og:description"
+          content="Automatically Transcribed Podcast:  - Why Bad Environmentalism Is Such an Easy Sell"/>
+    <meta property="og:type" content="article"/>
+    <noscript>
+        <style>.wpb_animate_when_almost_visible {
+            opacity: 1;
+        }</style>
+    </noscript>
+</head>
+<body class="single single-post postid-591 single-format-standard  wpb-js-composer js-comp-ver-4.5.1 vc_responsive"
+      data-backText="Back" data-vm-anim="1">
+
+<div id="mk-boxed-layout">
+    <div id="mk-theme-container">
+        <header id="mk-header" data-height="130" data-hover-style="2" data-transparent-skin="" data-header-style="3" data-sticky-height="55" data-sticky-style="fixed" data-sticky-offset="header" class="header-style-3 header-align-left header-toolbar-false sticky-style-fixed  mk-background-stretch full-header ">
+  <div class="mk-header-holder">
+    <div class="mk-header-inner">
+      <div class="mk-header-bg "></div>
+      <div class="mk-dashboard-trigger header_dashboard_style">
+        <div class="mk-css-icon-menu icon-size-big">
+          <div class="mk-css-icon-menu-line-1"></div>
+          <div class="mk-css-icon-menu-line-2"></div>
+          <div class="mk-css-icon-menu-line-3"></div>
+        </div>
+      </div>
+      <div class="header-logo  ">
+        <a href="/" title="TomeCast - Homepage">
+          <img class="mk-desktop-logo dark-logo" alt="TomeCast - Homepage" src="/img/logo.png"/>
+        </a>
+      </div>
+      <div class="clearboth"></div>
+      <div class="mk-header-right">
+      </div>
+    </div>
+  </div>
+  <div class="clearboth"></div>
+  <div class="mk-header-padding-wrapper"></div>
+  <div class="clearboth"></div>
+  <div class="mk-zindex-fix">
+  </div>
+  <div class="clearboth"></div>
+</header>
+
+        <div id="theme-page">
+            <div class="mk-main-wrapper-holder">
+                <div class="theme-page-wrapper mk-blog-single full-layout vc_row-fluid mk-grid ">
+                    <div class="theme-content ">
+                        <article
+                                class=" post type-post status-publish format-standard has-post-thumbnail hentry category-articles category-business tag-audio tag-design">
+                            <div class="mk-audio-section mk-audio-shortcode" style="background-color:#acacac"><img
+                                    class="audio-thumb" alt="" title=""
+                                    src="/img/covers/freakonomics-radio.jpg" style="width:170px"/>
+
+                                <div id="jquery_jplayer" class="jp-jplayer mk-blog-audio"
+                                     data-mp3="http://feedproxy.google.com/~r/freakonomicsradio/~5/zfwq7CDcHfw/freakonomics_podcast102413.mp3"
+                                     data-ogg=""></div>
+                                <div id="jp_container" class="jp-audio audio-has-img">
+                                    <div class="jp-type-single">
+                                        <div class="jp-gui jp-interface">
+                                            <div class="jp-time-holder">
+                                                <div class="jp-current-time"></div>
+                                                <div class="jp-duration"></div>
+                                            </div>
+                                            <div class="jp-progress">
+                                                <div class="jp-seek-bar">
+                                                    <div class="jp-play-bar"></div>
+                                                </div>
+                                            </div>
+                                            <div class="jp-volume-bar">
+                                                <i class="mk-moon-volume-mute"></i>
+
+                                                <div class="inner-value-adjust">
+                                                    <div class="jp-volume-bar-value"></div>
+                                                </div>
+                                            </div>
+                                            <ul class="jp-controls">
+                                                <li><a href="javascript:;" class="jp-play" tabindex="1"><i
+                                                        class="mk-icon-play"></i></a></li>
+                                                <li><a href="javascript:;" class="jp-pause" tabindex="1"><i
+                                                        class="mk-icon-pause"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="jp-no-solution">
+                                            <span>Update Required</span>
+                                            To play the media you will need to either update your browser to a recent
+                                            version or update your <a href="http://get.adobe.com/flashplayer/"
+                                                                      target="_blank">Flash plugin</a>.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearboth"></div>
+                            </div>
+                            <h2 class="blog-single-title">Why Bad Environmentalism Is Such an Easy Sell</h2>
+
+                            <div class="blog-single-meta">
+                                <div class="mk-blog-author"><a href="/podcasts/freakonomics-radio"
+                                                               title='Posts in ' rel="section"></a></div>
+                                <div class="mk-blog-author">By <a title='Posted By ' rel="author"></a>
+                                </div>
+                                <time class="mk-post-date" datetime="2013-10-24 00:00:00 +0000">
+                                    Posted on <a href="">2013-10-24</a>
+                                </time>
+                            </div>
+                            <div class="single-social-section">
+                                <div class="mk-love-holder">
+                                    <a href="#" class="mk-love-this " id="mk-love">
+                                        <i class="mk-icon-heart"><span>&nbsp;</span></i>
+                                        <span class="mk-love-count">2</span>
+                                    </a>
+                                </div>
+                                <a href="#comments" class="blog-modern-comment">
+                                    <i class="mk-moon-bubble-9"></i><span> 0</span>
+                                </a>
+                                <div class="blog-share-container">
+                                    <div class="blog-single-share mk-toggle-trigger"><i class="mk-moon-share-2"></i>
+                                    </div>
+                                    <ul class="single-share-box mk-box-to-trigger">
+                                        <li><a class="facebook-share" data-title="Check out this Podcast:  - "
+    data-url=""
+    href=""><i
+            class="mk-jupiter-icon-simple-facebook"></i></a></li>
+<li><a class="twitter-share" data-title="Check out this Podcast:  - "
+    data-url=""
+    href="#"><i
+            class="mk-moon-twitter"></i></a></li>
+<li><a class="googleplus-share" data-title="Check out this Podcast:  - "
+    data-url=""
+    href=""><i
+            class="mk-jupiter-icon-simple-googleplus"></i></a></li>
+<li><a class="pinterest-share"
+       data-image="/img/covers/.jpg"
+       data-title="Check out this Podcast:  - "
+    data-url=""
+    href=""><i
+            class="mk-jupiter-icon-simple-pinterest"></i></a></li>
+<li><a class="linkedin-share"
+       data-desc=""
+       data-title="Check out this Podcast:  - "
+    data-url=""
+    href=""><i
+            class="mk-jupiter-icon-simple-linkedin"></i></a></li>
+
+                                    </ul>
+                                </div>
+                                <a class="mk-blog-print" onClick="window.print()"
+                                   href="#" title="Print"><i
+                                        class="mk-moon-print-3"></i></a>
+
+                                <div class="clearboth"></div>
+                            </div>
+                            <div class="clearboth"></div>
+                            <div class="mk-single-content" itemprop="mainContentOfPage">
+                                <div class="wpb_row vc_row  vc_row-fluid  mk-fullwidth-false  attched-false vc_row-fluid">
+                                    <div style="" class="vc_col-sm-12 wpb_column column_container ">
+                                        <div class="clearboth"></div>
+                                        <div class="mk-shortcode mk-padding-shortcode" style="height:40px"></div>
+                                        <div class="clearboth"></div>
+                                        <span id="drop-caps-555772840bc14"
+                                              class="mk-dropcaps mk-shortcode fancy-style ">D</span>
+
+                                        <div id="ajax-555772840bc14" class="mk-dynamic-styles"></div>
+                                        <div style=" margin-bottom:0px;text-align: left;" class="mk-text-block  "><p
+                                                style="text-align: justify;"><span style="color: #33cccc;"><strong>Duis
+                                            viverra</strong></span>
+
+
+                                        </p>
+
+                                            <div class="clearboth"></div>
+                                        </div>
+                                        <div style="font-size: 18px;" id="blockquote-555772840c9ac"
+                                             class="mk-shortcode mk-blockquote quote-style ">
+                                            <p>Being green is rarely a black-and-white issue -- but that doesn't stop marketers and politicians from pretending it is.</p>
+                                        </div>
+                                        <div class="clearboth"></div>
+                                        <div class="mk-shortcode mk-padding-shortcode" style="height:20px"></div>
+                                        <div class="clearboth"></div>
+                                        <div style=" margin-bottom:0px;text-align: left;" class="mk-text-block  ">
+                                            <p>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="4.36"
+                                                      data-length=""
+                                                      data-uuid="cf01f94c-fe06-4f6a-a8a7-e00cc4aaca7b"
+                                                      data-confidence="0.6362275">
+                                                    bomb please identify yourself name rank serial number whenever version of rank and serial number you wish to convey
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S14"
+                                                      data-timestamp="11.04"
+                                                      data-length=""
+                                                      data-uuid="4781e69a-6d61-4d18-a961-1b830c651205"
+                                                      data-confidence="0.4986926">
+                                                    I'm at laser the fat man aglin professor economics and harvick wahlestedt wreck it happens in every state local government rapportage superata ball
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="19.45"
+                                                      data-length=""
+                                                      data-uuid="3d3e0ec6-5800-46d1-8c3b-1310bc0ea3a6"
+                                                      data-confidence="0.6122473">
+                                                    ok you said that a few times before that
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="23.85"
+                                                      data-length=""
+                                                      data-uuid="ece15e2c-229d-4dc8-86df-1ec15ff137b9"
+                                                      data-confidence="0.7568765">
+                                                    the short version is a glazer is an economist at harvard and he said his number of interesting things but his obsession seems to be with the city back with another podcast with him a couple years ago called why cities rock
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="37.67"
+                                                      data-length=""
+                                                      data-uuid="34528dad-7a4e-440d-8822-4bc00b0d4d02"
+                                                      data-confidence="0.6511282">
+                                                    gleiser looks cities from number bank how they deal with housing booms and busts how they incube ideas in guelph
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="46.91"
+                                                      data-length=""
+                                                      data-uuid="5a41d2e0-dc3a-4dc8-976f-03be657b32d7"
+                                                      data-confidence="0.7669227">
+                                                    how much cities pollut compared to suburban and rural areas grader argued cities are in fact very green primarily because if you live in a city you shared so many resources with so many other people so
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="61.19"
+                                                      data-length=""
+                                                      data-uuid="15b6820e-0fda-4d6d-ac02-969cd115240d"
+                                                      data-confidence="0.7495093">
+                                                    big laser is what you make call an urban environment it is not if you can imagine and overcrowded field so
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="69.84"
+                                                      data-length=""
+                                                      data-uuid="d0421f71-ffed-4673-8509-891fef7d55e6"
+                                                      data-confidence="0.7546021">
+                                                    I was interested to see a new paper that lazorko called the supply of environmentalism what is it mean by that the conversation starts here
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S14"
+                                                      data-timestamp="80.82"
+                                                      data-length=""
+                                                      data-uuid="fd753cba-9850-4c2c-bb75-1ec9cffb7bc0"
+                                                      data-confidence="0.7087756">
+                                                    I actually do believe it almost all environmentalism motivated by relatively benign 4 seasons are trying to do good work and I do not think on it in bimetallism isn't a good fourth I believe annette it is
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="91.59"
+                                                      data-length=""
+                                                      data-uuid="b130fe1e-2c44-4ddf-8762-ae1181ff9d2e"
+                                                      data-confidence="0.7589808">
+                                                    there's a butt is in there you just waiting for the bus
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S105"
+                                                      data-timestamp="94.98"
+                                                      data-length=""
+                                                      data-uuid="e18903a1-cad7-45c6-8c69-f580b39339e4"
+                                                      data-confidence="0.6630569">
+                                                    but I do think fit in the sales pitch in the persuasion process inevitably I'm decision rules get simplified inevitably we move things down to sound bites he moving down to simplification
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S105"
+                                                      data-timestamp="108.32"
+                                                      data-length=""
+                                                      data-uuid="28a05de5-2ae9-445f-b521-972743db2303"
+                                                      data-confidence="0.8481669">
+                                                    and sometimes he's just mean that we get results that are less than perfect in some cases we can get results that are
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S105"
+                                                      data-timestamp="116.96"
+                                                      data-length=""
+                                                      data-uuid="1ff72bb9-faad-4dfd-8929-625975b724b1"
+                                                      data-confidence="0.8897598">
+                                                    completely the reverse of what we wanted
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="120.51"
+                                                      data-length=""
+                                                      data-uuid="c7fab4bd-22d5-4bd8-bb15-e75246f230d7"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S19"
+                                                      data-timestamp="129.01"
+                                                      data-length=""
+                                                      data-uuid="75b6d6b5-3404-4c94-bc66-9db4d17e153e"
+                                                      data-confidence="0.6273695">
+                                                    mw on my feet this is freakonomics radio the pot catch that explored the inside of everything
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S20"
+                                                      data-timestamp="136.6"
+                                                      data-length=""
+                                                      data-uuid="f89af35c-a45e-4c53-b83d-741b1741018a"
+                                                      data-confidence="0.3492818">
+                                                    here's your help steven dubner
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="151.11"
+                                                      data-length=""
+                                                      data-uuid="783510ec-4bf6-4dab-9c1b-f19e1504ded1"
+                                                      data-confidence="0.7179761">
+                                                    today we're talking with you come with a glazer that would he called just fine I environmental them know what is that mean
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="157.98"
+                                                      data-length=""
+                                                      data-uuid="187553bc-b85c-475f-ab78-76a6dfee6f36"
+                                                      data-confidence="0.7961165">
+                                                    gleiser believes that most environmentalism is based on good intentions but for number reasons environmental messaging can be counterproductive I look at specific what's the greenest thing you can think of off the top your head
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="173.1"
+                                                      data-length=""
+                                                      data-uuid="2353434b-0ce5-4778-bcd1-35ef08307b4a"
+                                                      data-confidence="0.6999647">
+                                                    I may be walking or riding a bike instead of using something with an engine me that's very green this thing that comes to mind whats the second herstik whatsit 19th renesting you can think of maybe it's bamboo
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="189.45"
+                                                      data-length=""
+                                                      data-uuid="95df9aa0-b7ba-4a5b-bc35-3d107d4c06f0"
+                                                      data-confidence="0.7319021">
+                                                    yeah bamboo snow here's a commercial for bamboo from an australian retailer called attitude is the commercial features are talking panda and is the panda tells us
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S214"
+                                                      data-timestamp="201.52"
+                                                      data-length=""
+                                                      data-uuid="2299d541-9b8e-4cd1-a8ce-62952bbb4378"
+                                                      data-confidence="0.6429799">
+                                                    bamboo is pretty empty green bamboo is great to be as because want to cut down it grows back quickly which means it's a great renewable resource it also doesn't need any apps that I do
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S214"
+                                                      data-timestamp="213.24"
+                                                      data-length=""
+                                                      data-uuid="f054375d-22ca-43e1-a31e-6c77a7943fd1"
+                                                      data-confidence="0.5443935">
+                                                    license to grow and supsup nitrates from the soil which makes ricklingen pathya pm who has become a ubiquitous ingredients
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="222.83"
+                                                      data-length=""
+                                                      data-uuid="f99573d0-3da5-4293-8851-a3b55b9522f4"
+                                                      data-confidence="0.7424307">
+                                                    do you can buy bamboo flooring for your house and dishes and cutlery sheets and towels made from bamboo
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="229.55"
+                                                      data-length=""
+                                                      data-uuid="bf0d0d6c-5873-43a8-93f6-2c85139cbb0a"
+                                                      data-confidence="0.7642841">
+                                                    deodorant and toilet paper brand name bambusa
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="233.73"
+                                                      data-length=""
+                                                      data-uuid="46f0be39-a999-4e0e-a6ab-51c5916db49f"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="248.36"
+                                                      data-length=""
+                                                      data-uuid="5ab3d942-bd4a-46a3-bb76-9b1436ac1a5f"
+                                                      data-confidence="0.691373">
+                                                    the bamboo I'm so popular is that it's in easley renewable source and therefore it easy on the environment but is it really
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S36"
+                                                      data-timestamp="259.03"
+                                                      data-length=""
+                                                      data-uuid="3d5f4f74-b485-453f-97ea-b2a808d0fda9"
+                                                      data-confidence="0.8794988">
+                                                    in terms of the conversations round bamboo what's surprising is that it seems like people really fixated on that single attribute that it grows fast and in some ways we should know better than that
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="270.51"
+                                                      data-length=""
+                                                      data-uuid="1b4eaeaf-70f8-4f6a-b124-99eff7899894"
+                                                      data-confidence="0.7683693">
+                                                    let's catch infernals with dovetail partners there an environmental think tank in minneapolis that will publish the report called bamboo flooring environmental silver bullet orfeu savior just because bamboo grows fast ronel says does not make it a miracle crap
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S36"
+                                                      data-timestamp="287.59"
+                                                      data-length=""
+                                                      data-uuid="3520957d-da53-4338-a04d-4dce93e892a3"
+                                                      data-confidence="0.8390697">
+                                                    is all kinda things that grow fast corn grows fast and we've heard all of the negative impacts of some types of ethanol production so
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S36"
+                                                      data-timestamp="294.84"
+                                                      data-length=""
+                                                      data-uuid="10492e61-87e7-40e3-97f2-253f0d872642"
+                                                      data-confidence="0.827009">
+                                                    that's with surprising is it with a sophisticated environmental conversations have become it too often still we just go back to single attributes in we forget to look at the whole context of how things are produced
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="307.65"
+                                                      data-length=""
+                                                      data-uuid="c0682333-7cc7-4b63-a73f-c3dc2385fe70"
+                                                      data-confidence="0.7754301">
+                                                    the context of bamboo production furnald says is a bit more complicated muspell
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S36"
+                                                      data-timestamp="312.92"
+                                                      data-length=""
+                                                      data-uuid="95ce0ac0-f907-4162-8e8a-016da2826455"
+                                                      data-confidence="0.8702881">
+                                                    go to be economical for an export market is going to be cultivated in intensive way
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S36"
+                                                      data-timestamp="318.15"
+                                                      data-length=""
+                                                      data-uuid="b34eab86-e563-4d24-8230-f57afbc75aac"
+                                                      data-confidence="0.747287">
+                                                    answer that generally means monocultures gonna be one species yet or maybe a few different species but all bamboo in a cultivated area in most likely with intensive imports like fertilizers and chemicals taboo steptronic avidi
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S49"
+                                                      data-timestamp="338.72"
+                                                      data-length=""
+                                                      data-uuid="579b29a1-a893-4431-be5c-abef0d21c194"
+                                                      data-confidence="0.7129673">
+                                                    so why don't we not talk about when we talk
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="341.97"
+                                                      data-length=""
+                                                      data-uuid="815b306c-184e-4321-8ae5-d62145637878"
+                                                      data-confidence="0.7945866">
+                                                    well most bamboo products are imported from asian with increased demand can lead to deforestation another and sustainable practices
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="350.69"
+                                                      data-length=""
+                                                      data-uuid="67735988-1e4a-4b92-abfb-2105aaabbcc0"
+                                                      data-confidence="0.7197537">
+                                                    and just because something is made from bamboo or promote it is being made from bamboo doesn't necessarily make it so green turning all that bamboo into all those product means going to the typical manufacturing processes which involved
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="364.62"
+                                                      data-length=""
+                                                      data-uuid="79fda5b8-25bb-4e4c-a32b-9bdc5c6d0ed1"
+                                                      data-confidence="0.7453129">
+                                                    panita additives in hazardous chemicals earlier this year the federal trade commission find 4 national retailers a million dollars for falsely marketing fabric made from bamboo as environmentally friendly
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="377.79"
+                                                      data-length=""
+                                                      data-uuid="1ff8c840-0faa-4412-a058-d5a75de92934"
+                                                      data-confidence="0.7775025">
+                                                    the ftc in a bout of cleverness had a warning for consumers don't get
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S57"
+                                                      data-timestamp="387.23"
+                                                      data-length=""
+                                                      data-uuid="d8b539f0-b4ed-4ec6-8009-8f29498f365e"
+                                                      data-confidence="0.6692953">
+                                                    this brings back to add glaser's point the fact is that it's easy to be bamboozled because
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="393.87"
+                                                      data-length=""
+                                                      data-uuid="7b741618-f31f-468a-b141-5139290cf2e9"
+                                                      data-confidence="0.7671708">
+                                                    it feels so good to be told things we like to do aren't bad for the environment for kids and grandkids we all want clean air in the forest and christine lakes which means there's a lot of demand for the supply of environmentalist
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="412.1"
+                                                      data-length=""
+                                                      data-uuid="25333e2c-f9fb-4d72-8976-1ce044ad1660"
+                                                      data-confidence="0.7537379">
+                                                    not all of which unfortunately is is green as it sounds years ago
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S105"
+                                                      data-timestamp="418.29"
+                                                      data-length=""
+                                                      data-uuid="cf16e6ca-8a3c-45d5-bce4-cc8c68fc005d"
+                                                      data-confidence="0.6919201">
+                                                    I walk through 3 cases in the paper about things are getting part of environmental campaigns add
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S109"
+                                                      data-timestamp="425.37"
+                                                      data-length=""
+                                                      data-uuid="3c9d8e52-90df-44db-98d4-03ff2b6b36f6"
+                                                      data-confidence="0.7766003">
+                                                    2 of them I think I was just being less than perfect I be cycling in hybrid cars and one of which I think of is being in some cases downright counterproductive which is local opposition to new construction particuli in greater san francisco adorable arquata california
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="441.23"
+                                                      data-length=""
+                                                      data-uuid="ff0eab24-aeca-4232-b2c4-120dee70402c"
+                                                      data-confidence="0.7781692">
+                                                    add I'd like to ask about it is back up and give me a very brief art thumbnail of each of those to talk to me about the lesson perfect outcome of recycling fransen's
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S109"
+                                                      data-timestamp="451.3"
+                                                      data-length=""
+                                                      data-uuid="333b2663-3207-4b7d-bc44-44b5177aee76"
+                                                      data-confidence="0.7540555">
+                                                    sopra cycling this is an old idea manikonda miss darby is the persons associated with it the point being that if you would you care about is the number trees in the world you actually want people to use more paper rather than last because
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S109"
+                                                      data-timestamp="464.42"
+                                                      data-length=""
+                                                      data-uuid="01ae9824-2bd2-45b1-a8c2-93e268cb0d84"
+                                                      data-confidence="0.8207535">
+                                                    in the long run the demand for paper determines the stock of trees because fundamentally bizub renewable resources you have to plant more trees in order to get more paper
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S109"
+                                                      data-timestamp="475.18"
+                                                      data-length=""
+                                                      data-uuid="34fe9995-c47d-47d1-8553-b6080b942b09"
+                                                      data-confidence="0.7338865">
+                                                    not that isn't true if the paper is being produced from first growth forests of paper feels more like we're fishing from a common pool that is true but that's not actually had papers produced in the us
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S109"
+                                                      data-timestamp="485.93"
+                                                      data-length=""
+                                                      data-uuid="bc3c46c1-61dc-4635-9bbe-49d5b0dd2842"
+                                                      data-confidence="0.5744291">
+                                                    on it so I can produced in this window blepharis ok
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S109"
+                                                      data-timestamp="488.96"
+                                                      data-length=""
+                                                      data-uuid="fa207b6e-7acc-40e1-bc24-350e6f4315ad"
+                                                      data-confidence="0.7701939">
+                                                    pushing people terracycle more doesn't necessarily do anything good in terms of arthur indeed if you want more trees use more paper now
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S109"
+                                                      data-timestamp="495.57"
+                                                      data-length=""
+                                                      data-uuid="be7bb19b-727a-4b48-92d2-198abeb6d7cf"
+                                                      data-confidence="0.7497658">
+                                                    the flip side at the reason why that's a little bit too glib I is that if course there still is potential for energy savings in recycling mischler other potential advantages from from a site plan anyway I'm just talking bout paper not talking about plastic an idiot I think so I wouldn't try and say time I'm trying to beat the band against
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S109"
+                                                      data-timestamp="513.5"
+                                                      data-length=""
+                                                      data-uuid="9356f2d8-26d9-4ae2-b769-5c90c0012a42"
+                                                      data-confidence="0.6345689">
+                                                    against recite bible is clear many of the reasons why recycling is how we cycling sold off in with this you have savatri
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S109"
+                                                      data-timestamp="520.35"
+                                                      data-length=""
+                                                      data-uuid="bc3f3f4d-1490-40d6-949a-f251bb66935a"
+                                                      data-confidence="0.7964423">
+                                                    I don't recycle get it you get it backwards but actually it's the it's the people using more paper there actually encouraging people to supply much weed and similar to that the point about vegetarianism the number of animals try to me to be wanted to make sure there were no pigs on this world we wouldn't start eating like a pig we would stop eating pics
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="536.92"
+                                                      data-length=""
+                                                      data-uuid="6ca9c2d5-4474-481e-8d31-cfc45aa5e43d"
+                                                      data-confidence="0.8063519">
+                                                    a another um classic recycling argument is he know that's a paper plastic cup vs ceramic mug
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="545.99"
+                                                      data-length=""
+                                                      data-uuid="30a1adfe-e67c-4114-839a-779f6e1bf72f"
+                                                      data-confidence="0.8454159">
+                                                    and it's held by many people but it's summer close to send to use a disposable cup when you have a ceramic one at your disposal
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="553.41"
+                                                      data-length=""
+                                                      data-uuid="4d650e8c-a5fc-4d29-ae05-a0e62a184b1d"
+                                                      data-confidence="0.7689936">
+                                                    and yet you have to consider the energy associated with the ceramic magnone making it how long glasses on but every time you wash it hot water it consumes where that water out that water is produced where is electricity come from the detergent in there
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="566.73"
+                                                      data-length=""
+                                                      data-uuid="0e97092e-8c00-483f-a4e8-f22d9aae5209"
+                                                      data-confidence="0.7697651">
+                                                    in the drainage and so when using the water with which to watch it that I'm involved in solon versus throwing away a paper cup so what do you know about bat be on but I just lathered where do you stand on it
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S109"
+                                                      data-timestamp="578.73"
+                                                      data-length=""
+                                                      data-uuid="0f76b135-cfb2-432e-b1c4-7feeb5f9fca7"
+                                                      data-confidence="0.6625444">
+                                                    so I think I'm not gonna take a stand pacifically unrecycled cats with a nap but I know that what is economist we would tell people is do you know that perfectly count like the full environments not answer to everything that you're doing and make the appropriate choice I take that into account
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S109"
+                                                      data-timestamp="594.63"
+                                                      data-length=""
+                                                      data-uuid="e7ac097e-53c1-4605-87d5-68bc7d2ed629"
+                                                      data-confidence="0.7422001">
+                                                    we also know that that's an absurd thing for people to say in part of the recycling stories that we boil things down to a soundbyte ie please recycle
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S109"
+                                                      data-timestamp="603.01"
+                                                      data-length=""
+                                                      data-uuid="fbc9bc22-b1dc-444e-a9ee-51c61301d4a8"
+                                                      data-confidence="0.8179185">
+                                                    and as a result we don't necessarily get away is the perfect dialcom so maybe that most of the time using the ceramic cup is actually the right thing to do but the shirley are cases where is not in we don't have any ability to do on speakerphone no bright line rule
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="615.28"
+                                                      data-length=""
+                                                      data-uuid="221be8f3-694e-4b1d-a47f-9191b648487c"
+                                                      data-confidence="0.8772147">
+                                                    and we could go on and on electric hand dryers in the bathroom versus paper towels and probably 100 other examples the bottom line is I certainly don't know I'm guessing you don't know somebody probably knows if they take a lot of time to figure each case but your point is the larger one yes
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S109"
+                                                      data-timestamp="632.06"
+                                                      data-length=""
+                                                      data-uuid="4a94edeb-49e0-4497-9952-f4883021920b"
+                                                      data-confidence="0.7062171">
+                                                    yes it is it it it be that because it works with is publix market you never really get toys simple brightline rules you some wood can be in perfect
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="642.17"
+                                                      data-length=""
+                                                      data-uuid="2026b033-5321-448d-9adf-53cc25d65916"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="653.19"
+                                                      data-length=""
+                                                      data-uuid="5a52da57-97f6-40a8-a830-29f2c3a556f6"
+                                                      data-confidence="0.8147506">
+                                                    coming up at 3 can I mix radio y electric cars might make this drive more and why new construction in san francisco for instance is greener than you think
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S14"
+                                                      data-timestamp="663.52"
+                                                      data-length=""
+                                                      data-uuid="d12f45e3-4ff6-406c-9a3d-aedf5219bcfc"
+                                                      data-confidence="0.7175064">
+                                                    he was probably the area in which I bosan least convinced by dip your benevolence of the persuaders and most convinced that the efx are actually counterproductive from environmental pov
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="689.17"
+                                                      data-length=""
+                                                      data-uuid="4f5daca5-8d10-427b-9da7-7f17375f75eb"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S97"
+                                                      data-timestamp="693.01"
+                                                      data-length=""
+                                                      data-uuid="986ab9cf-517a-4a0c-aea7-9b55e21cbe05"
+                                                      data-confidence="0.8010428">
+                                                    from wmic this is freakonomics radio here's your host stephen dubner
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="700.9"
+                                                      data-length=""
+                                                      data-uuid="47907f59-0e7b-4f7c-8957-83aaf4e3e942"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="705.26"
+                                                      data-length=""
+                                                      data-uuid="57a7c7a0-8cca-430f-80b9-b1a34b1faa4b"
+                                                      data-confidence="0.7674937">
+                                                    big later today is telling us the environmental messaging can be substandard and yet will still consume it hungrily because were so eager to believe you want me to use bamboo a nice green leafy grassett I could
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="721.0"
+                                                      data-length=""
+                                                      data-uuid="44f9cca0-0efb-4d95-8475-4e713cf470be"
+                                                      data-confidence="0.7022567">
+                                                    tactically palata the ground with my bare hands instead of lumber that comes from some big hard perky tree that needs
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="728.51"
+                                                      data-length=""
+                                                      data-uuid="4a813eb7-f6a1-4bc7-a5f1-cec14f828b97"
+                                                      data-confidence="0.7064573">
+                                                    chainsaw burning gas and oil that cut it down shirt is bamboo know obviously were all for septa bull to marketing messages but just because someone says something doesn't make it true
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S103"
+                                                      data-timestamp="741.5"
+                                                      data-length=""
+                                                      data-uuid="ca81309e-fbf2-4801-bafe-b8726023c74e"
+                                                      data-confidence="0.8937945">
+                                                    for example I am a cat I'm a cat
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S103"
+                                                      data-timestamp="753.82"
+                                                      data-length=""
+                                                      data-uuid="6f072299-ea76-407d-bf8b-30d159afd2a8"
+                                                      data-confidence="0.7690594">
+                                                    ed blazer what are the trickiest environmental messages of the moment contains electric cars
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S105"
+                                                      data-timestamp="762.2"
+                                                      data-length=""
+                                                      data-uuid="f65be708-b275-4f9a-a7b3-ffb36211c2e7"
+                                                      data-confidence="0.739863">
+                                                    no one of the things interesting about cars that hearkens back to prep the greatest hit
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S105"
+                                                      data-timestamp="767.62"
+                                                      data-length=""
+                                                      data-uuid="5523ae2a-5095-4ff4-bfe0-aa05f701b826"
+                                                      data-confidence="0.5928428">
+                                                    of environmental in energy economics which is the japanese paradox which is damage evans great observation match between
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S109"
+                                                      data-timestamp="775.23"
+                                                      data-length=""
+                                                      data-uuid="22348a17-2e0b-4d48-81e2-0b440d88755c"
+                                                      data-confidence="0.7807534">
+                                                    1715 age of the newcomen engine in 1850 steam engines in the united kingdom to become wildly more efficient much better at moving things with smaller and smaller amounts of cool being burned
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S109"
+                                                      data-timestamp="788.12"
+                                                      data-length=""
+                                                      data-uuid="8743406f-4666-4c7d-8f43-e72fadf5529d"
+                                                      data-confidence="0.7060016">
+                                                    now you might have thought that this would create a radical reduction in the use of colon indeed wolfir is the uk would mind itself out with a vanished in the rise of all this energy efficient engines
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S109"
+                                                      data-timestamp="800.75"
+                                                      data-length=""
+                                                      data-uuid="7639fd29-7455-453b-83b0-14c991e56a34"
+                                                      data-confidence="0.7852166">
+                                                    but of course the opposite with happening at what those more efficient engines were doing with the age of bolton in want it was creating
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S109"
+                                                      data-timestamp="807.84"
+                                                      data-length=""
+                                                      data-uuid="acf33b50-04a7-4c7a-85e4-810c325e7004"
+                                                      data-confidence="0.7120544">
+                                                    what is a whole world builder in the steam engine that meant but instead of using less cold we were using morne morkel because of the behavior response I think were the reasons why gebisa populistic he really focuses on but economus care about most which is the behavioral response to changes in conditions
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S109"
+                                                      data-timestamp="824.62"
+                                                      data-length=""
+                                                      data-uuid="7809e7fc-8eaf-4b5e-80c1-a6fb07810eba"
+                                                      data-confidence="0.8038281">
+                                                    so just think about that the gym is paradox is closely tide oh how we think about cafe standards for cars are other forms of energy efficiency
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="832.62"
+                                                      data-length=""
+                                                      data-uuid="5c3e79ad-6e1f-4648-aacf-bb3c064533f5"
+                                                      data-confidence="0.7622412">
+                                                    so you're implying here let's say we could convert hour an internal combustion engine fleet right now of how many hundreds of millions of people that is with a few hybrid electric strunin around the edges to an entirely electrically tomorrow that we could push a matic switch your warning is that
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="850.29"
+                                                      data-length=""
+                                                      data-uuid="1ca6779d-e275-442b-afc5-02c7f013c22f"
+                                                      data-confidence="0.7900133">
+                                                    because then the electric car would seem to be so environmentally friendly it will produce an oversupply of wealth it would be with people drive a whole lot more yes but that's where
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S109"
+                                                      data-timestamp="862.0"
+                                                      data-length=""
+                                                      data-uuid="197fc42e-29cf-4a39-ba81-dce5750893b5"
+                                                      data-confidence="0.7395346">
+                                                    doesn't even have to do it because it seems bimoli friendly it's because it's so much cheaper so typically let's play tetris in normal mile per gallon gas powered car so
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S109"
+                                                      data-timestamp="871.16"
+                                                      data-length=""
+                                                      data-uuid="25bb0495-e44b-4954-a34e-9f7652ff2f93"
+                                                      data-confidence="0.783115">
+                                                    typically what you need is for what's called a rebound effect which team added extra miles per gallon increase bespeco reduction in the cost of driving what you need to have to direct effect of reducing the mileage cars
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S109"
+                                                      data-timestamp="882.37"
+                                                      data-length=""
+                                                      data-uuid="9eb8b7c6-b9e8-4996-bf28-e3f0d9a076c8"
+                                                      data-confidence="0.6930053">
+                                                    I not be overwhelmed by the behavioral blowback if you need at elasticity to be less than one meaning that you can't have too big of a behavioral response typically the estimates of this rebound effect are there to tasha less than one
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S109"
+                                                      data-timestamp="896.9"
+                                                      data-length=""
+                                                      data-uuid="f9549149-2037-43bd-9d6f-582d4e7d3c78"
+                                                      data-confidence="0.7504717">
+                                                    short run a fax or maybe a little is a quarter larger on my way to text can be a little bit more than I have studies different but I think most people think that card to become
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S109"
+                                                      data-timestamp="906.29"
+                                                      data-length=""
+                                                      data-uuid="f70aee76-21b4-41c8-8d8d-c1137f60d9d1"
+                                                      data-confidence="0.7683473">
+                                                    more fish and we have genuinely had a reduction in gas mileage for that is certainly true that over the past 30 years we've taken a lot of my more fuel efficient engines in me up then put them in heavier and heavier cars are cars with more and more horsepower so we said sorry I'm done if you're mad at
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S109"
+                                                      data-timestamp="921.14"
+                                                      data-length=""
+                                                      data-uuid="70a85d82-9d20-4286-8d6c-ef8ae177b9d2"
+                                                      data-confidence="0.7882386">
+                                                    not with interesting about electric cars is it because they use a totally different technology they both would use the car to drive in a mile and also they change the environmental footprint they would use both both of which is a good thing but they reduce the cost per mile by a lot
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S109"
+                                                      data-timestamp="935.6"
+                                                      data-length=""
+                                                      data-uuid="17f82df8-2bb8-4b46-a307-dc09c18af9c1"
+                                                      data-confidence="0.5992494">
+                                                    up but ashley more than they reduce the environmental footprint south
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S109"
+                                                      data-timestamp="940.44"
+                                                      data-length=""
+                                                      data-uuid="adcc392f-7f0a-4f05-9ee2-50ae24eeddb2"
+                                                      data-confidence="0.790004">
+                                                    yeah I walk through some estimates but you know if you can be the cost per mile of driving something like it has like a quarter 25th of the cost per mile this is with the marginal cost is not take me to get to be upfront cost to buy the car
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S109"
+                                                      data-timestamp="953.78"
+                                                      data-length=""
+                                                      data-uuid="3e502279-07c6-4a66-8a46-3febb25eb74f"
+                                                      data-confidence="0.7114696">
+                                                    recorder to a fifth of the marginal cost to drive me a gas card in car not by comparison to carbon emissions related to driving is much less substantial reduction it is a substantial reduction much less than that so you're pushing so strongly on the cost
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S109"
+                                                      data-timestamp="967.39"
+                                                      data-length=""
+                                                      data-uuid="26f24a30-b5f5-4ead-962f-953e81c571eb"
+                                                      data-confidence="0.7020501">
+                                                    that is much easier to imagine that an all electric fleet could have a big enough rebound effect dassett and I'm not sure I believe that there is something I should worry bout in terms of the impact of it
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="978.22"
+                                                      data-length=""
+                                                      data-uuid="394083f1-823d-4266-81d6-8815ee4bd810"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="985.08"
+                                                      data-length=""
+                                                      data-uuid="fa28ce07-af97-4257-aba5-dd03205a84a7"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="987.63"
+                                                      data-length=""
+                                                      data-uuid="81d9611c-ca7a-4a9d-baaf-3263a536131d"
+                                                      data-confidence="0.7458085">
+                                                    your 30 sample in the paper has to do with development regulations can you talk if you're not here yet
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S109"
+                                                      data-timestamp="992.61"
+                                                      data-length=""
+                                                      data-uuid="d8f4387d-6157-417c-a8fa-87e5513627af"
+                                                      data-confidence="0.7246507">
+                                                    so here is probably the area in which I both him and least convince buy dip your benevolence of the persuaders and most convinced that the efx araxi counterproductive from environmental pov
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S109"
+                                                      data-timestamp="1005.38"
+                                                      data-length=""
+                                                      data-uuid="bfdb71a3-3bbd-4df3-8a52-19585dfd0bd2"
+                                                      data-confidence="0.7303103">
+                                                    so when is there are certain parts of the country like san francisco that are intrinsically incredibly green if you just think about the climate of san francisco it requires very little heating in on the winter in very little cool in the summer in parts of the older areas accord interior door also and dad with excellent public transit
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S109"
+                                                      data-timestamp="1024.18"
+                                                      data-length=""
+                                                      data-uuid="808ad27a-289e-4aea-806f-6ba53e6aac03"
+                                                      data-confidence="0.8060317">
+                                                    and as a result in a building more housing there is about the green spot in the country in which you could do so now you would think that environmentalist who are interested minimizing america's carbon footprint
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S109"
+                                                      data-timestamp="1035.42"
+                                                      data-length=""
+                                                      data-uuid="c3f24ec3-25c6-494b-ae78-6b8eb02eb6e5"
+                                                      data-confidence="0.6818177">
+                                                    would therefore be beating the band to increase semen production around san francisco bay pics indeed it's just not production that will ensure that we live in an area that is if I'm at least sensitive robin area that is by mentally
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S109"
+                                                      data-timestamp="1047.99"
+                                                      data-length=""
+                                                      data-uuid="dba1e245-4d7a-494b-9a2e-a76b563104c4"
+                                                      data-confidence="0.7977419">
+                                                    I difficult but of course the opposite is the case for 45 years san francisco has been a center for environmental activism that was
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S109"
+                                                      data-timestamp="1056.0"
+                                                      data-length=""
+                                                      data-uuid="9b05b899-d0d3-45c0-9b5a-0ac97260bfd8"
+                                                      data-confidence="0.8315077">
+                                                    focused on restricting building in greater san francisco and it became increasingly difficult to build in san francisco this supreme court of california also help with a friends mammoth caves but required and buy metal impact of you for any large scale development in california
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S109"
+                                                      data-timestamp="1070.15"
+                                                      data-length=""
+                                                      data-uuid="2478ee75-d390-42d2-a6f7-5d8ba496a1e6"
+                                                      data-confidence="0.692095">
+                                                    I know is bimetal impact fees are intrinsically flawed because what they do is they ask about what the local environmental impact is a project
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S109"
+                                                      data-timestamp="1077.11"
+                                                      data-length=""
+                                                      data-uuid="f51a35dc-7731-427f-8f6c-f115bb96b3c2"
+                                                      data-confidence="0.7872561">
+                                                    but not the global environmental impact of not building the project because every time you say no to project in greater san francisco
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S109"
+                                                      data-timestamp="1084.66"
+                                                      data-length=""
+                                                      data-uuid="fd66bced-3c83-4c36-b3e7-e200f6b029a4"
+                                                      data-confidence="0.7962121">
+                                                    it means that you're saying yes to project somewhere else right me the rate of household for may shun the us to get to be determined in san francisco I just gotta turn it without it happens bear chucky turn off building in berkeley it turns on outside of houston attorneys on outside of las vegas
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S109"
+                                                      data-timestamp="1099.59"
+                                                      data-length=""
+                                                      data-uuid="eb3faa63-85ce-490c-96df-478e3bda90e5"
+                                                      data-confidence="0.7650924">
+                                                    in order to ask yourself whether not this lochlan bimetallism is good if I'm at least got to compare the carbon emissions associated with building in houston versus deli in san francisco
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S109"
+                                                      data-timestamp="1108.57"
+                                                      data-length=""
+                                                      data-uuid="aabf43f4-d38e-4654-9b2f-7f039bb1f63f"
+                                                      data-confidence="0.7438737">
+                                                    and I think we start doing that
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S109"
+                                                      data-timestamp="1110.6"
+                                                      data-length=""
+                                                      data-uuid="2462e5d4-1193-45c6-b2a3-976643c5747b"
+                                                      data-confidence="0.7726476">
+                                                    delete all positions of local building in the coast of california look like to have it backwards
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="1116.73"
+                                                      data-length=""
+                                                      data-uuid="bba4ed51-2192-4d9b-98d7-42204e80871a"
+                                                      data-confidence="0.7893749">
+                                                    so that is fascinating and it makes sense on the other hand we can't really unpack kind of in bar mental issue temper fact about the price can be because this is basic nimbyism is annette II don't want
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="1131.55"
+                                                      data-length=""
+                                                      data-uuid="4519ac39-2382-41d0-b4d2-f66489611ad5"
+                                                      data-confidence="0.7374427">
+                                                    yes of course I'm in bar mental list in less you meyen bimetallism requires me to do something right here that affect me in a porano some people are incredibly selfless and altruistic
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="1142.61"
+                                                      data-length=""
+                                                      data-uuid="677fc3c1-90ff-421b-a80a-14c993e40912"
+                                                      data-confidence="0.8181069">
+                                                    and I'm at but probably most the best kind of constantly juggle we want what's good for the world but we specially want with good for ourselves and our families so
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="1153.04"
+                                                      data-length=""
+                                                      data-uuid="8ad8f054-0894-484e-8837-c01ba5a979c5"
+                                                      data-confidence="0.7978173">
+                                                    can you really lump in let's say that kind of anti development berbar with the same kind of broad environmental messaging that may be more generally about I generally about energy are generally about recycling are generally about you know that the advantages of one kind of energy versus another
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S109"
+                                                      data-timestamp="1172.97"
+                                                      data-length=""
+                                                      data-uuid="71e8fb7e-c7e2-4bca-bed5-62bf06082f42"
+                                                      data-confidence="0.7432175">
+                                                    where are the kids at a ride in that is precisely because it is motivated by philly personal issues rovena generic out with him that is been more likely to not between bimetal got I think I did that the right
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S109"
+                                                      data-timestamp="1185.7"
+                                                      data-length=""
+                                                      data-uuid="ddd1a8ab-855a-46c6-849a-9a02fd161a72"
+                                                      data-confidence="0.7004786">
+                                                    in terms of lumping it together I think all of the stuff is on a continuum so I don't think of this is been radically different I think you know if you ask my neighbors were posing tabellen forleo julian bimetal reasons they would think that they are thinking globally and acting up how to be back to the same kusada as
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S109"
+                                                      data-timestamp="1201.48"
+                                                      data-length=""
+                                                      data-uuid="92910b70-8fad-49e5-a54e-2bca5ddda7cf"
+                                                      data-confidence="0.7581487">
+                                                    in some sense the job of the ikona message to create something up his property tax write to that you can oppose the development of you can pretend you doing good sitting by me up at least admit that what you're trying to do is to make your own commute a little bit easier or to not have to deal the construction on your street corner unilodge pretended you doing good for the world by doing
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="1217.59"
+                                                      data-length=""
+                                                      data-uuid="71bb03e4-364c-41c4-8e0a-92f59fbcb056"
+                                                      data-confidence="0.8280587">
+                                                    gas it's a great way of putting it as I can but the struggle bit but most right minded people have and let them sing for the moment at 100% of their right mind it we want what's good for ourselves and our families in the ones we love you and we want to punish everyone else not very much
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="1234.11"
+                                                      data-length=""
+                                                      data-uuid="c35cfb01-887a-4cde-8d15-4d876fb842cd"
+                                                      data-confidence="0.4429376">
+                                                    right let let let let the case in yet
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="1237.78"
+                                                      data-length=""
+                                                      data-uuid="1042129d-6814-46f1-bd4c-907578a4e6c1"
+                                                      data-confidence="0.8255579">
+                                                    I guess what I'm taking from hearing you talk is that the message of environmentalism is too often the bright line or the black versus white but doesn't allow for that contradiction to kind of leave within us are the best buy
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S109"
+                                                      data-timestamp="1253.93"
+                                                      data-length=""
+                                                      data-uuid="5a16fd5b-0c08-4629-bd28-ed57c5fd6781"
+                                                      data-confidence="0.7445502">
+                                                    they ride and we should probably be most where to buy metal messages when they are sold by people live in abias personal interest in it
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="1260.35"
+                                                      data-length=""
+                                                      data-uuid="20e55ce5-ddee-4870-a3bf-6e373c4f5f55"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="1268.18"
+                                                      data-length=""
+                                                      data-uuid="ea9c6f7b-5d31-467c-822d-2dd195fab9ba"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="1273.79"
+                                                      data-length=""
+                                                      data-uuid="0e5b45ec-9d00-4fd9-9629-c1f6f6b58bfe"
+                                                      data-confidence="0.7324024">
+                                                    I make sense doesn't follow the money and follow the incentives earlier
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="1280.51"
+                                                      data-length=""
+                                                      data-uuid="77d34961-cb31-4cd3-a88d-a838db53de0e"
+                                                      data-confidence="0.7122801">
+                                                    when were talking about bamboo the anti bamboo sentiment came from dovetail partners which is quote pudding itself a trusted source of environmental information now
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="1291.49"
+                                                      data-length=""
+                                                      data-uuid="376ca222-d506-413f-b8ed-3bd8e757e5c3"
+                                                      data-confidence="0.7538778">
+                                                    their arguments against bamboo some perfectly legitimate but we should note that among dovetail partners many sponsors are the american wood council the forest land owners association the kind of folks
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="1305.56"
+                                                      data-length=""
+                                                      data-uuid="22bd2463-5b97-4807-9d18-3b0327821d6d"
+                                                      data-confidence="0.7483521">
+                                                    who might not be crazy about all that asian bamboo bing turned in the floor boards in toilet paper
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="1311.7"
+                                                      data-length=""
+                                                      data-uuid="c6150946-cdbd-48f3-b325-c71473c30196"
+                                                      data-confidence="0.7276966">
+                                                    if you think the incentive get murky in marketing does the cat how environmental ideas are handled in politics never win at the mall made from corn starch to be the next great green energy breakthrough
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="1324.82"
+                                                      data-length=""
+                                                      data-uuid="906704e9-d97e-4f7a-8860-6b4a8ed97032"
+                                                      data-confidence="0.833423">
+                                                    ethynyl turned out not to be as green as promised and I'm sure you'll be shocked to know
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="1331.57"
+                                                      data-length=""
+                                                      data-uuid="2b35d356-dd8d-4bea-beda-87b4eefbd1fa"
+                                                      data-confidence="0.7888432">
+                                                    some of the politician to subsidize that had their own incentives al gore back when is vice president
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="1338.01"
+                                                      data-length=""
+                                                      data-uuid="b95e1cb7-8df4-4d64-9d34-339be174185e"
+                                                      data-confidence="0.7552902">
+                                                    with a big support of ethanol subsidies for corn farmers
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="1341.23"
+                                                      data-length=""
+                                                      data-uuid="2b5e6a9b-5524-43b8-a7a2-6bfc19c04300"
+                                                      data-confidence="0.7754204">
+                                                    what a few years ago and energy conference in athens gorad mitted that it had been a bad policy so why do you support one of the reasons I made that mistake he said is that I paid to give her attention to the farmers in my home state of tennessee in
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="1359.61"
+                                                      data-length=""
+                                                      data-uuid="3b0eff68-33e7-4ccf-a491-22447d984c66"
+                                                      data-confidence="0.7088553">
+                                                    I have a certain fondness for the farmers in the state of iowa because I was about to run for president hey give them into point of being honest bystrany campagnoli get that talking panda to come clean about bamboo
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="1385.37"
+                                                      data-length=""
+                                                      data-uuid="36689967-ea32-4d4e-ad53-cf3e2977dbac"
+                                                      data-confidence="0.7305725">
+                                                    the <profanity>fuck up</profanity> with news next week on the show we re visit one of our most popular episode about the value of college degree now will know the real college degree is expensive perfect agree pretty cheap
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="1399.06"
+                                                      data-length=""
+                                                      data-uuid="e7c7b199-1cbe-4233-9f9c-fb014b5a9e82"
+                                                      data-confidence="0.7152549">
+                                                    in pretty to come by
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S213"
+                                                      data-timestamp="1401.17"
+                                                      data-length=""
+                                                      data-uuid="462c75aa-310f-4cf8-9b40-e4330e157d06"
+                                                      data-confidence="0.8225911">
+                                                    we negotiated the price for my bachelors masters and doctorate with no work whatsoever
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S214"
+                                                      data-timestamp="1407.83"
+                                                      data-length=""
+                                                      data-uuid="45f33edd-f279-4069-888e-3bb99f94fac2"
+                                                      data-confidence="0.7810291">
+                                                    wait you bought a bachelors masters in the doctor all at once shore triple combo happy birthday did you know with transcript what's a college degree really worth that's next time and freakonomics radio
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="1421.28"
+                                                      data-length=""
+                                                      data-uuid="17cde421-72f5-423f-a212-04c3a6dd010a"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S218"
+                                                      data-timestamp="1426.67"
+                                                      data-length=""
+                                                      data-uuid="1b8b9022-e9bf-4abe-9a7e-f945561f4689"
+                                                      data-confidence="0.7425753">
+                                                    freakonomics radio is produced by w on my feet in dubner productions our staff includes david herman greg rozalski credico nbra lamb susie lechtenberg in crispins and if you want more
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S218"
+                                                      data-timestamp="1439.33"
+                                                      data-length=""
+                                                      data-uuid="b32f8066-b767-4dba-baff-5443c00e4f5f"
+                                                      data-confidence="0.8255712">
+                                                    freakonomics radio you can subscribe to a podcast on itunes or go to freakonomics.com will find lots of radio oblog the books and more
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="1450.92"
+                                                      data-length=""
+                                                      data-uuid="f3049e91-fc7c-40a6-88f5-9838f5ead760"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="1453.93"
+                                                      data-length=""
+                                                      data-uuid="73037ed9-6b8a-4616-a294-bbc8f1d504e3"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="1464.38"
+                                                      data-length=""
+                                                      data-uuid="d32d4a8e-9b74-4f01-b43d-6559d9a0ef63"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="1467.23"
+                                                      data-length=""
+                                                      data-uuid="273e4069-1e62-43d6-a2a8-49f6edffde71"
+                                                      data-confidence="0.7966823">
+                                                    freakonomics radio is supported by wealthfront wealthfront is an automated investment service built for the modern era in to make it easier than ever to invest your money well will front you the software instead of retail locations are salespeople so it can offer sophisticat in bethany bisat lokos that were previously impossible
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="1486.79"
+                                                      data-length=""
+                                                      data-uuid="b8a4c341-d2d5-4010-956b-f5d4391a8900"
+                                                      data-confidence="0.9054298">
+                                                    it is exploded in popularity in last 2 years I know it more than $2.5 Billion under management check them out atwealthfront.com slash freak to get up to $10000 managed for free
+                                                </span>
+                                            
+                                            
+                                            </p>
+                                            <div class="clearboth"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mk-about-author-wrapper">
+                                <div class="avatar-wrapper"><img alt=''
+                                                                 src='/img/covers/freakonomics-radio.jpg'
+                                                                 class='avatar avatar-65 photo' height='65' width='65'/>
+                                </div>
+                                <div class="mk-about-author-meta">
+                                    <a class="about-author-name" href=""></a>
+
+                                    <div class="about-author-desc"></div>
+
+                                </div>
+                                <div class="clearboth"></div>
+                            </div>
+                            <section class="blog-similar-posts">
+                                <div class="similar-post-title">Recent Podcasts</div>
+                                <ul class="four-cols">
+                                    
+                                    <li>
+                                        <div class="similar-post-holder"><a class="mk-similiar-thumbnail"
+                                                                            href=""
+                                                                            title="Why Bad Environmentalism Is Such an Easy Sell"><img
+                                                src="/img/covers/freakonomics-radio.jpg"
+                                                alt="Why Bad Environmentalism Is Such an Easy Sell"/>
+
+                                            <div class="image-hover-overlay"></div>
+                                        </a><a href="" class="mk-similiar-title">Why Bad Environmentalism Is Such an Easy Sell</a></div>
+                                    </li>
+                                    
+                                </ul>
+                                <div class="clearboth"></div>
+                            </section>
+                            <section id="comments">
+                            </section>
+                        </article>
+                        <div class="clearboth"></div>
+                    </div>
+                    <div class="clearboth"></div>
+                </div>
+            </div>
+        </div>
+        <section id="mk-footer" class="">
+  <div class="footer-wrapper mk-grid">
+    <div class="mk-padding-wrapper">
+      <div class=""><section id="text-2" class="widget widget_text"> <div class="textwidget"><div style="text-align: center; color: #999999;"> Copyright TomeCast All Rights Reserved © 2015 </div></div>
+      </section></div>
+      <div class="clearboth"></div>
+    </div>
+  </div>
+</section>
+
+    </div>
+    <div class="mk-side-dashboard">
+    <div class="side-dash-top-widgets">
+        <section id="text-4" class="widget widget_text">
+            <div class="textwidget"><img
+                    src="/img/D-logo.png">
+            </div>
+        </section>
+    </div>
+    <nav id="mk-sidedash-navigation" class="side_dashboard_menu">
+        <ul id="menu-main-menu" class="sidedash-navigation-ul">
+            <li id="menu-item-4533" class="menu-item menu-item-type-post_type menu-item-object-page"><a
+                    href="/">Home</a></li>
+            <li id="menu-item-4527" class="menu-item menu-item-type-post_type menu-item-object-page"><a
+                    href="/about.html">About</a></li>
+            <li id="menu-item-4529"
+                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><a
+                    href="">Podcasts</a>
+                <ul class="sub-menu">
+                    
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                        <a href="//"></a>
+                    </li>
+                    
+
+
+                </ul>
+            </li>
+
+            <li id="menu-item-4525" class="menu-item menu-item-type-post_type menu-item-object-page"><a
+                    href="/contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="side-dash-bottom-widgets">
+        <section id="social-2" class="widget widget_social_networks">
+            <div id="social-55560e5fcc0ca" class="align-left"><a href="#"
+                                                                 rel="nofollow"
+                                                                 class="builtin-icons mk-square-pointed custom small facebook-hover"
+                                                                 target="_blank" alt="Follow Us on facebook"
+                                                                 title="Follow Us on facebook"><i
+                    class="mk-jupiter-icon-simple-facebook"></i></a><a href="#"
+                                                                       rel="nofollow"
+                                                                       class="builtin-icons mk-square-pointed custom small googleplus-hover"
+                                                                       target="_blank" alt="Follow Us on googleplus"
+                                                                       title="Follow Us on googleplus"><i
+                    class="mk-jupiter-icon-simple-googleplus"></i></a><a href="#"
+                                                                         rel="nofollow"
+                                                                         class="builtin-icons mk-square-pointed custom small twitter-hover"
+                                                                         target="_blank" alt="Follow Us on twitter"
+                                                                         title="Follow Us on twitter"><i
+                    class="mk-jupiter-icon-simple-twitter"></i></a>
+                <style>#social-55560e5fcc0ca a {
+                    opacity: 100 !important;
+                    color: #ffffff !important;
+                }
+
+                #social-55560e5fcc0ca a:hover {
+                    color: #f16f4f !important;
+                }</style>
+            </div>
+        </section>
+    </div>
+</div>
+
+</div>
+<a href="#" class="mk-go-top"><i class="mk-icon-chevron-up"></i></a>
+
+
+
+<a class="mk-post-nav mk-post-prev with-image" href="/podcasts/freakonomics-radio/2013/10/14/the-troubled-cremation-of-stevie-the-cat.html"><span
+        class="pagnav-wrapper"><span class="pagenav-top"><span class="pagenav-image"><img width="150" height="150"
+              src="/img/covers/freakonomics-radio.jpg"
+              class="attachment-thumbnail wp-post-image"
+              alt="The Troubled Cremation of Stevie the Cat Podcast"/></span><span
+        class="mk-pavnav-icon"><i class="mk-icon-long-arrow-left"></i></span></span><div class="nav-info-container">
+    <span class="pagenav-bottom"><span class="pagenav-title">The Troubled Cremation of Stevie the Cat</span>2013-10-14</span></div></span></a>
+
+
+
+
+<a class="mk-post-nav mk-post-next with-image" href="/podcasts/freakonomics-radio/2013/10/31/freakonomics-goes-to-college-part-1-rebroadcast.html"><span
+        class="pagnav-wrapper"><span class="pagenav-top"><span class="mk-pavnav-icon"><i
+        class="mk-icon-long-arrow-right"></i></span><span class="pagenav-image"><img width="150" height="150"
+             src="/img/covers/freakonomics-radio.jpg"
+             class="attachment-thumbnail wp-post-image"
+             alt="Freakonomics Goes to College, Part 1 (Rebroadcast) Podcast"/></span></span><div
+        class="nav-info-container"><span class="pagenav-bottom"><span
+        class="pagenav-title">Freakonomics Goes to College, Part 1 (Rebroadcast)</span>
+    2013-10-31
+</span></div></span></a>
+
+
+
+<script type='text/javascript' src='/js/scripts-vendors.js'></script>
+<script type='text/javascript' src='/js/app.js'></script>
+<script type='text/javascript' src='/js/smoothscroll.js'></script>
+<script type='text/javascript'
+        src='//cdnjs.cloudflare.com/ajax/libs/jquery.transit/0.9.12/jquery.transit.min.js'></script>
+
+<script type="text/javascript">
+    window.$ = jQuery
+
+    $('.mk-dynamic-styles').each(function () {
+        $(this).remove();
+    });
+
+    function ajaxStylesInjector() {
+        $('.mk-dynamic-styles').each(function () {
+            var $this = $(this),
+                    id = $this.attr('id'),
+                    commentedStyles = $this.html();
+            styles = commentedStyles
+                    .replace('<!--', '')
+                    .replace('-->', '');
+
+
+            if (dynamic_styles_ids.indexOf(id) === -1) {
+                $('style[data-ajax]').append(styles);
+                $this.remove();
+            }
+
+            dynamic_styles_ids.push(id);
+        });
+    }
+    ;
+
+    abb.modules.theme_header.init({
+        id: 'mk-header',
+        height: '130',
+        stickyHeight: '55',
+        stickyOffset: 'header',
+        hasToolbar: 'false'
+    });
+    abb.init();    </script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-69068664-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>
+ 

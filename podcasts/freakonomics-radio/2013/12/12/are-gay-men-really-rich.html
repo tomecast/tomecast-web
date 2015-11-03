@@ -1,0 +1,3149 @@
+<!DOCTYPE html>
+<html itemscope="itemscope" itemtype="http://schema.org/Article" xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<head>
+    <meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="format-detection" content="telephone=no">
+<title itemprop="name">TomeCast Template</title>
+
+<script type="text/javascript">
+  // Init aplication namespace
+  var abb = {};
+  var php = {};
+
+  var mk_header_parallax, mk_banner_parallax, mk_page_parallax, mk_footer_parallax, mk_body_parallax;
+  var mk_captcha_placeholder = "Enter Captcha",
+          mk_captcha_invalid_txt = "Invalid. Try again.",
+          mk_captcha_correct_txt = "Captcha correct.",
+          mk_responsive_nav_width = 1140,
+          mk_check_rtl = true,
+          mk_grid_width = 1140,
+          mk_ajax_search_option = "disable",
+          mk_preloader_txt_color = "#444444",
+          mk_preloader_bg_color = "#ffffff",
+          mk_accent_color = "#f97352",
+          mk_preloader_bar_color = "#f97352",
+          mk_preloader_logo = "";
+  var mk_header_parallax = false,
+          mk_banner_parallax = false,
+          mk_page_parallax = false,
+          mk_footer_parallax = false,
+          mk_body_parallax = false,
+          mk_no_more_posts = "No More Posts";
+
+  function is_touch_device() {
+    return ('ontouchstart' in document.documentElement);
+  }
+
+</script>
+
+<link rel='stylesheet' id='theme-styles-css' href='/css/theme-styles.min.css' type='text/css' media='all'/>
+<link rel='stylesheet' id='mk-pe-line-icon-css' href='/css/pe-line-icons.min.css' type='text/css' media='all'/>
+<link rel='stylesheet' id='mk-font-awesome-css' href='/css/font-awesome.min.css' type='text/css' media='all'/>
+<link rel='stylesheet' id='mk-icomoon-fonts-css' href='/css/icomoon-fonts.min.css' type='text/css' media='all'/>
+<link rel='stylesheet' id='mk-theme-icons-css' href='/css/theme-icons.min.css' type='text/css' media='all'/>
+<link rel='stylesheet' id='google-font-api-special-1-css' href='http://fonts.googleapis.com/css?family=Open+Sans%3A100italic%2C200italic%2C300italic%2C400italic%2C500italic%2C600italic%2C700italic%2C800italic%2C900italic%2C100%2C200%2C300%2C400%2C500%2C600%2C700%2C800%2C900&#038;ver=4.2.2' type='text/css' media='all'/>
+<link rel='stylesheet' id='mk-style-css' href='/css/style.css' type='text/css' media='all'/>
+<link rel='stylesheet' id='theme-dynamic-styles-css' href='/css/custom.css' type='text/css' media='all'/>
+<style id='theme-dynamic-styles-inline-css' type='text/css'>
+  body {
+  }
+
+  body,
+  p {
+    font-family: Open Sans
+  }
+
+  body {
+    background-color: #fff;
+  }
+
+  #mk-header {
+    background-color: #1b1b1b;
+  }
+
+  .mk-header-bg {
+    background-color: #1b1b1b;
+  }
+
+  .mk-header-toolbar {
+    background-color: #ffffff;
+  }
+
+  #theme-page {
+    background-color: #fff;
+  }
+
+  #mk-footer {
+    background-color: #1b1b1b;
+  }
+
+  #mk-footer .footer-wrapper {
+    padding: 30px 0;
+  }
+
+  #mk-footer .widget {
+    margin-bottom: 40px;
+  }
+
+  #mk-footer [class*='mk-col-'] {
+    padding: 0 2%;
+  }
+
+  #sub-footer {
+    background-color: #43474d;
+  }
+
+  .mk-footer-copyright {
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+
+  #mk-boxed-layout {
+    -webkit-box-shadow: 0 0 0px rgba(0, 0, 0, 0);
+    -moz-box-shadow: 0 0 0px rgba(0, 0, 0, 0);
+    box-shadow: 0 0 0px rgba(0, 0, 0, 0);
+  }
+
+  .mk-tabs-panes,
+  .mk-news-tab .mk-tabs-tabs li.ui-tabs-active a,
+  .mk-divider .divider-go-top,
+  .ajax-container,
+  .mk-fancy-title.pattern-style span,
+  .mk-portfolio-view-all,
+  .mk-woo-view-all,
+  .mk-blog-view-all {
+    background-color: #fff;
+  }
+
+  .mk-header-bg {
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+    -o-opacity: 1;
+    opacity: 1;
+  }
+
+  .header-sticky-ready .mk-header-bg {
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+    -o-opacity: 1;
+    opacity: 1;
+  }
+
+  .mk-header-inner,
+  .header-sticky-ready .mk-header-inner,
+  .header-style-2.header-sticky-ready .mk-classic-nav-bg {
+    border-bottom: 1px solid #1b1b1b;
+  }
+
+  .header-style-4.header-align-left .mk-header-inner,
+  .header-style-4.header-align-center .mk-header-inner {
+    border-bottom: none;
+    border-right: 1px solid #1b1b1b;
+  }
+
+  .header-style-4.header-align-right .mk-header-inner {
+    border-bottom: none;
+    border-left: 1px solid #1b1b1b;
+  }
+
+  .header-style-2 .mk-header-nav-container {
+    border-top: 1px solid #1b1b1b;
+  }
+
+  #mk-header {
+    border-bottom: 1px solid #1b1b1b;
+  }
+
+  body {
+    font-size: 13px;
+    color: #777777;
+    font-weight: normal;
+    line-height: 1.66em;
+  }
+
+  p,
+  .mk-box-icon-2-content {
+    font-size: 13px;
+    color: #777777;
+    line-height: 1.66em;
+  }
+
+  a {
+    color: #2e2e2e;
+  }
+
+  a:hover {
+    color: #f97352;
+  }
+
+  #theme-page strong {
+    color: #f97352;
+  }
+
+  #theme-page h1 {
+    font-size: 36px;
+    color: #404040;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  #theme-page h2 {
+    font-size: 30px;
+    color: #404040;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  #theme-page h3 {
+    font-size: 24px;
+    color: #404040;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  #theme-page h4 {
+    font-size: 18px;
+    color: #404040;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  #theme-page h5 {
+    font-size: 16px;
+    color: #404040;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  #theme-page h6 {
+    font-size: 14px;
+    color: #404040;
+    font-weight: normal;
+    text-transform: uppercase;
+  }
+
+  .page-introduce-title {
+    font-size: 20px;
+    color: #4d4d4d;
+    text-transform: uppercase;
+    font-weight: normal;
+    letter-spacing: 2px;
+  }
+
+  .page-introduce-subtitle {
+    font-size: 14px;
+    line-height: 100%;
+    color: #a3a3a3;
+    font-size: 14px;
+    text-transform: none;
+  }
+
+  ::-webkit-selection {
+    background-color: #f97352;
+    color: #fff;
+  }
+
+  ::-moz-selection {
+    background-color: #f97352;
+    color: #fff;
+  }
+
+  ::selection {
+    background-color: #f97352;
+    color: #fff;
+  }
+
+  #mk-sidebar,
+  #mk-sidebar p {
+    font-size: 14px;
+    color: #999999;
+    font-weight: normal;
+  }
+
+  #mk-sidebar .widgettitle {
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #333333;
+    font-weight: bolder;
+  }
+
+  #mk-sidebar .widgettitle a {
+    color: #333333;
+  }
+
+  #mk-sidebar .widget a {
+    color: #999999;
+  }
+
+  #mk-footer,
+  #mk-footer p {
+    font-size: 14px;
+    color: #808080;
+    font-weight: normal;
+  }
+
+  #mk-footer .widgettitle {
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: 800;
+  }
+
+  #mk-footer .widgettitle a {
+    color: #ffffff;
+  }
+
+  #mk-footer .widget:not(.widget_social_networks) a {
+    color: #999999;
+  }
+
+  .mk-side-dashboard {
+    background-color: #1b1b1b;
+  }
+
+  .mk-side-dashboard,
+  .mk-side-dashboard p {
+    font-size: 12px;
+    color: #eeeeee;
+    font-weight: normal;
+  }
+
+  .mk-side-dashboard .widgettitle {
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #f16f4f;
+    font-weight: 800;
+  }
+
+  .mk-side-dashboard .widgettitle a {
+    color: #f16f4f;
+  }
+
+  .mk-side-dashboard .widget a {
+    color: #fafafa;
+  }
+
+  .sidedash-navigation-ul li a,
+  .sidedash-navigation-ul li .mk-nav-arrow {
+    color: #ffffff;
+  }
+
+  .sidedash-navigation-ul li a:hover {
+    color: #f16f4f;
+    background-color:;
+  }
+
+  .mk-fullscreen-nav {
+    background-color: #444444;
+  }
+
+  .mk-fullscreen-nav .mk-fullscreen-nav-wrapper .mk-fullscreen-nav-logo {
+    margin-bottom: 125px;
+  }
+
+  .mk-fullscreen-nav .fullscreen-navigation-ul .menu-item a {
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 0;
+    font-weight: 800;
+    padding: 25px 0;
+    color: #ffffff;
+  }
+
+  .mk-fullscreen-nav .fullscreen-navigation-ul .menu-item a:hover {
+    background-color: #ffffff;
+    color: #444444;
+  }
+
+  #mk-sidebar .widget:not(.widget_social_networks) a:hover {
+    color: #f97352;
+  }
+
+  #mk-footer .widget:not(.widget_social_networks) a:hover {
+    color: #f97352;
+  }
+
+  .mk-side-dashboard .widget:not(.widget_social_networks) a:hover {
+    color: #f97352;
+  }
+
+  .mk-grid {
+    max-width: 1140px;
+  }
+
+  .mk-header-nav-container,
+  .mk-classic-menu-wrapper {
+    width: 1140px;
+  }
+
+  .theme-page-wrapper #mk-sidebar.mk-builtin {
+    width: 27%;
+  }
+
+  .theme-page-wrapper.right-layout .theme-content,
+  .theme-page-wrapper.left-layout .theme-content {
+    width: 73%;
+  }
+
+  .mk-boxed-enabled #mk-boxed-layout,
+  .mk-boxed-enabled #mk-boxed-layout .header-style-1 .mk-header-holder,
+  .mk-boxed-enabled #mk-boxed-layout .header-style-3 .mk-header-holder {
+    max-width: 1200px;
+  }
+
+  .mk-boxed-enabled #mk-boxed-layout .header-style-1 .mk-header-holder,
+  .mk-boxed-enabled #mk-boxed-layout .header-style-3 .mk-header-holder {
+    width: 100% !important;
+    left: auto !important;
+  }
+
+  .mk-boxed-enabled #mk-boxed-layout .header-style-2.header-sticky-ready .mk-header-nav-container {
+    width: 1200px !important;
+    left: auto !important;
+  }
+
+  .header-style-1 .mk-header-start-tour,
+  .header-style-3 .mk-header-start-tour,
+  .header-style-1 .mk-header-inner #mk-header-search,
+  .header-style-1 .mk-header-inner,
+  .header-style-1 .mk-search-trigger,
+  .header-style-3 .mk-header-inner,
+  .header-style-1 .header-logo,
+  .header-style-3 .header-logo,
+  .header-style-1 .shopping-cart-header,
+  .header-style-3 .shopping-cart-header,
+  .header-style-1 #mk-header-social.header-section a,
+  .header-style-2 #mk-header-social.header-section a,
+  .header-style-3 #mk-header-social.header-section a {
+    height: 130px;
+    line-height: 130px;
+  }
+
+  @media handheld, only screen and (max-width: 1140px) {
+    .header-grid.mk-grid .header-logo.left-logo {
+      left: 15px !important;
+    }
+
+    .header-grid.mk-grid .header-logo.right-logo,
+    .mk-header-right {
+      right: 15px !important;
+    }
+
+    .header-style-3 .shopping-cart-header {
+      right: 30px;
+    }
+  }
+
+  #mk-theme-container:not(.mk-transparent-header) .header-style-1 .mk-header-padding-wrapper,
+  #mk-theme-container:not(.mk-transparent-header) .header-style-3 .mk-header-padding-wrapper {
+    padding-top: 130px;
+  }
+
+  @media handheld, only screen and (max-width: 960px) {
+    .theme-page-wrapper .theme-content {
+      width: 100% !important;
+      float: none !important;
+    }
+
+    .theme-page-wrapper {
+      padding-right: 15px !important;
+      padding-left: 15px !important;
+    }
+
+    .theme-page-wrapper .theme-content:not(.no-padding) {
+      padding: 25px 0 !important;
+    }
+
+    .theme-page-wrapper #mk-sidebar {
+      width: 100% !important;
+      float: none !important;
+      padding: 0 !important;
+    }
+
+    .theme-page-wrapper #mk-sidebar .sidebar-wrapper {
+      padding: 20px 0 !important;
+    }
+  }
+
+  @media handheld, only screen and (max-width: 1140px) {
+    .mk-go-top,
+    .mk-quick-contact-wrapper {
+      bottom: 70px !important;
+    }
+
+    .mk-grid {
+      width: 100%;
+    }
+
+    .mk-padding-wrapper {
+      padding: 0 20px;
+    }
+  }
+
+  #mk-toolbar-navigation ul li a,
+  .mk-language-nav > a,
+  .mk-header-login .mk-login-link,
+  .mk-subscribe-link,
+  .mk-checkout-btn,
+  .mk-header-tagline a,
+  .header-toolbar-contact a,
+  #mk-toolbar-navigation ul li a:hover,
+  .mk-language-nav > a:hover,
+  .mk-header-login .mk-login-link:hover,
+  .mk-subscribe-link:hover,
+  .mk-checkout-btn:hover,
+  .mk-header-tagline a:hover {
+    color: #999999;
+  }
+
+  .mk-header-tagline,
+  .header-toolbar-contact,
+  .mk-header-date {
+    color: #999999;
+  }
+
+  .mk-header-toolbar #mk-header-social a i {
+    color: #999999;
+  }
+
+  .header-section#mk-header-social ul li a i {
+    color: #999999;
+  }
+
+  .header-section#mk-header-social ul li a:hover i {
+    color: #cccccc;
+  }
+
+  .header-style-2 .header-logo,
+  .header-style-4 .header-logo {
+    height: 130px !important;
+  }
+
+  .header-style-4 .header-logo {
+    margin: 10px 0;
+  }
+
+  .header-style-2 .mk-header-inner {
+    line-height: 130px;
+  }
+
+  .mk-header-nav-container {
+    background-color:;
+  }
+
+  .mk-header-start-tour {
+    font-size: 14px;
+    color: #333333;
+  }
+
+  .mk-header-start-tour:hover {
+    color: #333333;
+  }
+
+  .mk-classic-nav-bg {
+    background-color: #1b1b1b;
+  }
+
+  .mk-search-trigger,
+  .mk-shoping-cart-link i,
+  .mk-header-cart-count,
+  .mk-toolbar-resposnive-icon i {
+    color: #ffffff;
+  }
+
+  .mk-css-icon-close div,
+  .mk-css-icon-menu div {
+    background-color: #ffffff;
+  }
+
+  #mk-header-searchform .text-input {
+    background-color: !important;
+    color: #c7c7c7;
+  }
+
+  #mk-header-searchform span i {
+    color: #c7c7c7;
+  }
+
+  #mk-header-searchform .text-input::-webkit-input-placeholder {
+    color: #c7c7c7;
+  }
+
+  #mk-header-searchform .text-input:-ms-input-placeholder {
+    color: #c7c7c7;
+  }
+
+  #mk-header-searchform .text-input:-moz-placeholder {
+    color: #c7c7c7;
+  }
+
+  .header-style-1.header-sticky-ready .menu-hover-style-1 .main-navigation-ul > li > a,
+  .header-style-3.header-sticky-ready .menu-hover-style-1 .main-navigation-ul > li > a,
+  .header-style-1.header-sticky-ready .menu-hover-style-5 .main-navigation-ul > li,
+  .header-style-1.header-sticky-ready .menu-hover-style-2 .main-navigation-ul > li > a,
+  .header-style-3.header-sticky-ready .menu-hover-style-2 .main-navigation-ul > li > a,
+  .header-style-1.header-style-1.header-sticky-ready .menu-hover-style-4 .main-navigation-ul > li > a,
+  .header-style-3.header-sticky-ready .menu-hover-style-4 .main-navigation-ul > li > a,
+  .header-style-1.header-sticky-ready .menu-hover-style-3 .main-navigation-ul > li,
+  .header-style-1.header-sticky-ready .mk-header-inner #mk-header-search,
+  .header-style-3.header-sticky-ready .mk-header-holder #mk-header-search,
+  .header-sticky-ready.header-style-3 .mk-header-start-tour,
+  .header-sticky-ready.header-style-1 .mk-header-start-tour,
+  .header-sticky-ready.header-style-1 .mk-header-inner,
+  .header-sticky-ready.header-style-3 .mk-header-inner,
+  .header-sticky-ready.header-style-3 .header-logo,
+  .header-sticky-ready.header-style-1 .header-logo,
+  .header-sticky-ready.header-style-1 .mk-search-trigger,
+  .header-sticky-ready.header-style-1 .mk-search-trigger i,
+  .header-sticky-ready.header-style-1 .shopping-cart-header,
+  .header-sticky-ready.header-style-1 .shopping-cart-header i,
+  .header-sticky-ready.header-style-3 .shopping-cart-header,
+  .header-sticky-ready.header-style-1 #mk-header-social.header-section a,
+  .header-sticky-ready.header-style-3 #mk-header-social.header-section a {
+    height: 55px !important;
+    line-height: 55px !important;
+  }
+
+  #mk-header-social.header-section a.small {
+    margin-top: 48px;
+  }
+
+  #mk-header-social.header-section a.medium {
+    margin-top: 40px;
+  }
+
+  #mk-header-social.header-section a.large {
+    margin-top: 32px;
+  }
+
+  .header-sticky-ready #mk-header-social.header-section a.small,
+  .header-sticky-ready #mk-header-social.header-section a.medium,
+  .header-sticky-ready #mk-header-social.header-section a.large {
+    margin-top: 10.5px;
+    line-height: 16px !important;
+    height: 16px !important;
+    font-size: 16px !important;
+    width: 16px !important;
+    padding: 8px !important;
+  }
+
+  .header-sticky-ready #mk-header-social.header-section a.small i:before,
+  .header-sticky-ready #mk-header-social.header-section a.medium i:before,
+  .header-sticky-ready #mk-header-social.header-section a.large i:before {
+    line-height: 16px !important;
+    font-size: 16px !important;
+  }
+
+  .main-navigation-ul > li.menu-item > a.menu-item-link {
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: bold;
+    padding-right: 20px !important;
+    padding-left: 20px !important;
+    text-transform: uppercase;
+    letter-spacing: 0px;
+  }
+
+  .mk-vm-menuwrapper ul li a {
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .mk-vm-menuwrapper li > a:after,
+  .mk-vm-menuwrapper li.mk-vm-back:after {
+    color: #ffffff;
+  }
+
+  .main-navigation-ul > li.no-mega-menu ul.sub-menu li.menu-item a.menu-item-link {
+    width: 230px;
+  }
+
+  .mk-header-3-menu-trigger {
+    color: #ffffff;
+  }
+
+  .menu-hover-style-1 .main-navigation-ul li.menu-item > a.menu-item-link:hover,
+  .menu-hover-style-1 .main-navigation-ul li.menu-item:hover > a.menu-item-link,
+  .menu-hover-style-1 .main-navigation-ul li.current-menu-item > a.menu-item-link,
+  .menu-hover-style-1 .main-navigation-ul li.current-menu-ancestor > a.menu-item-link,
+  .menu-hover-style-2 .main-navigation-ul li.menu-item > a.menu-item-link:hover,
+  .menu-hover-style-2 .main-navigation-ul li.menu-item:hover > a.menu-item-link,
+  .menu-hover-style-2 .main-navigation-ul li.current-menu-item > a.menu-item-link,
+  .menu-hover-style-2 .main-navigation-ul li.current-menu-ancestor > a.menu-item-link,
+  .menu-hover-style-1.mk-vm-menuwrapper li.menu-item > a:hover,
+  .menu-hover-style-1.mk-vm-menuwrapper li.menu-item:hover > a,
+  .menu-hover-style-1.mk-vm-menuwrapper li.current-menu-item > a,
+  .menu-hover-style-1.mk-vm-menuwrapper li.current-menu-ancestor > a,
+  .menu-hover-style-2.mk-vm-menuwrapper li.menu-item > a:hover,
+  .menu-hover-style-2.mk-vm-menuwrapper li.menu-item:hover > a,
+  .menu-hover-style-2.mk-vm-menuwrapper li.current-menu-item > a,
+  .menu-hover-style-2.mk-vm-menuwrapper li.current-menu-ancestor > a {
+    color: #f97352 !important;
+  }
+
+  .menu-hover-style-3 .main-navigation-ul > li.menu-item > a.menu-item-link:hover,
+  .menu-hover-style-3 .main-navigation-ul > li.menu-item:hover > a.menu-item-link,
+  .menu-hover-style-3.mk-vm-menuwrapper li > a:hover,
+  .menu-hover-style-3.mk-vm-menuwrapper li:hover > a {
+    border: 2px solid #f97352;
+  }
+
+  .menu-hover-style-3 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
+  .menu-hover-style-3 .main-navigation-ul > li.current-menu-ancestor > a.menu-item-link,
+  .menu-hover-style-3.mk-vm-menuwrapper li.current-menu-item > a,
+  .menu-hover-style-3.mk-vm-menuwrapper li.current-menu-ancestor > a {
+    border: 2px solid #f97352;
+    background-color: #f97352;
+    color: #ffffff;
+  }
+
+  .menu-hover-style-3.mk-vm-menuwrapper li.current-menu-ancestor > a:after {
+    color: #ffffff;
+  }
+
+  .menu-hover-style-4 .main-navigation-ul li.menu-item > a.menu-item-link:hover,
+  .menu-hover-style-4 .main-navigation-ul li.menu-item:hover > a.menu-item-link,
+  .menu-hover-style-4 .main-navigation-ul li.current-menu-item > a.menu-item-link,
+  .menu-hover-style-4 .main-navigation-ul li.current-menu-ancestor > a.menu-item-link,
+  .menu-hover-style-4.mk-vm-menuwrapper li a:hover,
+  .menu-hover-style-4.mk-vm-menuwrapper li:hover > a,
+  .menu-hover-style-4.mk-vm-menuwrapper li.current-menu-item > a,
+  .menu-hover-style-4.mk-vm-menuwrapper li.current-menu-ancestor > a,
+  .menu-hover-style-5 .main-navigation-ul > li.menu-item > a.menu-item-link:after {
+    background-color: #f97352;
+    color: #ffffff;
+  }
+
+  .menu-hover-style-4.mk-vm-menuwrapper li.current-menu-ancestor > a:after,
+  .menu-hover-style-4.mk-vm-menuwrapper li.current-menu-item > a:after,
+  .menu-hover-style-4.mk-vm-menuwrapper li:hover > a:after,
+  .menu-hover-style-4.mk-vm-menuwrapper li a:hover::after {
+    color: #ffffff;
+  }
+
+  .menu-hover-style-1 .main-navigation-ul > li.dropdownOpen > a.menu-item-link,
+  .menu-hover-style-1 .main-navigation-ul > li.active > a.menu-item-link,
+  .menu-hover-style-1 .main-navigation-ul > li.open > a.menu-item-link,
+  .menu-hover-style-1 .main-navigation-ul > li.menu-item > a:hover,
+  .menu-hover-style-1 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
+  .menu-hover-style-1 .main-navigation-ul > li.current-menu-ancestor > a.menu-item-link {
+    border-top-color: #f97352;
+  }
+
+  .menu-hover-style-1.mk-vm-menuwrapper li > a:hover,
+  .menu-hover-style-1.mk-vm-menuwrapper li.current-menu-item > a,
+  .menu-hover-style-1.mk-vm-menuwrapper li.current-menu-ancestor > a {
+    border-left-color: #f97352;
+  }
+
+  .header-style-1 .menu-hover-style-1 .main-navigation-ul > li > a,
+  .header-style-1 .menu-hover-style-2 .main-navigation-ul > li > a,
+  .header-style-1 .menu-hover-style-4 .main-navigation-ul > li > a,
+  .header-style-1 .menu-hover-style-5 .main-navigation-ul > li {
+    height: 130px;
+    line-height: 130px;
+  }
+
+  .header-style-1 .menu-hover-style-3 .main-navigation-ul > li,
+  .header-style-1 .menu-hover-style-5 .main-navigation-ul > li {
+    height: 130px;
+    line-height: 130px;
+  }
+
+  .header-style-1 .menu-hover-style-3 .main-navigation-ul > li > a {
+    line-height: 65px;
+  }
+
+  .header-style-1.header-sticky-ready .menu-hover-style-3 .main-navigation-ul > li > a {
+    line-height: 36.666666666667px;
+  }
+
+  .header-style-1 .menu-hover-style-5 .main-navigation-ul > li > a {
+    line-height: 20px;
+    vertical-align: middle;
+  }
+
+  .main-navigation-ul > li.no-mega-menu ul.sub-menu:after,
+  .main-navigation-ul > li.has-mega-menu > ul.sub-menu:after {
+    background-color: #f97352;
+  }
+
+  .mk-shopping-cart-box {
+    border-top: 2px solid #f97352;
+  }
+
+  #mk-main-navigation li.no-mega-menu ul.sub-menu,
+  #mk-main-navigation li.has-mega-menu > ul.sub-menu,
+  .mk-shopping-cart-box {
+    background-color: #333333;
+  }
+
+  #mk-main-navigation ul.sub-menu a.menu-item-link,
+  #mk-main-navigation ul .megamenu-title,
+  .megamenu-widgets-container a,
+  .mk-shopping-cart-box .product_list_widget li a,
+  .mk-shopping-cart-box .product_list_widget li.empty,
+  .mk-shopping-cart-box .product_list_widget li span,
+  .mk-shopping-cart-box .widget_shopping_cart .total {
+    color: #b3b3b3;
+  }
+
+  .mk-shopping-cart-box .mk-button.cart-widget-btn {
+    border-color: #b3b3b3;
+    color: #b3b3b3;
+  }
+
+  .mk-shopping-cart-box .mk-button.cart-widget-btn:hover {
+    background-color: #b3b3b3;
+    color: #333333;
+  }
+
+  #mk-main-navigation ul .megamenu-title {
+    color: #ffffff;
+  }
+
+  #mk-main-navigation ul .megamenu-title:after {
+    background-color: #ffffff;
+  }
+
+  .megamenu-widgets-container {
+    color: #b3b3b3;
+  }
+
+  .megamenu-widgets-container .widgettitle {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bolder;
+  }
+
+  #mk-main-navigation ul.sub-menu li.menu-item ul.sub-menu li.menu-item a.menu-item-link i {
+    color: #e0e0e0;
+  }
+
+  #mk-main-navigation ul.sub-menu a.menu-item-link:hover,
+  .main-navigation-ul ul.sub-menu li.current-menu-item > a.menu-item-link,
+  .main-navigation-ul ul.sub-menu li.current-menu-parent > a.menu-item-link {
+    color: #ffffff !important;
+  }
+
+  .megamenu-widgets-container a:hover {
+    color: #ffffff;
+  }
+
+  .main-navigation-ul li.menu-item ul.sub-menu li.menu-item a.menu-item-link:hover,
+  .main-navigation-ul li.menu-item ul.sub-menu li.menu-item:hover > a.menu-item-link,
+  .main-navigation-ul ul.sub-menu li.menu-item a.menu-item-link:hover,
+  .main-navigation-ul ul.sub-menu li.menu-item:hover > a.menu-item-link,
+  .main-navigation-ul ul.sub-menu li.current-menu-item > a.menu-item-link,
+  .main-navigation-ul ul.sub-menu li.current-menu-parent > a.menu-item-link {
+    background-color: transparent !important;
+  }
+
+  .mk-search-trigger:hover,
+  .mk-header-start-tour:hover {
+    color: #f97352;
+  }
+
+  .main-navigation-ul li.menu-item ul.sub-menu li.menu-item a.menu-item-link {
+    font-size: 12px;
+    font-weight: normal;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .has-mega-menu .megamenu-title {
+    letter-spacing: 1px;
+  }
+
+  .header-style-4 {
+    text-align: left
+  }
+
+  .mk-vm-menuwrapper li > a {
+    padding-right: 45px;
+  }
+
+  @media handheld, only screen and (max-width: 1140px) {
+    .header-style-1 .mk-header-inner,
+    .header-style-3 .mk-header-inner,
+    .header-style-3 .header-logo,
+    .header-style-1 .header-logo,
+    .header-style-1 .shopping-cart-header,
+    .header-style-3 .shopping-cart-header {
+      height: 90px !important;
+      line-height: 90px;
+    }
+
+    #mk-header:not(.header-style-4) .mk-header-holder {
+      position: relative !important;
+      top: 0 !important;
+    }
+
+    .mk-header-padding-wrapper {
+      display: none !important;
+    }
+
+    .mk-header-nav-container {
+      width: auto !important;
+      display: none;
+    }
+
+    .header-style-1 .mk-header-right,
+    .header-style-2 .mk-header-right,
+    .header-style-3 .mk-header-right {
+      right: 55px !important;
+    }
+
+    .header-style-1 .mk-header-inner #mk-header-search,
+    .header-style-2 .mk-header-inner #mk-header-search,
+    .header-style-3 .mk-header-inner #mk-header-search {
+      display: none !important;
+    }
+
+    .mk-fullscreen-search-overlay {
+      display: none;
+    }
+
+    #mk-header-search {
+      padding-bottom: 10px !important;
+    }
+
+    #mk-header-searchform span .text-input {
+      width: 100% !important;
+    }
+
+    .header-style-2 .header-logo .center-logo {
+      text-align: right !important;
+    }
+
+    .header-style-2 .header-logo .center-logo a {
+      margin: 0 !important;
+    }
+
+    .header-logo,
+    .header-style-4 .header-logo {
+      height: 90px !important;
+    }
+
+    .header-style-4 .shopping-cart-header {
+      display: none;
+    }
+
+    .mk-header-inner {
+      padding-top: 0 !important;
+    }
+
+    .header-logo {
+      position: relative !important;
+      right: auto !important;
+      left: auto !important;
+      float: left !important;
+      text-align: left;
+    }
+
+    .shopping-cart-header {
+      margin: 0 20px 0 0 !important;
+    }
+
+    #mk-responsive-nav {
+      background-color: #ffffff !important;
+    }
+
+    .mk-header-nav-container #mk-responsive-nav {
+      visibility: hidden;
+    }
+
+    #mk-responsive-nav li ul li .megamenu-title:hover,
+    #mk-responsive-nav li ul li .megamenu-title,
+    #mk-responsive-nav li a,
+    #mk-responsive-nav li ul li a:hover,
+    #mk-responsive-nav .mk-nav-arrow {
+      color: #444444 !important;
+    }
+
+    .mk-mega-icon {
+      display: none !important;
+    }
+
+    .mk-header-bg {
+      zoom: 1 !important;
+      filter: alpha(opacity=100) !important;
+      opacity: 1 !important;
+    }
+
+    .header-style-1 .mk-nav-responsive-link,
+    .header-style-2 .mk-nav-responsive-link {
+      display: block !important;
+    }
+
+    .mk-header-nav-container {
+      height: 100%;
+      z-index: 200;
+    }
+
+    #mk-main-navigation {
+      position: relative;
+      z-index: 2;
+    }
+
+    .mk_megamenu_columns_2,
+    .mk_megamenu_columns_3,
+    .mk_megamenu_columns_4,
+    .mk_megamenu_columns_5,
+    .mk_megamenu_columns_6 {
+      width: 100% !important;
+    }
+
+    .header-style-1.header-align-right .header-logo img,
+    .header-style-3.header-align-right .header-logo img,
+    .header-style-3.header-align-center .header-logo img {
+      float: left !important;
+      right: auto !important;
+    }
+
+    .header-style-4 .mk-header-inner {
+      width: auto !important;
+      position: relative !important;
+      overflow: visible;
+      padding-bottom: 0;
+    }
+
+    .admin-bar .header-style-4 .mk-header-inner {
+      top: 0 !important;
+    }
+
+    .header-style-4 .mk-header-right {
+      display: none;
+    }
+
+    .header-style-4 .mk-nav-responsive-link {
+      display: block !important;
+    }
+
+    .header-style-4 .mk-vm-menuwrapper,
+    .header-style-4 #mk-header-search {
+      display: none;
+    }
+
+    .header-style-4 .header-logo {
+      width: auto !important;
+      display: inline-block !important;
+      text-align: left !important;
+      margin: 0 !important;
+    }
+
+    .vertical-header-enabled .header-style-4 .header-logo img {
+      max-width: 100% !important;
+      left: 20px !important;
+      top: 50% !important;
+      -webkit-transform: translate(0, -50%) !important;
+      -moz-transform: translate(0, -50%) !important;
+      -ms-transform: translate(0, -50%) !important;
+      -o-transform: translate(0, -50%) !important;
+      transform: translate(0, -50%) !important;
+      position: relative !important;
+    }
+
+    .vertical-header-enabled.vertical-header-left #theme-page > .mk-main-wrapper-holder,
+    .vertical-header-enabled.vertical-header-center #theme-page > .mk-main-wrapper-holder,
+    .vertical-header-enabled.vertical-header-left #theme-page > .mk-page-section,
+    .vertical-header-enabled.vertical-header-center #theme-page > .mk-page-section,
+    .vertical-header-enabled.vertical-header-left #theme-page > .wpb_row,
+    .vertical-header-enabled.vertical-header-center #theme-page > .wpb_row,
+    .vertical-header-enabled.vertical-header-left #mk-theme-container:not(.mk-transparent-header),
+    .vertical-header-enabled.vertical-header-center #mk-footer,
+    .vertical-header-enabled.vertical-header-left #mk-footer,
+    .vertical-header-enabled.vertical-header-center #mk-theme-container:not(.mk-transparent-header) {
+      padding-left: 0 !important;
+    }
+
+    .vertical-header-enabled.vertical-header-right #theme-page > .mk-main-wrapper-holder,
+    .vertical-header-enabled.vertical-header-right #theme-page > .mk-page-section,
+    .vertical-header-enabled.vertical-header-right #theme-page > .wpb_row,
+    .vertical-header-enabled.vertical-header-right #mk-footer,
+    .vertical-header-enabled.vertical-header-right #mk-theme-container:not(.mk-transparent-header) {
+      padding-right: 0 !important;
+    }
+  }
+
+  @media handheld, only screen and (min-width: 1140px) {
+    .mk-transparent-header .sticky-style-slide .mk-header-holder {
+      position: absolute;
+    }
+
+    .mk-transparent-header .remove-header-bg-true:not(.header-sticky-ready) .mk-header-bg {
+      opacity: 0;
+    }
+
+    .mk-transparent-header .remove-header-bg-true#mk-header:not(.header-sticky-ready) .mk-header-inner {
+      border: 0;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-desktop-logo.light-logo {
+      display: block !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-desktop-logo.dark-logo {
+      display: none !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .main-navigation-ul > li.menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-search-trigger,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-shoping-cart-link i,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-header-cart-count,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-header-start-tour,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) #mk-header-social a i,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.menu-item > a.menu-item-link:hover,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.menu-item:hover > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.current-menu-ancestor > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-2 .main-navigation-ul > li.menu-item > a.menu-item-link:hover,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-2 .main-navigation-ul > li.menu-item:hover > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-2 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-vm-menuwrapper li a,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-vm-menuwrapper li > a:after,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-vm-menuwrapper li.mk-vm-back:after {
+      color: #fff !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .mk-css-icon-menu div {
+      background-color: #fff !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.dropdownOpen > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.active > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.open > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.menu-item > a:hover,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.current-menu-ancestor > a.menu-item-link {
+      border-top-color: #fff;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.current-menu-ancestor > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li.current-menu-item > a,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li.current-menu-ancestor > a {
+      border: 2px solid #fff;
+      background-color: #fff;
+      color: #222 !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.menu-item > a.menu-item-link:hover,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.menu-item:hover > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li > a:hover,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li:hover > a {
+      border: 2px solid #fff;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-4 .main-navigation-ul li.menu-item > a.menu-item-link:hover,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-4 .main-navigation-ul li.menu-item:hover > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-4 .main-navigation-ul li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.light-header-skin:not(.header-sticky-ready) .menu-hover-style-5 .main-navigation-ul > li.menu-item > a.menu-item-link:after {
+      background-color: #fff;
+      color: #222 !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-desktop-logo.dark-logo {
+      display: block !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-desktop-logo.light-logo {
+      display: none !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .main-navigation-ul > li.menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-search-trigger,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-shoping-cart-link i,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-header-cart-count,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-header-start-tour,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) #mk-header-social a i,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul li.menu-item > a.menu-item-link:hover,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul li.menu-item:hover > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul li.current-menu-ancestor > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-2 .main-navigation-ul li.menu-item > a.menu-item-link:hover,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-2 .main-navigation-ul li.menu-item:hover > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-2 .main-navigation-ul li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-2 .main-navigation-ul li.current-menu-ancestor > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-vm-menuwrapper li a,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-vm-menuwrapper li > a:after,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-vm-menuwrapper li.mk-vm-back:after {
+      color: #222 !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.dropdownOpen > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.active > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.open > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.menu-item > a:hover,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-1 .main-navigation-ul > li.current-menu-ancestor > a.menu-item-link {
+      border-top-color: #222;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .mk-css-icon-menu div {
+      background-color: #222 !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.current-menu-ancestor > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li.current-menu-item > a,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li.current-menu-ancestor > a {
+      border: 2px solid #222;
+      background-color: #222;
+      color: #fff !important;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.menu-item > a.menu-item-link:hover,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3 .main-navigation-ul > li.menu-item:hover > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li > a:hover,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-3.mk-vm-menuwrapper li:hover > a {
+      border: 2px solid #222;
+    }
+
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-4 .main-navigation-ul li.menu-item > a.menu-item-link:hover,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-4 .main-navigation-ul li.menu-item:hover > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-4 .main-navigation-ul li.current-menu-item > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-4 .main-navigation-ul li.current-menu-ancestor > a.menu-item-link,
+    .mk-transparent-header .remove-header-bg-true.dark-header-skin:not(.header-sticky-ready) .menu-hover-style-5 .main-navigation-ul > li.menu-item > a.menu-item-link:after {
+      background-color: #222;
+      color: #fff !important;
+    }
+  }
+
+  .comment-reply a,
+  .mk-toggle .mk-toggle-title.active-toggle:before,
+  .mk-testimonial-author,
+  .modern-style .mk-testimonial-company,
+  #wp-calendar td#today,
+  .news-full-without-image .news-categories span,
+  .news-half-without-image .news-categories span,
+  .news-fourth-without-image .news-categories span,
+  .mk-read-more,
+  .news-single-social li a,
+  .portfolio-widget-cats,
+  .portfolio-carousel-cats,
+  .blog-showcase-more,
+  .simple-style .mk-employee-item:hover .team-member-position,
+  .mk-readmore,
+  .about-author-name,
+  .mk-portfolio-classic-item .portfolio-categories a,
+  .register-login-links a:hover,
+  .not-found-subtitle,
+  .mk-mini-callout a,
+  .search-loop-meta a,
+  .new-tab-readmore,
+  .mk-news-tab .mk-tabs-tabs li.ui-tabs-active a,
+  .mk-tooltip a,
+  .mk-accordion-single.current .mk-accordion-tab i,
+  .monocolor.pricing-table .pricing-price span,
+  .quantity .plus:hover,
+  .quantity .minus:hover,
+  .mk-woo-tabs .mk-tabs-tabs li.ui-state-active a,
+  .product .add_to_cart_button i,
+  .blog-modern-comment:hover,
+  .blog-modern-share:hover,
+  {
+    color: #f97352;
+  }
+
+  .mk-tabs .mk-tabs-tabs li.ui-tabs-active a > i,
+  .mk-accordion .mk-accordion-single.current .mk-accordion-tab:before,
+  .mk-tweet-list a,
+  .widget_testimonials .testimonial-slider .testimonial-author,
+  #mk-filter-portfolio li a:hover,
+  #mk-language-navigation ul li a:hover,
+  #mk-language-navigation ul li.current-menu-item > a,
+  .mk-quick-contact-wrapper h4,
+  .divider-go-top:hover i,
+  .widget-sub-navigation ul li a:hover,
+  #mk-footer .widget_posts_lists ul li .post-list-meta time,
+  .mk-footer-tweets .tweet-username,
+  .product-category .item-holder:hover h4,
+  {
+    color: #f97352 !important;
+  }
+
+  .image-hover-overlay,
+  .newspaper-portfolio,
+  .similar-posts-wrapper .post-thumbnail:hover > .overlay-pattern,
+  .portfolio-logo-section,
+  .post-list-document .post-type-thumb:hover,
+  #cboxTitle,
+  #cboxPrevious,
+  #cboxNext,
+  #cboxClose,
+  .comment-form-button,
+  .mk-dropcaps.fancy-style,
+  .mk-image-overlay,
+  .pinterest-item-overlay,
+  .news-full-with-image .news-categories span,
+  .news-half-with-image .news-categories span,
+  .news-fourth-with-image .news-categories span,
+  .widget-portfolio-overlay,
+  .portfolio-carousel-overlay,
+  .blog-carousel-overlay,
+  .mk-classic-comments span,
+  .mk-similiar-overlay,
+  .mk-skin-button,
+  .mk-flex-caption .flex-desc span,
+  .mk-icon-box .mk-icon-wrapper i:hover,
+  .mk-quick-contact-link:hover,
+  .quick-contact-active.mk-quick-contact-link,
+  .mk-fancy-table th,
+  .ui-slider-handle,
+  .widget_price_filter .ui-slider-range,
+  .shop-skin-btn,
+  #review_form_wrapper input[type=submit],
+  #mk-nav-search-wrapper form .nav-side-search-icon:hover,
+  form.ajax-search-complete i,
+  .blog-modern-btn,
+  .showcase-blog-overlay,
+  .gform_button[type=submit],
+  .button.alt,
+  #respond #submit,
+  .woocommerce .price_slider_amount .button.button,
+  .mk-shopping-cart-box .mk-button.checkout,
+  .widget_shopping_cart .mk-button.checkout,
+  .widget_shopping_cart .mk-button.checkout {
+    background-color: #f97352 !important;
+  }
+
+  .mk-circle-image .item-holder {
+    -webkit-box-shadow: 0 0 0 1px #f97352;
+    -moz-box-shadow: 0 0 0 1px #f97352;
+    box-shadow: 0 0 0 1px #f97352;
+  }
+
+  .mk-blockquote.line-style,
+  .bypostauthor .comment-content,
+  .bypostauthor .comment-content:after,
+  .mk-tabs.simple-style .mk-tabs-tabs li.ui-tabs-active a {
+    border-color: #f97352 !important;
+  }
+
+  .news-full-with-image .news-categories span,
+  .news-half-with-image .news-categories span,
+  .news-fourth-with-image .news-categories span,
+  .mk-flex-caption .flex-desc span {
+    box-shadow: 8px 0 0 #f97352, -8px 0 0 #f97352;
+  }
+
+  .monocolor.pricing-table .pricing-cols .pricing-col.featured-plan {
+    border: 1px solid #f97352 !important;
+  }
+
+  .mk-skin-button.three-dimension {
+    box-shadow: 0px 3px 0px 0px #c75c42;
+  }
+
+  .mk-skin-button.three-dimension:active {
+    box-shadow: 0px 1px 0px 0px #c75c42;
+  }
+
+  .mk-footer-copyright,
+  #mk-footer-navigation li a {
+    color: #8c8e91;
+  }
+
+  .mk-woocommerce-main-image img:hover,
+  .mk-single-thumbnails img:hover {
+    border: 1px solid #f97352 !important;
+  }
+
+  .product-loading-icon {
+    background-color: rgba(249, 115, 82, 0.6);
+  }
+
+  .mk-dynamic-styles {
+    display: none
+  }
+</style>
+<link rel='stylesheet' id='js_composer_front-css' href='/css/js_composer.css' type='text/css' media='all'/>
+<script type='text/javascript' src='https://code.jquery.com/jquery-1.11.3.min.js'></script>
+<script type='text/javascript' src='https://code.jquery.com/jquery-migrate-1.2.1.min.js'></script>
+<style type="text/css">.recentcomments a {
+  display: inline !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}</style>
+
+
+    <meta property="og:site_name" content="TomeCast"/>
+    <meta property="og:image"
+          content="/img/covers/freakonomics-radio.jpg"/>
+    <meta property="og:url" content="/podcasts/freakonomics-radio/2013/12/12/are-gay-men-really-rich.html"/>
+    <meta property="og:title" content="TomeCast Transcribed Podcast -  - Are Gay Men Really Rich?"/>
+    <meta property="og:description"
+          content="Automatically Transcribed Podcast:  - Are Gay Men Really Rich?"/>
+    <meta property="og:type" content="article"/>
+    <noscript>
+        <style>.wpb_animate_when_almost_visible {
+            opacity: 1;
+        }</style>
+    </noscript>
+</head>
+<body class="single single-post postid-591 single-format-standard  wpb-js-composer js-comp-ver-4.5.1 vc_responsive"
+      data-backText="Back" data-vm-anim="1">
+
+<div id="mk-boxed-layout">
+    <div id="mk-theme-container">
+        <header id="mk-header" data-height="130" data-hover-style="2" data-transparent-skin="" data-header-style="3" data-sticky-height="55" data-sticky-style="fixed" data-sticky-offset="header" class="header-style-3 header-align-left header-toolbar-false sticky-style-fixed  mk-background-stretch full-header ">
+  <div class="mk-header-holder">
+    <div class="mk-header-inner">
+      <div class="mk-header-bg "></div>
+      <div class="mk-dashboard-trigger header_dashboard_style">
+        <div class="mk-css-icon-menu icon-size-big">
+          <div class="mk-css-icon-menu-line-1"></div>
+          <div class="mk-css-icon-menu-line-2"></div>
+          <div class="mk-css-icon-menu-line-3"></div>
+        </div>
+      </div>
+      <div class="header-logo  ">
+        <a href="/" title="TomeCast - Homepage">
+          <img class="mk-desktop-logo dark-logo" alt="TomeCast - Homepage" src="/img/logo.png"/>
+        </a>
+      </div>
+      <div class="clearboth"></div>
+      <div class="mk-header-right">
+      </div>
+    </div>
+  </div>
+  <div class="clearboth"></div>
+  <div class="mk-header-padding-wrapper"></div>
+  <div class="clearboth"></div>
+  <div class="mk-zindex-fix">
+  </div>
+  <div class="clearboth"></div>
+</header>
+
+        <div id="theme-page">
+            <div class="mk-main-wrapper-holder">
+                <div class="theme-page-wrapper mk-blog-single full-layout vc_row-fluid mk-grid ">
+                    <div class="theme-content ">
+                        <article
+                                class=" post type-post status-publish format-standard has-post-thumbnail hentry category-articles category-business tag-audio tag-design">
+                            <div class="mk-audio-section mk-audio-shortcode" style="background-color:#acacac"><img
+                                    class="audio-thumb" alt="" title=""
+                                    src="/img/covers/freakonomics-radio.jpg" style="width:170px"/>
+
+                                <div id="jquery_jplayer" class="jp-jplayer mk-blog-audio"
+                                     data-mp3="http://feedproxy.google.com/~r/freakonomicsradio/~5/d-cCP2VcUPI/freakonomics_podcast121213.mp3"
+                                     data-ogg=""></div>
+                                <div id="jp_container" class="jp-audio audio-has-img">
+                                    <div class="jp-type-single">
+                                        <div class="jp-gui jp-interface">
+                                            <div class="jp-time-holder">
+                                                <div class="jp-current-time"></div>
+                                                <div class="jp-duration"></div>
+                                            </div>
+                                            <div class="jp-progress">
+                                                <div class="jp-seek-bar">
+                                                    <div class="jp-play-bar"></div>
+                                                </div>
+                                            </div>
+                                            <div class="jp-volume-bar">
+                                                <i class="mk-moon-volume-mute"></i>
+
+                                                <div class="inner-value-adjust">
+                                                    <div class="jp-volume-bar-value"></div>
+                                                </div>
+                                            </div>
+                                            <ul class="jp-controls">
+                                                <li><a href="javascript:;" class="jp-play" tabindex="1"><i
+                                                        class="mk-icon-play"></i></a></li>
+                                                <li><a href="javascript:;" class="jp-pause" tabindex="1"><i
+                                                        class="mk-icon-pause"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="jp-no-solution">
+                                            <span>Update Required</span>
+                                            To play the media you will need to either update your browser to a recent
+                                            version or update your <a href="http://get.adobe.com/flashplayer/"
+                                                                      target="_blank">Flash plugin</a>.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearboth"></div>
+                            </div>
+                            <h2 class="blog-single-title">Are Gay Men Really Rich?</h2>
+
+                            <div class="blog-single-meta">
+                                <div class="mk-blog-author"><a href="/podcasts/freakonomics-radio"
+                                                               title='Posts in ' rel="section"></a></div>
+                                <div class="mk-blog-author">By <a title='Posted By ' rel="author"></a>
+                                </div>
+                                <time class="mk-post-date" datetime="2013-12-12 00:00:00 +0000">
+                                    Posted on <a href="">2013-12-12</a>
+                                </time>
+                            </div>
+                            <div class="single-social-section">
+                                <div class="mk-love-holder">
+                                    <a href="#" class="mk-love-this " id="mk-love">
+                                        <i class="mk-icon-heart"><span>&nbsp;</span></i>
+                                        <span class="mk-love-count">2</span>
+                                    </a>
+                                </div>
+                                <a href="#comments" class="blog-modern-comment">
+                                    <i class="mk-moon-bubble-9"></i><span> 0</span>
+                                </a>
+                                <div class="blog-share-container">
+                                    <div class="blog-single-share mk-toggle-trigger"><i class="mk-moon-share-2"></i>
+                                    </div>
+                                    <ul class="single-share-box mk-box-to-trigger">
+                                        <li><a class="facebook-share" data-title="Check out this Podcast:  - "
+    data-url=""
+    href=""><i
+            class="mk-jupiter-icon-simple-facebook"></i></a></li>
+<li><a class="twitter-share" data-title="Check out this Podcast:  - "
+    data-url=""
+    href="#"><i
+            class="mk-moon-twitter"></i></a></li>
+<li><a class="googleplus-share" data-title="Check out this Podcast:  - "
+    data-url=""
+    href=""><i
+            class="mk-jupiter-icon-simple-googleplus"></i></a></li>
+<li><a class="pinterest-share"
+       data-image="/img/covers/.jpg"
+       data-title="Check out this Podcast:  - "
+    data-url=""
+    href=""><i
+            class="mk-jupiter-icon-simple-pinterest"></i></a></li>
+<li><a class="linkedin-share"
+       data-desc=""
+       data-title="Check out this Podcast:  - "
+    data-url=""
+    href=""><i
+            class="mk-jupiter-icon-simple-linkedin"></i></a></li>
+
+                                    </ul>
+                                </div>
+                                <a class="mk-blog-print" onClick="window.print()"
+                                   href="#" title="Print"><i
+                                        class="mk-moon-print-3"></i></a>
+
+                                <div class="clearboth"></div>
+                            </div>
+                            <div class="clearboth"></div>
+                            <div class="mk-single-content" itemprop="mainContentOfPage">
+                                <div class="wpb_row vc_row  vc_row-fluid  mk-fullwidth-false  attched-false vc_row-fluid">
+                                    <div style="" class="vc_col-sm-12 wpb_column column_container ">
+                                        <div class="clearboth"></div>
+                                        <div class="mk-shortcode mk-padding-shortcode" style="height:40px"></div>
+                                        <div class="clearboth"></div>
+                                        <span id="drop-caps-555772840bc14"
+                                              class="mk-dropcaps mk-shortcode fancy-style ">D</span>
+
+                                        <div id="ajax-555772840bc14" class="mk-dynamic-styles"></div>
+                                        <div style=" margin-bottom:0px;text-align: left;" class="mk-text-block  "><p
+                                                style="text-align: justify;"><span style="color: #33cccc;"><strong>Duis
+                                            viverra</strong></span>
+
+
+                                        </p>
+
+                                            <div class="clearboth"></div>
+                                        </div>
+                                        <div style="font-size: 18px;" id="blockquote-555772840c9ac"
+                                             class="mk-shortcode mk-blockquote quote-style ">
+                                            <p>It’s easy to get that idea. But is the stereotype true?</p>
+                                        </div>
+                                        <div class="clearboth"></div>
+                                        <div class="mk-shortcode mk-padding-shortcode" style="height:20px"></div>
+                                        <div class="clearboth"></div>
+                                        <div style=" margin-bottom:0px;text-align: left;" class="mk-text-block  ">
+                                            <p>
+                                            
+                                            
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="1.13"
+                                                      data-length=""
+                                                      data-uuid="ebf669e3-def0-4ab5-a859-690ac9c19511"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="5.25"
+                                                      data-length=""
+                                                      data-uuid="3227f501-a27d-46b3-9519-449f7c86a8b3"
+                                                      data-confidence="0.6895191">
+                                                    everybody freakonomics radio listener named annie rosa reason to get in touch with us he's 22 recent graduate from the university of chicago he works as a youth advocate at the los angeles gay and lesbian center danny himself is gay and his question force
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S3"
+                                                      data-timestamp="21.2"
+                                                      data-length=""
+                                                      data-uuid="5e258fdd-4ef4-4208-aad2-051a5fb8b2e7"
+                                                      data-confidence="0.6647893">
+                                                    hey freakonomics I'm deniro style and I'm wondering why gay men are so after when is the festival if you want to neighborhoods like west hollywood los angeles the castro in san francisco in boys town in chicago
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S3"
+                                                      data-timestamp="33.67"
+                                                      data-length=""
+                                                      data-uuid="3fbe423d-c00f-4ce1-b71e-e7e47360555e"
+                                                      data-confidence="0.8211479">
+                                                    they are all very well kept expensive and highly sought after some thinking what is it about gay men in gay culture that make sense the wealthy
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="42.34"
+                                                      data-length=""
+                                                      data-uuid="b617c153-413b-4a0f-9f6a-ec8c57368519"
+                                                      data-confidence="0.8119626">
+                                                    what is it about gay men that makes him so well it is true that the gay neighborhoods with danny mentions in la in san francisco in chicago bulls similar areas in new york and washington elsewhere are very nice neighborhoods in
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="60.08"
+                                                      data-length=""
+                                                      data-uuid="cea3a719-e4de-48f5-8fdd-d6a6e44a5160"
+                                                      data-confidence="0.7413">
+                                                    if you watch even a little bit of television these days you'll get the same idea
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S10"
+                                                      data-timestamp="64.9"
+                                                      data-length=""
+                                                      data-uuid="52b55cbb-357d-4ecb-a502-d63ae6a67df3"
+                                                      data-confidence="0.5375098">
+                                                    we gave gas cheaper in a mini bottle of water keith and william davis 2 tickets to italy and $40,000 tree and t
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="74.47"
+                                                      data-length=""
+                                                      data-uuid="a659b232-12d1-4c13-9fe9-5f0c55f962c6"
+                                                      data-confidence="0.4114687">
+                                                    fabulous cherry wood lopie super flat screen tv cheap louis vuitton factor in rollbots about baran
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="84.04"
+                                                      data-length=""
+                                                      data-uuid="16ce858b-fd0d-4d1f-a12a-bead585abd26"
+                                                      data-confidence="0.6736647">
+                                                    so yes it's pretty easy to get the impression that being gay is the ticket to affluence but today I'm free can I mix radio we ask this how real is that rich gay stereotype
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="101.25"
+                                                      data-length=""
+                                                      data-uuid="25e38822-caea-4bd0-b84e-628629f546c9"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S15"
+                                                      data-timestamp="109.76"
+                                                      data-length=""
+                                                      data-uuid="22cbe985-51b3-4cde-a888-61b12ee97d57"
+                                                      data-confidence="0.6281579">
+                                                    mw on my feet this is freakonomics radio podcast explored the inside of everything
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S15"
+                                                      data-timestamp="117.35"
+                                                      data-length=""
+                                                      data-uuid="c6fb2dd8-2d27-460d-9915-7cdde6f910d7"
+                                                      data-confidence="0.3579517">
+                                                    here's your host stephen dubner
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="125.32"
+                                                      data-length=""
+                                                      data-uuid="4de47e1f-4b1c-494d-b325-d09fadfa319b"
+                                                      data-confidence="0.6794776">
+                                                    ok so the question I tried to answer today seems pretty simple why are gay men after with a bat of course presumes that gay men or more apple so we should probably start
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="140.06"
+                                                      data-length=""
+                                                      data-uuid="2c845f27-c713-4c1f-b714-fd694f8b94f8"
+                                                      data-confidence="0.7735553">
+                                                    take a look at us census data according to some analysis median household income for heterosexual couples about $86,000 for gay male couple mimio median household income is
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="155.89"
+                                                      data-length=""
+                                                      data-uuid="501d35d3-ff3d-404b-bf97-c2305e18e217"
+                                                      data-confidence="0.7061507">
+                                                    105 thousand $600 for nearly 20% more and for what it's worth lesbian couples have lower median income in heterosexual couples meedy $4000 to danny rosa seems to be right game and do seem to earn more
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="174.05"
+                                                      data-length=""
+                                                      data-uuid="f441055d-6b3a-4c6b-b392-5ebf373b6c73"
+                                                      data-confidence="0.7812167">
+                                                    so the next logical question is why rebadge it is in a columnist university of massachusetts amherst she says it appears that gay men tend to have higher than average education level now
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="187.78"
+                                                      data-length=""
+                                                      data-uuid="28947630-619f-4add-8af5-aedb1456360b"
+                                                      data-confidence="0.7986248">
+                                                    maybe a lot of explanations for that there'S1 you may not have considered
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S26"
+                                                      data-timestamp="194.06"
+                                                      data-length=""
+                                                      data-uuid="7257a38c-7081-46be-8945-4d528d67748b"
+                                                      data-confidence="0.871584">
+                                                    one possibility is a gay person says well I know I'm gonna face time steegman discrimination the labor market may be my best
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S111"
+                                                      data-timestamp="200.84"
+                                                      data-length=""
+                                                      data-uuid="e5f7e8fc-1c0f-477a-81cc-01d7ab8e38e7"
+                                                      data-confidence="0.7576892">
+                                                    turn on a defense against having an income to savannah just to get alotta medication so that'S1 possibility that it said I'm trying to overcome the effects of discrimination
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="211.95"
+                                                      data-length=""
+                                                      data-uuid="07ea214b-23fb-4edd-baa9-615975e2f56f"
+                                                      data-confidence="0.7456377">
+                                                    now as we know more education usually translates into more earnings your steve levitt my freakonomics friend and coauthor kesina camest at university chicago
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S30"
+                                                      data-timestamp="222.88"
+                                                      data-length=""
+                                                      data-uuid="8211a939-2fcc-4b52-a97b-adcc20ae7310"
+                                                      data-confidence="0.7419832">
+                                                    the best estimate economist have our that each extra year of education that you get is worth about maybe in a percent increment to your earnings each year for the rest of your life
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="235.61"
+                                                      data-length=""
+                                                      data-uuid="541fd009-0c2b-4209-ad1a-4605640f3866"
+                                                      data-confidence="0.8108883">
+                                                    so someone with a college diploma will on average how to earn someone with only a high school diploma by about a million dollars of their lifetime if there for gay men get more education that would go along way to explaining why they earn more plus which
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="251.39"
+                                                      data-length=""
+                                                      data-uuid="d270e856-11b9-42f7-962a-ae26a9b810f0"
+                                                      data-confidence="0.7279709">
+                                                    men generally earn more than women so having to working men in the household
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="256.91"
+                                                      data-length=""
+                                                      data-uuid="0921dcd9-c3a9-48b2-a3fe-d8c09860a68d"
+                                                      data-confidence="0.6571448">
+                                                    should also be the high ringtones so I think burning up spending are there big differences between howard gay couple in a straight couple spend their money well most obvious difference in probabile for the biggest goes by famous acronym dinc
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="273.89"
+                                                      data-length=""
+                                                      data-uuid="4e5040bd-2c29-456e-a97c-37c7c491f668"
+                                                      data-confidence="0.7509162">
+                                                    with dual income no kids
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="279.04"
+                                                      data-length=""
+                                                      data-uuid="d0b74046-1cb0-43e7-8fd5-a5fc3ee61d2c"
+                                                      data-confidence="0.7013689">
+                                                    bing black is in economista teaches public policy is university of chicago pizza is there's a rank order and what kind of couples are more likely have kids
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S130"
+                                                      data-timestamp="288.88"
+                                                      data-length=""
+                                                      data-uuid="e7b5bafe-94a6-4039-bedc-656df76266f9"
+                                                      data-confidence="0.6484604">
+                                                    are you really higher key sort of goes get her sexual couples lesbian couples followed by a gay male couples
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="296.42"
+                                                      data-length=""
+                                                      data-uuid="33030adb-a400-4664-b0e4-24c329f3b167"
+                                                      data-confidence="0.7943909">
+                                                    ok here's the numbers in the us 43 and a half percent of straight couples are raising kids 100 hd teen among lesbian households that number is 22%
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="307.6"
+                                                      data-length=""
+                                                      data-uuid="e9c6e7bb-d1f1-48fa-8728-dd79b101dcc6"
+                                                      data-confidence="0.7366078">
+                                                    and only 10% of gay male couples are raising a child sucks street couple of more than 4 times as likely as a gay male couple to be raznick it when you're not raising a kid it and black points out
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S130"
+                                                      data-timestamp="321.1"
+                                                      data-length=""
+                                                      data-uuid="27fc0119-adb2-49fe-8eb4-5a527315df53"
+                                                      data-confidence="0.7952961">
+                                                    you have more disposable income because you're not making expenditures associated with having children
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="327.36"
+                                                      data-length=""
+                                                      data-uuid="719d644a-44d2-4c72-9758-716f2faf9feb"
+                                                      data-confidence="0.7710162">
+                                                    what kind of expenditures are we talking about having children
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="331.41"
+                                                      data-length=""
+                                                      data-uuid="a8c29f50-84ea-4cc8-ae8c-77fb17f2c41c"
+                                                      data-confidence="0.7257528">
+                                                    welp one cup an estimate says that american parents spend an average of about 175 thousand dollars per kid birth to eat eat eat
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="341.75"
+                                                      data-length=""
+                                                      data-uuid="fcf3f4d4-c1ce-488f-b5d4-45665f3dfc4b"
+                                                      data-confidence="0.5804197">
+                                                    a couple without kids care otherwise is that money spend it some other way
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="347.39"
+                                                      data-length=""
+                                                      data-uuid="832a106b-23a4-4784-806e-dd1a24d4fc7d"
+                                                      data-confidence="0.7069684">
+                                                    how is that money spent but here's some data
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="351.43"
+                                                      data-length=""
+                                                      data-uuid="2b3bf700-0a82-4ccd-8946-1b6fdd2d36b5"
+                                                      data-confidence="0.7357308">
+                                                    the average same sex households were told makes 16% more shopping trips than the average street us household photo de housholder said to spend 50% more on pet care products of your dogs do you wanna be pampered having gay parents seemed like a good idea
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="369.78"
+                                                      data-length=""
+                                                      data-uuid="feb3fd27-879f-4540-ae1a-5ea4c9dfd3de"
+                                                      data-confidence="0.7312638">
+                                                    if you don't have kids you don't have tuition bills in the doctors bills kickboxing lessons pay 4
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="376.73"
+                                                      data-length=""
+                                                      data-uuid="7f3db8a9-9ff1-4d71-bdf8-11cd75872d43"
+                                                      data-confidence="0.8784965">
+                                                    you don't have to stay home with the kids when their young
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="379.46"
+                                                      data-length=""
+                                                      data-uuid="e542b3eb-7ad9-4c51-ba3b-ac65ab2181e2"
+                                                      data-confidence="0.5977736">
+                                                    here's another financial advantage of childlessness so if you go
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S130"
+                                                      data-timestamp="385.18"
+                                                      data-length=""
+                                                      data-uuid="2cd7ed50-4b35-4fc0-804b-dba1f84f986e"
+                                                      data-confidence="0.771597">
+                                                    want to live in san francisco it's nice if you don't have to buy a yeah 5 bedroom house
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="389.83"
+                                                      data-length=""
+                                                      data-uuid="008a9790-2312-4f5f-99ae-3dd915c9557c"
+                                                      data-confidence="0.726189">
+                                                    with dan black again he co wrote a paper called why do gay men live in san francisco do I do that
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="397.87"
+                                                      data-length=""
+                                                      data-uuid="5a30a62b-4e3e-4a42-8df0-5731ac192c37"
+                                                      data-confidence="0.7214771">
+                                                    one reason is that they can afford to but also blacks research shows that neighborhood amenities are particular draw for gay men are steve levitt again so when can we talk about
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S30"
+                                                      data-timestamp="410.68"
+                                                      data-length=""
+                                                      data-uuid="8c3f466a-04cf-49ce-ab57-f7fc80f20020"
+                                                      data-confidence="0.6723161">
+                                                    location to use the word amenities to mean that kind of things that people are willing to pay for so I access this theater orton nature or 2 a good bar scene I think like that
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="428.47"
+                                                      data-length=""
+                                                      data-uuid="d1472834-0a97-4634-a7bc-b11ea329e803"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="431.32"
+                                                      data-length=""
+                                                      data-uuid="f70a41d3-d4c3-4af5-bedb-fc4d3183ccc4"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="435.85"
+                                                      data-length=""
+                                                      data-uuid="ac028106-da1d-45a1-a501-e15843c6906f"
+                                                      data-confidence="0.6136534">
+                                                    so all the evidence seems to confirm the punch danny rosa our freakonomics radio listener got in touch task list of the gay men are more affluent
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="445.78"
+                                                      data-length=""
+                                                      data-uuid="a0ae2b95-a0a9-4e96-9830-d8eadfbf32a5"
+                                                      data-confidence="0.7334437">
+                                                    probably because they more highly educated and because in much less likely to have kids with me that the money to live in a really nice neighborhood but as you know the show is all about using theater in the real world and some data is much better than others
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="463.84"
+                                                      data-length=""
+                                                      data-uuid="6b938a27-a107-4f4c-a821-fa8fa262e3ba"
+                                                      data-confidence="0.6801011">
+                                                    so what is the data we've been looking at here
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="467.89"
+                                                      data-length=""
+                                                      data-uuid="ae1f5c54-4cd4-4abe-8fa6-b7a1d16d0d42"
+                                                      data-confidence="0.577799">
+                                                    it is very good the most import
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S111"
+                                                      data-timestamp="470.35"
+                                                      data-length=""
+                                                      data-uuid="ca37b547-8c78-4665-8a83-f4a389055e36"
+                                                      data-confidence="0.797703">
+                                                    I do know is that it is actually pretty hard to get good data on lesbian gay bisexual
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S61"
+                                                      data-timestamp="474.97"
+                                                      data-length=""
+                                                      data-uuid="347a5001-92ec-4463-a9e2-dfb05180e0e1"
+                                                      data-confidence="0.1535918">
+                                                    phone
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="476.76"
+                                                      data-length=""
+                                                      data-uuid="315146d8-5725-49eb-a63c-ba729310dea8"
+                                                      data-confidence="0.7871308">
+                                                    coming up on freakonomics radio why everything that we just told you it probably kind of wrong
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="494.67"
+                                                      data-length=""
+                                                      data-uuid="7c026334-ebb1-4ddf-8875-97a10745e79a"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="499.14"
+                                                      data-length=""
+                                                      data-uuid="c08e9216-d4cf-4d05-8319-7dfed8626846"
+                                                      data-confidence="0.8243351">
+                                                    freakonomics radio is supported by legal zoom if you have a family or any assets it's important to protect them by ensuring your last wishes are upheld find out more about last wills and living trust at legalzoom.com plus get legal guidance through their network of independent attorneys in legal zoom is not a law firm
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="517.67"
+                                                      data-length=""
+                                                      data-uuid="b9af3baa-e18e-4e2d-a1b0-e4f7dec98ec0"
+                                                      data-confidence="0.7579647">
+                                                    for a special discount for freakonomics listeners take freak in the referral box at checkout
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S74"
+                                                      data-timestamp="523.99"
+                                                      data-length=""
+                                                      data-uuid="dea28e47-d4d5-44b2-bdb2-8e03d1de45ed"
+                                                      data-confidence="0.7657498">
+                                                    freakonomics radio is supported by interactive brokers lower call send international trading are critical when choosing your broker that's why are active brokers offer transparent low commissions low financing rates in best price executions to minimize your cost to help you maximize your returns
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S74"
+                                                      data-timestamp="540.16"
+                                                      data-length=""
+                                                      data-uuid="d8e84c3a-a413-4b09-b2eb-e1acd3f0d3b1"
+                                                      data-confidence="0.7802263">
+                                                    it's also why they give you direct market access to stocks options futures for ikhsan borrowing from a single account and over 100 market centers in 24 countries in 20 corinthians
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S74"
+                                                      data-timestamp="550.31"
+                                                      data-length=""
+                                                      data-uuid="38cc9424-d960-4b1c-abed-c369a2865689"
+                                                      data-confidence="0.7974116">
+                                                    learn more at I dkr.com slash freak
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="553.8"
+                                                      data-length=""
+                                                      data-uuid="768f9b09-d38d-4a9b-bb1f-2496b0b80e1f"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S78"
+                                                      data-timestamp="555.93"
+                                                      data-length=""
+                                                      data-uuid="934c058c-370d-4209-a3f4-fb4c1502fc50"
+                                                      data-confidence="0.8264251">
+                                                    from WNYC this is freakonomics radio here's your host stephen dubner
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="563.66"
+                                                      data-length=""
+                                                      data-uuid="33f067b6-554c-4a0c-a4f2-e583135475aa"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="566.99"
+                                                      data-length=""
+                                                      data-uuid="b917f1c8-7077-433c-852a-e0255e7fb11c"
+                                                      data-confidence="0.6704502">
+                                                    andre show were talking about the stereo type of the height income gay american male and how true that stereotype maybe
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="574.83"
+                                                      data-length=""
+                                                      data-uuid="e9e3082d-134e-4db3-ad96-78de684879e0"
+                                                      data-confidence="0.7153845">
+                                                    so far we've given you some pretty convincing cenedella but it's probably not convincing is it sounds cheap ericsson is a professor of public policy in law at boston university there is a problem he says with just about everything to you
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S84"
+                                                      data-timestamp="589.9"
+                                                      data-length=""
+                                                      data-uuid="4d326f8c-05ea-470d-98b1-46c976850522"
+                                                      data-confidence="0.6838159">
+                                                    <profanity>fuck off</profanity> data about lgb t individual that we have is really data about individuals who choose to disclose their sexual orientation and that's not necessarily a representative sample of gay people princeton
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="605.63"
+                                                      data-length=""
+                                                      data-uuid="7d95c076-5dc2-4ce5-99c1-c19cee079e4a"
+                                                      data-confidence="0.7812365">
+                                                    ok so one problem is that not everyone who's lesbian gay bisexual transgender you going to say so when a stranger with a sentence for knocks on the door but even before that you have to back up the steps
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S84"
+                                                      data-timestamp="619.38"
+                                                      data-length=""
+                                                      data-uuid="60c10592-92a0-4aac-a724-5cbf22947d24"
+                                                      data-confidence="0.6755343">
+                                                    for the first problem we have is the percentage does and ask directly about sexual orientation
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="624.13"
+                                                      data-length=""
+                                                      data-uuid="2f8a5564-17c5-4bc7-b2b2-c7059552052d"
+                                                      data-confidence="0.7718804">
+                                                    ok so if the sense that doesn't ask directly about sexual orientation how do we know why
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="631.15"
+                                                      data-length=""
+                                                      data-uuid="79767fdf-3900-4512-abd1-24ce70553e12"
+                                                      data-confidence="0.8034413">
+                                                    we've been telling you about that for instance gay couples earn about 20% more than straight couples
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S104"
+                                                      data-timestamp="637.0"
+                                                      data-length=""
+                                                      data-uuid="e4cb7714-9599-47ad-a0fc-27ab1e123b00"
+                                                      data-confidence="0.7212812">
+                                                    what people have been able to do at the senses is look at people who report being in a same sex partnered household and honestly that's a subsample of gay people at the hall at the september because not all gay bar partnered and it also some sample because not all partners gay people would wanna discuss that to the census
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="655.64"
+                                                      data-length=""
+                                                      data-uuid="e5f6504e-66a6-43b3-9d3c-03315adcf6b0"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="660.4"
+                                                      data-length=""
+                                                      data-uuid="394e1e57-d02b-45fe-b173-0b32ae8f8995"
+                                                      data-confidence="0.6744211">
+                                                    so you see the problem yes the puppy also see y in the early part of my program we told you about the income of gay couples but not individuals please keep certain point out that data isn't necessarily a good representation of the gay couple population and why is that
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="677.95"
+                                                      data-length=""
+                                                      data-uuid="bac8976b-75e4-4666-a184-66a9fcd0daff"
+                                                      data-confidence="0.683961">
+                                                    well maybe a high earning gay couple is more likely to divulge their sexuality to census taker than a learning cup
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="687.75"
+                                                      data-length=""
+                                                      data-uuid="d2f46555-67c8-4548-8ce4-32e8feffda6d"
+                                                      data-confidence="0.6477709">
+                                                    the more we learn here the last meeting today
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="693.95"
+                                                      data-length=""
+                                                      data-uuid="67e36b1a-d060-44cb-95e5-35cdb652b49f"
+                                                      data-confidence="0.7019374">
+                                                    hey we should go back even further something really basic like what share of the us population is lgb TA gallup poll tells is the number in about 3.4 percent but again keep in mind that survey data
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="709.25"
+                                                      data-length=""
+                                                      data-uuid="f15f3372-b986-49c7-850a-e49f4812643b"
+                                                      data-confidence="0.730426">
+                                                    keith erickson says the lgbt head count is quote substantially underestimated
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S104"
+                                                      data-timestamp="715.86"
+                                                      data-length=""
+                                                      data-uuid="c81e3129-b440-4795-ac50-5b764bdccd89"
+                                                      data-confidence="0.7125268">
+                                                    can we find it even let me ask people anonymously if we ask them directly they aren't necessarily willing to reveal batbayar lgb t but last time in this private veiled way so that we don't know anything about a particular person
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S104"
+                                                      data-timestamp="731.86"
+                                                      data-length=""
+                                                      data-uuid="dd31f453-834b-472c-be77-1fee282202bc"
+                                                      data-confidence="0.786715">
+                                                    men are reported lgbt identity goes up substantially about a 55% increase in our data
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="738.88"
+                                                      data-length=""
+                                                      data-uuid="0dc3ee89-28df-4d87-949d-b522f1937576"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="742.24"
+                                                      data-length=""
+                                                      data-uuid="05d61a45-a136-4ddd-ad9f-cb6a3bd5295a"
+                                                      data-confidence="0.7317049">
+                                                    so if a group of people is undercounted and many of them may be unwilling to disclose information about himself makes it pretty hard to get reliable data about there in kentucky so how can we find out if the affluent gay stereotype is really true
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="759.91"
+                                                      data-length=""
+                                                      data-uuid="0d4d806f-f184-45c2-9d16-4658f5ca6cb6"
+                                                      data-confidence="0.3447543">
+                                                    struzik honestly badge it again
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S111"
+                                                      data-timestamp="762.8"
+                                                      data-length=""
+                                                      data-uuid="cf2cfdab-685d-492d-9f37-40e50de975f2"
+                                                      data-confidence="0.6624159">
+                                                    we have a few studies and when does the 2 day and look at income
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="769.54"
+                                                      data-length=""
+                                                      data-uuid="03019ee9-62df-4483-8ff2-c437a7f0a656"
+                                                      data-confidence="0.5688718">
+                                                    do williams institute is the think tank at ucla specialize in issues around sexual orientation bajans weather scholars study she's talking about tell completely different story about getting <profanity>cum</profanity> in mouth
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S111"
+                                                      data-timestamp="783.95"
+                                                      data-length=""
+                                                      data-uuid="8b5c4d27-5b11-4a12-82bc-9751eb45cd85"
+                                                      data-confidence="0.7747046">
+                                                    cortana have higher than average education level so you would expect them to have higher than average income but when you compare straight gay people with the same education level actually like gay people earn less
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="794.9"
+                                                      data-length=""
+                                                      data-uuid="646fb434-2dfe-4105-a57f-60fe9fc261dd"
+                                                      data-confidence="0.7529811">
+                                                    did you hear that badge it says that all her data may not be so great either it appears that if you took 2 observationally equipmentman same background same education salon at the game and we turn left down the street not more in fact
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="810.8"
+                                                      data-length=""
+                                                      data-uuid="29946dd0-e39e-4029-b6a1-c76788216a83"
+                                                      data-confidence="0.6226429">
+                                                    earlier this year bajit into coauthors released williams institute study which found gays and lesbians are more likely to live in property in observation ilyuk with her sexual nap
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="823.36"
+                                                      data-length=""
+                                                      data-uuid="fac05a8a-ee58-4e74-a680-4c8978d4e6cf"
+                                                      data-confidence="0.8246516">
+                                                    you may be a bit suspicious of such a claim made by an institute dedicated to sexual orientation issues but
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="830.51"
+                                                      data-length=""
+                                                      data-uuid="fc5d910e-b1bd-43d4-8cc3-b590a71a553b"
+                                                      data-confidence="0.749581">
+                                                    assuming it's legitimate the next question would be why aren't days earning more than black from university of chicago a couple ideas
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S124"
+                                                      data-timestamp="841.2"
+                                                      data-length=""
+                                                      data-uuid="f67a8eb2-bef8-4e9c-9438-cc0de3f4c911"
+                                                      data-confidence="0.7440891">
+                                                    there is some good evidence that gay men do take occupations that are you up did they look more female like in court email occupation sweetie sleep a little bit lower so that could explain a part of it
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="852.88"
+                                                      data-length=""
+                                                      data-uuid="3f621172-d870-4e96-a959-76bb75308c91"
+                                                      data-confidence="0.8345348">
+                                                    now I gotta keep in mind and analysis like this relies on self identified gay men who lived with the same sex partner but among that group
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="863.54"
+                                                      data-length=""
+                                                      data-uuid="6e0474dd-a882-4912-8a41-e04567f6d285"
+                                                      data-confidence="0.8986056">
+                                                    a gay man with about 16 times more likely than a straight man to teach a preschooler kindergarten about 5 times more likely to be a library in a registered nurse not the highest paying jobs
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="878.36"
+                                                      data-length=""
+                                                      data-uuid="4b03222f-589a-43fb-baf3-e38e32886bc4"
+                                                      data-confidence="0.6373348">
+                                                    dan black says that gay men do indeed earn less in maybe another reason
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S124"
+                                                      data-timestamp="884.29"
+                                                      data-length=""
+                                                      data-uuid="3bc5e918-6db9-477d-9c2b-fc0cb3b4977d"
+                                                      data-confidence="0.7041392">
+                                                    I wouldn't be shocked to find a good portion of that was actually dude screaming asian
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="890.26"
+                                                      data-length=""
+                                                      data-uuid="98b3e8f1-c92c-4d0a-924d-db13a479e485"
+                                                      data-confidence="0.6688816">
+                                                    now how does an employer discriminate against a monthly thing here according to black and bagit is one way that can happen
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S111"
+                                                      data-timestamp="903.16"
+                                                      data-length=""
+                                                      data-uuid="748df082-487a-4bad-af00-31934e3231d8"
+                                                      data-confidence="0.4761295">
+                                                    it's in the resume in one little line buried in there in the red
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S130"
+                                                      data-timestamp="907.23"
+                                                      data-length=""
+                                                      data-uuid="eb368f7a-ab94-4809-9a58-8e99722a5803"
+                                                      data-confidence="0.6759759">
+                                                    matt and still down halfway through the resume you list a membership or not in a gay or lesbian group
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S111"
+                                                      data-timestamp="916.22"
+                                                      data-length=""
+                                                      data-uuid="6539b0d1-a6ce-4296-bec7-e89e7e7ff803"
+                                                      data-confidence="0.6660413">
+                                                    and a employers you know who are seeing resumes with and without that line can denote is it apparently because I'm the one that it was done by sociologist resuli here in the us under stoschek for every 8 jobs in a straight man apply for key got invited us to an interview
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S111"
+                                                      data-timestamp="934.56"
+                                                      data-length=""
+                                                      data-uuid="424cc0d2-3c74-46d0-b8f1-32ef361fd6fb"
+                                                      data-confidence="0.7638323">
+                                                    the game and had to apply for 11 jobs even just get one interview so that's just of the interview stage and I suspect that I know that differential treatment between gay and straight applicant is likely to be seen in other ways if we could actually study that's farther into the employment
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="951.6"
+                                                      data-length=""
+                                                      data-uuid="085dfb61-c037-406c-b348-ebbff6e43244"
+                                                      data-confidence="0.7492288">
+                                                    so how much might discrimination affect with gay men earn you member keith erickson for boston university by yes but if he tells is there might be more discrimination and we think because it's probably more homophobie than we think too
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S104"
+                                                      data-timestamp="967.99"
+                                                      data-length=""
+                                                      data-uuid="234e2a66-9ce2-490d-991d-5d028515b8dc"
+                                                      data-confidence="0.8064623">
+                                                    we find that people are also has been to reveal they don't support gays and lesbians that they hide their anti gay sentiment so we ask in a private valld way people are more likely to admit that they be uncomfortable having a game manager for that they think it's ok to discriminate against gays and lesbians
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="986.67"
+                                                      data-length=""
+                                                      data-uuid="443da794-9eed-48cd-acf8-472300cb3a8e"
+                                                      data-confidence="0.6041983">
+                                                    study the erickson coauthored found
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="989.2"
+                                                      data-length=""
+                                                      data-uuid="ad48a83e-c4f9-46cd-97c4-1a20d987780d"
+                                                      data-confidence="0.7917545">
+                                                    it when people could answer questions to be anonymously they were much more likely to expressed anti gay feelings so
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="995.92"
+                                                      data-length=""
+                                                      data-uuid="9fa4fcc8-b0c6-40a1-8031-980bd082d638"
+                                                      data-confidence="0.8740972">
+                                                    of course that would help explain why so many gays and lesbians are unwilling to admit their gay or lesbian it also helps explain why it's so hard to do something as simple as collect basic income information now
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="1010.06"
+                                                      data-length=""
+                                                      data-uuid="dc022c58-d2b6-4752-a374-1ab4f3468120"
+                                                      data-confidence="0.7527279">
+                                                    this will likely change ssid moves on same sex marriage is increasingly being recognized legalized in this country and elsewhere
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="1018.63"
+                                                      data-length=""
+                                                      data-uuid="d20fc3fb-6738-4f4d-a07a-5a13ce6ede82"
+                                                      data-confidence="0.8201768">
+                                                    what kind of changes will back bring over the past 20 years it appears that the rate of partner gay men becoming parents is nearly doubled what happens if that trend continues thursday in black again
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S124"
+                                                      data-timestamp="1032.22"
+                                                      data-length=""
+                                                      data-uuid="85e07a56-91b8-4ded-93bb-2a8297ef59cf"
+                                                      data-confidence="0.8163097">
+                                                    well I could have negative affects on economic outcomes in the sense that in particular I think god given greater access to adoption on the part of gay and lesbian couples
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S124"
+                                                      data-timestamp="1043.64"
+                                                      data-length=""
+                                                      data-uuid="4dd016f9-7076-4306-ade2-42291b6bf4aa"
+                                                      data-confidence="0.6089311">
+                                                    might induce them to your supper if you will the consequences of having children university beat bobby is benefits to having children as well
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="1054.69"
+                                                      data-length=""
+                                                      data-uuid="2a2f786e-0612-44f0-a6c3-08386454ad3a"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="1063.32"
+                                                      data-length=""
+                                                      data-uuid="5e74d830-f465-4e5b-a39d-934db320f383"
+                                                      data-confidence="0.6735067">
+                                                    do have kids to them about are the benefits I was about to the cost there for real
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="1071.49"
+                                                      data-length=""
+                                                      data-uuid="465a9823-c2df-463e-a310-53c46ddf0e7a"
+                                                      data-confidence="0.779798">
+                                                    as for the question that started this whole conversation from danny rose if you want to know what is it about gay men in gay culture that makes him so wealthy got this idea from seeing
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="1081.68"
+                                                      data-length=""
+                                                      data-uuid="57d0c70c-2719-4d92-ad68-39a24ad45d8a"
+                                                      data-confidence="0.752137">
+                                                    really nice expensive gay neighborhoods in big cities media stereotypes confirm this idea but as we've learned in today's program in beta testing center lincoln from it back today to push back against the street I know that would be the first to re type that turned out to not be true
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="1099.46"
+                                                      data-length=""
+                                                      data-uuid="bd79585b-92de-4cd9-afa0-95f1314eb70e"
+                                                      data-confidence="0.7645889">
+                                                    maybe the best lesson to learn from this but with called confirmation bias that means basically bit
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="1105.71"
+                                                      data-length=""
+                                                      data-uuid="a0df9736-a0b4-4645-b36c-89b89a02575f"
+                                                      data-confidence="0.7218418">
+                                                    when you already think something is true it and pay more attention to evidence that confirms that idea cell
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="1113.71"
+                                                      data-length=""
+                                                      data-uuid="b2db35d5-fd87-4b2d-bd9f-a1262ce93155"
+                                                      data-confidence="0.7254926">
+                                                    if you are you think that gay men are relatively affluent and then you see if you really nice neighborhoods that happen to be gay neighborhoods well that confirms your view is not that you necessarily block out the evans rent country just doesn't register the same way
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="1130.87"
+                                                      data-length=""
+                                                      data-uuid="4de3c56f-2901-4120-9b9d-0ba2fca62375"
+                                                      data-confidence="0.7456872">
+                                                    this is just one of many ways in which humans are elas
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S166"
+                                                      data-timestamp="1135.66"
+                                                      data-length=""
+                                                      data-uuid="68c64413-5308-4cc7-a328-92d028f8e610"
+                                                      data-confidence="0.6948208">
+                                                    I'm not perfect
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S166"
+                                                      data-timestamp="1138.3"
+                                                      data-length=""
+                                                      data-uuid="7ec6f5b2-4c64-49e3-b49c-0b01bab310ae"
+                                                      data-confidence="0.6064218">
+                                                    but we're still pretty good
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="1151.81"
+                                                      data-length=""
+                                                      data-uuid="4296b71f-9d32-437a-aa04-5cb9b00d2e04"
+                                                      data-confidence="0.6416966">
+                                                    bing pocketless news on the next episode pope francis recently published document called evangeli gaudium joy of the gospel in which he called l global economy a dictatorship in which quote the powerful feed palm palace so do a columnist agree
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S170"
+                                                      data-timestamp="1170.88"
+                                                      data-length=""
+                                                      data-uuid="753da69d-b69b-4ad7-a280-0af67e4dc730"
+                                                      data-confidence="0.7891734">
+                                                    first let me say I'm a believer in night market economy
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S170"
+                                                      data-timestamp="1175.24"
+                                                      data-length=""
+                                                      data-uuid="c6bda3df-7261-494e-86e9-46a3a36a1b2d"
+                                                      data-confidence="0.6861209">
+                                                    donna and I would imagine a pope francis to usibelli bird market economy but what the church is tosh is the idea that first and economy need
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S166"
+                                                      data-timestamp="1187.71"
+                                                      data-length=""
+                                                      data-uuid="02e244c6-b4d3-4fa6-8596-0aacad892bc7"
+                                                      data-confidence="0.7306325">
+                                                    so moral framework
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S166"
+                                                      data-timestamp="1189.49"
+                                                      data-length=""
+                                                      data-uuid="949e7e60-24bd-4dcb-bdc5-1095b8c5f100"
+                                                      data-confidence="0.7465727">
+                                                    what the catholic church pete's about the global economy and what should be done about it next time we can I'm free
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S176"
+                                                      data-timestamp="1202.56"
+                                                      data-length=""
+                                                      data-uuid="cb5986b1-48ad-45a9-99ef-ed0795725895"
+                                                      data-confidence="0.6683702">
+                                                    freakonomics radio is produced byWNYCN.net production our staff includes david herman fraguas elphick readercon for a lam susie lechtenberg in crispins in
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S176"
+                                                      data-timestamp="1214.25"
+                                                      data-length=""
+                                                      data-uuid="bf6456e1-8202-4a67-a120-6c0f9da81081"
+                                                      data-confidence="0.7808691">
+                                                    if you want more freakonomics radio you can subscribe to a podcast on itunes or go to freakonomics.com will find lots of radio ablas the books and more
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker=""
+                                                      data-timestamp="1237.13"
+                                                      data-length=""
+                                                      data-uuid="4c18e916-7c17-4558-9b65-f52df596c753"
+                                                      data-confidence="">
+                                                    
+                                                </span>
+                                            
+                                            
+                                                
+                                            </p><p><!--New speaker-->
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="1239.62"
+                                                      data-length=""
+                                                      data-uuid="6543116f-7d9a-44b2-a14e-3a044dfd2f83"
+                                                      data-confidence="0.823853">
+                                                    freakonomics radio is supported by wealthfront wealthfront is an automated investment service built for the modern era and make it easier than ever to invest your money well will front you the software instead of retail locations are salespeople so it can offer sophistical investment advice at low cost that were previously impossible
+                                                </span>
+                                            
+                                            
+                                                
+                                                <span data-speaker="S1"
+                                                      data-timestamp="1258.86"
+                                                      data-length=""
+                                                      data-uuid="baaaf883-99cc-48ad-b862-9ee419303fce"
+                                                      data-confidence="0.8896158">
+                                                    it is exploded in popularity in last 2 years I know it more than $2.5 Billion under management check them out atwealthfront.com slash freak to get up to $10000 managepro free
+                                                </span>
+                                            
+                                            
+                                            </p>
+                                            <div class="clearboth"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mk-about-author-wrapper">
+                                <div class="avatar-wrapper"><img alt=''
+                                                                 src='/img/covers/freakonomics-radio.jpg'
+                                                                 class='avatar avatar-65 photo' height='65' width='65'/>
+                                </div>
+                                <div class="mk-about-author-meta">
+                                    <a class="about-author-name" href=""></a>
+
+                                    <div class="about-author-desc"></div>
+
+                                </div>
+                                <div class="clearboth"></div>
+                            </div>
+                            <section class="blog-similar-posts">
+                                <div class="similar-post-title">Recent Podcasts</div>
+                                <ul class="four-cols">
+                                    
+                                    <li>
+                                        <div class="similar-post-holder"><a class="mk-similiar-thumbnail"
+                                                                            href=""
+                                                                            title="Are Gay Men Really Rich?"><img
+                                                src="/img/covers/freakonomics-radio.jpg"
+                                                alt="Are Gay Men Really Rich?"/>
+
+                                            <div class="image-hover-overlay"></div>
+                                        </a><a href="" class="mk-similiar-title">Are Gay Men Really Rich?</a></div>
+                                    </li>
+                                    
+                                </ul>
+                                <div class="clearboth"></div>
+                            </section>
+                            <section id="comments">
+                            </section>
+                        </article>
+                        <div class="clearboth"></div>
+                    </div>
+                    <div class="clearboth"></div>
+                </div>
+            </div>
+        </div>
+        <section id="mk-footer" class="">
+  <div class="footer-wrapper mk-grid">
+    <div class="mk-padding-wrapper">
+      <div class=""><section id="text-2" class="widget widget_text"> <div class="textwidget"><div style="text-align: center; color: #999999;"> Copyright TomeCast All Rights Reserved © 2015 </div></div>
+      </section></div>
+      <div class="clearboth"></div>
+    </div>
+  </div>
+</section>
+
+    </div>
+    <div class="mk-side-dashboard">
+    <div class="side-dash-top-widgets">
+        <section id="text-4" class="widget widget_text">
+            <div class="textwidget"><img
+                    src="/img/D-logo.png">
+            </div>
+        </section>
+    </div>
+    <nav id="mk-sidedash-navigation" class="side_dashboard_menu">
+        <ul id="menu-main-menu" class="sidedash-navigation-ul">
+            <li id="menu-item-4533" class="menu-item menu-item-type-post_type menu-item-object-page"><a
+                    href="/">Home</a></li>
+            <li id="menu-item-4527" class="menu-item menu-item-type-post_type menu-item-object-page"><a
+                    href="/about.html">About</a></li>
+            <li id="menu-item-4529"
+                class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children"><a
+                    href="">Podcasts</a>
+                <ul class="sub-menu">
+                    
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page">
+                        <a href="//"></a>
+                    </li>
+                    
+
+
+                </ul>
+            </li>
+
+            <li id="menu-item-4525" class="menu-item menu-item-type-post_type menu-item-object-page"><a
+                    href="/contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="side-dash-bottom-widgets">
+        <section id="social-2" class="widget widget_social_networks">
+            <div id="social-55560e5fcc0ca" class="align-left"><a href="#"
+                                                                 rel="nofollow"
+                                                                 class="builtin-icons mk-square-pointed custom small facebook-hover"
+                                                                 target="_blank" alt="Follow Us on facebook"
+                                                                 title="Follow Us on facebook"><i
+                    class="mk-jupiter-icon-simple-facebook"></i></a><a href="#"
+                                                                       rel="nofollow"
+                                                                       class="builtin-icons mk-square-pointed custom small googleplus-hover"
+                                                                       target="_blank" alt="Follow Us on googleplus"
+                                                                       title="Follow Us on googleplus"><i
+                    class="mk-jupiter-icon-simple-googleplus"></i></a><a href="#"
+                                                                         rel="nofollow"
+                                                                         class="builtin-icons mk-square-pointed custom small twitter-hover"
+                                                                         target="_blank" alt="Follow Us on twitter"
+                                                                         title="Follow Us on twitter"><i
+                    class="mk-jupiter-icon-simple-twitter"></i></a>
+                <style>#social-55560e5fcc0ca a {
+                    opacity: 100 !important;
+                    color: #ffffff !important;
+                }
+
+                #social-55560e5fcc0ca a:hover {
+                    color: #f16f4f !important;
+                }</style>
+            </div>
+        </section>
+    </div>
+</div>
+
+</div>
+<a href="#" class="mk-go-top"><i class="mk-icon-chevron-up"></i></a>
+
+
+
+<a class="mk-post-nav mk-post-prev with-image" href="/podcasts/freakonomics-radio/2013/12/05/the-most-dangerous-machine.html"><span
+        class="pagnav-wrapper"><span class="pagenav-top"><span class="pagenav-image"><img width="150" height="150"
+              src="/img/covers/freakonomics-radio.jpg"
+              class="attachment-thumbnail wp-post-image"
+              alt="The Most Dangerous Machine Podcast"/></span><span
+        class="mk-pavnav-icon"><i class="mk-icon-long-arrow-left"></i></span></span><div class="nav-info-container">
+    <span class="pagenav-bottom"><span class="pagenav-title">The Most Dangerous Machine</span>2013-12-05</span></div></span></a>
+
+
+
+
+<a class="mk-post-nav mk-post-next with-image" href="/podcasts/freakonomics-radio/2013/12/19/pontiff-icating-on-the-free-market-system.html"><span
+        class="pagnav-wrapper"><span class="pagenav-top"><span class="mk-pavnav-icon"><i
+        class="mk-icon-long-arrow-right"></i></span><span class="pagenav-image"><img width="150" height="150"
+             src="/img/covers/freakonomics-radio.jpg"
+             class="attachment-thumbnail wp-post-image"
+             alt="Pontiff-icating on the Free-Market System Podcast"/></span></span><div
+        class="nav-info-container"><span class="pagenav-bottom"><span
+        class="pagenav-title">Pontiff-icating on the Free-Market System</span>
+    2013-12-19
+</span></div></span></a>
+
+
+
+<script type='text/javascript' src='/js/scripts-vendors.js'></script>
+<script type='text/javascript' src='/js/app.js'></script>
+<script type='text/javascript' src='/js/smoothscroll.js'></script>
+<script type='text/javascript'
+        src='//cdnjs.cloudflare.com/ajax/libs/jquery.transit/0.9.12/jquery.transit.min.js'></script>
+
+<script type="text/javascript">
+    window.$ = jQuery
+
+    $('.mk-dynamic-styles').each(function () {
+        $(this).remove();
+    });
+
+    function ajaxStylesInjector() {
+        $('.mk-dynamic-styles').each(function () {
+            var $this = $(this),
+                    id = $this.attr('id'),
+                    commentedStyles = $this.html();
+            styles = commentedStyles
+                    .replace('<!--', '')
+                    .replace('-->', '');
+
+
+            if (dynamic_styles_ids.indexOf(id) === -1) {
+                $('style[data-ajax]').append(styles);
+                $this.remove();
+            }
+
+            dynamic_styles_ids.push(id);
+        });
+    }
+    ;
+
+    abb.modules.theme_header.init({
+        id: 'mk-header',
+        height: '130',
+        stickyHeight: '55',
+        stickyOffset: 'header',
+        hasToolbar: 'false'
+    });
+    abb.init();    </script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-69068664-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+</body>
+</html>
+ 
