@@ -136,17 +136,17 @@
                                         <div style=" margin-bottom:0px;text-align: left;" class="mk-text-block  ">
                                             <p>
                                             {% assign prev_segment = null %}
-                                            {% for segment_hash in page.segments%}
-                                                {% if forloop.first == false and prev_segment.speaker != segment_hash[1].speaker %}
+                                            {% for segment in page.segments%}
+                                                {% if forloop.first == false and prev_segment.speaker != segment.speaker %}
                                             </p><p><!--New speaker-->
                                                 {% endif %}
-                                                <span data-speaker="{{segment_hash[1].speaker}}"
-                                                      data-timestamp="{{segment_hash[1].timestamp}}"
-                                                      data-length="{{segment_hash[1].length}}"
-                                                      data-uuid="{{segment_hash[1].uuid}}">
-                                                    {{segment_hash[1].content}}
+                                                <span data-speaker="{{segment.speaker}}"
+                                                      data-timestamp="{{segment.timestamp}}"
+                                                      data-length="{{segment.length}}"
+                                                      data-uuid="{{segment.uuid}}">
+                                                    {{segment.content}}
                                                 </span>
-                                            {% assign prev_segment = segment_hash[1] %}
+                                            {% assign prev_segment = segment %}
                                             {% endfor %}
                                             </p>
                                             <div class="clearboth"></div>
